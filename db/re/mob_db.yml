@@ -25633,7 +25633,7 @@ Body:
         Rate: 1500
       - Item: Dragon_Killer
         Rate: 1
-      - Item: Unstable_Energy_Particle
+      - Item: Particles_Of_Energy3
         Rate: 1000
       - Item: Carnium
         Rate: 1
@@ -25687,7 +25687,7 @@ Body:
         Rate: 25
       - Item: Agent_Katar
         Rate: 10
-      - Item: Unstable_Energy_Particle
+      - Item: Particles_Of_Energy3
         Rate: 1000
       - Item: Various_Jur
         Rate: 15
@@ -25737,7 +25737,7 @@ Body:
         Rate: 1
       - Item: Vecer_Axe
         Rate: 200
-      - Item: Unstable_Energy_Particle
+      - Item: Particles_Of_Energy3
         Rate: 1000
       - Item: Will_Of_Warrior
         Rate: 200
@@ -25837,7 +25837,7 @@ Body:
         Rate: 55
       - Item: Big_CrossBow
         Rate: 10
-      - Item: Unstable_Energy_Particle
+      - Item: Particles_Of_Energy3
         Rate: 1000
       - Item: Will_Of_Warrior
         Rate: 200
@@ -25887,7 +25887,7 @@ Body:
         Rate: 1
       - Item: La'cryma_Stick
         Rate: 200
-      - Item: Unstable_Energy_Particle
+      - Item: Particles_Of_Energy3
         Rate: 1000
       - Item: Will_Of_Warrior
         Rate: 200
@@ -26529,9 +26529,9 @@ Body:
         Rate: 1
       - Item: Saber_
         Rate: 10
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Plate_Armor_
         Rate: 1
@@ -26575,9 +26575,9 @@ Body:
         Rate: 1000
       - Item: Forturn_Sword
         Rate: 1
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Goast_Chill
         Rate: 1
@@ -26627,9 +26627,9 @@ Body:
         Rate: 1
       - Item: Buster_
         Rate: 25
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Goast_Chill
         Rate: 1
@@ -26677,9 +26677,9 @@ Body:
         Rate: 3
       - Item: Morning_Star_
         Rate: 25
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Goast_Chill
         Rate: 1
@@ -26727,9 +26727,9 @@ Body:
         Rate: 1
       - Item: Steel_Arrow_Container
         Rate: 50
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Goast_Chill
         Rate: 1
@@ -26777,9 +26777,9 @@ Body:
         Rate: 1
       - Item: Goast_Chill
         Rate: 1
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Silver_Robe_
         Rate: 15
@@ -27752,9 +27752,9 @@ Body:
         Rate: 500
       - Item: Butcher_
         Rate: 3
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Cookbook08
         Rate: 3
@@ -27794,13 +27794,13 @@ Body:
     DamageMotion: 1152
     Ai: 04
     Drops:
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
       - Item: Old_Steel_Plate
         Rate: 2500
       - Item: Gas_Mask
         Rate: 5
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Detrimindexta
         Rate: 25
@@ -36969,9 +36969,9 @@ Body:
       IgnoreMisc: true
       IgnoreRanged: true
     Drops:
-      - Item: Pumpkin_Deco
+      - Item: Pumpkin_Decorations
         Rate: 3000
-      - Item: Dried_White_Stem
+      - Item: Dry_White_Stem
         Rate: 3000
       - Item: Pumpkin_Head_Crushed
         Rate: 2000
@@ -41471,7 +41471,7 @@ Body:
         Rate: 10000
       - Item: Poison_Bottle_Box2
         Rate: 10000
-      - Item: Briliant_Hat_Box
+      - Item: Brilliant_Hat_Box
         Rate: 1000
       - Item: Dark_Lord_Card
         Rate: 1
@@ -47782,7 +47782,7 @@ Body:
         Rate: 10000
       - Item: Poison_Bottle_Box2
         Rate: 10000
-      - Item: Briliant_Hat_Box
+      - Item: Brilliant_Hat_Box
         Rate: 1000
       - Item: Knight_Windstorm_Card
         Rate: 1
@@ -48084,7 +48084,7 @@ Body:
         Rate: 2000
       - Item: Goast_Chill
         Rate: 1
-      - Item: Sinister_Energy_Particle
+      - Item: Particles_Of_Energy4
         Rate: 1000
       - Item: Elunium
         Rate: 100
@@ -48133,7 +48133,7 @@ Body:
         Rate: 2000
       - Item: Goast_Chill
         Rate: 1
-      - Item: Sinister_Energy_Particle
+      - Item: Particles_Of_Energy4
         Rate: 1000
       - Item: Oridecon
         Rate: 100
@@ -48184,7 +48184,7 @@ Body:
         Rate: 1
       - Item: Telekinetic_Orb
         Rate: 20
-      - Item: Sinister_Energy_Particle
+      - Item: Particles_Of_Energy4
         Rate: 1000
       - Item: Creeper_Bow
         Rate: 10
@@ -48232,7 +48232,7 @@ Body:
         Rate: 1
       - Item: Lab_Staff_Record
         Rate: 2000
-      - Item: Sinister_Energy_Particle
+      - Item: Particles_Of_Energy4
         Rate: 1000
       - Item: Oridecon
         Rate: 100
@@ -48283,7 +48283,7 @@ Body:
         Rate: 1
       - Item: Lab_Staff_Record
         Rate: 2000
-      - Item: Sinister_Energy_Particle
+      - Item: Particles_Of_Energy4
         Rate: 1000
       - Item: Elunium
         Rate: 100
@@ -48332,7 +48332,7 @@ Body:
         Rate: 1
       - Item: Lab_Staff_Record
         Rate: 2000
-      - Item: Sinister_Energy_Particle
+      - Item: Particles_Of_Energy4
         Rate: 1000
       - Item: Oridecon
         Rate: 100
@@ -48383,7 +48383,7 @@ Body:
         Rate: 2000
       - Item: Dance_Shoes
         Rate: 20
-      - Item: Sinister_Energy_Particle
+      - Item: Particles_Of_Energy4
         Rate: 1000
       - Item: Assassin_Handcuffs
         Rate: 10
@@ -49283,7 +49283,7 @@ Body:
         Rate: 500
       - Item: Korea_Rice_Cake
         Rate: 5000
-      - Item: Honey_Songpyun_
+      - Item: Honey_Rice_Cake_
         Rate: 1000
         StealProtected: true
   - Id: 2249
@@ -63483,13 +63483,13 @@ Body:
     DamageMotion: 1152
     Ai: 04
     Drops:
-      - Item: Silent_Energy_Particle
+      - Item: Particles_Of_Energy1
         Rate: 1000
       - Item: Old_Steel_Plate
         Rate: 10000
       - Item: Gas_Mask
         Rate: 25
-      - Item: Weak_Energy_Particle
+      - Item: Particles_Of_Energy2
         Rate: 250
       - Item: Detrimindexta
         Rate: 125
@@ -75730,7 +75730,7 @@ Body:
         Rate: 100
       - Item: Bloody_Letter
         Rate: 50
-      - Item: Unsent_Letter
+      - Item: Unsent_Mail
         Rate: 50
       - Item: XM_Mystcase_Card
         Rate: 1
@@ -75968,7 +75968,7 @@ Body:
     Drops:
       - Item: Closedmind_Box
         Rate: 4000
-      - Item: Butterfly_Hair_Decoration
+      - Item: Butterfly_Hair_Clip
         Rate: 4000
       - Item: Bloody_Coin
         Rate: 4000
@@ -76010,7 +76010,7 @@ Body:
     Ai: 21
     Class: Boss
     Drops:
-      - Item: Dried_Flower
+      - Item: Thirsty_Flower
         Rate: 10000
   - Id: 2998
     AegisName: EP14_MORS_EVENT
@@ -77665,7 +77665,7 @@ Body:
         Rate: 100
       - Item: Bow_Of_Storm
         Rate: 200
-      - Item: Jitterbug's_Tooth
+      - Item: Tooth_Of_Jitterbug
         Rate: 7000
       - Item: Grand_Pere_Card
         Rate: 1
@@ -78507,7 +78507,7 @@ Body:
       CanMove: true
       Mvp: true
     Drops:
-      - Item: Demon_God's_Apostle_Ahat_Card
+      - Item: Ahat_Card
         Rate: 1
         StealProtected: true
   - Id: 3106
@@ -78542,7 +78542,7 @@ Body:
       CanMove: true
       Mvp: true
     Drops:
-      - Item: Demon_God's_Apostle_Shnaim_Card
+      - Item: Shnaim_Card
         Rate: 1
         StealProtected: true
 #  - Id: 3107
@@ -78612,9 +78612,9 @@ Body:
         Rate: 500
       - Item: Harden_Breastplate
         Rate: 500
-      - Item: Jitterbug's_Tooth
+      - Item: Tooth_Of_Jitterbug
         Rate: 5000
-      - Item: Jitterbug's_Tooth
+      - Item: Tooth_Of_Jitterbug
         Rate: 1000
       - Item: JitterbugCard
         Rate: 1
@@ -78656,9 +78656,9 @@ Body:
         Rate: 500
       - Item: Frozen_Breastplate
         Rate: 500
-      - Item: Jitterbug's_Tooth
+      - Item: Tooth_Of_Jitterbug
         Rate: 5000
-      - Item: Jitterbug's_Tooth
+      - Item: Tooth_Of_Jitterbug
         Rate: 1000
       - Item: JitterbugCard
         Rate: 1
@@ -79064,7 +79064,7 @@ Body:
     DamageMotion: 480
     Ai: 02
     Drops:
-      - Item: Crushed_Can_Iron_Plate
+      - Item: Distorted_Iron_Plate
         Rate: 1000
       - Item: Iron
         Rate: 150
@@ -79110,7 +79110,7 @@ Body:
     Modes:
       CanMove: true
     Drops:
-      - Item: Failed_Engine
+      - Item: Wrong_Engine
         Rate: 500
       - Item: Steel
         Rate: 350
@@ -79154,7 +79154,7 @@ Body:
     DamageMotion: 480
     Ai: 10
     Drops:
-      - Item: Failed_Engine
+      - Item: Wrong_Engine
         Rate: 400
       - Item: Steel
         Rate: 250
@@ -79200,7 +79200,7 @@ Body:
     Modes:
       CanMove: true
     Drops:
-      - Item: Crushed_Can_Iron_Plate
+      - Item: Distorted_Iron_Plate
         Rate: 500
       - Item: Iron
         Rate: 100
@@ -80179,7 +80179,7 @@ Body:
     Ai: 04
     Class: Boss
     Drops:
-      - Item: Fragments_Of_Gigan
+      - Item: Piece_Of_Gigantes
         Rate: 10000
       - Item: Gigantes_Card
         Rate: 1
@@ -80578,7 +80578,7 @@ Body:
         Rate: 500
       - Item: C_Circlet_Of_Bone
         Rate: 50
-      - Item: C_Silent_Executor
+      - Item: C_Silent_Executer
         Rate: 50
       - Item: Pieces_Of_Sentiment
         Rate: 600
@@ -80586,7 +80586,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Eremes_Card
         Rate: 1
@@ -80635,7 +80635,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Magaleta_Card
         Rate: 1
@@ -80684,7 +80684,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Katrinn_Card
         Rate: 1
@@ -80727,7 +80727,7 @@ Body:
         Rate: 500
       - Item: C_Camouflage_RabbitHood
         Rate: 50
-      - Item: C_Sniper_Google
+      - Item: C_Sniper_Goggle
         Rate: 50
       - Item: Pieces_Of_Grudge
         Rate: 400
@@ -80735,7 +80735,7 @@ Body:
         Rate: 600
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Shecil_Card
         Rate: 1
@@ -80786,7 +80786,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Harword_Card
         Rate: 1
@@ -80835,7 +80835,7 @@ Body:
         Rate: 600
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Seyren_Card
         Rate: 1
@@ -81219,7 +81219,7 @@ Body:
     Modes:
       Mvp: true
     Drops:
-      - Item: Cursed_Crystal
+      - Item: Crystal_Of_Grudge
         Rate: 3000
       - Item: Manteau_Of_Fallen
         Rate: 150
@@ -81324,7 +81324,7 @@ Body:
     Modes:
       Mvp: true
     Drops:
-      - Item: Cursed_Crystal
+      - Item: Crystal_Of_Grudge
         Rate: 3000
       - Item: Manteau_Of_Fallen
         Rate: 150
@@ -81379,7 +81379,7 @@ Body:
         Rate: 500
       - Item: C_Protect_Of_Crown
         Rate: 50
-      - Item: C_Schmitz_Helm
+      - Item: C_Schmidt_Helm
         Rate: 50
       - Item: Pieces_Of_Sentiment
         Rate: 600
@@ -81387,7 +81387,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Randel_Card
         Rate: 1
@@ -81438,7 +81438,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Flamel_Card
         Rate: 1
@@ -81489,7 +81489,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Ceila_Card
         Rate: 1
@@ -81540,7 +81540,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Chen_Card
         Rate: 1
@@ -81591,7 +81591,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Gertie_Card
         Rate: 1
@@ -81642,7 +81642,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Alphoccio_Card
         Rate: 1
@@ -81693,7 +81693,7 @@ Body:
         Rate: 400
       - Item: Pieces_Of_Grudge
         Rate: 200
-      - Item: Fallen_Energy_Particle
+      - Item: Particles_Of_Energy5
         Rate: 1000
       - Item: Real_Trentini_Card
         Rate: 1
@@ -81950,7 +81950,7 @@ Body:
     Modes:
       Mvp: true
     Drops:
-      - Item: Cursed_Crystal
+      - Item: Crystal_Of_Grudge
         Rate: 3000
       - Item: Manteau_Of_Fallen
         Rate: 150
@@ -82624,7 +82624,7 @@ Body:
       CanMove: true
       Mvp: true
     MvpDrops:
-      - Item: Questioned_Parts
+      - Item: Problematical_Part
         Rate: 5000
       - Item: Old_Violet_Box
         Rate: 5000
@@ -84800,7 +84800,7 @@ Body:
         Rate: 50
       - Item: Kiss_Of_Angel
         Rate: 500
-      - Item: Min_Toad_Card
+      - Item: IFN_Toad_Card
         Rate: 1
         StealProtected: true
   - Id: 3422
@@ -84850,7 +84850,7 @@ Body:
         Rate: 250
       - Item: Shattered_Rune
         Rate: 10000
-      - Item: Min_Vagabond_Wolf_Card
+      - Item: IFN_V_Wolf_Card
         Rate: 1
         StealProtected: true
   - Id: 3423
@@ -84900,7 +84900,7 @@ Body:
         Rate: 250
       - Item: Guitar_Of_Gentle_Breeze
         Rate: 5
-      - Item: Min_Vocal_Card
+      - Item: IFN_Vocal_Card
         Rate: 1
         StealProtected: true
   - Id: 3424
@@ -84950,7 +84950,7 @@ Body:
         Rate: 25
       - Item: Angel's_Protection
         Rate: 500
-      - Item: Min_Eclipse_Card
+      - Item: IFN_Eclipse_Card
         Rate: 1
         StealProtected: true
   - Id: 3425
@@ -84999,7 +84999,7 @@ Body:
         Rate: 1
       - Item: Oridecon
         Rate: 80
-      - Item: Min_Chimera_Card
+      - Item: IFN_Chimera_Card
         Rate: 1
         StealProtected: true
   - Id: 3426
@@ -85058,7 +85058,7 @@ Body:
         Rate: 1200
       - Item: Krieg
         Rate: 100
-      - Item: Min_Eddga_Card
+      - Item: IFN_Eddga_Card
         Rate: 1
         StealProtected: true
   - Id: 3427
@@ -85117,7 +85117,7 @@ Body:
         Rate: 75
       - Item: Cakram
         Rate: 50
-      - Item: Min_Osiris_Card
+      - Item: IFN_Osiris_Card
         Rate: 1
         StealProtected: true
   - Id: 3428
@@ -85176,7 +85176,7 @@ Body:
         Rate: 1450
       - Item: Weihna
         Rate: 50
-      - Item: Min_Phreeoni_Card
+      - Item: IFN_Phreeoni_Card
         Rate: 1
         StealProtected: true
   - Id: 3429
@@ -85237,7 +85237,7 @@ Body:
         Rate: 10000
       - Item: Giant_Axe
         Rate: 50
-      - Item: Min_Orc_Hero_Card
+      - Item: IFN_OrcHero_Card
         Rate: 1
         StealProtected: true
   - Id: 3430
@@ -85296,7 +85296,7 @@ Body:
         Rate: 100
       - Item: Gemmed_Sallet_
         Rate: 3
-      - Item: Min_Tao_Gunka_Card
+      - Item: IFN_Tao_Gunka_Card
         Rate: 1
         StealProtected: true
   - Id: 3431
@@ -85760,7 +85760,7 @@ Body:
     DamageMotion: 576
     Ai: 04
     Drops:
-      - Item: Will_Master
+      - Item: Will_Of_Owner
         Rate: 2000
       - Item: Skull
         Rate: 5000
@@ -85800,7 +85800,7 @@ Body:
     DamageMotion: 576
     Ai: 04
     Drops:
-      - Item: Will_Master
+      - Item: Will_Of_Owner
         Rate: 2000
       - Item: Skull
         Rate: 5000
@@ -85840,7 +85840,7 @@ Body:
     DamageMotion: 432
     Ai: 04
     Drops:
-      - Item: Will_Master
+      - Item: Will_Of_Owner
         Rate: 2000
       - Item: Skull
         Rate: 5000
@@ -85878,7 +85878,7 @@ Body:
     DamageMotion: 480
     Ai: 04
     Drops:
-      - Item: Will_Master
+      - Item: Will_Of_Owner
         Rate: 5000
       - Item: Black_Dyestuffs
         Rate: 1000
@@ -85959,7 +85959,7 @@ Body:
       - Item: White_Potion_Box
         Rate: 3000
     Drops:
-      - Item: Fragments_Valkyrie_Power
+      - Item: Valkyrie_Fragment
         Rate: 5000
       - Item: Black_Dyestuffs
         Rate: 5000
@@ -85967,7 +85967,7 @@ Body:
         Rate: 1000
       - Item: Berserk
         Rate: 500
-      - Item: C_Bijou_Hat
+      - Item: C_BIJOUHAT
         Rate: 10
       - Item: Bijou_Card
         Rate: 1
@@ -86004,7 +86004,7 @@ Body:
     Modes:
       Detector: true
     Drops:
-      - Item: Moving_Dark_Matter
+      - Item: Moving_Black_Things
         Rate: 4000
       - Item: Transparent_Cloth
         Rate: 1500
@@ -86051,7 +86051,7 @@ Body:
     DamageMotion: 480
     Ai: 04
     Drops:
-      - Item: Old_Belt
+      - Item: Shabby_Old_Belt
         Rate: 4000
       - Item: Clattering_Skull
         Rate: 1500
@@ -86739,7 +86739,7 @@ Body:
     DamageMotion: 300
     Ai: 04
     Drops:
-      - Item: Moving_Dark_Matter
+      - Item: Moving_Black_Things
         Rate: 4000
       - Item: Rusty_Cleaver
         Rate: 1000
@@ -86784,7 +86784,7 @@ Body:
     DamageMotion: 480
     Ai: 04
     Drops:
-      - Item: Moving_Dark_Matter
+      - Item: Moving_Black_Things
         Rate: 4000
       - Item: Rusty_Cleaver
         Rate: 1000
@@ -86829,7 +86829,7 @@ Body:
     DamageMotion: 480
     Ai: 04
     Drops:
-      - Item: Moving_Dark_Matter
+      - Item: Moving_Black_Things
         Rate: 4000
       - Item: Rusty_Cleaver
         Rate: 1000
@@ -86878,7 +86878,7 @@ Body:
     Modes:
       Detector: true
     Drops:
-      - Item: Moving_Dark_Matter
+      - Item: Moving_Black_Things
         Rate: 4000
       - Item: Rice_Ball
         Rate: 4000
@@ -90030,15 +90030,15 @@ Body:
       - Item: Magic_Card_Album
         Rate: 50
     Drops:
-      - Item: Royal_Guardian_Ring
+      - Item: ProtectRingofKing
         Rate: 70
-      - Item: Diamond_Dust_Scroll_1_5
+      - Item: DiamondDust5_Scroll
         Rate: 10
-      - Item: Crimson_Rock_Scroll_1_5
+      - Item: CrimsonRock_5_Scroll
         Rate: 10
-      - Item: Sienna_Execrate_Scroll_1_5
+      - Item: Sienna_5_Scroll
         Rate: 10
-      - Item: Varetyr_Spear_Scroll_1_5
+      - Item: Varetyr_5_Scroll
         Rate: 10
       - Item: Golden_Potion_RG
         Rate: 500
@@ -90088,15 +90088,15 @@ Body:
       - Item: Magic_Card_Album
         Rate: 50
     Drops:
-      - Item: Royal_Guardian_Ring
+      - Item: ProtectRingofKing
         Rate: 1000
-      - Item: Diamond_Dust_Scroll_1_5
+      - Item: DiamondDust5_Scroll
         Rate: 500
-      - Item: Crimson_Rock_Scroll_1_5
+      - Item: CrimsonRock_5_Scroll
         Rate: 500
-      - Item: Sienna_Execrate_Scroll_1_5
+      - Item: Sienna_5_Scroll
         Rate: 500
-      - Item: Varetyr_Spear_Scroll_1_5
+      - Item: Varetyr_5_Scroll
         Rate: 500
       - Item: Golden_Potion_RG
         Rate: 10000
@@ -91659,7 +91659,7 @@ Body:
     Drops:
       - Item: Bradium
         Rate: 5000
-      - Item: Hazy_Dream_Fragment
+      - Item: HazyDream
         Rate: 3000
       - Item: Spectral_Spear
         Rate: 500
@@ -91712,7 +91712,7 @@ Body:
         Rate: 100
       - Item: IllusoryStone
         Rate: 200
-      - Item: Hazy_Dream_Fragment
+      - Item: HazyDream
         Rate: 500
       - Item: AngerNineTail_Card
         Rate: 1
@@ -91837,7 +91837,7 @@ Body:
     DamageMotion: 576
     Ai: 19
     Drops:
-      - Item: Bloody_Love_Letter
+      - Item: Bloody_LoveLetter
         Rate: 2000
       - Item: Skirt_Of_Virgin
         Rate: 300
@@ -91884,7 +91884,7 @@ Body:
     DamageMotion: 576
     Ai: 19
     Drops:
-      - Item: Broken_Arrow
+      - Item: BrokenArrow
         Rate: 2000
       - Item: Carnium
         Rate: 10
@@ -91978,7 +91978,7 @@ Body:
     DamageMotion: 288
     Ai: 19
     Drops:
-      - Item: Recruitment_Leaflet
+      - Item: SubjugationFlyer
         Rate: 2000
       - Item: Light_Granule
         Rate: 200
@@ -92195,7 +92195,7 @@ Body:
     Modes:
       Detector: true
     Drops:
-      - Item: Frozen_Stone_Fragment
+      - Item: Frozen_PieceOfRock
         Rate: 1000
       - Item: Bradium
         Rate: 200
@@ -92321,28 +92321,28 @@ Body:
     WalkSpeed: 1000
     AttackDelay: 1344
     Drops:
-      - Item: Frozen_Stone_Fragment
+      - Item: Frozen_PieceOfRock
         Rate: 200
         Index: 0
-      - Item: Frozen_Stone_Fragment
+      - Item: Frozen_PieceOfRock
         Rate: 200
         Index: 1
-      - Item: Frozen_Stone_Fragment
+      - Item: Frozen_PieceOfRock
         Rate: 200
         Index: 2
-      - Item: Frozen_Stone_Fragment
+      - Item: Frozen_PieceOfRock
         Rate: 200
         Index: 3
-      - Item: Frozen_Stone_Fragment
+      - Item: Frozen_PieceOfRock
         Rate: 200
         Index: 4
-      - Item: Frozen_Stone_Fragment
+      - Item: Frozen_PieceOfRock
         Rate: 200
         Index: 5
-      - Item: Frozen_Stone_Fragment
+      - Item: Frozen_PieceOfRock
         Rate: 200
         Index: 6
-      - Item: Frozen_Stone_Fragment
+      - Item: Frozen_PieceOfRock
         Rate: 200
         Index: 7
         StealProtected: true
@@ -92388,7 +92388,7 @@ Body:
       - Item: IllusionStone
         Rate: 5000
     Drops:
-      - Item: Ktullanux_Eye
+      - Item: KTULLANUXsEye
         Rate: 4000
       - Item: Clack_Of_Servival
         Rate: 1000
@@ -93858,7 +93858,7 @@ Body:
         Rate: 100
       - Item: EP17_1_EVT39
         Rate: 1000
-      - Item: Crushed_Can_Iron_Plate
+      - Item: Distorted_Iron_Plate
         Rate: 1500
       - Item: EL_A17T_Card
         Rate: 1
