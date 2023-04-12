@@ -20737,7 +20737,6 @@ BUILDIN_FUNC(erasequest)
 	}
 	pc_show_questinfo(sd); 
 
-	pc_show_questinfo(sd);
 	return SCRIPT_CMD_SUCCESS;
 }
 
