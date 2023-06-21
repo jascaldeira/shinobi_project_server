@@ -48527,7 +48527,7 @@ Body:
     Script: |
       bonus bDelayrate,-5;
       bonus bPAtk,1;
-      bonus bSmatk,1;
+      bonus bSMatk,1;
   - Id: 300193
     AegisName: Tiara_Card
     Name: Tiara Card
@@ -48579,6 +48579,17 @@ Body:
          bonus2 bAddEle,Ele_Earth,10;
          bonus2 bAddEle,Ele_Wind,10;
       }
+  - Id: 300196
+    AegisName: SLD_A_Moonlight_Card
+    Name: Sealed Angry Moonlight Flower Card
+    Type: Card
+    Weight: 10
+    Locations:
+      Armor: true
+    Flags:
+      DropEffect: CLIENT
+    Script: |
+      skill "PA_PRESSURE",((getrefine()>14)?3:2);
   - Id: 300197
     AegisName: SLD_Ill_Dracula_Card
     Name: Sealed Furious Dracula Card
@@ -58092,16 +58103,16 @@ Body:
       bonus bMatk,5*.@param;
       if (.@g >= ENCHANTGRADE_D) {
          bonus2 bMagicAtkEle,Ele_All,.@param;
-         bonus bSmatk,.@param;
+         bonus bSMatk,.@param;
          if (.@g >= ENCHANTGRADE_C) {
             bonus2 bMagicAtkEle,Ele_All,.@param;
-            bonus bSmatk,.@param;
+            bonus bSMatk,.@param;
             if (.@g >= ENCHANTGRADE_B) {
                bonus2 bMagicAtkEle,Ele_All,.@param;
-               bonus bSmatk,.@param;
+               bonus bSMatk,.@param;
                if (.@g >= ENCHANTGRADE_A) {
                   bonus2 bMagicAtkEle,Ele_All,.@param;
-                  bonus bSmatk,.@param;
+                  bonus bSMatk,.@param;
                }
             }
          }
@@ -58118,16 +58129,16 @@ Body:
       bonus bMatk,7*.@param;
       if (.@g >= ENCHANTGRADE_D) {
          bonus2 bMagicAtkEle,Ele_All,.@param;
-         bonus bSmatk,.@param;
+         bonus bSMatk,.@param;
          if (.@g >= ENCHANTGRADE_C) {
             bonus2 bMagicAtkEle,Ele_All,.@param;
-            bonus bSmatk,.@param;
+            bonus bSMatk,.@param;
             if (.@g >= ENCHANTGRADE_B) {
                bonus2 bMagicAtkEle,Ele_All,2*.@param;
-               bonus bSmatk,.@param;
+               bonus bSMatk,.@param;
                if (.@g >= ENCHANTGRADE_A) {
                   bonus2 bMagicAtkEle,Ele_All,2*.@param;
-                  bonus bSmatk,2*.@param;
+                  bonus bSMatk,2*.@param;
                }
             }
          }
@@ -58144,16 +58155,16 @@ Body:
       bonus bMatk,15*.@param;
       if (.@g >= ENCHANTGRADE_D) {
          bonus2 bMagicAtkEle,Ele_All,.@param;
-         bonus bSmatk,.@param;
+         bonus bSMatk,.@param;
          if (.@g >= ENCHANTGRADE_C) {
             bonus2 bMagicAtkEle,Ele_All,.@param;
-            bonus bSmatk,.@param;
+            bonus bSMatk,.@param;
             if (.@g >= ENCHANTGRADE_B) {
                bonus2 bMagicAtkEle,Ele_All,2*.@param;
-               bonus bSmatk,2*.@param;
+               bonus bSMatk,2*.@param;
                if (.@g >= ENCHANTGRADE_A) {
                   bonus2 bMagicAtkEle,Ele_All,3*.@param;
-                  bonus bSmatk,2*.@param;
+                  bonus bSMatk,2*.@param;
                }
             }
          }
@@ -58396,7 +58407,7 @@ Body:
     Script: |
       bonus bVariableCastrate,-7;
       bonus bMatk,11;
-      bonus bSmatk,1;
+      bonus bSMatk,1;
   - Id: 310710
     AegisName: Star_Of_Spell4
     Name: Star of Spell Lv4
@@ -58405,7 +58416,7 @@ Body:
     Script: |
       bonus bVariableCastrate,-10;
       bonus bMatk,17;
-      bonus bSmatk,2;
+      bonus bSMatk,2;
   - Id: 310711
     AegisName: Star_Of_Spell5
     Name: Star of Spell Lv5
@@ -58414,7 +58425,7 @@ Body:
     Script: |
       bonus bVariableCastrate,-15;
       bonus bMatk,25;
-      bonus bSmatk,4;
+      bonus bSMatk,4;
   - Id: 310712
     AegisName: Star_Of_Speed1
     Name: Star of Speed Lv1
@@ -58946,7 +58957,7 @@ Body:
     SubType: Enchant
     Script: |
       bonus bVariableCastrate,-10;
-      bonus bSmatk,1;
+      bonus bSMatk,1;
   - Id: 310861
     AegisName: Mad_Bunny_Enchant_4_1
     Name: Defense 1Lv
@@ -59317,16 +59328,16 @@ Body:
       .@param = (readparam(bSpl)/20);
       .@g = getenchantgrade();
       bonus bSpl,1;
-      bonus bSmatk,.@param;
+      bonus bSMatk,.@param;
       bonus bMatk,3*.@param;
       if (.@g >= ENCHANTGRADE_D) {
-         bonus bSmatk,.@param;
+         bonus bSMatk,.@param;
          if (.@g >= ENCHANTGRADE_C) {
-            bonus bSmatk,.@param;
+            bonus bSMatk,.@param;
             if (.@g >= ENCHANTGRADE_B) {
-               bonus bSmatk,.@param;
+               bonus bSMatk,.@param;
                if (.@g >= ENCHANTGRADE_A) {
-                  bonus bSmatk,.@param;
+                  bonus bSMatk,.@param;
                }
             }
          }
@@ -59340,16 +59351,16 @@ Body:
       .@param = (readparam(bSpl)/20);
       .@g = getenchantgrade();
       bonus bSpl,2;
-      bonus bSmatk,2*.@param;
+      bonus bSMatk,2*.@param;
       bonus bMatk,4*.@param;
       if (.@g >= ENCHANTGRADE_D) {
-         bonus bSmatk,.@param;
+         bonus bSMatk,.@param;
          if (.@g >= ENCHANTGRADE_C) {
-            bonus bSmatk,.@param;
+            bonus bSMatk,.@param;
             if (.@g >= ENCHANTGRADE_B) {
-               bonus bSmatk,.@param;
+               bonus bSMatk,.@param;
                if (.@g >= ENCHANTGRADE_A) {
-                  bonus bSmatk,2*.@param;
+                  bonus bSMatk,2*.@param;
                }
             }
          }
@@ -59363,16 +59374,16 @@ Body:
       .@param = (readparam(bSpl)/20);
       .@g = getenchantgrade();
       bonus bSpl,3;
-      bonus bSmatk,3*.@param;
+      bonus bSMatk,3*.@param;
       bonus bMatk,5*.@param;
       if (.@g >= ENCHANTGRADE_D) {
-         bonus bSmatk,.@param;
+         bonus bSMatk,.@param;
          if (.@g >= ENCHANTGRADE_C) {
-            bonus bSmatk,2*.@param;
+            bonus bSMatk,2*.@param;
             if (.@g >= ENCHANTGRADE_B) {
-               bonus bSmatk,2*.@param;
+               bonus bSMatk,2*.@param;
                if (.@g >= ENCHANTGRADE_A) {
-                  bonus bSmatk,2*.@param;
+                  bonus bSMatk,2*.@param;
                }
             }
          }
@@ -59714,14 +59725,14 @@ Body:
     Type: Card
     SubType: Enchant
     Script: |
-      bonus bSmatk,1;
+      bonus bSMatk,1;
   - Id: 310985
     AegisName: SMATK_2Lv
     Name: S.MATK 2Lv
     Type: Card
     SubType: Enchant
     Script: |
-      bonus bSmatk,2;
+      bonus bSMatk,2;
   - Id: 310986
     AegisName: ATK_1Lv
     Name: ATK 1Lv
@@ -60023,7 +60034,7 @@ Body:
     Type: Card
     SubType: Enchant
     Script: |
-      bonus bSmatk,3+getenchantgrade();
+      bonus bSMatk,3+getenchantgrade();
   - Id: 311029
     AegisName: Gear_DN1
     Name: Storm Slash Tuning Device
