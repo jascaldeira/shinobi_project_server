@@ -1,0 +1,27 @@
+-	script	kgLevelingSystem#1	-1,{
+    end;
+
+    OnNPCKillEvent:
+        if (kekkeigenkai == 0) end;
+        if (kekkeigenkai_lvl == 100) end;
+
+                set .@currentXP, kekkeigenkai_exp;
+                if ( ! .@currentXP) {
+                    set .@currentXP, 0;
+                }
+                set .@newXP, .@currentXP + getmonsterinfo(killedrid,1);
+
+                set .@nextLevel, kekkeigenkai_lvl + 1;
+                set .@nextLevelXpRequirement, pow((.@nextLevel + 1),7);
+
+                if (.@newXP >= .@nextLevelXpRequirement) {
+                    set kekkeigenkai_exp, 0;
+                    set kekkeigenkai_lvl, .@nextLevel;
+                    
+                    dispbottom "[Jutsu level]: Parabéns, " + .@skillName$[0] + " subiu para o nivel " + .@nextLevel + ".";
+                } else {
+                    set kekkeigenkai_exp, .@newXP;
+                    dispbottom "[Kekkei Genkai level] " + .@skillName$[0] + " level " + kekkeigenkai_lvl + ": "+.@newXP+" de " + .@nextLevelXpRequirement;
+                }
+        end;
+}

@@ -1,0 +1,6 @@
+function	script	kg_akimichi	{
+    if (kekkeigenkai != 3) return;
+    bonus_script "{bonus bMaxHPrate,((6/100)*kekkeigenkai_lvl); bonus bHPrecovRate,((1/100)*kekkeigenkai_lvl); bonus bMatkRate,((17/100)*kekkeigenkai_lvl); bonus bVit,((20/100)*kekkeigenkai_lvl); bonus bSpeedAddRate,-((100/100)*kekkeigenkai_lvl); skill 380,10; skill 250,5; skill 992,1;}",172800, 520;
+    
+	return;
+}

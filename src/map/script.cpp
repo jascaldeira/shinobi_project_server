@@ -267,6 +267,7 @@ struct Script_Config script_config = {
 	"OnPCLoadMapEvent", //loadmap_event_name
 	"OnPCBaseLvUpEvent", //baselvup_event_name
 	"OnPCJobLvUpEvent", //joblvup_event_name
+	"onPcUseSkillEvent", //useskill_event_name
 	// NPC related
 	"OnTouch_",	//ontouch_event_name (runs on first visible char to enter area, picks another char if the first char leaves)
 	"OnTouch",	//ontouch2_event_name (run whenever a char walks into the OnTouch area)
@@ -7038,7 +7039,7 @@ static bool script_getitem_randomoption(struct script_state *st, map_session_dat
 	
 	for (i = 0; i < opt_id_n && i < MAX_ITEM_RDM_OPT; i++) {
 		it->option[i].id = (short)get_val2_num( st, reference_uid( opt_id_id, opt_id_idx + i ), opt_id_ref );
-		it->option[i].value = (short)get_val2_num( st, reference_uid( opt_val_id, opt_val_idx + i ), opt_val_ref );
+		it->option[i].value = (int)get_val2_num( st, reference_uid( opt_val_id, opt_val_idx + i ), opt_val_ref );
 		it->option[i].param = (char)get_val2_num( st, reference_uid( opt_param_id, opt_param_idx + i ), opt_param_ref );
 	}
 	return true;
@@ -25825,7 +25826,7 @@ BUILDIN_FUNC(mail){
 			}
 
 			for( k = 0; k < num_items && start < end; k++, start++ ){
-				msg.item[k].option[i].value = (short)get_val2_num( st, reference_uid( id, start ), reference_getref( data ) );
+				msg.item[k].option[i].value = (int)get_val2_num( st, reference_uid( id, start ), reference_getref( data ) );
 			}
 
 			j++;

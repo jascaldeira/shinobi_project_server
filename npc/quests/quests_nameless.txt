@@ -1,7 +1,13 @@
-//===== rAthena Script =======================================
+//===== eAthena Script ======================================= 
 //= Nameless Island Quests
-//===== Description: =========================================
-//= [Official Conversion]
+//===== By: ================================================== 
+//= L0ne_W0lf
+//===== Current Version: ===================================== 
+//= 2.1
+//===== Compatible With: ===================================== 
+//= eAthena SVN
+//===== Description: ========================================= 
+//= [Aegis Conversion]
 //= Collection of Nameless Island Quests
 //= Nameless Island:
 //= - Quest to gain access to Nameless Island and dungeon.
@@ -14,7 +20,7 @@
 //= - prerequisite Quest to "Broken Diamond"
 //= - Variable in use: diamond_edq (Max: 14)
 //= Broken Diamond:
-//- - Help Ibrahim retrieve his stolen diamond.
+//- - Help Ibrahim rtrieve his stolen diamond.
 //= - prerequisite Quest to "Unlucky Emerald"
 //= - Variable in use: diamond_edq (Max: 26)
 //= Z-Gang Quest:
@@ -28,13 +34,13 @@
 //= Rogue Guild Investigation Assistance:
 //- - Assist the Rogue Guild with their investigations.
 //= - Variable in use: rumour_nd (Max: 22)
-//===== Changelog: ===========================================
+//===== Additional Comments: ================================= 
 //= 1.0 First version. [L0ne_W0lf]
-//= 1.1 Made quest accessable to "Failed" Geoborg quest. [L0ne_W0lf]
-//= 1.1a Touch up to other Geoborg fail-points. [L0ne_W0lf]
+//= 1.1 Made quest accessable to "Failed" gaebolg quest. [L0ne_W0lf]
+//= 1.1a Touch up to other Gaebolg fail-points. [L0ne_W0lf]
 //= 1.2 Some final tuning to Nameless Island quest. [Koca]
 //= 1.3 Should fix any more issues with "Creature" npc. [L0ne_W0lf]
-//= 1.4 Changed the way Out_from_Monastery works slightly. [L0ne_W0lf]
+//= 1.4 Changed the way aru_warp works slightly. [L0ne_W0lf]
 //= 1.5 added a next to stop double npc message [Yommy]
 //= 1.6 Updated the Nameless Island Access quest
 //=     Added Quest: Peace for Arunafeltz
@@ -49,25 +55,16 @@
 //= 1.9 Fixed mapwarp warping to disabled map. [L0ne_W0lf]
 //= 2.0 Removed duplicate dialog. [L0ne_W0lf]
 //= 2.1 Fixed a race condition blocking progress. [brianluau]
-//= 2.2 Added quest log entries for:
-//=     - Muff's Loan
-//=     - Broken Diamond
-//=     - Z-Gang Quest
-//= 2.2a Fixed a few job constant typos. [Euphy]
-//= 2.3 Updated RE/Pre-RE EXP. [Euphy]
-//= 2.4 Moved Dorian to pre-re/re paths. [Euphy]
-//= 2.5 Updated Nameless Island quests and added questlog support. [Euphy]
-//= 2.6 Commented custom quest log support for the Nameless Island Quest [Everade]
-//============================================================
+//============================================================ 
 
-// Nameless Island and Cursed Monestary Access Quest :: aru_monas
+// Nameless Island and Cursed Monestary Access Quest
 //============================================================
-airplane_01,90,63,0	script	Event Switch#pc	-1,3,3,{
+airplane_01,95,61,3	script	QuestTrigger#Aru	-1,3,3,{
 	end;
 
-OnTouch:
+OnTouch:	
 	if ((prt_curse == 36 || prt_curse == 45 || prt_curse == 56 || prt_curse == 61) && (aru_monas < 1)) {
-		hideoffnpc "Agent#pc1";
+		hideoffnpc "Agent#Aru";
 		mes "[????]";
 		mes "Are you "+strcharinfo(0)+"?";
 		mes "I've been waiting for you.";
@@ -75,19 +72,18 @@ OnTouch:
 		mes "your arrival at ^6B8E23Prontera";
 		mes "Church^000000. Please visit him";
 		mes "as soon as you can.";
-		set aru_monas,1;
-		//setquest 17000;
 		close2;
-		hideonnpc "Agent#pc1";
+		set aru_monas,1;
+		hideonnpc "Agent#Aru";
 	}
 	end;
 }
 
-airplane_01,95,61,3	script	Agent#pc1	899,{
+airplane_01,95,61,3	script	Agent#Aru	899,5,5,{
 	end;
 
 OnInit:
-	hideonnpc "Agent#pc1";
+	hideonnpc "Agent#Aru";
 	end;
 }
 
@@ -191,7 +187,6 @@ cmd_in02,111,52,3	script	Ordinary Man#pc2	97,{
 		mes "Arunafeltz so I wasn't able";
 		mes "to investigate any further.";
 		set aru_monas,4;
-		//changequest 17001,17002;
 		close;
 	}
 	else {
@@ -204,7 +199,7 @@ cmd_in02,111,52,3	script	Ordinary Man#pc2	97,{
 	}
 }
 
-ra_in01,308,59,1	script	Waiter#pc	930,{
+ra_in01,308,59,1	script	Waiter#Aru	930,{
 	if (aru_monas < 7) {
 		mes "[Waiter]";
 		mes "Welcome to";
@@ -232,12 +227,8 @@ ra_in01,308,59,1	script	Waiter#pc	930,{
 				mes "Right this way.";
 				close2;
 				set aru_monas,7;
-				switch(rand(1,4)) {
-					case 1: warp "ra_in01",303,43; end;
-					case 2: warp "ra_in01",304,43; end;
-					case 3: warp "ra_in01",304,39; end;
-					case 4: warp "ra_in01",303,39; end;
-				}
+				warp "ra_in01",303,43;
+				end;
 			}
 			mes "[Waiter]";
 			mes "Hm, okay. Well, whatever";
@@ -285,7 +276,7 @@ ra_in01,297,50,7	script	Suspicious-Looking Man	926,{
 	close;
 }
 
-ra_in01,301,43,0	script	MealConversation Trigger	-1,3,3,{
+ra_in01,301,43,0	script	#Aru_conv	-1,3,3,{
 	end;
 
 OnTouch:
@@ -431,12 +422,11 @@ OnTouch:
 		mes "I've never tasted anything";
 		mes "like it! It's almost like";
 		mes "a dessert. God, it's good!";
-		set aru_monas,8;
-		//changequest 17003,17004;
-		if (Zeny > 3000) {
-			set Zeny, Zeny-3000;
+		if (Zeny >= 3000) {
+			set Zeny,Zeny-3000;
 			getitem 12052,4; //Vit_Dish02
 		}
+		set aru_monas,8;
 		close;
 	}
 	end;
@@ -469,7 +459,6 @@ ve_in,78,314,5	script	Magistrate#Aru	945,{
 		mes "comfortable talking to complete";
 		mes "strangers about my problems.";
 		set aru_monas,9;
-		//changequest 17004,17005;
 		close;
 	}
 	else if (aru_monas == 9) {
@@ -481,7 +470,7 @@ ve_in,78,314,5	script	Magistrate#Aru	945,{
 		mes "peace, and letting anyone";
 		mes "in here will cause trouble.";
 		close;
-	}
+	}	
 	else if (aru_monas == 10) {
 		mes "[Al Hamad]";
 		mes "I thought I told you";
@@ -513,10 +502,9 @@ ve_in,78,314,5	script	Magistrate#Aru	945,{
 		mes "Oh, and you're prohibited";
 		mes "asking anyone else, so behave.";
 		set aru_monas,11;
-		//changequest 17006,17007;
 		close;
 	}
-	else if (aru_monas < 13) {
+	else if (aru_monas == 11) {
 		mes "[Al Hamad]";
 		mes "I don't blame you for";
 		mes "being curious, but getting";
@@ -608,8 +596,6 @@ ve_in,78,314,5	script	Magistrate#Aru	945,{
 		mes "we have to capture the";
 		mes "smugglers again? I don't";
 		mes "know what's going on...";
-		set aru_monas,14;
-		//changequest 17009,17010;
 		next;
 		mes "[Al Hamad]";
 		mes "Even if I could make headway";
@@ -626,9 +612,10 @@ ve_in,78,314,5	script	Magistrate#Aru	945,{
 		mes "learn more, your only choice";
 		mes "would be to find out on your";
 		mes "own. Fat chance, right?";
+		set aru_monas,14;
 		close;
 	}
-	else {
+	else if (aru_monas >= 14) {
 		mes "[Al Hamad]";
 		mes "I've suffered enough";
 		mes "already! Why can't this";
@@ -677,9 +664,8 @@ ve_in,81,296,3	script	Soldier#Aru	946,{
 		mes "Maybe the magistrate would";
 		mes "know if he was able to finish";
 		mes "interrogating the smugglers.";
-		mes "I'm not sure if he did since the smugglers were taken away.";
+		mes "I'm not sure if he did since the smugglers were taken away.";		
 		set aru_monas,10;
-		//changequest 17005,17006;
 		close;
 	}
 	else if (aru_monas == 10) {
@@ -695,828 +681,10 @@ ve_in,81,296,3	script	Soldier#Aru	946,{
 	else {
 		mes "[Himus]";
 		mes "Nice day, isn't it?";
-		close;
+		close;		
 	}
 }
 
-ve_in,239,115,0	script	Drunkard#Aru	943,{
-	if (aru_monas < 14) {
-		mes "[Drunkard]";
-		mes "Man, I feel great! Hah hah!";
-		mes "Hey, gimme one more drink!";
-		close;
-	}
-	if (aru_monas == 14) {
-		if (rachel_camel == 25) {
-			mes "[Drunkard]";
-			mes "So--*Hic* What I was...";
-			mes "Oog, dizzy... I say sayin',";
-			mes "that guy that ^32CD32snuck out to";
-			mes "sea on a boat^000000? You know";
-			mes "*Hic* why he came back";
-			mes "so early? You won't believe it!";
-			next;
-			mes "[Drunkard]";
-			mes "Hah hah! He--*Hic*";
-			mes "He thought he saw a ^DBDB70ghost^000000!";
-			mes "Bwah hah hah! Oooog... Hey...";
-			set aru_monas,15;
-			//changequest 17010,17011;
-			next;
-			mes "["+strcharinfo(0)+"]";
-			mes "That's right!";
-			mes "Maybe I should check";
-			mes "on ^32CD32Kurdi's father since";
-			mes "he's a fisherman^000000";
-			close;
-		}
-		else {
-			mes "[Drunkard]";
-			mes "Zzzz...";
-			mes "Umm... Zzz...";
-			close;
-		}
-	}
-	else {
-		mes "[Drunkard]";
-		mes "Why?! Why can't I take";
-		mes "my boat out to sea? I hafta";
-		mes "catch fish to make a living!";
-		mes "What, they expect me to starve";
-		mes "to death or something?! Huh?!";
-		close;
-	}
-}
-
-ve_in,238,120,4	script	Drunkard#Aru1	940,{
-	mes "[Drunkard]";
-	mes "Hohohoho~";
-	mes "Oh~ Hohohoho~";
-	next;
-	mes "[" + strcharinfo(0) + "]";
-	mes "She's kind of strange...";
-	close;
-}
-
-ve_fild07,125,128,0	script	Boat#Aru	111,{
-	if (aru_monas < 16) {
-		mes "^3355FFThis boat seems to ";
-		mes "be in decent condition.";
-		mes "Who could its owner be?^000000";
-		close;
-	}
-	else if (aru_monas == 16) {
-		mes "^3355FFThis must be the boat that";
-		mes "Karyn was talking about.";
-		mes "It seems to be in pretty";
-		mes "good shape. Now, the";
-		mes "monastery should be";
-		mes "southwest from here...^000000";
-		next;
-		hideoffnpc "Secret Agent#Aru";
-		next;
-		mes "[Larjes]";
-		mes "Long time no see,";
-		mes ""+strcharinfo(0)+".";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "Larjes!";
-		next;
-		mes "[Larjes]";
-		mes "I had a tough time following";
-		mes "you, you know? I actually";
-		mes "almost lost you once. You";
-		mes "must be wondering why";
-		mes "I'm here. If you'll listen,";
-		mes "I'll explain everything.";
-		next;
-		mes "[Larjes]";
-		mes "According to our investigation, Arunafeltz is definitely involved";
-		mes "in this case. We've been watching you since you're somehow related";
-		mes "to that high ranked official from Arunafeltz. I apologize for that.";
-		next;
-		mes "[Larjes]";
-		mes "This is an international";
-		mes "incident, so to prevent any";
-		mes "intel leaks to Arunafeltz,";
-		mes "we've had to be much stricter";
-		mes "with securing and protecting";
-		mes "all information for this case.";
-		next;
-		mes "[Larjes]";
-		mes "Anyway, I've decided to";
-		mes "reveal myself to you since";
-		mes "I'm the only one that can help";
-		mes "you right now. You're thinking";
-		mes "of using that boat, aren't you?";
-		next;
-		mes "[Larjes]";
-		mes "If you don't have the skills,";
-		mes "knowledge, and preparation";
-		mes "to sail those waters ahead,";
-		mes "you'll probably wreck the";
-		mes "boat. You'll make it if you're lucky but... That's a lot of luck.";
-		next;
-		mes "[Larjes]";
-		mes "I'll help you sail this";
-		mes "boat to get where you're";
-		mes "going. But if you fail, there's";
-		mes "a chance you might have to";
-		mes "sail this boat on your own if I'm not here. So, you ready to go?";
-		next;
-		switch(select("Yes, I'm ready.:Give me more time.")) {
-		case 1:
-			mes "[Larjes]";
-			mes "Alright, let's go.";
-			mes "Hold on to something:";
-			mes "this will probably be";
-			mes "a pretty rocky ride...";
-			set aru_monas,17;
-			//changequest 17012,17013;
-			close2;
-			hideonnpc "Secret Agent#Aru";
-			warp "nameless_i",257,217;
-			end;
-		case 2:
-			mes "[Larjes]";
-			mes "Alright. Just let me know";
-			mes "whenever you're ready.";
-			close;
-		}
-	}
-	else if (aru_monas < 20) {
-		mes "^3355FFThis is the boat that";
-		mes "can take you to the";
-		mes "monastery.^000000";
-		next;
-		switch(select("Go to Monastery:Cancel")) {
-		case 1:
-			mes "^3355FFYou set sail for";
-			mes "the monastery...^000000";
-			close2;
-			warp "nameless_i",257,217;
-			end;
-		case 2:
-			mes "^3355FFYou decide to";
-			mes "stay ashore.^000000";
-			close;
-		}
-	}
-	else {
-		mes "^3355FFThis is the boat that";
-		mes "can take you to the";
-		mes "monastery.^000000";
-		next;
-		switch(select("Go to Monastery:Cancel")) {
-		case 1:
-			mes "^3355FFYou set sail for";
-			mes "the monastery...^000000";
-			close2;
-			warp "nameless_n",257,217;
-			end;
-		case 2:
-			mes "^3355FFYou decide to";
-			mes "stay ashore.^000000";
-			close;
-		}
-	}
-}
-
-ve_fild07,128,130,1	script	Secret Agent#Aru	97,{
-	if (aru_monas == 16) {
-		mes "[Larjes]";
-		mes "Are you ready to go";
-		mes "aboard? I'll help you";
-		mes "sail to that monastery,";
-		mes "but if you fail while you're";
-		mes "there, I might not be here";
-		mes "when you come back.";
-		next;
-		switch(select("Yes, I'm ready.:Give me more time.")) {
-		case 1:
-			mes "[Larjes]";
-			mes "Alright, let's go.";
-			mes "Hold on to something:";
-			mes "this will probably be";
-			mes "a pretty rocky ride...";
-			set aru_monas,17;
-			//changequest 17012,17013;
-			close2;
-			hideonnpc "Secret Agent#Aru";
-			warp "nameless_i",257,217;
-			end;
-		case 2:
-			mes "[Larjes]";
-			mes "Alright. Just let me know";
-			mes "whenever you're ready.";
-			close;
-		}
-	}
-	end;
-
-OnInit:
-	hideonnpc "Secret Agent#Aru";
-	end;
-}
-
-nameless_i,212,184,0	script	Outside Island#Aru	-1,2,3,{
-	end;
-
-OnTouch:
-	if (aru_monas == 17) {
-		mes "^3355FFThe village is totally";
-		mes "silent, as if all life had";
-		mes "abandoned it. You look";
-		mes "around and see that something";
-		mes "was here a few hours ago, but";
-		mes "it's somewhere else now.^000000";
-		next;
-		mes "^3355FFWhatever it was,";
-		mes "it definitely wasn't";
-		mes "human. What kind of";
-		mes "creature could it be?^000000";
-		close;
-	}
-	end;
-}
-
-nameless_in,21,176,0	script	Inside Island#Aru	-1,2,2,{
-	end;
-
-OnTouch:
-	if (aru_monas == 17) {
-		mes "^3355FFThere are traces of";
-		mes "humans around here,";
-		mes "along with some kind";
-		mes "of creature that you";
-		mes "can't clearly identify.^000000";
-		close;
-	}
-	end;
-}
-
-nameless_i,129,218,0	script	Grass Behind#Aru	-1,4,3,{
-	end;
-
-OnTouch:
-	if (aru_monas == 17) {
-		mes "^3355FFA strange scent strikes";
-		mes "you as you enter this field of";
-		mes "grass. A few ^32CD32animal corpses^3355FF";
-		mes "are strewn around the ground.^000000";
-		close;
-	}
-	end;
-}
-
-nameless_i,127,207,0	script	Dead Crow#Aru	111,{
-	if (aru_monas < 17) { 
-		mes "^3355FFThere is a dead crow on the ground.";
-		close;
-	}
-	else if (aru_monas == 17) {
-		mes "^3355FFThe sight of this ^32CD32dead";
-		mes "crow^3355FF makes you feel";
-		mes "uneasy for some reason.^000000";
-		next;
-		if (select("Ignore:Investigate") == 1) {
-			mes "^3355FFYou decide not to touch";
-			mes "the animal's carcass.^000000";
-			close;
-		}
-		mes "^3355FFYou notice some grass sap";
-		mes "on the crow's beak, so it";
-		mes "must have been nibbling on";
-		mes "some grass. Some feathers";
-		mes "are missing, revealing";
-		mes "scaly, snake-like skin.^000000";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "Wait...";
-		mes "Did this grass...?";
-		next;
-		mes "^3355FFThis grass must be the";
-		mes "main ingredient of the";
-		mes "poison used to kill the";
-		mes "Geoborg family princes.^000000";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "Looks like I just hit";
-		mes "the jackpot. Huh?";
-		mes "Someone behi--";
-		next;
-		mes "^3355FFA sharp, throbbing pain";
-		mes "assails the back of your";
-		mes "head as you fall into";
-		mes "unconsciousness...^000000";
-		set aru_monas,18;
-		close2;
-		warp "nameless_in",15,60;
-		end;
-	}
-	end;
-}
-
-nameless_in,15,61,0	script	Pass Out#Aru	-1,2,3,{
-	end;
-
-OnTouch:
-	if (aru_monas == 18) {
-		disablenpc "Out_from_Monastery";
-		sc_start SC_Blind,600000,0,10000;
-		mes "^3355FFThe pressure on your";
-		mes "stomach and the blood";
-		mes "rushing to your head tells";
-		mes "you someone is carrying you";
-		mes "over his shoulder. He stops,";
-		mes "and you hear a faint voice.^000000";
-		next;
-		mes "^3355FFThe faint voice steadily";
-		mes "grows stronger and more";
-		mes "distinct--someone's calling";
-		mes "your name. You feel cold water";
-		mes "trickle through your lips, and";
-		mes "then you regain your senses.^000000";
-		next;
-		sc_end SC_BLIND;
-		hideoffnpc "Larjes#Monastery";
-		next;
-		mes "That was too close...";
-		mes "For a second there,";
-		mes "I thought I lost you.";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "Larjes...? What...";
-		mes "What happened?";
-		mes "Ugh, my head...";
-		next;
-		mes "[Larjes]";
-		mes "Try not to move for a while.";
-		mes "I had a bad feeling waiting";
-		mes "for you on the boat. Lucky";
-		mes "thing. When I found you,";
-		mes "these strange creatures";
-		mes "were savagely attacking you!";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "You saved me?";
-		mes "Thank you. Do you";
-		mes "happen to know what";
-		mes "those creatures were?";
-		next;
-		mes "[Larjes]";
-		mes "No clue. They looked";
-		mes "like humans, but... They";
-		mes "definitely weren't. Once";
-		mes "I killed them, they all";
-		mes "turned into sand.";
-		next;
-		hideoffnpc "Creature#Monas";
-		emotion ET_HUK, playerattached();
-		emotion ET_HUK, getnpcid(0, "Larjes#Monastery");
-		mes "[Larjes]";
-		mes "?!?!?!!!!!";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "!!!!?!?!!!!!!";
-		mes "Isn't... Isn't that...?";
-		next;
-		mes "[Larjes]";
-		mes "It seems it's just like the";
-		mes "creatures that kidnapped";
-		mes "you, but... I wonder why";
-		mes "he's not attacking us.";
-		next;
-		mes "[" +strcharinfo(0)+ "]";
-		mes "I guess you'll have to go";
-		mes "right up to him and ask.";
-		set aru_monas,19;
-		close;
-	}
-}
-
-nameless_in,13,58,6	script	Larjes#Monastery	97,{
-	mes "[Larjes]";
-	mes "Be careful. That guy";
-	mes "looks pretty dangerous.";
-	close;
-
-OnInit:
-	hideonnpc "Larjes#Monastery";
-	end;
-}
-
-nameless_in,13,53,1	script	Creature#Monas	1864,3,1,{
-	end;
-
-OnInit:
-	hideonnpc "Creature#Monas";
-	end;
-
-OnTouch:
-	if (aru_monas == 19 && mobcount("nameless_in","Creature#Monas::OnMyMobDead") < 1 && !@aru_monas_kill) {
-		mes "[???????]";
-		mes "Grrr~!!!";
-		close2;
-		monster "nameless_in",13,53,"Zombie",1864,1,"Creature#Monas::OnMyMobDead";
-		hideonnpc "Creature#Monas";
-	}
-	end;
-
-OnMyMobDead:
-	set @aru_monas_kill,1;
-	enablenpc "Out_from_Monastery";
-	end;
-}
-
-nameless_in,12,37,0	script	Out_from_Monastery	45,1,1,{
-	end;
-
-OnTouch:
-	if (aru_monas == 19) {
-		set aru_monas,20;
-		warp "nameless_n",168,252;
-		end;
-	}
-
-OnInit:
-	disablenpc "Out_from_Monastery";
-	end;
-}
-
-
-
-nameless_i,168,257,0	script	outtoin_01#mo	45,1,1,{
-	end;
-
-OnTouch:
-	if (aru_monas == 18 || aru_monas == 19) {
-		warp "nameless_in",12,41;
-		end;
-	}
-	mes "^3355FFThe door won't budge:";
-	mes "you can't go through.^000000";
-	close;
-}
-
-nameless_n,169,254,0	script	Night#Aru2	-1,3,3,{
-	end;
-
-OnTouch:
-	if(aru_monas == 20) {
-		hideoffnpc "Larjes#Monastery2";
-		mes "[" +strcharinfo(0)+ "]";
-		mes "What the hell...!?";
-		next;
-		mes "[Larjes]";
-		mes "So... This is the";
-		mes "island's true nature.";
-		next;
-		mes "[Larjes]";
-		mes "Someone like me won't";
-		mes "survive long in a place";
-		mes "like this. I'm going to wait";
-		mes "for you in the boat. Learn";
-		mes "what you need to learn, and then come back safe, "+strcharinfo(0)+".";
-		set aru_monas,21;
-		//changequest 17013,17014;
-		close2;
-		hideonnpc "Larjes#Monastery2";
-	}
-	end;
-}
-
-nameless_n,166,254,0	script	Larjes#Monastery2	97,{
-	end;
-
-OnInit:
-	hideonnpc "Larjes#Monastery2";
-	end;
-}
-
-nameless_i,259,218,3	script	Larjes#Aru	97,{
-	if (aru_monas < 18) {
-		mes "[Larjes]";
-		mes "I don't like this place.";
-		mes "You'd be better be careful";
-		mes "around here with those weird";
-		mes "creatures running around.";
-		close;
-	}
-	else if (aru_monas < 24) {
-		mes "[Larjes]";
-		mes "Good, you're back";
-		mes "I know that there's still";
-		mes "things on this island that";
-		mes "you want to investigate,";
-		mes "but did you want to leave";
-		mes "this place for a while?";
-		next;
-		if(select("Yes:No")==1) {
-			mes "[Larjes]";
-			mes "Alight, let's go.";
-			close2;
-			warp "ve_fild07",130,130;
-			end;
-		}
-		mes "[Larjes]";
-		mes "Alright, but becareful.";
-		mes "Those creatures almost";
-		mes "got you once, you know.";
-		close;
-	}
-	else {
-		mes "[Larjes]";
-		mes "Did you still want to";
-		mes "investigate the island?";
-		next;
-		if (select("No:Yes") == 1) {
-			mes "[Larjes]";
-			mes "Alright, let's go.";
-			close2;
-			warp "ve_fild07",130,130;
-			end;
-		}
-		mes "[Larjes]";
-		mes "Alright, but be careful.";
-		mes "Those creatures almost";
-		mes "got you once, you know.";
-		close;
-	}
-}
-
-nameless_n,259,218,3	script	Larjes#Boat1	97,{
-	if (aru_monas == 24) {
-		if (countitem(7726) < 1) {
-			mes "[Larjes]";
-			mes "Good, you're back.";
-			mes "I know that there's still";
-			mes "things on this island that";
-			mes "you want to investigate,";
-			mes "but did you want to leave";
-			mes "this place for a while?";
-			next;
-			switch(select("Yes:No")) {
-			case 1:
-				mes "[Larjes]";
-				mes "Alright, let's go.";
-				close2;
-				warp "ve_fild07",130,130;
-				end;
-			case 2:
-				mes "[Larjes]";
-				mes "Alright, but becareful.";
-				mes "Those creatures almost";
-				mes "got you once, you know.";
-				close;
-			}
-		} else {
-			mes "[Larjes]";
-			mes "I don't believe it...";
-			mes "That guy was Tristam III?!";
-			mes "This explains a lot, I suppose.";
-			mes "I'll report this along with the";
-			mes "voucher. So Arunafeltz was";
-			mes "behind that poison grass too...";
-			next;
-			mes "[Larjes]";
-			mes "I'm shocked over this";
-			mes "whole debacle. I'm sure";
-			mes "the Rune-Midgarts royal family";
-			mes "will be in an uproar over this.";
-			mes "To think that we're involved";
-			mes "in something this huge...";
-			next;
-			mes "[Larjes]";
-			mes "Anyway, we better get";
-			mes "going... This is huge!";
-			delitem 7726,1; //Token_Of_King
-			set aru_monas,25;
-			//changequest 17016,17017;
-			getexp (checkre(3))?100000:1000000,0;
-			close;
-		}
-	}
-	mes "[Larjes]";
-	mes "Did you still want to";
-	mes "investigate the island?";
-	next;
-	switch(select("No:Yes")) {
-	case 1:
-		mes "[Larjes]";
-		mes "Alright, let's go.";
-		close2;
-		warp "ve_fild07",130,130;
-		end;
-	case 2:
-		mes "[Larjes]";
-		mes "Alright, but becareful.";
-		mes "Those creatures almost";
-		mes "got you once, you know.";
-		close;
-	}
-}
-
-abbey02,224,70,0	script	Books#Mona1	111,{
-	if (checkweight(7766,1) == 0) {
-		mes "^3355FFWait a second!";
-		mes "Right now, you're carrying";
-		mes "too many things with you.";
-		mes "Please come back after";
-		mes "using the Kafra Service";
-		mes "to store some of your items.^000000";
-		close;
-	}
-	if (aru_monas < 21) {
-		mes "^3355FFIt's just a bunch";
-		mes "of old, moldy books.^000000";
-		close;
-	}
-	else if (aru_monas == 21) {
-		mes "^3355FFThere's a book stained";
-		mes "with blood amongst all";
-		mes "these old, moldy books.^000000";
-		next;
-		if(select("Examine Book:Ignore")==1) {
-			set aru_monas,22;
-			//changequest 17014,17015;
-			getitem 7755,1; // Reasearch_Note
-			readbook 7755,1;
-			close;
-		}
-		mes "^3355FFThat book was probably";
-		mes "worthless to you anyway.^000000";
-		close;
-	}
-	else {
-		mes "^3355FFThere are old books";
-		mes "scattered all over here.^000000";
-		close;
-	}
-}
-
-abbey03,232,233,4	script	Man#King	956,{
-	if (aru_monas < 22) {
-		mes "^3355FFYou find a man lying on";
-		mes "the floor, wearing torn";
-		mes "yet luxurious clothing.";
-		mes "He doesn't seem to be";
-		mes "breathing at all...^000000.";
-		next;
-		mes "^3355FFHe's dead.^000000";
-		close;
-	}
-	if (aru_monas == 22 || aru_monas == 23) {
-		mes "^3355FFYou find a man lying on";
-		mes "the floor, wearing torn";
-		mes "yet luxurious clothing.";
-		mes "He doesn't seem to be";
-		mes "breathing at all...^000000.";
-		next;
-		mes "^3355FFYou bring your ears more";
-		mes "closely to his mouth: it";
-		mes "seems that he really is";
-		mes "still barely alive.^000000";
-		next;
-		if (select("Touch Him:Ignore Him") == 1) {
-			mes "["+strcharinfo(0)+"]";
-			mes "This man...";
-			mes "He's so familiar";
-			mes "for some reason.";
-			next;
-			mes "^3355FFAs you touch him, the";
-			mes "man suddenly jumps";
-			mes "up with a crazed yowl.^000000";
-			set aru_monas,23;
-			monster "abbey03",232,232,"Dead King",1875,1,"Man#King::OnMyMobDead";
-			initnpctimer;
-			hideonnpc "Man#King";
-			close;
-		}
-		mes "^3355FFYou don't feel";
-		mes "comfortable enough";
-		mes "to touch this man.^000000";
-		close;
-	}
-	else {
-		mes "^3355FFHe's dead... Now...^000000";
-		close;
-	}
-
-OnMyMobDead:
-	stopnpctimer;
-	donpcevent "Dead Man#King::OnEnable";
-	end;
-
-OnTimer300000:
-	stopnpctimer;
-	hideonnpc "Dead Man#King";
-	hideoffnpc "Man#King";
-	end;
-}
-
-abbey03,232,232,4	script	Dead Man#King	956,{
-	if (checkweight(7766,1) == 0) {
-		mes "^3355FFWait a second!";
-		mes "Right now, you're carrying";
-		mes "too many things with you.";
-		mes "Please come back after";
-		mes "using the Kafra Service";
-		mes "to store some of your items.^000000";
-		close;
-	}
-	if (aru_monas == 23) {
-		mes "^3355FFYou have no idea why";
-		mes "this dead man is moving";
-		mes "around, so you decided to";
-		mes "examine him. In his jacket,";
-		mes "you find a shining medal...^000000";
-		next;
-		mes "["+strcharinfo(0)+"]";
-		mes "This medal...";
-		mes "This means that";
-		mes "this man is...!";
-		set aru_monas,24;
-		getitem 7726,1; //Token_of_King
-		//changequest 17015,17016;
-		hideonnpc "Dead Man#King";
-		hideoffnpc "Man#King";
-		stopnpctimer;
-		close;
-	}
-	end;
-
-OnEnable:
-	initnpctimer;
-	hideoffnpc "Dead Man#King";
-	end;
-
-OnInit:
-	hideonnpc "Dead Man#King";
-	end;
-
-OnTimer150000:
-	hideonnpc "Dead Man#King";
-	hideoffnpc "Man#King";
-	stopnpctimer;
-	end;
-}
-
-nameless_n,145,162,0	script	AideAmi#Aru	139,2,2,{
-	end;
-OnTouch_:
-	if (aru_monas == 26) {
-		mes "[" + strcharinfo(0) + "]";
-		mes "There is a low wall here against the other wall, if I climb it I could reach the resting place of Tristan III...";
-		next;
-		switch(select("Stay here:Climb the wall")) {
-		case 1:
-			warp "nameless_n",158,169;
-			end;
-		case 2:
-			warp "abbey01",51,15;
-			end;
-		}
-	}
-	else {
-		warp "nameless_n",158,169;
-		end;
-	}
-}
-
-sec_in02,15,15,4	script	boss::boss_aru_monas	809,{
-	callfunc "F_GM_NPC";
-	mes "[Patch]";
-	mes "Input.";
-	next;
-	switch(select("Now:How much?:P- How much?:Others")) {
-	case 1:
-		mes " ";
-		mes ""+aru_monas;
-		close;
-	case 2:
-		input .@input,0,1000;
-		set aru_monas, .@input;
-		mes " ";
-		mes ""+aru_monas;
-		close;
-	case 3:
-		input .@input,0,1000;
-		set prt_curse, .@input;
-		mes " ";
-		mes ""+prt_curse;
-		close;
-	case 4:
-		set prt_curse,61;
-		set ra_tem_q,12; //TODO: Doesn't match Athena's current script.
-		set rachel_camel,25;
-		set lost_boy,0;
-		close;
-	}
-}
-
-// Rachel Addition :: aruna_nir
-//============================================================
 ra_temple,165,57,5	script	Niren#ss	915,{
 	if (checkweight(907,200) == 0) {
 		mes "^3355FFWait a second!";
@@ -1534,7 +702,7 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 	mes "I can spare a moment or two.";
 	mes "What would you like to ask?";
 	next;
-	switch(select("Ask About Veins Smugglers:Ask About Zhed")) {
+	switch(select("Ask About Veins Smugglers:As About Zhed")) {
 	case 1:
 		if (aru_monas == 12) {
 			mes "[Niren]";
@@ -1597,7 +765,7 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 			mes "were too preoccupied";
 			mes "with other matters. In fact,";
 			mes "I haven't gotten the chance";
-			mes "to think of what to do with him...";
+			mes "to think of what do with him...";
 			next;
 			mes "[Niren]";
 			mes "I want to ask you to";
@@ -1639,7 +807,6 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 			mes "come back and tell me if";
 			mes "you learn anything there.";
 			set aru_monas,13;
-			//changequest 17008,17009;
 			next;
 			mes "[Niren]";
 			mes "I'll send a message to the";
@@ -1707,8 +874,7 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 				mes "comes from that place.";
 				delitem 7755,1; //Research_Note
 				set aru_monas,26;
-				//completequest 17017;
-				getexp (checkre(3))?50000:500000,0;
+				getexp 500000,0;
 				close2;
 			}
 		}
@@ -1796,7 +962,6 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 			mes "For now, you'd better talk";
 			mes "to High Priest Zhed.^000000";
 			set aru_em,11;
-			changequest 2132,2133;
 			close2;
 		}
 		else if ((aru_em == 11) || (aru_em == 12)) {
@@ -1869,13 +1034,13 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 				mes "...................";
 				mes "...................";
 				mes "...................";
-				emotion ET_THINK;
+				emotion e_dots;
 				next;
 				mes "[Sippie]";
 				mes "High Priestess Niren,";
 				mes "you must be really tired.";
 				mes "You look pale for some reason.";
-				emotion ET_PROFUSELY_SWEAT;
+				emotion 19;
 				next;
 				mes "[High Priestess Niren]";
 				mes "I do feel rather drained.";
@@ -1945,9 +1110,8 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 				mes "["+strcharinfo(0)+"]";
 				mes "Sure thing. You";
 				mes "can count on me!";
-				emotion ET_BEST, playerattached();
+				emotion e_no1,1;
 				set aru_em,15;
-				changequest 2134,2135;
 				close2;
 			}
 			else {
@@ -1986,7 +1150,7 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 			mes "side twenty-fours a day.";
 			mes "It's been like that for years.";
 			next;
-			emotion ET_KEK;
+			emotion e_wah;
 			mes "[Sippie]";
 			mes "Oh, High Priestess Niren,";
 			mes "I love working for you, but";
@@ -1994,13 +1158,13 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 			mes "just to see my family. Even";
 			mes "just once a year would be nice.";
 			next;
-			emotion ET_AHA;
+			emotion 5;
 			mes "[High Priestess Niren]";
 			mes "...............................";
 			mes "You're absolutely right.";
 			mes "That gives me an idea.";
 			next;
-			emotion ET_DELIGHT;
+			emotion 2;
 			mes "[Sippie]";
 			mes "Huh? What is it?";
 			next;
@@ -2061,7 +1225,6 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 			mes "I hope she'll help us...";
 			set aru_em,17;
 			getitem 7343,1; //File02
-			changequest 2136,2137;
 			close2;
 		}
 		else if (aru_em == 17) {
@@ -2081,7 +1244,7 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 				mes "^3355FFYou handed Niren the";
 				mes "file forged by Ishmael.^000000";
 				next;
-				emotion ET_STARE;
+				emotion e_bzz;
 				mes "[High Priestess Niren]";
 				mes "Perfect! This forgery is";
 				mes "so well done, I'm sure";
@@ -2130,7 +1293,6 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 				mes "what we are doing.";
 				delitem 7343,1; //File02
 				set aru_em,20;
-				changequest 2139,2140;
 				close2;
 			}
 			else {
@@ -2181,8 +1343,7 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 			mes "that you've seen that";
 			mes "expression on her face.^000000";
 			set aru_em,23;
-			getexp (checkre(3))?100000:1000000,0;
-			changequest 2141,2142;
+			getexp 1000000,0;
 			close2;
 		}
 		else if (aru_em > 21) {
@@ -2202,6 +1363,717 @@ ra_temple,165,57,5	script	Niren#ss	915,{
 		}
 	}
 	cutin "ra_gwoman",255;
+	end;
+}
+
+ve_in,239,115,1	script	Drunkard#Aru	943,{
+	if (aru_monas < 14) {
+		mes "[Drunkard]";
+		mes "Man, I feel great! Hah hah!";
+		mes "Hey, gimme one more drink!";
+		close;
+	}
+	if (aru_monas == 14) {
+		if (rachel_camel == 25) {
+			mes "[Drunkard]";
+			mes "So--*Hic* What I was...";
+			mes "Oog, dizzy... I say sayin',";
+			mes "that guy that ^32CD32snuck out to";
+			mes "sea on a boat^000000? You know";
+			mes "*Hic* why he came back";
+			mes "so early? You won't believe it!";
+			next;
+			mes "[Drunkard]";
+			mes "Hah hah! He--*Hic*";
+			mes "He thought he saw a ^DBDB70ghost^000000!";
+			mes "Bwah hah hah! Oooog... Hey...";
+			next;
+			mes "["+strcharinfo(0)+"]";
+			mes "That's right!";
+			mes "Maybe I should check";
+			mes "on ^32CD32Kurdi's father since";
+			mes "he's a fisherman^000000";
+			set aru_monas,15;
+			close;
+		}
+		else {
+			mes "[Drunkard]";
+			mes "Zzzz...";
+			mes "Umm... Zzz...";
+			close;
+		}
+	}
+	else {
+		mes "[Drunkard]";
+		mes "Why?! Why can't I take";
+		mes "my boat out to sea? I hafta";
+		mes "catch fish to make a living!";
+		mes "What, they expect me to starve";
+		mes "to death or something?! Huh?!";
+		close;
+	}
+}
+
+ve_fild07,125,128,0	script	Boat#Aru	111,{
+	if (aru_monas < 16) {
+		mes "^3355FFThis boat seems to ";
+		mes "be in decent condition.";
+		mes "Who could its owner be?^000000";
+		close;
+	}
+	if (aru_monas == 16) {
+		mes "^3355FFThis must be the boat that";
+		mes "Karyn was talking about.";
+		mes "It seems to be in pretty";
+		mes "good shape. Now, the";
+		mes "monastery should be";
+		mes "southwest from here...^000000";
+		next;
+		hideoffnpc "Secret Agent#Aru";
+		next;
+		mes "[Larjes]";
+		mes "Long time no see,";
+		mes ""+strcharinfo(0)+".";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "Larjes!";
+		next;
+		mes "[Larjes]";
+		mes "I had a tough time following";
+		mes "you, you know? I actually";
+		mes "almost lost you once. You";
+		mes "must be wondering why";
+		mes "I'm here. If you'll listen,";
+		mes "I'll explain everything.";
+		next;
+		mes "[Larjes]";
+		mes "According to our investigation, Arunafeltz is definitely involved";
+		mes "in this case. We've been watching you since you're somehow related";
+		mes "to that high ranked official from Arunafeltz. I apologize for that.";
+		next;
+		mes "[Larjes]";
+		mes "This is an international";
+		mes "incident, so to prevent any";
+		mes "intel leaks to Arunafeltz,";
+		mes "we've had to be much stricter";
+		mes "with securing and protecting";
+		mes "all information for this case.";
+		next;
+		mes "[Larjes]";
+		mes "Anyway, I've decided to";
+		mes "reveal myself to you since";
+		mes "I'm the only one that can help";
+		mes "you right now. You're thinking";
+		mes "of using that boat, aren't you?";
+		next;
+		mes "[Larjes]";
+		mes "If you don't have the skills,";
+		mes "knowledge, and preparation";
+		mes "to sail those waters ahead,";
+		mes "you'll probably wreck the";
+		mes "boat. You'll make it if you're lucky but... That's a lot of luck.";
+		next;
+		mes "[Larjes]";
+		mes "I'll help you sail this";
+		mes "boat to get where you're";
+		mes "going. But if you fail, there's";
+		mes "a chance you might have to";
+		mes "sail this boat on your own if I'm not here. So, you ready to go?";
+		next;
+		switch(select("Yes, I'm ready.:Give me more time.")) {
+		case 1:
+			mes "[Larjes]";
+			mes "Alright, let's go.";
+			mes "Hold on to something:";
+			mes "this will probably be";
+			mes "a pretty rocky ride...";
+			set aru_monas,17;
+			close2;
+			hideonnpc "Secret Agent#Aru";
+			warp "nameless_i",257,217;
+			end;
+		case 2:
+			mes "[Larjes]";
+			mes "Alright. Just let me know";
+			mes "whenever you're ready.";
+			close;
+		}
+	}
+	if (aru_monas < 20) {
+		mes "^3355FFThis is the boat that";
+		mes "can take you to the";
+		mes "monastery.^000000";
+		next;
+		switch(select("Go to Monastery:Cancel")) {
+		case 1:
+			mes "^3355FFYou set sail for";
+			mes "the monastery...^000000";
+			close2;
+			warp "nameless_i",257,217;
+			end;
+		case 2:
+			mes "^3355FFYou decide to";
+			mes "stay ashore.^000000";
+			close;
+		}
+	}
+	else {
+		mes "^3355FFThis is the boat that";
+		mes "can take you to the";
+		mes "monastery.^000000";
+		next;
+		switch(select("Go to Monastery:Cancel")) {
+		case 1:
+			mes "^3355FFYou set sail for";
+			mes "the monastery...^000000";
+			close2;
+			warp "nameless_n",257,217;
+			end;
+		case 2:
+			mes "^3355FFYou decide to";
+			mes "stay ashore.^000000";
+			close;
+		}
+	}
+}
+
+ve_fild07,128,130,1	script	Secret Agent#Aru	97,{
+	if (aru_monas == 16) {
+		mes "[Larjes]";
+		mes "Are you ready to go";
+		mes "aboard? I'll help you";
+		mes "sail to that monastery,";
+		mes "but if you fail while you're";
+		mes "there, I might not be here";
+		mes "when you come back.";
+		next;
+		switch(select("Yes, I'm ready.:Give me more time.")) {
+		case 1:
+			mes "[Larjes]";
+			mes "Alright, let's go.";
+			mes "Hold on to something:";
+			mes "this will probably be";
+			mes "a pretty rocky ride...";
+			set aru_monas,17;
+			close2;
+			hideonnpc "Secret Agent#Aru";
+			warp "nameless_i",257,217;
+			end;
+		case 2:
+			mes "[Larjes]";
+			mes "Alright. Just let me know";
+			mes "whenever you're ready.";
+			close;
+		}
+	}
+	end;
+
+OnInit:
+	hideonnpc "Secret Agent#Aru";
+	end;
+}
+
+nameless_i,259,218,3	script	Larjes#Aru	97,{
+	if(aru_monas < 18) {
+		mes "[Larjes]";
+		mes "I don't like this place.";
+		mes "You'd be better be careful";
+		mes "around here with those weird";
+		mes "creatures running around.";
+		close;
+	}
+	else if (aru_monas > 24) {
+		mes "[Larjes]";
+		mes "Good, you're back";
+		mes "I know that there's still";
+		mes "things on this island that";
+		mes "you want to investigate,";
+		mes "but did you want to leave";
+		mes "this place for a while?";
+		next;
+		if(select("Yes:No")==1) {
+			mes "[Larjes]";
+			mes "Alight, let's go.";
+			close2;
+			warp "ve_fild07",130,130;
+			end;
+		}
+		mes "[Larjes]";
+		mes "Alright, but becareful.";
+		mes "Those creatures almost";
+		mes "got you once, you know.";
+		close;
+	}
+	else {
+		mes "[Larjes]";
+		mes "Did you still want to";
+		mes "investigate the island?";
+		next;
+		if (select("No:Yes") == 1) {
+			mes "[Larjes]";
+			mes "Alright, let's go.";
+			close2;
+			warp "ve_fild07",130,130;
+			end;
+		}
+		mes "[Larjes]";
+		mes "Alright, but be careful.";
+		mes "Those creatures almost";
+		mes "got you once, you know.";
+		close;
+	}
+}
+
+nameless_i,212,184,0	script	#aru_clue1	-1,2,3,{
+	end;
+
+OnTouch:
+	if (aru_monas == 17) {
+		mes "^3355FFThe village is totally";
+		mes "silent, as if all life had";
+		mes "abandoned it. You look";
+		mes "around and see that something";
+		mes "was here a few hours ago, but";
+		mes "it's somewhere else now.^000000";
+		next;
+		mes "^3355FFWhatever it was,";
+		mes "it definitely wasn't";
+		mes "human. What kind of";
+		mes "creature could it be?^000000";
+		close;
+	}
+	end;
+}
+
+nameless_in,21,176,0	script	#aru_clue2	-1,2,2,{
+	end;
+
+OnTouch:
+	if (aru_monas == 17) {
+		mes "^3355FFThere are traces of";
+		mes "humans around here,";
+		mes "along with some kind";
+		mes "of creature that you";
+		mes "can't clearly identify.^000000";
+		close;
+	}
+	end;
+}
+
+nameless_i,129,218,0	script	#aru_clue3	-1,4,3,{
+	end;
+
+OnTouch:
+	if (aru_monas == 17) {
+		mes "^3355FFA strange scent strikes";
+		mes "you as you enter this field of";
+		mes "grass. A few ^32CD32animal corpses^3355FF";
+		mes "are strewn around the ground.^000000";
+		close;
+	}
+	end;
+}
+
+nameless_i,127,207,0	script	Dead Crow#Aru	111,{
+	if (aru_monas < 17) { 
+		mes "^3355FFThere is a dead crow on the ground.";
+		close;
+	}
+	else if (aru_monas == 17) {
+		mes "^3355FFThe sight of this ^32CD32dead";
+		mes "crow^3355FF makes you feel";
+		mes "uneasy for some reason.^000000";
+		next;
+		if (select("Ignore:Investigate") == 1) {
+			mes "^3355FFYou decide not to touch";
+			mes "the animal's carcass.^000000";
+			close;
+		}
+		mes "^3355FFYou notice some grass sap";
+		mes "on the crow's beak, so it";
+		mes "must have been nibbling on";
+		mes "some grass. Some feathers";
+		mes "are missing, revealing";
+		mes "scaly, snake-like skin.^000000";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "Wait...";
+		mes "Did this grass...?";
+		next;
+		mes "^3355FFThis grass must be the";
+		mes "main ingredient of the";
+		mes "poison used to kill the";
+		mes "Gaebolg family princes.^000000";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "Looks like I just hit";
+		mes "the jackpot. Huh?";
+		mes "Someone behi--";
+		next;
+		mes "^3355FFA sharp, throbbing pain";
+		mes "assails the back of your";
+		mes "head as you fall into";
+		mes "unconsciousness...^000000";
+		close2;
+		set aru_monas,18;
+		warp "nameless_in",15,60;
+		end;
+	}
+	end;
+}
+
+nameless_i,168,257,0	script	Aru_LockedDoor	45,1,1,{
+	end;
+
+OnTouch:
+	if (aru_monas == 18 || aru_monas == 19) {
+		warp "nameless_in",12,41;
+		end;
+	}
+	mes "^3355FFThe door won't budge:";
+	mes "you can't go through.^000000";
+	close;
+}
+
+nameless_in,15,60,0	script	#Aru_Trigger	-1,1,1,{
+	end;
+
+OnTouch:
+	if (aru_monas == 18) {
+		disablenpc "aru_warp";
+		sc_start2 SC_Blind,600000,0,10000;
+		mes "^3355FFThe pressure on your";
+		mes "stomach and the blood";
+		mes "rushing to your head tells";
+		mes "you someone is carrying you";
+		mes "over his shoulder. He stops,";
+		mes "and you hear a faint voice.^000000";
+		next;
+		mes "^3355FFThe faint voice steadily";
+		mes "grows stronger and more";
+		mes "distinct--someone's calling";
+		mes "your name. You feel cold water";
+		mes "trickle through your lips, and";
+		mes "then you regain your senses.^000000";
+		sc_end SC_BLIND;
+		next;
+		hideoffnpc "Larjes#Aru2";
+		mes "That was too close.";
+		mes "For a second there,";
+		mes "I thought I lost you.";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "Larjes...? What...";
+		mes "What happened?";
+		mes "Ugh, my head...";
+		next;
+		mes "[Larjes]";
+		mes "Try not to move for a while.";
+		mes "I had a bad feeling waiting";
+		mes "for you on the boat. Lucky";
+		mes "thing. When I found you,";
+		mes "these strange creatures";
+		mes "were savagely attacking you!";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "You saved me?";
+		mes "Thank you. Do you";
+		mes "happen to know what";
+		mes "those creatures were?";
+		next;
+		mes "[Larjes]";
+		mes "No clue. They looked";
+		mes "like humans, but... They";
+		mes "definitely weren't. Once";
+		mes "I killed them, they all";
+		mes "turned into sand.";
+		next;
+		hideoffnpc "Creature#Aru";
+		emotion e_omg,1;
+		emotion e_omg;
+		mes "[Larjes]";
+		mes "?!?!?!!!!!";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "!!!!?!?!!!!!!";
+		mes "Isn't... Isn't that...?";
+		next;
+		mes "[Larjes]";
+		mes "It seems it's just like the";
+		mes "creatures that kidnapped";
+		mes "you, but... I wonder why";
+		mes "he's not attacking us.";
+		next;
+		mes "[" +strcharinfo(0)+ "]";
+		mes "I guess you'll have to go";
+		mes "right up to him and ask.";
+		set aru_monas,19;
+		close;
+	}
+}
+
+nameless_in,13,58,6	script	Larjes#Aru2	97,{
+	mes "[Larjes]";
+	mes "Be careful. That guy";
+	mes "looks pretty dangerous.";
+	close;
+}
+
+nameless_in,13,53,0	script	Creature#Aru	1864,{
+	end;
+
+OnInit:
+	hideonnpc "Creature#Aru";
+	end;
+
+OnMyMobDead:
+	enablenpc "aru_warp";
+	end;
+}
+
+nameless_in,13,53,0	script	#Aru_Trigger2	-1,3,1,{
+	end;
+
+OnTouch:
+	if (aru_monas == 19 && !@mymobcount) {
+		mes "[???????]";
+		mes "Grrr~!!!";
+		close2;
+		hideonnpc "Creature#Aru";
+		set @mymobcount,1;
+		monster "nameless_in",13,53,"Zombie",1864,1,"Creature#Aru::OnMyMobDead";
+		end;
+	}
+	end;
+}
+
+nameless_in,12,37,0	script	aru_warp	45,1,1,{
+	end;
+
+OnTouch:
+	if (aru_monas == 19) {
+		set aru_monas,20;
+		warp "nameless_n",168,252;
+		end;
+	}
+
+OnInit:
+	disablenpc "aru_warp";
+	end;
+}
+
+nameless_n,169,254,0	script	#Aru_Trigger3	-1,3,3,{
+	end;
+
+OnTouch:
+	if(aru_monas == 20) {
+		hideoffnpc "Larjes#Aru3";
+		mes "[" +strcharinfo(0)+ "]";
+		mes "What the hell...!?";
+		next;
+		mes "[Larjes]";
+		mes "So... This is the";
+		mes "island's true nature.";
+		next;
+		mes "[Larjes]";
+		mes "Someone like me won't";
+		mes "survive long in a place";
+		mes "like this. I'm going to wait";
+		mes "for you in the boat. Learn";
+		mes "what you need to learn, and";
+		mes "then come back safe, "+strcharinfo(0)+".";
+		set aru_monas,21;
+		hideonnpc "Larjes#Aru3";
+		close;
+	}
+	end;
+}
+
+nameless_n,166,254,7	script	Larjes#Aru3	97,{
+	end;
+
+OnInit:
+	hideonnpc "Larjes#Aru3";
+	end;
+}
+
+nameless_n,259,218,3	script	Larjes#Boat1	97,{
+	if ((aru_monas == 23) && (countitem(7726))) {
+		mes "[Larjes]";
+		mes "I don't believe it...";
+		mes "That guy was Tristam III?!";
+		mes "This explains a lot, I suppose.";
+		mes "I'll report this along with the";
+		mes "voucher. So Arunafeltz was";
+		mes "behind that poison grass too.";
+		next;
+		mes "[Larjes]";
+		mes "I'm shocked over this";
+		mes "whole debacle. I'm sure";
+		mes "the Rune-Midgarts royal family";
+		mes "will be in an uproar over this.";
+		mes "To think that we're involved";
+		mes "in something this huge...";
+		next;
+		mes "[Larjes]";
+		mes "Anyway, we better get...";
+		mes "This is huge!";
+		set aru_monas,24;
+		delitem 7726,1; //Token_Of_King
+		getexp 1000000,0;
+		close;
+	}
+	mes "[Larjes]";
+	mes "“Did you still want to";
+	mes "investigate the island?";
+	next;
+	if(select("No:yes")==1) {
+		mes "[Larjes]";
+		mes "Alright, let's go.";
+		close2;
+		warp "ve_fild07",130,130;
+		end;
+	}
+	mes "[Larjes]";
+	mes "Alright, but becareful.";
+	mes "Those creatures almost";
+	mes "got you once, you know.";
+	close;
+}
+
+abbey02,224,70,0	script	Book#Aru	111,{
+	if (checkweight(7766,1) == 0) {
+		mes "^3355FFWait a second!";
+		mes "Right now, you're carrying";
+		mes "too many things with you.";
+		mes "Please come back after";
+		mes "using the Kafra Service";
+		mes "to store some of your items.^000000";
+		close;
+	}
+	if (aru_monas < 21) {
+		mes "^3355FFIt's just a bunch";
+		mes "of old, moldy books.^000000";
+		close;
+	}
+	else if (aru_monas == 21) {
+		mes "^3355FFThere's a book stained";
+		mes "with blood amongst all";
+		mes "these old, moldy books.^000000";
+		next;
+		if(select("Examine Book:Ignore")==1) {
+			Readbook 7755,1;
+			getitem 7755,1; // Reasearch_Note
+			set aru_monas,22;
+			close;
+		}
+		mes "^3355FFThat book was probably";
+		mes "worthless to you anyway.^000000";
+		close;
+	}
+	else {
+		mes "^3355FFThere are old books";
+		mes "scattered all over here.^000000";
+		close;
+	}
+}
+
+abbey03,232,233,4	script	Man#Aru	956,{
+	if (aru_monas < 22) {
+		mes "^3355FFYou find a man lying on";
+		mes "the floor, wearing torn";
+		mes "yet luxurious clothing.";
+		mes "He doesn't seem to be";
+		mes "breathing at all...^000000.";
+		next;
+		mes "^3355FFHe's dead.^000000";
+		close;
+	}
+	if (aru_monas == 22) {
+		mes "^3355FFYou find a man lying on";
+		mes "the floor, wearing torn";
+		mes "yet luxurious clothing.";
+		mes "He doesn't seem to be";
+		mes "breathing at all...^000000.";
+		next;
+		mes "^3355FFYou bring your ears more";
+		mes "closely to his mouth: it";
+		mes "seems that he really is";
+		mes "still barely alive.^000000";
+		next;
+		if (select("Touch Him:Ignore Him") == 1) {
+			mes "["+strcharinfo(0)+"]";
+			mes "This man...";
+			mes "He's so familiar";
+			mes "for some reason.";
+			next;
+			mes "^3355FFAs you touch him, the";
+			mes "man suddenly jumps";
+			mes "up with a crazed yowl.^000000";
+			initnpctimer;
+			hideonnpc "Man#Aru";
+			monster "abbey03",232,232,"Dead King",1875,1,"Man#Aru::OnMyMobDead";
+			close;
+		}
+		mes "^3355FFYou don't feel";
+		mes "comfortable enough";
+		mes "to touch this man.^000000";
+		close;
+	}
+	if (aru_monas > 22) {
+		mes "^3355FFHe's dead... Now...^000000";
+		close;
+	}
+
+OnMyMobDead:
+	stopnpctimer;
+	hideoffnpc "Dead Man#Aru";
+	donpcevent "Dead Man#Aru::OnEnable";
+	end;
+
+OnTimer300000:
+	stopnpctimer;
+	hideonnpc "Dead Man#Aru";
+	hideoffnpc "Man#Aru";
+	end;
+}
+
+abbey03,232,232,4	script	Dead Man#Aru	956,{
+	if (checkweight(7766,1) == 0) {
+		mes "^3355FFWait a second!";
+		mes "Right now, you're carrying";
+		mes "too many things with you.";
+		mes "Please come back after";
+		mes "using the Kafra Service";
+		mes "to store some of your items.^000000";
+		close;
+	}
+	if (aru_monas == 22) {
+		mes "^3355FFYou have no idea why";
+		mes "this dead man is moving";
+		mes "around, so you decided to";
+		mes "examine him. In his jacket,";
+		mes "you find a shining medal...^000000";
+		next;
+		mes "["+strcharinfo(0)+"]";
+		mes "This medal...";
+		mes "This means that";
+		mes "this man is...!";
+		set aru_monas,23;
+		getitem 7726,1; //Token_of_King
+		hideonnpc "Dead Man#Aru";
+		hideoffnpc "Man#Aru";
+		stopnpctimer;
+		close;
+	}
+	end;
+
+OnEnable:
+	initnpctimer;
+	end;
+
+OnInit:
+	hideonnpc "Dead Man#Aru";
 	end;
 }
 
@@ -2252,12 +2124,12 @@ ra_temple,168,54,3	script	Sippie#ss	917,{
 	}
 }
 
-// Peace to the Arunafeltz :: aruna_em
+// Peace to the Arunafeltz
 //============================================================
 moc_ruins,77,167,4	script	Foreign Merchant#aru1	880,5,5,{
 	if (aru_vol == 27) {
 		if (aru_em == 0) {
-			emotion ET_THINK;
+			emotion e_dots;
 			mes "[Foreign Merchant]";
 			mes "I never thought the desert";
 			mes "would be this hot! They built";
@@ -2266,24 +2138,24 @@ moc_ruins,77,167,4	script	Foreign Merchant#aru1	880,5,5,{
 			mes "more, the crowds make things";
 			mes "around here so much hotter!";
 			next;
-			emotion ET_THINK;
+			emotion e_dots;
 			mes "[Foreign Merchant]";
 			mes "I heard that I could make";
-			mes "a killing in Morocc, which is";
+			mes "a killing in Morroc, which is";
 			mes "why I moved my business here.";
 			mes "But it looks like the weather";
 			mes "is going to kill me first!";
 			next;
-			select("How did you hear of Morocc?");
-			emotion ET_THINK;
+			select("How did you hear of Morroc?");
+			emotion e_dots;
 			mes "[Foreign Merchant]";
 			mes "I... I just told you.";
-			mes "I heard that Morocc is";
+			mes "I heard that Morroc is";
 			mes "full customers willing to";
 			mes "buy things at premium prices.";
 			mes "Ugh, but it's a burning hell!";
 			next;
-			emotion ET_SWEAT;
+			emotion e_swt;
 			mes "[Foreign Merchant]";
 			mes "I don't even care about making";
 			mes "money anymore! I just want to";
@@ -2292,24 +2164,23 @@ moc_ruins,77,167,4	script	Foreign Merchant#aru1	880,5,5,{
 			mes "I might just leave this town";
 			mes "tomorrow. Forget this desert!";
 			next;
-			emotion ET_CRY;
-			emotion ET_SWEAT, playerattached();
+			emotion e_sob;
+			emotion e_swt,1;
 			mes "[Foreign Merchant]";
 			mes "Ah, that's right. Don't they";
 			mes "sell some sweet, heavenly";
 			mes "drink around here? You know,";
 			mes "near the pond in the middle";
-			mes "of Morocc? Before I leave,";
+			mes "of Morroc? Before I leave,";
 			mes "I want to taste that drink...";
 			set aru_em,1;
-			setquest 2129;
 			close;
 		}
 		else if ((aru_em > 0) && (aru_em < 7)) {
 			mes "[Foreign Merchant]";
 			mes "Say, isn't there a wandering";
 			mes "drink merchant near the pond";
-			mes "in the middle of Morocc. Oh,";
+			mes "in the middle of Morroc. Oh,";
 			mes "what I would do to have that";
 			mes "delicious drink he's selling...";
 			next;
@@ -2339,7 +2210,7 @@ moc_ruins,77,167,4	script	Foreign Merchant#aru1	880,5,5,{
 				mes "^3355FF*Gulp Gulp Gulp Gulp*^000000";
 				mes "^3355FF*Gulp Gulp Gulp Gulp*^000000";
 				next;
-				emotion ET_THROB;
+				emotion 3;
 				mes "[Foreign Merchant]";
 				mes "Ahhh! That hit the spot!";
 				mes "It's so refreshing and so";
@@ -2371,13 +2242,13 @@ moc_ruins,77,167,4	script	Foreign Merchant#aru1	880,5,5,{
 				mes " ";
 				mes " - Bekento^000000";
 				next;
-				emotion ET_HUK, playerattached();
+				emotion e_omg,1;
 				mes "["+ strcharinfo(0) +"]";
 				mes "So... This means...";
 				mes "You're not really a";
 				mes "merchant, are you?";
 				next;
-				emotion ET_MERONG;
+				emotion 39;
 				mes "^3355FFThe merchant quietly";
 				mes "looks at you with a";
 				mes "mischievous grin.^000000";
@@ -2386,7 +2257,7 @@ moc_ruins,77,167,4	script	Foreign Merchant#aru1	880,5,5,{
 				mes "So you asked me to get";
 				mes "you a drink as an excuse";
 				mes "just to talk to you?!";
-				emotion ET_CRY, playerattached();
+				emotion e_sob,1;
 				next;
 				mes "["+ strcharinfo(0) +"]";
 				mes "Oh well, thanks for";
@@ -2400,7 +2271,6 @@ moc_ruins,77,167,4	script	Foreign Merchant#aru1	880,5,5,{
 				mes "speak to him now?";
 				mes "Good luck!";
 				set aru_em,8;
-				changequest 2130,2131;
 				close;
 			case 2:
 				mes "[Foreign Merchant]";
@@ -2414,7 +2284,7 @@ moc_ruins,77,167,4	script	Foreign Merchant#aru1	880,5,5,{
 			mes "[Foreign Merchant]";
 			mes "Well, I'm already here.";
 			mes "I guess I may as well go";
-			mes "sightseeing around Morocc.";
+			mes "sightseeing around Morroc.";
 			mes "*Pant Pant* But it's so hot!";
 			close;
 		}
@@ -2514,15 +2384,15 @@ moc_ruins,101,133,7	script	Foreign Merchant#aru2	929,{
 		next;
 		mes "["+ strcharinfo(0) +"]";
 		mes "Oh, no...";
-		emotion ET_OTL, playerattached();
+		emotion 57,1;
 		next;
 		mes "[Foreign Merchant]";
 		mes "...............................";
 		mes "...............................";
 		mes "...............................";
-		emotion ET_PROFUSELY_SWEAT;
+		emotion 19;
 		next;
-		emotion ET_HUK, playerattached();
+		emotion e_omg,1;
 		mes "[Foreign Merchant]";
 		mes "You know, I save a small";
 		mes "bottle of wine for myself";
@@ -2543,7 +2413,7 @@ moc_ruins,101,133,7	script	Foreign Merchant#aru2	929,{
 		mes "keep an extra bottle in case";
 		mes "you want more next time. Take";
 		mes "care, and I'll see you later!";
-		emotion ET_FLAG;
+		emotion 13;
 		next;
 		mes "^3355FFYou received a bottle";
 		mes "of the famous fruit wine";
@@ -2551,7 +2421,6 @@ moc_ruins,101,133,7	script	Foreign Merchant#aru2	929,{
 		mes "guy's pretty nice!^000000";
 		set aru_em,7;
 		hideonnpc "Foreign Merchant#aru2";
-		changequest 2129,2130;
 		close;
 	}
 	else {
@@ -2680,7 +2549,7 @@ ra_fild03,139,355,5	script	Ishmael#em	914,{
 		mes "just step away? I... I don't";
 		mes "like being too close to";
 		mes "other people. Please!";
-		emotion ET_PROFUSELY_SWEAT;
+		emotion 19;
 		close;
 	}
 	else if (aru_em == 17) {
@@ -2690,7 +2559,7 @@ ra_fild03,139,355,5	script	Ishmael#em	914,{
 		mes "just step away? Wait, you";
 		mes "don't have something you";
 		mes "need from me, do you?";
-		emotion ET_PROFUSELY_SWEAT;
+		emotion 19;
 		next;
 		switch(select("Give Her Niren's File:Leave Her Alone")) {
 		case 1:
@@ -2704,7 +2573,7 @@ ra_fild03,139,355,5	script	Ishmael#em	914,{
 				mes "Just toss the file over";
 				mes "to me. I-I don't want";
 				mes "you coming any closer.";
-				emotion ET_PROFUSELY_SWEAT;
+				emotion 19;
 				next;
 				mes "[Ishmael]";
 				mes "I'll be glad to help out";
@@ -2720,13 +2589,13 @@ ra_fild03,139,355,5	script	Ishmael#em	914,{
 				mes "expert at forging writing!";
 				mes "Just give me a moment and--";
 				next;
-				emotion ET_HUK;
+				emotion e_omg;
 				mes "[Ishmael]";
 				mes "Dang it! I completely forgot!";
 				mes "Someone stole my pen yesterday!";
 				mes "Now how am I gonna do this...?";
 				next;
-				emotion ET_CRY;
+				emotion e_sob;
 				mes "[Ishmael]";
 				mes "My pen was made of a very";
 				mes "rare gemstone called ^FF0000Sardonyx^000000.";
@@ -2742,7 +2611,6 @@ ra_fild03,139,355,5	script	Ishmael#em	914,{
 				mes "she's been so good to us...";
 				set aru_em,18;
 				delitem 7343,1; //File02
-				changequest 2137,2138;
 				close;
 			}
 			else {
@@ -2778,7 +2646,7 @@ ra_fild03,139,355,5	script	Ishmael#em	914,{
 			mes "I still... Uh... I don't mean";
 			mes "to be rude... It's just...";
 			mes "I'm just not good with...";
-			emotion ET_PROFUSELY_SWEAT;
+			emotion 19;
 			next;
 			mes "[Ishmael]";
 			mes "If you just toss the";
@@ -2813,7 +2681,7 @@ ra_fild03,139,355,5	script	Ishmael#em	914,{
 				mes "*Scribble*^000000";
 				specialeffect EF_COMBOATTACK4;
 				specialeffect EF_STEAL;
-				emotion ET_AHA;
+				emotion e_ic;
 				next;
 				mes "[Ishmael]";
 				mes "There you go! I made the";
@@ -2830,12 +2698,11 @@ ra_fild03,139,355,5	script	Ishmael#em	914,{
 				delitem 725,1; //Red_Jewel
 				set aru_em,19;
 				getitem 7343,1; //File02
-				changequest 2138,2139;
 				close;
 			}
 		}
 		else {
-			emotion ET_CRY;
+			emotion e_sob;
 			mes "[Ishmael]";
 			mes "If only I only had";
 			mes "my precious pen made";
@@ -2866,6 +2733,7 @@ que_temsky,99,100,6	script	Pope#rachel2	936,{
 }
 
 que_temsky,100,93,0	script	#em_sky_s	-1,5,2,{
+//OnTouch2:
 OnTouch:
 	if (aru_em == 21) {
 		mes "^3355FFHigh Priest Zhed and High";
@@ -3074,9 +2942,9 @@ OnTouch:
 		mes "Write a report about the";
 		mes "tests conducted by the";
 		mes "moderates in Arunafeltz and";
-		mes "the Schwarzwald Republic,";
+		mes "the Schwaltzvalt Republic,";
 		mes "and their relationship with";
-		mes "that Schwarzwald Corporation.";
+		mes "that Schwaltzvalt Corporation.";
 		next;
 		mes "[Zhed]";
 		mes "I'll get it done immediately,";
@@ -3139,7 +3007,6 @@ OnTouch:
 		mes "aura of warmth and kindness";
 		mes "permeate your entire being.^000000";
 		set aru_em,22;
-		changequest 2140,2141;
 		close2;
 		warp "rachel",142,136;
 	}
@@ -3151,7 +3018,7 @@ OnInit:
 	stopnpctimer;
 	end;
 
-OnTouch_:
+OnTouch:
 	if (aru_em == 22) {
 		initnpctimer;
 		disablenpc "#em_end";
@@ -3207,8 +3074,8 @@ OnTimer53000:
 
 que_temsky,99,7,0	warp	quetemskyout	1,1,ra_temin,276,231
 
-// Muff's Loan :: zdan_total_edq
-//============================================================
+// Muff's Loan
+//============================================================ 
 comodo,224,187,3	script	Muff	86,{
 	if (checkweight(907,200) == 0) {
 		mes "[Muff]";
@@ -3292,7 +3159,6 @@ comodo,224,187,3	script	Muff	86,{
 					mes "wallet, I'll make sure";
 					mes "to repay you. Please";
 					mes "help me if you can!";
-					setquest 3100;
 					set diamond_edq,1;
 					close;
 				case 2:
@@ -3394,7 +3260,6 @@ comodo,224,187,3	script	Muff	86,{
 			mes "but I really need my bond";
 			mes "of debt to get my collateral";
 			mes "back from that Belder.";
-			setquest 3100;
 			set diamond_edq,1;
 			close;
 		case 2:
@@ -3476,7 +3341,6 @@ comodo,224,187,3	script	Muff	86,{
 			mes "him to restore my bond of";
 			mes "debt. I'll be waiting for";
 			mes "you right here, okay?";
-			changequest 3102,3103;
 			set diamond_edq,6;
 			close;
 		case 2:
@@ -3508,7 +3372,6 @@ comodo,224,187,3	script	Muff	86,{
 			mes "him to restore my bond of";
 			mes "debt. I'll be waiting for";
 			mes "you right here, okay?";
-			changequest 3102,3103;
 			set diamond_edq,6;
 			close;
 		case 2:
@@ -3546,7 +3409,6 @@ comodo,224,187,3	script	Muff	86,{
 		mes "You've done well, my friend.";
 		mes "Here, please take these as";
 		mes "a meager reward for your help.";
-		completequest 3109;
 		set diamond_edq,14;
 		getitem 603,1; //Old_Blue_Box
 		getitem 608,4; //Seed_Of_Yggdrasil
@@ -3602,7 +3464,7 @@ alberta,127,143,3	script	Belder	85,{
 		next;
 		switch(select("I'll promote your loans!:Uh...")) {
 		case 1:
-			if (Sex == SEX_MALE) {
+			if (Sex == 1) {
 				mes "[Belder]";
 				mes "You? But you're a dude!";
 				mes "No sweaty, stinky, sleazy";
@@ -3686,7 +3548,7 @@ alberta,127,143,3	script	Belder	85,{
 	mes "you came from. Jerk.";
 	close;
 
-OnTouch_:
+OnTouch:
 	if (diamond_edq < 3) {
 		mes "[Belder]";
 		mes "Cash flow problems?";
@@ -3726,7 +3588,6 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 			mes "little thing. Now what?";
 			mes "I dropped it! I have to";
 			mes "try to dig it up again...";
-			changequest 3100,3101;
 			set diamond_edq,2;
 			close;
 		case 2:
@@ -3751,7 +3612,6 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 		mes "Well, I've done all";
 		mes "I can for now. I should";
 		mes "bring this back to Muff.";
-		changequest 3101,3102;
 		set diamond_edq,4;
 		close;
 	}
@@ -3772,7 +3632,7 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 	close;
 }
 
--	script	::Dorian_izlude	-1,{
+izlude_in,110,64,3	script	Dorian	878,2,2,{
 	if (checkweight(907,200) == 0) {
 		mes "[Dorian]";
 		mes "Ugh, just like a member";
@@ -3917,7 +3777,6 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 						mes "explain how you can";
 						mes "repair the Mystic";
 						mes "Dryer de Elegance.";
-						changequest 3103,3104;
 						set diamond_edq,9;
 						close;
 					}
@@ -3996,7 +3855,7 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 				close;
 			}
 		case 2:
-			if (Sex == SEX_MALE) {
+			if (Sex == 1) {
 				mes "[Dorian]";
 				mes "Ah, my apologies.";
 				mes "Too many have asked, so";
@@ -4052,7 +3911,7 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 		set diamond_edq,6;
 		close;
 	}
-	if (diamond_edq == 9) {
+	if (diamond_edq) == 9 {
 		mes "[Dorian]";
 		mes "Ah, did you bring all";
 		mes "the materials I need to";
@@ -4072,7 +3931,6 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 			delitem 999,5; //Steel
 			delitem 723,2; //Cardinal_Jewel
 			delitem 716,5; //Red_Gemstone
-			changequest 3104,3105;
 			set diamond_edq,10;
 			mes "[Dorian]";
 			mes "I expect you to fail";
@@ -4146,7 +4004,7 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 			close;
 		}
 	}
-	if (diamond_edq == 10) {
+	if (diamond_edq) == 10 {
 		mes "[Dorian]";
 		mes "Did you already forget";
 		mes "my instructions for fixing my";
@@ -4210,18 +4068,17 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 			close;
 		}
 	}
-	if (diamond_edq == 11) {
+	if (diamond_edq) == 11 {
 		mes "[Dorian]";
 		mes "Ah, so you failed to";
 		mes "fix the Mystic Dryer de";
 		mes "Elegance? That's expected:";
-		mes "I didn't really design it for the common user in mind. Well,";
+		mes "I didn't really design it for the^FFFFFF ^000000 common user in mind. Well,";
 		mes "why don't you try it again?";
-		changequest 3106,3105;
 		set diamond_edq,10;
 		close;
 	}
-	if (diamond_edq == 12) {
+	if (diamond_edq) == 12 {
 		mes "[Dorian]";
 		mes "Ah, I underestimated you.";
 		mes "You really repaired the";
@@ -4235,7 +4092,6 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 		mes "is insert the damaged";
 		mes "document and press the";
 		mes "switch. Simple, yes?";
-		changequest 3107,3108;
 		set diamond_edq,13;
 		next;
 		mes "[Dorian]";
@@ -4247,7 +4103,7 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 		mes "your kind of help. Farewell~";
 		close;
 	}
-	if (diamond_edq > 12) {
+	if (diamond_edq) > 12 {
 		mes "[Dorian]";
 		mes "Ah, hello! How have";
 		mes "you been? Are you in need";
@@ -4256,8 +4112,9 @@ cmd_fild01,55,160,0	script	Heap of Earth	844,{
 		close;
 	}
 
+//OnTouch2:
 OnTouch:
-	if (diamond_edq < 9) {
+	if (diamond_edq) < 9 {
 		mes "[Dorian]";
 		mes "Wh-what are you doing?";
 		mes "D-don't sully my wonderful";
@@ -4265,7 +4122,7 @@ OnTouch:
 		mes "uncultured hands!";
 		close;
 	}
-	if (diamond_edq == 9) {
+	if (diamond_edq) == 9 {
 		mes "[Dorian]";
 		mes "Can't you see that the";
 		mes "machine won't work without";
@@ -4276,7 +4133,7 @@ OnTouch:
 	end;
 }
 
--	script	::StrangeMachine_izlude	-1,{
+izlude_in,113,66,0	script	Strange Machine	111,{
 	if (checkweight(907,200) == 0) {
 		mes "[Dorian]";
 		mes "Ugh, just like a member";
@@ -4287,7 +4144,7 @@ OnTouch:
 		mes "goods to Kafra Storage, please.";
 		close;
 	}
-	if (diamond_edq == 10) {
+	if (diamond_edq) == 10 {
 		set .@bolt_rand,rand(2,5);
 		mes "^3355FFThis must be Dorian's";
 		mes "Mystic Dryer de Elegance.";
@@ -4314,7 +4171,7 @@ OnTouch:
 					next;
 					set .@engine,.@engine+1;
 				}
-				else if (.@engine > 0) {
+				else if (engine > 0) {
 					mes "^3355FFThe ruby in the";
 					mes "engine has already";
 					mes "been replaced.^000000";
@@ -4350,7 +4207,6 @@ OnTouch:
 					mes "The joint is broken...";
 					mes "You should go back";
 					mes "to Dorian for help.^000000";
-					changequest 3105,3106;
 					set diamond_edq,11;
 					close;
 				}
@@ -4388,7 +4244,6 @@ OnTouch:
 					mes "^3355FFYou should tell Dorian";
 					mes "first so that you can";
 					mes "use this machine.^000000";
-					changequest 3105,3107;
 					set diamond_edq,12;
 					close;
 				}
@@ -4411,8 +4266,7 @@ OnTouch:
 							mes "and vibrated violently";
 							mes "before coming to a sudden";
 							mes "stop. That was the wrong";
-							mes "switch. You'd better ask Dorian...";
-							changequest 3105,3106;
+							mes "switch. You'd better ask Dorian... ^FFFFFF ^000000";
 							set diamond_edq,11;
 							close;
 						case 1:
@@ -4437,8 +4291,7 @@ OnTouch:
 								mes "and vibrated violently";
 								mes "before coming to a sudden";
 								mes "stop. That was the wrong";
-								mes "switch. You'd better ask Dorian...";
-								changequest 3105,3106;
+								mes "switch. You'd better ask Dorian... ^FFFFFF ^000000";
 								set diamond_edq,11;
 								close;
 							}
@@ -4463,8 +4316,7 @@ OnTouch:
 							mes "and vibrated violently";
 							mes "before coming to a sudden";
 							mes "stop. That was the wrong";
-							mes "switch. You'd better ask Dorian...";
-							changequest 3105,3106;
+							mes "switch. You'd better ask Dorian... ^FFFFFF ^000000";
 							set diamond_edq,11;
 							close;
 						case 2:
@@ -4489,8 +4341,7 @@ OnTouch:
 								mes "and vibrated violently";
 								mes "before coming to a sudden";
 								mes "stop. That was the wrong";
-								mes "switch. You'd better ask Dorian...";
-								changequest 3105,3106;
+								mes "switch. You'd better ask Dorian... ^FFFFFF ^000000";
 								set diamond_edq,11;
 								close;
 							}
@@ -4514,8 +4365,7 @@ OnTouch:
 							mes "and vibrated violently";
 							mes "before coming to a sudden";
 							mes "stop. That was the wrong";
-							mes "switch. You'd better ask Dorian...";
-							changequest 3105,3106;
+							mes "switch. You'd better ask Dorian... ^FFFFFF ^000000";
 							set diamond_edq,11;
 							close;
 						case 3:
@@ -4540,8 +4390,7 @@ OnTouch:
 								mes "and vibrated violently";
 								mes "before coming to a sudden";
 								mes "stop. That was the wrong";
-								mes "switch. You'd better ask Dorian...";
-								changequest 3105,3106;
+								mes "switch. You'd better ask Dorian... ^FFFFFF ^000000";
 								set diamond_edq,11;
 								close;
 							}
@@ -4566,8 +4415,7 @@ OnTouch:
 							mes "and vibrated violently";
 							mes "before coming to a sudden";
 							mes "stop. That was the wrong";
-							mes "switch. You'd better ask Dorian...";
-							changequest 3105,3106;
+							mes "switch. You'd better ask Dorian... ^FFFFFF ^000000";
 							set diamond_edq,11;
 							close;
 						case 4:
@@ -4592,8 +4440,7 @@ OnTouch:
 								mes "and vibrated violently";
 								mes "before coming to a sudden";
 								mes "stop. That was the wrong";
-								mes "switch. You'd better ask Dorian...";
-								changequest 3105,3106;
+								mes "switch. You'd better ask Dorian... ^FFFFFF ^000000";
 								set diamond_edq,11;
 								close;
 							}
@@ -4632,7 +4479,6 @@ OnTouch:
 		mes "So this is the original";
 		mes "bond of debt that Muff";
 		mes "lost? It looks... Perfect!";
-		changequest 3108,3109;
 		getitem 7722,1; //Debt_Note
 		close;
 	}
@@ -4653,7 +4499,7 @@ OnTouch:
 }
 
 // Broken Diamond
-//============================================================
+//============================================================ 
 moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 	if (checkweight(907,200) == 0) {
 		mes "[Ibrahim]";
@@ -4758,7 +4604,6 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 					mes "Well, I'll be right";
 					mes "here. I hope you come";
 					mes "back with some good news.";
-					setquest 3110;
 					set diamond_edq,15;
 					close;
 				case 2:
@@ -4772,7 +4617,7 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 					close;
 				}
 			case 2:
-				if ((BaseJob == Job_Novice) || (BaseJob == Job_Super_Novice)) {
+				if ((BaseJob == Job_Novice) || (BaseJob == Job_Supernovice)) {
 					mes "[Ibrahim]";
 					mes "So it's true...";
 					mes "People say you're";
@@ -4790,7 +4635,7 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 					mes "for someone smart and strong.";
 					close;
 				}
-				else if (BaseClass == Job_Crusader) {
+				else if (BaseClass == CRUSADER) {
 					mes "[Ibrahim]";
 					mes "Heh, so you really";
 					mes "are one of those holy";
@@ -4821,7 +4666,7 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 					mes "really spoke highly of you.";
 					close;
 				}
-				else if (BaseClass == Job_Alchemist) {
+				else if (BaseClass == Job_Alcehmist) {
 					mes "[Ibrahim]";
 					mes "I know a guy who knows";
 					mes "a guy in the Alchemist Guild.";
@@ -4843,7 +4688,7 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 					mes "[Ibrahim]";
 					mes "Heh, it sounds like almost";
 					mes "anyone who's anyone in";
-					mes "Morocc knows who you are.";
+					mes "Morroc knows who you are.";
 					mes "Pleasure to make your";
 					mes "acquaintance~";
 					close;
@@ -4865,7 +4710,7 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 					mes "like an angel...";
 					close;
 				}
-				else if (BaseClass == Job_Dancer) {
+				else if (BaseClass == Job_dancer) {
 					mes "[Ibrahim]";
 					mes "Is it really true?";
 					mes "I hear you dance";
@@ -4957,7 +4802,6 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 		mes "Well, I don't know if";
 		mes "it's enough for what you";
 		mes "did, but I hope you like it.";
-		completequest 3118;
 		set diamond_edq,26;
 		getitem 732,2; //Crystal_Jewel__
 		getitem 603,1; //Old_Blue_Box
@@ -4976,7 +4820,7 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 			if ((treasure_nd > 10) && (BaseLevel > 65)) {
 				mes "[Ibrahim]";
 				mes "Ah, I hear from a friend";
-				mes "in Morocc that you happened";
+				mes "in Morroc that you happened";
 				mes "to obtain the Unlucky Emerald.";
 				mes "I'm sure it's one of the Four";
 				mes "Cursed Jewels. You wouldn't";
@@ -5061,7 +4905,7 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 				mes "[Ibrahim]";
 				mes "I heard that you obtained";
 				mes "the Unlucky Emerald from";
-				mes "a friend in Morocc. Let me";
+				mes "a friend in Morroc. Let me";
 				mes "warn you that you might not";
 				mes "be strong enough to handle";
 				mes "its power. Be careful.";
@@ -5166,6 +5010,7 @@ moc_ruins,152,147,5	script	Ibrahim	732,3,3,{
 	mes "kept it well hidden...";
 	close;
 
+//OnTouch2:
 OnTouch:
 if ((diamond_edq == 14) && (BaseLevel > 65)) {
 	mes "[Ibrahim]";
@@ -5251,7 +5096,7 @@ alberta,102,80,3	script	Jhonnita	86,{
 				mes "I doubt you can afford them.";
 				mes "Jewels aren't cheap, you know?";
 				next;
-				if (Sex == SEX_MALE) {
+				if (Sex) {
 					mes "[Jhonnita]";
 					mes "Oh, I get it now. You want";
 					mes "to give one as a present to";
@@ -5481,7 +5326,7 @@ geffen,128,153,3	script	Leblo	883,{
 		mes "been asking questions about";
 		mes "the Diamond of Destruction.";
 		next;
-		emotion ET_HUK, playerattached();
+		emotion e_omg,1;
 		mes "[Leblo]";
 		mes "Don't be so suprised:";
 		mes "word travels fast in the";
@@ -5514,7 +5359,6 @@ geffen,128,153,3	script	Leblo	883,{
 			mes "she'll give you my medicine...";
 			mes "I hope. Anyway, her name is";
 			mes "^0000FFWola^000000, and she's in Payon.";
-			changequest 3110,3111;
 			set diamond_edq,17;
 			close;
 		case 2:
@@ -5591,7 +5435,6 @@ geffen,128,153,3	script	Leblo	883,{
 		mes "learn more about the Z Gang.";
 		mes "Pretty useful info, huh?";
 		mes "Take care, my friend.";
-		changequest 3114,3115;
 		set diamond_edq,22;
 		close;
 	}
@@ -5787,7 +5630,6 @@ payon_in03,167,149,3	script	Wola	75,2,2,{
 		next;
 		mes "["+ strcharinfo(0) +"]";
 		mes "You... You got it.";
-		changequest 3111,3112;
 		set diamond_edq,19;
 		close;
 	}
@@ -5842,12 +5684,11 @@ payon_in03,167,149,3	script	Wola	75,2,2,{
 			mes "some medicine? I completely";
 			mes "forgot about that for a while.";
 			mes "What did you say exactly?";
-			changequest 3112,3113;
 			set diamond_edq,20;
 			next;
 			switch(select("Will you go out with me?:Leblo's back medicine?")) {
 			case 1:
-				if (Sex == SEX_MALE) {
+				if (Sex) {
 					mes "[Wola]";
 					mes "^666666*Blush*^000000 But it's too";
 					mes "early for us to just go";
@@ -5908,7 +5749,6 @@ payon_in03,167,149,3	script	Wola	75,2,2,{
 				mes "be okay in my hands. I need";
 				mes "to get back to work: please";
 				mes "take care of yourself!";
-				changequest 3113,3114;
 				set diamond_edq,21;
 				close;
 			}
@@ -5936,7 +5776,7 @@ payon_in03,167,149,3	script	Wola	75,2,2,{
 		next;
 		switch(select("Will you go out with me?:Leblo's back medicine?")) {
 		case 1:
-			if (Sex == SEX_MALE) {
+			if (Sex == 1) {
 				mes "^666666*Blush*^000000 But it's too";
 				mes "early for us to just go";
 				mes "on a date. I'm sorry, it's...";
@@ -5996,7 +5836,6 @@ payon_in03,167,149,3	script	Wola	75,2,2,{
 			mes "be okay in my hands. I need";
 			mes "to get back to work: please";
 			mes "take care of yourself!";
-			changequest 3113,3114;
 			set diamond_edq,21;
 			close;
 		}
@@ -6015,6 +5854,7 @@ payon_in03,167,149,3	script	Wola	75,2,2,{
 	mes "Take care of yourself!";
 	close;
 
+//OnTouch2:
 OnTouch:
 	if (diamond_edq == 17) {
 		mes "[Wola]";
@@ -6107,7 +5947,7 @@ in_rogue,366,46,3	script	Rogue Investigator	828,{
 		switch(select("Sounds good!:Never mind, I'll find it myself...")) {
 		case 1:
 			if (Zeny > 9999) {
-				set Zeny, Zeny-10000;
+				set zeny,zeny-10000;
 				mes "[Investigator]";
 				mes "Thanks for the money~";
 				mes "Of course, if you became";
@@ -6121,7 +5961,6 @@ in_rogue,366,46,3	script	Rogue Investigator	828,{
 				mes "in Comodo. I doubt you'll";
 				mes "find anything there, but";
 				mes "you can go check it out. ";
-				changequest 3115,3116;
 				set diamond_edq,23;
 				close;
 			}
@@ -6185,7 +6024,7 @@ in_rogue,366,46,3	script	Rogue Investigator	828,{
 		switch(select("Sounds good!:Forget it...")) {
 		case 1:
 			if (Zeny > 9999) {
-				set Zeny, Zeny-10000;
+				set zeny,zeny-10000;
 				mes "[Investigator]";
 				mes "Right on, right on.";
 				mes "Alright, I didn't charge";
@@ -6193,7 +6032,6 @@ in_rogue,366,46,3	script	Rogue Investigator	828,{
 				mes "is a large warehouse in";
 				mes "Comodo where I doubt you'll";
 				mes "find anything. But who knows? ";
-				changequest 3115,3116;
 				set diamond_edq,23;
 				close;
 			}
@@ -6304,7 +6142,6 @@ cmd_in02,69,188,1	script	Small Safe	844,{
 		mes "sneak out of here, and";
 		mes "return this big diamond";
 		mes "to Ibrahim as soon as I can.";
-		changequest 3117,3118;
 		set diamond_edq,25;
 		close;
 	}
@@ -6364,7 +6201,6 @@ cmd_in02,80,189,0	script	Odd Switch#Switch2	844,{
 		next;
 		mes "^3355FF*Click Click*^000000";
 		next;
-		changequest 3116,3117;
 		set diamond_edq,24;
 		mes "[" + strcharinfo(0) + "]";
 		mes "That sound...!";
@@ -6382,7 +6218,7 @@ OnInit:
 }
 
 // Z-Gang Quest
-//============================================================
+//============================================================ 
 prontera,150,326,0	script	Wanted Notice#edq	111,{
 	if (zdan_edq == 0) {
 		mes "====National Wanted Notice====";
@@ -6410,7 +6246,6 @@ prontera,150,326,0	script	Wanted Notice#edq	111,{
 		mes "be rewarded with the Book";
 		mes "of Forbidden Mystery, one";
 		mes "of the kingdom's treasures.";
-		setquest 3119;
 		set zdan_edq,1;
 		close;
 	}
@@ -6442,7 +6277,7 @@ prontera,150,326,0	script	Wanted Notice#edq	111,{
 		mes "^0000ffCatfoii^000000 - Pet Cat";
 		next;
 		mes "====National Wanted Notice====";
-		mes "These infamous members";
+	mes "These infamous members";
 		mes "of the Z Gang are suspected";
 		mes "of stealing national treasure,";
 		mes "committing fraud, forgery,";
@@ -6504,7 +6339,6 @@ prontera,148,326,3	script	Chief Officer#edq	734,{
 		mes "Louis, Martha Hertizan a.k.a.";
 		mes "Martha, and Catfoii a.k.a.";
 		mes "Catfoii must be captured!";
-		changequest 3119,3120;
 		set zdan_edq,2;
 		close;
 	}
@@ -6628,7 +6462,7 @@ prontera,148,326,3	script	Chief Officer#edq	734,{
 			mes "That damned Z Gang seems";
 			mes "to be in the center of all the";
 			mes "crime that's happening in";
-			mes "Rune-Midgarts. They caused";
+			mes "Rune-Midgard. They caused";
 			mes "a riot in Geffen by spreading";
 			mes "rumors about ghosts...";
 			next;
@@ -6678,9 +6512,8 @@ prontera,148,326,3	script	Chief Officer#edq	734,{
 		mes "be recorded in the annals";
 		mes "of Rune-Midgarts history.";
 		mes "Congratulations! ";
-		completequest 3134;
 		set zdan_edq,19;
-		getexp (checkre(3))?100000:1000000,0;
+		getexp 1000000,0;
 		close;
 	}
 	mes "[Chief Officer]";
@@ -6738,11 +6571,10 @@ prt_in,168,18,1	script	Valdes	65,2,2,{
 			next;
 			mes "[Valdes]";
 			mes "Heh, I just ran out of wine!";
-			mes "Gimme, um, ^0000FFMorocc Fruit Wine^000000!";
+			mes "Gimme, um, ^0000FFMorroc Fruit Wine^000000!";
 			mes "5 bottles! Then... Maybe...";
 			mes "I'll tell you want you really";
 			mes "wanna know. Heh heh~ ^666666*Hic!*^000000";
-			changequest 3120,3121;
 			set zdan_edq,3;
 			close;
 		case 2:
@@ -6832,7 +6664,6 @@ prt_in,168,18,1	script	Valdes	65,2,2,{
 			mes "those Z Gang bastards.";
 			mes "^666666*Sigh*^000000 I think I'll go rest";
 			mes "a bit now. Good luck!";
-			changequest 3121,3122;
 			set zdan_edq,4;
 			close;
 		}
@@ -6841,7 +6672,7 @@ prt_in,168,18,1	script	Valdes	65,2,2,{
 			mes "You stinkface!";
 			mes "Where's my wine?!";
 			mes "My ^0000FF5 bottles of";
-			mes "Morocc Fruit Wine^000000?!";
+			mes "Morroc Fruit Wine^000000?!";
 			mes "I'm not gonna talk";
 			mes "to you without it!";
 			close;
@@ -6865,6 +6696,7 @@ prt_in,168,18,1	script	Valdes	65,2,2,{
 	mes "It's like my life is over...";
 	close;
 
+//OnTouch2:
 OnTouch:
 	if (zdan_edq == 2) {
 		mes "[Valdes]";
@@ -6925,7 +6757,6 @@ in_rogue,359,116,3	script	Marybell	747,{
 					mes "or not, I'm gonna continue";
 					mes "investigating the Z Gang for";
 					mes "the Rogue Guild and Valdes.";
-					changequest 3122,3123;
 					set zdan_edq,5;
 					break;
 				case 2:
@@ -6952,7 +6783,7 @@ in_rogue,359,116,3	script	Marybell	747,{
 				mes "Can't tell what";
 				mes "you're saying exactly.";
 				next;
-				if (Sex == SEX_MALE) {
+				if (Sex) {
 					mes "[Marybell]";
 					mes "If this is some kind";
 					mes "of weird come-on, you'd";
@@ -7084,16 +6915,15 @@ in_rogue,359,116,3	script	Marybell	747,{
 					mes "Oh, and one more thing...";
 					mes "I hear that they're trying";
 					mes "to secretly recruit more";
-					mes "gang members in Morocc.";
+					mes "gang members in Morroc.";
 					mes "The nerve of those guys...!";
 					next;
 					mes "[Marybell]";
 					mes "It might be a good idea";
-					mes "for you to go to Morocc";
+					mes "for you to go to Morroc";
 					mes "and check it out. Good";
 					mes "luck finding those Z Gang";
 					mes "guys. And take care!";
-					changequest 3125,3126;
 					set zdan_edq,9;
 					close;
 				}
@@ -7115,7 +6945,7 @@ in_rogue,359,116,3	script	Marybell	747,{
 		mes "Oh, and one more thing...";
 		mes "I hear that they're trying";
 		mes "to secretly recruit more";
-		mes "gang members in Morocc.";
+		mes "gang members in Morroc.";
 		mes "The nerve of those guys...! ";
 		next;
 		mes "[Marybell]";
@@ -7159,7 +6989,7 @@ in_rogue,359,116,3	script	Marybell	747,{
 		mes "decoders in this kingdom.";
 		next;
 		mes "[" + strcharinfo(0) + "]";
-		mes "Gooho Ahn?";
+		mes "Goohoo Ahn?";
 		mes "Why does it feel like";
 		mes "I should know that";
 		mes "name? It's so familiar...";
@@ -7173,16 +7003,15 @@ in_rogue,359,116,3	script	Marybell	747,{
 		mes "[Marybell]";
 		mes "Eh, that's not what's";
 		mes "important right now.";
-		mes "Would you talk to Gooho";
+		mes "Would you talk to Goohoo";
 		mes "Ahn and see what he found?";
-		changequest 3128,3129;
 		set zdan_edq,12;
 		close;
 	}
 	if ((zdan_edq > 11) && (zdan_edq < 14)) {
 		mes "[Marybell]";
 		mes "Hey, why don't you talk";
-		mes "to Gooho Ahn in Payon,";
+		mes "to Goohoo Ahn in Payon,";
 		mes "and ask if he finished";
 		mes "decoding that secret letter";
 		mes "from the Z Gang already?";
@@ -7190,9 +7019,9 @@ in_rogue,359,116,3	script	Marybell	747,{
 	}
 	if (zdan_edq == 14) {
 		mes "[Marybell]";
-		mes "Oh, Gooho decoded everything?";
+		mes "Oh, Goohoo decoded everything?";
 		mes "Let's see... Something about";
-		mes "the Book of Forbidden Mystery... Ah. There we go! The location";
+		mes "the Book of Forbidden Mystery...^FFFFFF ^000000 Ah. There we go! The location";
 		mes "of the Z Gang's hideout!";
 		mes "Heh heh! We got 'em!";
 		next;
@@ -7208,7 +7037,7 @@ in_rogue,359,116,3	script	Marybell	747,{
 		mes "Even so, we're definitely";
 		mes "sure that it's around the";
 		mes "secret path to the South";
-		mes "Morocc underground. Um,";
+		mes "Morroc underground. Um,";
 		mes "but we can't let you come";
 		mes "with the Rogue Guild.";
 		next;
@@ -7219,7 +7048,6 @@ in_rogue,359,116,3	script	Marybell	747,{
 		mes "hunt them down separately, and";
 		mes "whoever finds 'em first gets";
 		mes "dibs on beating them up!";
-		changequest 3131,3132;
 		set zdan_edq,15;
 		close;
 	}
@@ -7228,7 +7056,7 @@ in_rogue,359,116,3	script	Marybell	747,{
 		mes "We're definitely sure";
 		mes "that the Z Gang's hideout";
 		mes "is near the secret path";
-		mes "to the South Morocc";
+		mes "to the South Morroc";
 		mes "underground. You";
 		mes "know where that is?";
 		next;
@@ -7369,7 +7197,6 @@ payon,244,62,3	script	Moonho Ahn	897,{
 			mes "some time to prep the";
 			mes "game? When you return,";
 			mes "we'll be ready to play~";
-			changequest 3123,3124;
 			set zdan_edq,6;
 			close;
 		}
@@ -7382,7 +7209,7 @@ payon,244,62,3	script	Moonho Ahn	897,{
 		switch(select("Yes, let's play!:How does this game work again?")) {
 		case 1:
 			if (Zeny > 500) {
-				set Zeny, Zeny-500;
+				set zeny,zeny-500;
 				mes "[Moonho Ahn]";
 				mes "Good, let's get started!";
 				mes "I'll let you go first~";
@@ -7592,7 +7419,6 @@ payon,244,62,3	script	Moonho Ahn	897,{
 					mes "feels good to have";
 					mes "played with a worthy";
 					mes "opponent. Thank you~";
-					changequest 3124,3125;
 					set zdan_edq,7;
 					close;
 				}
@@ -7636,7 +7462,7 @@ payon,244,62,3	script	Moonho Ahn	897,{
 						if (((.@input$ == "Odd") && (.@number == 1)) || ((.@input$ == "Even") && (.@number == 2))) {
 							set .@number_right_3,.@number_right_3+1;
 							mes "[Moonho Ahn]";
-							mes "^0000FF"+.@input$+"^000000?";
+							mes "^0000FF"+.@input+"^000000?";
 							mes "Okay, you won.";
 							next;
 							if ((.@number_right_3 < 2) && (.@number_false_3 < 2)) {
@@ -7649,7 +7475,7 @@ payon,244,62,3	script	Moonho Ahn	897,{
 						else if (((.@input$ == "Odd") && (.@number == 2)) || ((.@input$ == "Even") && (.@number == 1))) {
 							set .@number_false_3,.@number_false_3+1;
 							mes "[Moonho Ahn]";
-							mes "Well, it's ^0000FF"+.@input$+"^000000.";
+							mes "Well, it's ^0000FF+.@input+^000000.";
 							mes "Looks like I won.";
 							next;
 							if ((.@number_right_3 < 2) && (.@number_false_3 <2)) {
@@ -7729,7 +7555,6 @@ payon,244,62,3	script	Moonho Ahn	897,{
 						mes "feels good to have";
 						mes "played with a worthy";
 						mes "opponent. Thank you~";
-						changequest 3124,3125;
 						set zdan_edq,7;
 						close;
 					}
@@ -7835,7 +7660,7 @@ payon,192,176,3	script	Gooho Ahn	903,{
 		mes "adventurer.";
 		mes "Um, was there";
 		mes "something you wanted?";
-		emotion ET_QUESTION, playerattached();
+		emotion e_what,1;
 		next;
 		switch(select("Rogue Guild's Decoding Request")) {
 		case 1:
@@ -7852,7 +7677,7 @@ payon,192,176,3	script	Gooho Ahn	903,{
 			mes "of heat and light, you can";
 			mes "read its contents. This is";
 			mes "some powerful encryption!";
-			emotion ET_HUK, playerattached();
+			emotion e_omg,1;
 			next;
 			mes "[Gooho Ahn]";
 			mes "So far, I've only decrypted";
@@ -7882,7 +7707,6 @@ payon,192,176,3	script	Gooho Ahn	903,{
 			mes "I need, I should be able";
 			mes "to decrypt the rest of";
 			mes "this secret Z Gang letter.";
-			changequest 3129,3130;
 			set zdan_edq,13;
 			close;
 		}
@@ -7908,7 +7732,7 @@ payon,192,176,3	script	Gooho Ahn	903,{
 			delitem 970,2; //Alchol
 			delitem 7035,1; //Matchstick
 			delitem 7097,10; //Burning_Heart
-			emotion ET_AHA;
+			emotion e_ic;
 			mes "[Gooho Ahn]";
 			mes "Oh, what? This language...";
 			mes "It's ancient! Aegye hasn't";
@@ -7985,7 +7809,6 @@ payon,192,176,3	script	Gooho Ahn	903,{
 			mes "^0000ffWeii arr prowd Z G gna^000000";
 			mes "^0000ffAynoen hwo sspotp uys^000000";
 			mes "^0000ffwlil eb kckide on htier ssa!^000000";
-			changequest 3130,3131;
 			set zdan_edq,14;
 			close;
 		}
@@ -8036,229 +7859,494 @@ payon,192,176,3	script	Gooho Ahn	903,{
 	close;
 }
 
-moc_ruins,90,67,3	script	Suspicious Man#1	4W_M_03,4,4,{
-	if (zdan_edq == 9) {
-		if ($@zdan == 0)
-			callsub S_Quest;
-		else {
-			mes "[Suspicious Man]";
-			if (strnpcinfo(2) == "1") {
-				mes "...............................";
-				mes "...............................";
-				mes "............................... ";
-			}
-			else
-				mes "... ...";
-			next;
-			mes "[" + strcharinfo(0) + "]";
-			mes "Something's not quite";
-			mes "right. I should come back";
-			mes "and investigate this area";
-			mes "later when there are fewer";
-			mes "people watching...";
-		}
+moc_ruins,90,67,3	script	Suspicious Man#1	99,2,2,{
+	if ((zdan_edq == 9) && ($@zdan == 0)) {
+		set $@zdan,1;
+		initnpctimer;
+		mes "[????]";
+		mes "I know you've";
+		mes "been pursuing us!";
+		mes "Grrrr... DIE NOW!";
+		specialeffect EF_STEAL;
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Wh-who are you?";
+		next;
+		mes "[????]";
+		mes "Y-you're stronger";
+		mes "than I thought!";
+		mes "Run awaaaaay!";
+		hideoffnpc "Suspicious Man#2";
+		hideonnpc "Suspicious Man#1";
+		set $@zdan,0;
+		stopnpctimer;
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Huh? That man must";
+		mes "have dropped this";
+		mes "note in his haste";
+		mes "to get away from here.";
+		mes "Let's see what it says...";
+		next;
+		mes "^FFFFFF ^000000";
+		mes "^FFFFFF ^000000";
+		mes "^666666Kill " + strcharinfo(0) + ", meow.";
+		mes "That arrogant do-gooder";
+		mes "is looking into us too much.";
+		mes "Fail to kill him, and death";
+		mes "will be too good for you, meow.^000000";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "That must have been";
+		mes "an informer for the Z Gang.";
+		mes "He can't have gotten too far:";
+		mes "I have a chance to catch him!";
+		set zdan_edq,10;
+		close;
 	}
-	else if (zdan_edq == 10) {
-		if ($@zdan > 0) {
-			mes "[" + strcharinfo(0) + "]";
-			mes "Nuts! I was supposed";
-			mes "to try to do this secretly!";
-			mes "I better try to investigate";
-			mes "this area again when no";
-			mes "one is around here.";
-		}
-		else {
-			set $@zdan,1;
-			initnpctimer;
-			mes "[????]";
-			mes "Eeek...!";
-			next;
-			mes "[" + strcharinfo(0) + "]";
-			mes "Haha! Got you!";
-			mes "You're an informer for";
-			mes "the Z Gang, aren't you?";
-			next;
-			mes "[????]";
-			mes "I... I... d-don't";
-			mes "know what you're";
-			mes "talking about!";
-			mes "I'm innocent!";
-			next;
-			mes "[" + strcharinfo(0) + "]";
-			mes "Then you're telling";
-			mes "me this note didn't";
-			mes "just fall out of your";
-			mes "pocket? What's this";
-			mes "about trying to kill me?";
-			next;
-			mes "[????]";
-			mes "Th-that's...";
-			mes "I'm not--That...!";
-			next;
-			mes "[" + strcharinfo(0) + "]";
-			mes "You better confess, or";
-			mes "I'll drag you over to the";
-			mes "Prontera Knightage or the";
-			mes "Rogue Guild to take care";
-			mes "of you. In fact, let's just";
-			mes "head over to Prontera...";
-			next;
-			mes "[Z Gang Informer]";
-			mes "N-no! I'll tell you";
-			mes "everything! Please!";
-			mes "My mother's old! I've";
-			mes "got kids to feed!";
-			mes "I... I can't go to jail!";
-			next;
-			mes "[" + strcharinfo(0) + "]";
-			mes "Alright.";
-			mes "Let's start by you";
-			mes "telling me where";
-			mes "I can find the Z Gang.";
-			next;
-			mes "[Z Gang Informer]";
-			mes "I... I really don't";
-			mes "know where to find them.";
-			mes "I'm at the bottom of the";
-			mes "food chain, I just follow";
-			mes "their written instructions.";
-			next;
-			mes "[" + strcharinfo(0) + "]";
-			mes "You know what?";
-			mes "Never mind. I'm won't";
-			mes "take you to be jailed by";
-			mes "the Prontera Knights.";
-			mes "I'll drop you off";
-			mes "at the Rogues.";
-			next;
-			mes "[Z Gang Informer]";
-			mes "...............................";
-			mes "Their secret hideout is in";
-			mes "South Morocc, and you can't";
-			mes "enter the place without the";
-			mes "secret password.";
-			next;
-			mes "[" + strcharinfo(0) + "]";
-			mes "Nice. Now, you better";
-			mes "stop running with the";
-			mes "Z Gang. Otherwise, I'm";
-			mes "not going to be so merciful";
-			mes "the next time I see you.";
-			next;
-			mes "[Z Gang Informer]";
-			mes "Anything you want!";
-			mes "J-just let me liiive!";
-			next;
-			mes "[" + strcharinfo(0) + "]";
-			mes "I should head back to";
-			mes "Marybell, and see if she's";
-			mes "learned any new information.";
-			changequest 3127,3128;
-			set zdan_edq,11;
-			set $@zdan,0;
-			stopnpctimer;
-		}
+	if ((zdan_edq == 9) && ($@zdan > 0)) {
+		mes "[Suspicious Man]";
+		mes "...............................";
+		mes "...............................";
+		mes "............................... ";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Something's not quite";
+		mes "right. I should come back";
+		mes "and investigate this area";
+		mes "later when there are fewer";
+		mes "people watching...";
+		close;
 	}
-	else if (zdan_edq < 9) {
-		if (strnpcinfo(2) == "1")
-			mes "[Suspicious Man]";
-		else
-			mes "[Thug]";
+	if ((zdan_edq == 10) && ($@zdan > 0)) {
+		mes "[" + strcharinfo(0) + "]";
+		mes "Nuts! I was supposed";
+		mes "to try to do this secretly!";
+		mes "I better try to investigate";
+		mes "this area again when no";
+		mes "one is around here.";
+		close;
+	}
+	if ((zdan_edq == 10) && ($@zdan == 0 )) {
+		set $@zdan,1;
+		initnpctimer;
+		mes "[????]";
+		mes "Eeek...!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Haha! Got you!";
+		mes "You're an informer for";
+		mes "the Z Gang, aren't you?";
+		next;
+		mes "[????]";
+		mes "I... I... d-don't";
+		mes "know what you're";
+		mes "talking about!";
+		mes "I'm innocent!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Then you're telling";
+		mes "me this note didn't";
+		mes "just fall out of your";
+		mes "pocket? What's this";
+		mes "about trying to kill me?";
+		next;
+		mes "[????]";
+		mes "Th-that's...";
+		mes "I'm not--That...!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "You better confess, or";
+		mes "I'll drag you over to the";
+		mes "Prontera Knightage or the";
+		mes "Rogue Guild to take care";
+		mes "of you. In fact, let's just";
+		mes "head over to Prontera...";
+		next;
+		mes "[Z Gang Informer]";
+		mes "N-no! I'll tell you";
+		mes "everything! Please!";
+		mes "My mother's old! I've";
+		mes "got kids to feed!";
+		mes "I... I can't go to jail!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Alright.";
+		mes "Let's start by you";
+		mes "telling me where";
+		mes "I can find the Z Gang.";
+		next;
+		mes "[Z Gang Informer]";
+		mes "I... I really don't";
+		mes "know where to find them.";
+		mes "I'm at the bottom of the";
+		mes "food chain, I just follow";
+		mes "their written instructions.";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "You know what?";
+		mes "Never mind. I'm won't";
+		mes "take you to be jailed by";
+		mes "the Prontera Knights.";
+		mes "I'll drop you off";
+		mes "at the Rogues.";
+		next;
+		mes "[Z Gang Informer]";
+		mes "...............................";
+		mes "Their secret hideout is in";
+		mes "South Morroc, and you can't";
+		mes "enter the place without the";
+		mes "secret password.";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Nice. Now, you better";
+		mes "stop running with the";
+		mes "Z Gang. Otherwise, I'm";
+		mes "not going to be so merciful";
+		mes "the next time I see you.";
+		next;
+		mes "[Z Gang Informer]";
+		mes "Anything you want!";
+		mes "J-just let me liiive!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "I should head back to";
+		mes "Marybell, and see if she's";
+		mes "learned any new information.";
+		set zdan_edq,11;
+		set $@zdan,0;
+		stopnpctimer;
+		close;
+	}
+	if (zdan_edq < 9) {
+		mes "[Suspicious Man]";
 		mes "What? Get lost!";
 		mes "Listen, you don't";
 		mes "want to mess with";
 		mes "me. Just. Don't.";
+		close;
 	}
-	else if (zdan_edq > 10 && zdan_edq < 15) {
+	if ((zdan_edq > 10) && (zdan_edq < 15)) {
 		mes "[Z Gang Informer]";
 		mes "Whoa, leave me alone!";
 		mes "I'm just standing here";
 		mes "on the road, I didn't";
 		mes "do anything wrong!";
+		close;
 	}
-	else if (zdan_edq > 14) {
+	if (zdan_edq > 14) {
 		mes "[Former Z Gang Informer]";
 		mes "You don't have to";
 		mes "worry about me anymore.";
 		mes "I've turned over a new";
 		mes "leaf, got a real job,";
 		mes "that sort of deal.";
+		close;
 	}
-	else {
-		if (strnpcinfo(2) == "1")
-			mes "[Suspicious Man]";
-		else
-			mes "[Thug]";
-		mes "What? Get lost!";
-		mes "Listen, you don't";
-		mes "want to mess with";
-		mes "me. Just. Don't.";
-	}
+	mes "[Suspicious Man]";
+	mes "What? Get lost!";
+	mes "Listen, you don't";
+	mes "want to mess with";
+	mes "me. Just. Don't.";
 	close;
 
 OnTimer30000:
 	set $@zdan,0;
 	end;
 
+OnTouch:
+	if ((zdan_edq == 9) && ($@zdan == 0)) {
+		set $@zdan,1;
+		initnpctimer;
+		mes "[????]";
+		mes "I know you've";
+		mes "been pursuing us!";
+		mes "Grrrr... DIE NOW!";
+		specialeffect EF_STEAL;
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Wh-who are you?";
+		next;
+		mes "[????]";
+		mes "Y-you're stronger";
+		mes "than I thought!";
+		mes "Run awaaaaay!";
+		hideoffnpc "Suspicious Man#2";
+		hideonnpc "Suspicious Man#1";
+		set $@zdan,0;
+		stopnpctimer;
+		next;
+		mes "[" + strcharinfo(0) + "] ";
+		mes "Huh? That man must";
+		mes "have dropped this";
+		mes "note in his haste";
+		mes "to get away from here.";
+		mes "Let's see what it says...";
+		next;
+		mes "^FFFFFF ^000000";
+		mes "^FFFFFF ^000000";
+		mes "^666666Kill " + strcharinfo(0) + ", meow.";
+		mes "That arrogant do-gooder";
+		mes "is looking into us too much.";
+		mes "Fail to kill him, and death";
+		mes "will be too good for you, meow.^000000";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "That must have been";
+		mes "an informer for the Z Gang.";
+		mes "He can't have gotten too far:";
+		mes "I have a chance to catch him!";
+		set zdan_edq,10;
+		close;
+	}
+	end;
+}
+
+//Incorrect position.
+moc_ruins,78,167,3	script	Suspicious Man#2	99,2,2,{
+	if ((zdan_edq == 9) && ($@zdan == 0)) {
+		set $@zdan,1;
+		initnpctimer;
+		mes "[????]";
+		mes "I know you've";
+		mes "been pursuing us!";
+		mes "Grrrr... DIE NOW!";
+		specialeffect EF_STEAL;
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Wh-who are you?";
+		next;
+		mes "[????]";
+		mes "Y-you're stronger";
+		mes "than I thought!";
+		mes "Run awaaaaay!";
+		hideoffnpc "Suspicious Man#1";
+		hideonnpc "Suspicious Man#2";
+		set $@zdan,0;
+		stopnpctimer;
+		next;
+		mes "[" + strcharinfo(0) + "] ";
+		mes "Huh? That man must";
+		mes "have dropped this";
+		mes "note in his haste";
+		mes "to get away from here.";
+		mes "Let's see what it says...";
+		next;
+		mes "^FFFFFF ^000000";
+		mes "^FFFFFF ^000000";
+		mes "^666666Kill " + strcharinfo(0) + ", meow.";
+		mes "That arrogant do-gooder";
+		mes "is looking into us too much.";
+		mes "Fail to kill him, and death";
+		mes "will be too good for you, meow.^000000";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "That must have been";
+		mes "an informer for the Z Gang.";
+		mes "He can't have gotten too far:";
+		mes "I have a chance to catch him!";
+		set zdan_edq,10;
+		close;
+	}
+	if ((zdan_edq == 10) && ($@zdan == 0)) {
+		set $@zdan,1;
+		initnpctimer;
+		mes "[????]";
+		mes "Eeek...!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Haha! Got you!";
+		mes "You're an informer for";
+		mes "the Z Gang, aren't you?";
+		next;
+		mes "[????]";
+		mes "I... I... d-don't";
+		mes "know what you're";
+		mes "talking about!";
+		mes "I'm innocent!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Then you're telling";
+		mes "me this note didn't";
+		mes "just fall out of your";
+		mes "pocket? What's this";
+		mes "about trying to kill me?";
+		next;
+		mes "[????]";
+		mes "Th-that's...";
+		mes "I'm not--That...!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "You better confess, or";
+		mes "I'll drag you over to the";
+		mes "Prontera Knightage or the";
+		mes "Rogue Guild to take care";
+		mes "of you. In fact, let's just";
+		mes "head over to Prontera...";
+		next;
+		mes "[Z Gang Informer]";
+		mes "N-no! I'll tell you";
+		mes "everything! Please!";
+		mes "My mother's old! I've";
+		mes "got kids to feed!";
+		mes "I... I can't go to jail!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Alright.";
+		mes "Let's start by you";
+		mes "telling me where";
+		mes "I can find the Z Gang.";
+		next;
+		mes "[Z Gang Informer]";
+		mes "I... I really don't";
+		mes "know where to find them.";
+		mes "I'm at the bottom of the";
+		mes "food chain, I just follow";
+		mes "their written instructions.";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "You know what?";
+		mes "Never mind. I'm won't";
+		mes "take you to be jailed by";
+		mes "the Prontera Knights.";
+		mes "I'll drop you off";
+		mes "at the Rogues.";
+		next;
+		mes "[Z Gang Informer]";
+		mes "...............................";
+		mes "Their secret hideout is in";
+		mes "South Morroc, and you can't";
+		mes "enter the place without the";
+		mes "secret password.";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Nice. Now, you better";
+		mes "stop running with the";
+		mes "Z Gang. Otherwise, I'm";
+		mes "not going to be so merciful";
+		mes "the next time I see you.";
+		next;
+		mes "[Z Gang Informer]";
+		mes "Anything you want!";
+		mes "J-just let me liiive!";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "I should head back to";
+		mes "Marybell, and see if she's";
+		mes "learned any new information.";
+		set zdan_edq,11;
+		set $@zdan,0;
+		stopnpctimer;
+		close;
+	}
+	if ((zdan_edq == 9) && ($@zdan > 0)) {
+		mes "[Suspicious Man]";
+		mes "... ...";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Something's not quite";
+		mes "right. I should come back";
+		mes "and investigate this area";
+		mes "later when there are fewer";
+		mes "people watching...";
+		close;
+	}
+	if ((zdan_edq == 10) && ($@zdan > 0)) {
+		mes "[" + strcharinfo(0) + "]";
+		mes "Nuts! I was supposed";
+		mes "to try to do this secretly!";
+		mes "I better try to investigate";
+		mes "this area again when no";
+		mes "one is around here.";
+		close;
+	}
+	if (zdan_edq < 9) {
+		mes "[Thug]";
+		mes "What? Get lost!";
+		mes "Listen, you don't";
+		mes "want to mess with";
+		mes "me. Just. Don't.";
+		close;
+	}
+	if ((zdan_edq > 10) && (zdan_edq < 15)) {
+		mes "[Z Gang Informer]";
+		mes "Whoa, leave me alone!";
+		mes "I'm just standing here";
+		mes "on the road, I didn't";
+		mes "do anything wrong!";
+		close;
+	}
+	if (zdan_edq > 14) {
+		mes "[Former Z Gang Informer]";
+		mes "You don't have to";
+		mes "worry about me anymore.";
+		mes "I've turned over a new";
+		mes "leaf, got a real job,";
+		mes "that sort of deal.";
+		close;
+	}
+	mes "[Thug]";
+	mes "What? Get lost!";
+	mes "Listen, you don't";
+	mes "want to mess with";
+	mes "me. Just. Don't.";
+	close;
+
 OnInit:
 	hideonnpc "Suspicious Man#2";
 	end;
 
-OnTouch_:
-	if (zdan_edq == 9 && $@zdan == 0)
-		callsub S_Quest;
+OnTimer30000:
+	set $@zdan,0;
 	end;
 
-S_Quest:
-	set $@zdan,1;
-	initnpctimer;
-	mes "[????]";
-	mes "I know you've";
-	mes "been pursuing us!";
-	mes "Grrrr... DIE NOW!";
-	specialeffect EF_STEAL;
-	next;
-	mes "[" + strcharinfo(0) + "]";
-	mes "Wh-who are you?";
-	next;
-	mes "[????]";
-	mes "Y-you're stronger";
-	mes "than I thought!";
-	mes "Run awaaaaay!";
-	if (strnpcinfo(2) == "1") {
-		hideonnpc "Suspicious Man#1";
-		hideoffnpc "Suspicious Man#2";
-	}
-	else {
-		hideonnpc "Suspicious Man#2";
+OnTouch:
+	if ((zdan_edq == 9) && ($@zdan == 0)) {
+		set $@zdan,1;
+		initnpctimer;
+		mes "[????]";
+		mes "I know you've";
+		mes "been pursuing us!";
+		mes "Grrrr... DIE NOW!";
+		specialeffect EF_STEAL;
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Wh-who are you?";
+		next;
+		mes "[????]";
+		mes "Y-you're stronger";
+		mes "than I thought!";
+		mes "Run awaaaaay!";
 		hideoffnpc "Suspicious Man#1";
+		hideonnpc "Suspicious Man#2";
+		set $@zdan,0;
+		stopnpctimer;
+		next;
+		mes "[" + strcharinfo(0) + "] ";
+		mes "Huh? That man must";
+		mes "have dropped this";
+		mes "note in his haste";
+		mes "to get away from here.";
+		mes "Let's see what it says...";
+		next;
+		mes "^FFFFFF ^000000";
+		mes "^FFFFFF ^000000";
+		mes "^666666Kill " + strcharinfo(0) + ", meow.";
+		mes "That arrogant do-gooder";
+		mes "is looking into us too much.";
+		mes "Fail to kill him, and death";
+		mes "will be too good for you, meow.^000000";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "That must have been";
+		mes "an informer for the Z Gang.";
+		mes "He can't have gotten too far:";
+		mes "I have a chance to catch him!";
+		set zdan_edq,10;
+		close;
 	}
-	set $@zdan,0;
-	stopnpctimer;
-	next;
-	mes "[" + strcharinfo(0) + "] ";
-	mes "Huh? That man must";
-	mes "have dropped this";
-	mes "note in his haste";
-	mes "to get away from here.";
-	mes "Let's see what it says...";
-	next;
-	mes "^666666Kill " + strcharinfo(0) + ", meow.";
-	mes "That arrogant do-gooder";
-	mes "is looking into us too much.";
-	mes "Fail to kill him, and death";
-	mes "will be too good for you, meow.^000000";
-	next;
-	mes "[" + strcharinfo(0) + "]";
-	mes "That must have been";
-	mes "an informer for the Z Gang.";
-	mes "He can't have gotten too far:";
-	mes "I have a chance to catch him!";
-	changequest 3126,3127;
-	set zdan_edq,10;
-	close;
+	end;
 }
-moc_ruins,75,171,3	duplicate(Suspicious Man#1)	Suspicious Man#2	4W_M_03,4,4
 
 moc_fild17,209,235,0	script	Odd Slab	111,4,4,{
 	if (((zdan_edq == 15) || (zdan_edq == 16) || (zdan_edq == 17)) && ($@door2 == 0)) {
@@ -8266,7 +8354,7 @@ moc_fild17,209,235,0	script	Odd Slab	111,4,4,{
 		mes "^FF0000*Creak Creak*";
 		mes "Etner sspawrod.^000000";
 		next;
-		emotion ET_HUK, playerattached();
+		emotion e_omg,1;
 		mes "[" + strcharinfo(0) + "]";
 		mes "This slab is speaking";
 		mes "to me! I... I think. Now";
@@ -8277,7 +8365,7 @@ moc_fild17,209,235,0	script	Odd Slab	111,4,4,{
 		mes "^FF0000*Creak Creak*";
 		mes "Etner sspawrod.^000000";
 		next;
-		emotion ET_AHA, playerattached();
+		emotion e_ic,1;
 		mes "[" + strcharinfo(0) + "]";
 		mes "Oh, right! This is that";
 		mes "trashy language, Aegye,";
@@ -8333,7 +8421,6 @@ moc_fild17,209,235,0	script	Odd Slab	111,4,4,{
 						mes "What th--?! What's";
 						mes "happening?! I'm being";
 						mes "sucked away somewhere!";
-						changequest 3132,3133;
 						set zdan_edq,16;
 						close2;
 						warp "z_agit",98,40;
@@ -8434,6 +8521,7 @@ OnInit:
 	set $@mosnter,0;
 	end;
 
+//OnTouch2:
 OnTouch:
 	if (zdan_edq == 15) {
 		mes "^FF0000*Creak Creak*^000000";
@@ -8448,7 +8536,7 @@ OnTouch:
 }
 
 z_agit,98,44,0	script	EntranceCheck#1	-1,10,10,{
-OnTouch_:
+OnTouch:
 	if (((zdan_edq == 15) || (zdan_edq == 16)) && ($@monster_zgang == 0)) {
 		set $@monster_zgang,1;
 		donpcevent "#zdan_broad::OnEnable";
@@ -8477,7 +8565,7 @@ OnTouch_:
 }
 
 z_agit,98,92,0	script	EntranceCheck#2	-1,10,10,{
-OnTouch_:
+OnTouch:
 	if (((zdan_edq == 15) || (zdan_edq == 16)) && ($@monster_zgang == 0)) {
 		set $@monster_zgang,1;
 		donpcevent "#zdan_broad::OnEnable";
@@ -8586,6 +8674,7 @@ OnInit:
 OnEnable:
 	enablenpc "#ZGuard";
 	initnpctimer;
+	set .MyMobCount,3;
 	monster "z_agit",97,78,"Catfoii's Guard",1479,1,"#ZGuard::OnMyMobDead";
 	monster "z_agit",98,79,"Catfoii's Guard",1479,1,"#ZGuard::OnMyMobDead";
 	monster "z_agit",96,81,"Catfoii's Guard",1523,1,"#ZGuard::OnMyMobDead";
@@ -8596,13 +8685,14 @@ OnDisable:
 	stopnpctimer;
 	end;
 
-OnReset:
+Onreset:
 	killmonster "z_agit","#ZGuard::OnMyMobDead";
 	set $@monster_zgang,0;
 	end;
 
 OnMyMobDead:
-	if (mobcount("z_agit","#ZGuard::OnMyMobDead") < 1) {
+	set .MyMobCount,.MyMobCount-1;
+	if (.MyMobCount < 1) {
 		mes "[" + strcharinfo(0) + "]";
 		mes "You cowardly Z Gang!";
 		mes "Come out and surrender!";
@@ -8740,7 +8830,6 @@ z_agit,97,101,3	script	Louis	931,{
 		mes "But how did we lose?!";
 		close2;
 		getitem 7724,1; //Forbidden_Secret_Art
-		changequest 3133,3134;
 		set zdan_edq,18;
 		mapwarp "z_agit","moc_fild17",209,235;
 		set $@monster_zgang,0;
@@ -8863,7 +8952,6 @@ z_agit,99,101,3	script	Martha	101,{
 		mes "But how did we lose?!";
 		close2;
 		getitem 7724,1; //Forbidden_Secret_Art
-		changequest 3133,3134;
 		set zdan_edq,18;
 		mapwarp "z_agit","moc_fild17",209,235;
 		set $@monster_zgang,0;
@@ -8983,7 +9071,6 @@ z_agit,95,101,3	script	Catfoii	876,{
 		mes "But how did we lose?!";
 		close2;
 		getitem 7724,1; //Forbidden_Secret_Art
-		changequest 3133,3134;
 		set zdan_edq,18;
 		mapwarp "z_agit","moc_fild17",209,235;
 		set $@monster_zgang,0;
@@ -9015,7 +9102,7 @@ OnInit:
 }
 
 // Unlucky Emerald
-//============================================================
+//============================================================ 
 morocc,143,63,3	script	Ragged Man#nd	929,{
 	if (treasure_nd == 0) {
 		mes "[Ragged Man]";
@@ -9041,7 +9128,7 @@ morocc,143,63,3	script	Ragged Man#nd	929,{
 			case 1:
 				mes "[Ragged Man]";
 				mes "I was so sure I could find";
-				mes "the treasure here in Morocc";
+				mes "the treasure here in Morroc";
 				mes "when I first started... I did";
 				mes "all my research and prep work.";
 				mes "But after hiring teams of other";
@@ -9053,7 +9140,7 @@ morocc,143,63,3	script	Ragged Man#nd	929,{
 				mes "to finding that treasure.";
 				mes "I... I don't even have enough";
 				mes "money to go back home!";
-				emotion ET_CRY;
+				emotion e_sob;
 				next;
 				mes "[Ragged Man]";
 				mes "Won't you spare some";
@@ -9100,7 +9187,7 @@ morocc,143,63,3	script	Ragged Man#nd	929,{
 						close;
 					}
 					else {
-						set Zeny, Zeny-1200;
+						set zeny,zeny-1200;
 						mes "[Ragged Man]";
 						mes "Let's see... I just need";
 						mes "1,200 zeny. That's enough";
@@ -9122,7 +9209,7 @@ morocc,143,63,3	script	Ragged Man#nd	929,{
 						mes "the hands of someone like";
 						mes "you than a rival treasure";
 						mes "hunter. This hunter that";
-						mes "stays north in town apparently confirmed the treasure's location.";
+						mes "stays north in town apparently^FFFFFF ^000000 confirmed the treasure's location.";
 						next;
 						mes "[Ragged Man]";
 						mes "Now, I hear that this guy";
@@ -9179,7 +9266,7 @@ morocc,143,63,3	script	Ragged Man#nd	929,{
 				mes "up the funds. I'll be waiting.";
 				close;			}
 			else {
-				set Zeny, Zeny-1200;
+				set zeny,zeny-1200;
 				mes "[Ragged Man]";
 				mes "Remember that hidden";
 				mes "treasure I was looking for?";
@@ -9193,7 +9280,7 @@ morocc,143,63,3	script	Ragged Man#nd	929,{
 				mes "he hands of someone like";
 				mes "you than a rival treasure";
 				mes "hunter. This hunter that";
-				mes "stays north in town apparently confirmed the treasure's location.";
+				mes "stays north in town apparently^FFFFFF ^000000 confirmed the treasure's location.";
 				next;
 				mes "[Ragged Man]";
 				mes "Now, I hear that this guy";
@@ -9227,7 +9314,7 @@ morocc,143,63,3	script	Ragged Man#nd	929,{
 		mes "Ah, you must be having";
 		mes "trouble finding that guy";
 		mes "I was talking about. He's";
-		mes "just in the northern part of this town. It can't be that hard.";
+		mes "just in the northern part of^FFFFFF ^000000 this town. It can't be that hard.";
 		close;
 	}
 	else if (treasure_nd > 10) {
@@ -9252,7 +9339,7 @@ morocc,143,63,3	script	Ragged Man#nd	929,{
 		mes "So how's the treasure";
 		mes "hunt coming along? I hope";
 		mes "you have better luck than";
-		mes "I did. Still, I've got a pretty good feeling that you'll find it.";
+		mes "I did. Still, I've got a pretty^FFFFFF ^000000 good feeling that you'll find it.";
 		close;
 	}
 }
@@ -9271,7 +9358,7 @@ morocc,102,298,3	script	Man#zgang	98,{
 		next;
 		switch(select("Tell me about the treasure.")) {
 		case 1:
-			emotion ET_SURPRISE;
+			emotion e_gasp;
 			mes "[Man]";
 			mes "What? So you're the one";
 			mes "I was warned about! I've";
@@ -9450,7 +9537,7 @@ morocc,102,298,3	script	Man#zgang	98,{
 			next;
 			mes "[Man]";
 			mes "The treasure is buried";
-			mes "south of Morocc. Use the";
+			mes "south of Morroc. Use the";
 			mes "south gate to leave town,";
 			mes "and then head to the next";
 			mes "field to the south. From";
@@ -9741,7 +9828,7 @@ comodo,339,224,3	script	Man in Hiding#nd	881,{
 			mes "for information";
 			mes "about the treasure.";
 			next;
-			emotion ET_HUK;
+			emotion e_omg;
 			mes "[Man in Hiding]";
 			mes "You... You've come";
 			mes "looking for me?!";
@@ -9752,7 +9839,7 @@ comodo,339,224,3	script	Man in Hiding#nd	881,{
 			mes "[" + strcharinfo(0) + "]";
 			mes "What? No, it's not like";
 			mes "that. I met this treasure";
-			mes "hunter in Morocc that said";
+			mes "hunter in Morroc that said";
 			mes "I could find you around here.";
 			next;
 			mes "[Man in Hiding]";
@@ -9883,7 +9970,7 @@ moc_fild18,108,116,0	script	#treasure	844,{
 	}
 	else if (treasure_nd == 6) {
 		mes "^3355FFThat Treasure Hunter in";
-		mes "Morocc must know something";
+		mes "Morroc must know something";
 		mes "about the chest's magical";
 		mes "protection. It might be";
 		mes "a good idea to ask him.^000000";
@@ -9929,7 +10016,7 @@ moc_fild18,108,116,0	script	#treasure	844,{
 				getitem 7725,1; //Unlucky_Emerald
 				getitem 604,1; //Branch_Of_Dead_Tree
 				getitem 1157,1; //Two_Hand_Sword
-				sc_start SC_Curse,10000,0,10000;
+				sc_start2 SC_Curse,10000,0,10000;
 				next;
 				mes "[" + strcharinfo(0) + "]";
 				mes "N-no! What's going on?";
@@ -10055,7 +10142,7 @@ comodo,139,184,3	script	Scholar#zgang	742,{
 		mes "jewel came into a rich man's";
 		mes "possession. However, he lost";
 		mes "his fortune and was completely";
-		mes "ruined after obtaining it. Hence the moniker, ''Unlucky Emerald.''";
+		mes "ruined after obtaining it. Hence ^FFFFFF ^000000 the moniker, ''Unlucky Emerald.''";
 		next;
 		mes "[Scholar]";
 		mes "Then the emerald came into";
@@ -10172,7 +10259,7 @@ alberta_in,70,109,5	script	Shaman	788,{
 		mes "mind if I take a look at it?";
 		next;
 		if (countitem(7725) > 0) {
-			emotion ET_THINK;
+			emotion e_dots;
 			mes "[Shaman]";
 			mes "So this bauble's the";
 			mes "Unlucky Emerald? Yes,";
@@ -10219,7 +10306,7 @@ alberta_in,70,109,5	script	Shaman	788,{
 			mes "If all goes well, you'll be";
 			mes "free of your curse, and I can";
 			mes "buy some Prontera real estate.";
-			set Zeny, Zeny-200000;
+			set zeny,zeny-200000;
 			set jewel_nd,14;
 			next;
 			mes "[Shaman]";
@@ -10270,7 +10357,7 @@ alberta_in,70,109,5	script	Shaman	788,{
 			mes "Hopefully, the";
 			mes "spirits will be more";
 			mes "cooperative this time.";
-			set Zeny, Zeny-100000;
+			set zeny,zeny-100000;
 			set jewel_nd,16;
 			next;
 			mes "[Shaman]";
@@ -10300,7 +10387,7 @@ alberta_in,70,109,5	script	Shaman	788,{
 		next;
 		mes "[Shaman]";
 		mes "Hhhkkk... Arrrgh...!";
-		emotion ET_HUK;
+		emotion e_omg;
 		next;
 		mes "[" + strcharinfo(0) +"]";
 		mes ".....?";
@@ -10576,7 +10663,7 @@ yuno_in04,38,48,3	script	Archeologist	55,{
 			next;
 			switch(select("Ask About the Jewel's Curse:Show Off Jewel")) {
 			case 1:
-				emotion ET_SMILE;
+				emotion e_heh;
 				mes "[Archeologist]";
 				mes "The jewel's curse?";
 				mes "Hah! You believe in that";
@@ -10918,26 +11005,42 @@ prontera,140,304,5	script	Old Soldier	901,{
 					delitem 7725,1; //Unlucky_Emerald
 					set jewel_nd,31;
 					getitem 603,1; //Old_Blue_Box
-					if (checkre(3)) {
-						if (BaseLevel < 66) getitem 607,1; //Yggdrasilberry
-						else if ((BaseLevel > 65) && (BaseLevel < 75)) getexp 5000,0;
-						else if ((BaseLevel > 74) && (BaseLevel < 81)) getexp 18000,0;
-						else if ((BaseLevel > 80) && (BaseLevel < 86)) getexp 36000,0;
-						else if ((BaseLevel > 85) && (BaseLevel < 91)) getexp 50000,0;
-						else if ((BaseLevel > 90) && (BaseLevel < 96)) getexp 80000,0;
-						else if ((BaseLevel > 95) && (BaseLevel < MAX_LEVEL)) getexp 100000,0;
-						else getitem 617,1; //Old_Violet_Box
-					} else {
-						if (BaseLevel < 66) getitem 607,1; //Yggdrasilberry
-						else if ((BaseLevel > 65) && (BaseLevel < 75)) getexp 50000,0;
-						else if ((BaseLevel > 74) && (BaseLevel < 81)) getexp 180000,0;
-						else if ((BaseLevel > 80) && (BaseLevel < 86)) getexp 360000,0;
-						else if ((BaseLevel > 85) && (BaseLevel < 91)) getexp 500000,0;
-						else if ((BaseLevel > 90) && (BaseLevel < 96)) getexp 800000,0;
-						else if ((BaseLevel > 95) && (BaseLevel < 99)) getexp 1000000,0;
-						else getitem 617,1; //Old_Violet_Box
+					if (BaseLevel < 66) {
+						getitem 607,1; //Yggdrasilberry
+						next;
 					}
-					next;
+					else if ((BaseLevel > 65) && (BaseLevel < 75)) {
+						getexp 50000,0;
+						next;
+					}
+					else if ((BaseLevel > 74) && (BaseLevel < 81)) {
+						getexp 180000,0;
+						next;
+					}
+					else if ((BaseLevel > 80) && (BaseLevel < 86)) {
+						getexp 360000,0;
+						next;
+					}
+					else if ((BaseLevel > 85) && (BaseLevel < 91)) {
+						getexp 500000,0;
+						next;
+					}
+					else if ((BaseLevel > 90) && (BaseLevel < 96)) {
+						getexp 800000,0;
+						next;
+					}
+					else if ((BaseLevel > 95) && (BaseLevel < 99)) {
+						getexp 1000000,0;
+						next;
+					}
+					else if (BaseLevel == 99) {
+						getitem 617,1; //Old_Violet_Box
+						next;
+					}
+					else {
+						getitem 617,1; //Old_Violet_Box
+						next;
+					}
 					mes "[Retired Soldier]";
 					mes "If there's anything";
 					mes "you learn from all this,";
@@ -10973,26 +11076,42 @@ prontera,140,304,5	script	Old Soldier	901,{
 			delitem 7725,1; //Unlucky_Emerald
 			set jewel_nd,31;
 			getitem 603,1; //Old_Blue_Box
-			if (checkre(3)) {
-				if (BaseLevel < 66) getitem 607,1; //Yggdrasilberry
-				else if ((BaseLevel > 65) && (BaseLevel < 75)) getexp 5000,0;
-				else if ((BaseLevel > 74) && (BaseLevel < 81)) getexp 8000,0;
-				else if ((BaseLevel > 80) && (BaseLevel < 86)) getexp 15000,0;
-				else if ((BaseLevel > 85) && (BaseLevel < 91)) getexp 20000,0;
-				else if ((BaseLevel > 90) && (BaseLevel < 96)) getexp 40000,0;
-				else if ((BaseLevel > 95) && (BaseLevel < MAX_LEVEL)) getexp 50000,0;
-				else getitem 617,1; //Old_Violet_Box
-			} else {
-				if (BaseLevel < 66) getitem 607,1; //Yggdrasilberry
-				else if ((BaseLevel > 65) && (BaseLevel < 75)) getexp 50000,0;
-				else if ((BaseLevel > 74) && (BaseLevel < 81)) getexp 80000,0;
-				else if ((BaseLevel > 80) && (BaseLevel < 86)) getexp 150000,0;
-				else if ((BaseLevel > 85) && (BaseLevel < 91)) getexp 200000,0;
-				else if ((BaseLevel > 90) && (BaseLevel < 96)) getexp 400000,0;
-				else if ((BaseLevel > 95) && (BaseLevel < 99)) getexp 500000,0;
-				else getitem 617,1; //Old_Violet_Box
+			if (BaseLevel < 66) {
+				getitem 607,1; //Yggdrasilberry
+				next;
 			}
-			next;
+			else if ((BaseLevel > 65) && (BaseLevel < 75)) {
+				getexp 50000,0;
+				next;
+			}
+			else if ((BaseLevel > 74) && (BaseLevel < 81)) {
+				getexp 80000,0;
+				next;
+			}
+			else if ((BaseLevel > 80) && (BaseLevel < 86)) {
+				getexp 150000,0;
+				next;
+			}
+			else if ((BaseLevel > 85) && (BaseLevel < 91)) {
+				getexp 200000,0;
+				next;
+			}
+			else if ((BaseLevel > 90) && (BaseLevel < 96)) {
+				getexp 400000,0;
+				next;
+			}
+			else if ((BaseLevel > 95) && (BaseLevel < 99)) {
+				getexp 500000,0;
+				next;
+			}
+			else if (BaseLevel == 99) {
+				getitem 617,1; //Old_Violet_Box
+				next;
+			}
+			else {
+				getitem 617,1; //Old_Violet_Box
+				next;
+			}
 			mes "[Retired Soldier]";
 			mes "If there's anything";
 			mes "you learn from all this,";
@@ -11200,7 +11319,7 @@ gef_fild08,182,185,0	script	The Wanderer	739,{
 		mes "When I came back to my";
 		mes "senses, they were all...";
 		next;
-		emotion ET_THINK;
+		emotion e_dots;
 		mes "[The Wanderer]";
 		mes "I'm not sure what";
 		mes "happened. There was";
@@ -11282,7 +11401,7 @@ gef_fild08,182,185,0	script	The Wanderer	739,{
 		mes "When I came back to my";
 		mes "senses, they were all...";
 		next;
-		emotion ET_THINK;
+		emotion e_dots;
 		mes "[The Wanderer]";
 		mes "I'm not sure what";
 		mes "happened. There was";
@@ -11319,7 +11438,7 @@ gef_fild08,182,185,0	script	The Wanderer	739,{
 		mes "When I came back to my";
 		mes "senses, they were all...";
 		next;
-		emotion ET_THINK;
+		emotion e_dots;
 		mes "[The Wanderer]";
 		mes "I'm not sure what";
 		mes "happened. There was";
@@ -11379,6 +11498,7 @@ OnTimer60000:
 gef_fild08,182,182,0	script	#CallGhost	-1,2,2,{
 	end;
 
+//OnTouch2:
 OnTouch:
 	if (jewel_nd == 21) {
 		if (countitem(7725) > 0) {
@@ -11405,25 +11525,25 @@ OnTouch:
 }
 
 // Rogue Guild Investigation
-//============================================================
-prontera,163,204,3	script	Man from Morocc	99,{
+//============================================================ 
+prontera,163,204,3	script	Man from Morroc	99,{
 	if (rumour_nd == 0) {
-		mes "[Morocc Traveler]";
+		mes "[Morroc Traveler]";
 		mes "Ah, it's very nice and";
 		mes "refreshing to be near this";
 		mes "fountain. It's much cooler";
-		mes "here than back in Morocc.";
+		mes "here than back in Morroc.";
 		next;
-		switch(select("Nice day today, huh?:How's Morocc lately?")) {
+		switch(select("Nice day today, huh?:How's Morroc lately?")) {
 		case 1:
-			mes "[Morocc Traveler]";
+			mes "[Morroc Traveler]";
 			mes "Oh, yes. It's a wonderful";
 			mes "day! Prontera is so sunny";
 			mes "and cool. No wonder so";
 			mes "many people live over here!";
 			close;
 		case 2:
-			mes "[Morocc Traveler]";
+			mes "[Morroc Traveler]";
 			mes "You're an adventurer, and";
 			mes "you haven't heard the crazy";
 			mes "rumors spreading all over";
@@ -11433,7 +11553,7 @@ prontera,163,204,3	script	Man from Morocc	99,{
 			next;
 		}
 		select("What crazy rumors?");
-		mes "[Morocc Traveler]";
+		mes "[Morroc Traveler]";
 		mes "Uh... Rogue agents!";
 		mes "They're all over the place!";
 		mes "Why don't you talk to some";
@@ -11444,7 +11564,7 @@ prontera,163,204,3	script	Man from Morocc	99,{
 		close;
 	}
 	else if (rumour_nd == 1) {
-		mes "[Morocc Traveler]";
+		mes "[Morroc Traveler]";
 		mes "Shouldn't you be";
 		mes "looking for a Rogue";
 		mes "agent to talk to?";
@@ -11455,7 +11575,7 @@ prontera,163,204,3	script	Man from Morocc	99,{
 	}
 	else if (rumour_nd > 1) {
 		if (zdan_edq > 12) {
-			mes "[Morocc Traveler]";
+			mes "[Morroc Traveler]";
 			mes "So the Z Gang was what";
 			mes "those crazy rumors were";
 			mes "all about. Good to hear";
@@ -11463,7 +11583,7 @@ prontera,163,204,3	script	Man from Morocc	99,{
 			close;
 		}
 		else {
-			mes "[Morocc Traveler]";
+			mes "[Morroc Traveler]";
 			mes "Hey, uh...";
 			mes "I'm just trying to";
 			mes "relax on my vacation.";
@@ -12208,7 +12328,7 @@ payon,209,44,5	script	Rogue Guild Agent#nd2	828,{
 		mes "be talking a Rogue";
 		mes "agent in one of the";
 		mes "other towns.";
-		emotion ET_ANGER;
+		emotion e_ag;
 		close;
 	}
 	else if (rumour_nd == 6) {
@@ -12243,7 +12363,7 @@ payon,209,44,5	script	Rogue Guild Agent#nd2	828,{
 		next;
 		mes "[Agent]";
 		mes "Awwww, man!";
-		emotion ET_HUK;
+		emotion e_omg;
 		next;
 		mes "[Agent]";
 		mes "I keep telling that";
@@ -12498,7 +12618,7 @@ payon,209,44,5	script	Rogue Guild Agent#nd2	828,{
 			mes "You're a lifesaver!";
 			mes "Detrimindexta, huh?";
 			next;
-			emotion ET_KIK;
+			emotion e_gg;
 			mes "[Agent]";
 			mes "Don't worry, I got";
 			mes "that one too! All you";
@@ -12587,7 +12707,7 @@ payon,209,44,5	script	Rogue Guild Agent#nd2	828,{
 		close;
 	}
 	else if (rumour_nd == 15) {
-		emotion ET_SMILE;
+		emotion e_heh;
 		mes "[Agent]";
 		mes "Heh heh! Looks like";
 		mes "we solved the case!";
@@ -12624,7 +12744,7 @@ payon,209,44,5	script	Rogue Guild Agent#nd2	828,{
 			mes "communicates solely";
 			mes "through doodles.^000000";
 			set rumour_nd,16;
-			emotion ET_SMILE;
+			emotion e_heh;
 			close;
 		}
 	}
@@ -12715,7 +12835,7 @@ comodo,233,199,5	script	Rogue Guild Agent#nd3	810,{
 		next;
 		switch(select("Yes, Sir!:...")) {
 		case 1:
-			emotion ET_THINK;
+			emotion e_dots;
 			mes "[Agent]";
 			mes "Right on, right on.";
 			mes "Hm. Let's try that again...";
@@ -12818,9 +12938,9 @@ comodo,233,199,5	script	Rogue Guild Agent#nd3	810,{
 				mes "I thought you were";
 				mes "here to take the Job";
 				mes "change test for Rogues!";
-				emotion ET_HUK;
+				emotion e_omg;
 				next;
-				emotion ET_SORRY;
+				emotion e_sry;
 				mes "[Agent]";
 				mes "Aw man, you came all this";
 				mes "way to help me out, and";
@@ -12835,7 +12955,7 @@ comodo,233,199,5	script	Rogue Guild Agent#nd3	810,{
 				mes "Consider this... I dunno,";
 				mes "an insider look into the";
 				mes "Rogue world if you would.";
-				emotion ET_CRY;
+				emotion e_sob;
 				next;
 				switch(select("Yes, sir!:I won't tell anyone.")) {
 				case 1:
@@ -12856,7 +12976,7 @@ comodo,233,199,5	script	Rogue Guild Agent#nd3	810,{
 				}
 				mes "[Agent]";
 				mes "Anyway, you've got one";
-				mes "last place to go, Morocc.";
+				mes "last place to go, Morroc.";
 				mes "Check in with the Rogue";
 				mes "agent over there, will you?";
 				mes "Oh, and take this food";
@@ -12891,7 +13011,7 @@ comodo,233,199,5	script	Rogue Guild Agent#nd3	810,{
 				next;
 				mes "[Agent]";
 				mes "Hey, be safe on your";
-				mes "way to Morocc, alright?";
+				mes "way to Morroc, alright?";
 				mes "Good luck finding that";
 				mes "Rogue agent over there.";
 				mes "Oh, and mum's the word";
@@ -12912,7 +13032,7 @@ comodo,233,199,5	script	Rogue Guild Agent#nd3	810,{
 		mes "[Agent]";
 		mes "Oh, hey, you're back?";
 		mes "Weren't you already on";
-		mes "your way to Morocc?";
+		mes "your way to Morroc?";
 		close;
 	}
 	else if (rumour_nd == 22) {
@@ -12982,7 +13102,7 @@ morocc,116,39,3	script	Rogue Guild Agent#nd4	779,{
 			mes "[Agent]";
 			mes "Anyway, that gang is";
 			mes "drawing a lot of flak";
-			mes "to Morocc. I mean, they";
+			mes "to Morroc. I mean, they";
 			mes "kind of live here, so...";
 			next;
 			mes "[Agent]";

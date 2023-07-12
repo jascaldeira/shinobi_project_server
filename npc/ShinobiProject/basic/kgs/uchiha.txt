@@ -1,0 +1,17 @@
+function	script	kg_uchiha	{
+    if (kekkeigenkai != 2) return;
+
+    addtimer 300000, "kg_uchiha_timers::OnBlindTime";
+	return;
+
+}
+
+-	script	kg_uchiha_timers	-1,{
+    end;
+	OnBlindTime:
+        if (rand(0,100) <= ((60/100)*kekkeigenkai_lvl)) {
+            sc_start SC_BLIND,60000,0;
+        }
+        addtimer 300000, "kg_uchiha_timers::OnBlindTime";
+		end;
+}

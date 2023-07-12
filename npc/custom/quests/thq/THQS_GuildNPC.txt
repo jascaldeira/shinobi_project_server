@@ -1,23 +1,31 @@
-//===== rAthena Script =======================================
-//= Treasure Hunter Quests
-//===== By: ==================================================
+//===== eAthena Script =======================================
+//= Treasure Hunter Script
+//===== Converted By =========================================
 //= Fredzilla
-//===== Current Version: =====================================
-//= 1.0
-//===== Compatible With: =====================================
-//= rAthena Project
-//===== Description: =========================================
+//= Original
+//////////////////////////////////////////////////////////////
+//                  Treasure Hunter Quests                  //
+//                       By: Ezekial                        //
+//             for the use on nRO run by Newbe5             //
+//                    revised By Warlock                    //
+//////////////////////////////////////////////////////////////
+//===== Version ==============================================
+//= 1.0 - Straight conversion of Aegis NPC file
+//===== Compatible With ======================================
+//= eAthena 1.0
+//===== Description ==========================================
 //= Start for Treasure hunter quests
-//===== Additional Comments: =================================
+//===== Comments =============================================
 //= Event_THQS - Used to check if you have already registered
 //= #Treasure_Token - used to keep track of tokens
 //============================================================
+
 
 yuno_in01,124,164,6	script	Guild Leader	108,{
 	mes "[Keegan]";
 	mes "What brings you here? Have something to say?";
 	next;
-	menu "I want to be a Treasure Hunter",-,"Take a New Quest.",N_NQuest,"Take me to the Official Shop.",N_OShop,"Never mind.",N_NVM;
+	menu "I want to be a Treasure Hunter",-,"Take a New Quest.",N_NQuest,"Take me to the Official Shop.",N_OShop,"Nevermind.",N_NVM;
 	if(Event_THQS==1) goto N_AlreadyReg;
 	mes "[Keegan]";
 	mes "Well "+strcharinfo(0)+" if you want to be a Treasure Hunter first you must.";
@@ -27,14 +35,14 @@ yuno_in01,124,164,6	script	Guild Leader	108,{
 	mes "Umm... Well that is all you need to do. Hahaha.";
 	next;
 	menu "Pay ^FF000025,000z^000000.",-,"Thats way to high!!",N_HighPrice;
-	if (Zeny < 25000) goto N_NoZeny;
+	if (zeny < 25000) goto N_NoZeny;
 	set Zeny,Zeny-25000;
 	//getitem 7950, 1;
 	//getitem 7951, 1;
 	set Event_THQS,1;
 	mes "[Keegan]";
 	mes "Congratulations!";
-	emotion ET_CONGRATULATION;
+	emotion 46;
 	next;
 	mes "[Keegan]";
 	mes "Welcome to the Guild of Treasure Hunters.";
@@ -46,7 +54,7 @@ N_NoZeny:
 	close;
 N_HighPrice:
 	mes "[Keegan]";
-	mes "Well if you can't afford a small ^FF000025,000z^000000 you shouldn't be a Treasure Hunter yet.";
+	mes "Well if you can't afford a small ^FF000025,000z^000000 you shouldent be a Treasure Hunter yet.";
 	close;
 N_AlreadyReg:
 	mes "[Keegan]";
@@ -77,10 +85,11 @@ N_OShop:
 	end;
 N_NeedMem:
 	mes "[Keegan]";
-	mes "I'm sorry only members may visit our private shop.";
+	mes "Im sorry only members may visit our private shop.";
 	close;
 N_NVM:
 	mes "[Keegan]";
 	mes "Alright come back when you have the free time to spare.";
 	close;
+
 }

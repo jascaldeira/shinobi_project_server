@@ -1,0 +1,287 @@
+
+function	script	removerkg	{
+
+mes "Você tem certeza que quer remover sua Kekkei Genkai? Será preciso evoluir a nova do zero (NÃO CLIQUE EM CANCELAR, OU PERDERÁ O ITEM)";
+menu "Sim",doit,"Não",nao;
+
+doit:
+	if (kg_ossos > 0)) {set kg_ossos,0; set pegoukg,0; if(countitem(12641) >= 1) {delitem 12641,1;} set ossos,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;} }
+	if (kg_uzumaki > 0) {set kg_uzumaki,0; set pegoukg,0; if(countitem(12612) >= 1) {delitem 12612,1;} set uzumaki,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;} }
+	if (kg_seloceu > 0) {set kg_seloceu,0; set pegoukg,0; if(countitem(19149) >= 1) {delitem 19149,1;} set SELO1,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;} }
+	if (kg_seloterra > 0) {set kg_seloterra,0; set pegoukg,0; if(countitem(19150) >= 1) {delitem 19150,1;} set SELO2,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+	if (kg_sharingan > 0) {set quest_mangekyou,0; set kg_sharingan,0; set pegoukg,0; set OlhoHipnotico,0; set sharingan_2,0; set OlhoPoderoso,0; set sharingan_3,0; set OlhoPerceptivo,0; set sharingan_4,0; set OlhoProtetor,0; set sharingan_1,0; if(countitem(19168) >= 1) {delitem 19168,1;} if(countitem(19169) >= 1) {delitem 19169,1;}  if(countitem(19170) >= 1) {delitem 19170,1;}  if(countitem(19003) >= 1) {delitem 19003,1;} if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+	if (kg_byakugan > 0) {set kg_byakugan,0; set pegoukg,0; if(countitem(19002) >= 1) {delitem 19002,1;} set byakugan,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+	if (kg_hyouton > 0) {set kg_hyouton,0; set pegoukg,0; if(countitem(19152) >= 1) {delitem 19152,1;} set GELO,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+	if (kg_lee > 0) {set kg_lee,0; set pegoukg,0; if(countitem(19155) >= 1) {delitem 19155,1;} set LEE2,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+	if (kg_konan > 0) {set kg_konan,0; set pegoukg,0; if(countitem(7111) >=1) {delitem 7111,1;} set KONAN2,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+
+	if (kg_kugutsu > 0) {
+	set kg_kugutsu,0;
+	set pegoukg,0;
+	if(countitem(19154) >= 1) {delitem 19154,1;}
+	set MARIONETE,0;
+	if (marionete_nivel_1 > 0) {set marionete_nivel_1,0;}
+	if (marionete_nivel_2 > 0) {set marionete_nivel_2,0;}
+	if (marionete_nivel_3 > 0) {set marionete_nivel_3,0;}
+	if (marionete_roxa > 0) {set marionete_roxa,0;}
+	if (linha_branca > 0) {set linha_branca,0;}
+	if (linha_vermelha > 0 ) {set linha_vermelha,0;}
+	if (MARIONETE_4_1 > 0) {set MARIONETE_4_1,0;}
+	if (MARIONETE_4_2 > 0) {set MARIONETE_4_2,0;}
+	if (MARIONETE_4_3 > 0) {set MARIONETE_4_3,0;}
+	if (quest_karasu_A > 0) {set quest_karasu_A,0;}
+	if (quest_karasu_B > 0) {set quest_karasu_B,0;}
+	if (quest_karasu_C > 0) {set quest_karasu_C,0;}
+	if (quest_kuroari_A  > 0) {set quest_kuroari_A ,0;}
+	if (quest_kuroari_B  > 0) {set quest_kuroari_B ,0;}
+	if (quest_kuroari_C  > 0) {set quest_kuroari_C ,0;}
+	if (quest_sanshoouo_A  > 0) {set quest_sanshoouo_A ,0;}
+	if (quest_sanshoouo_B  > 0) {set quest_sanshoouo_B ,0;}
+	if (quest_sanshoouo_C  > 0) {set quest_sanshoouo_C ,0;}
+	if (quest_kugutsu_quatro > 0) {set quest_kugutsu_quatro,0;}
+
+	if (kgmobs1 > 0) {set kgmobs1,0;}
+	if (kgmobs2 > 0) {set kgmobs2,0;}
+	if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+if (kg_baika > 0) {set kg_baika,0; set pegoukg,0; if(countitem(19153) >= 1) {delitem 19153,1;} set AKIMICHI,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+if (kg_nara > 0) {set kg_nara,0; set pegoukg,0; if(countitem(19151) >= 1) {delitem 19151,1;} set NARA2,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+
+if (hashirama > 0) {set kg_hashirama,0; set pegoukg,0; if(countitem(12620) >= 1) {delitem 12620,1;} set hashirama,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+if (kibaku > 0) {set kg_kibaku,0; set pegoukg,0; if(countitem(19212) >= 1) {delitem 19212,1;} set kibaku,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+if (Jashin > 0) {set kg_Jashin,0; set pegoukg,0; if(countitem(19210) >= 1) {delitem 19210,1;} set Jashin,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+if (Ibuse > 0) {set kg_Ibuse,0; set pegoukg,0; if(countitem(19218) >= 1) {delitem 19218,1;} set Ibuse,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+if (Mitsashi > 0) {set kg_Bukijutsu,0; set pegoukg,0; if(countitem(19207) >= 1) {delitem 19207,1;} set Mitsashi,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+if (Tayuya > 0) {set kg_flauta,0; set pegoukg,0; if(countitem(19211) >= 1) {delitem 19211,1;} set Tayuya,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+if (Aburame > 0) {set kg_kikaichu,0; set pegoukg,0; if(countitem(19216) >= 1) {delitem 19216,1;} set Aburame,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}}
+
+dispbottom "Kekkei Genkai removido com sucesso";
+close;
+
+nao:
+getitem 1091,1;
+end;
+
+}
+
+function	script	removerkgesp	{
+
+mes "Você tem certeza que quer remover sua Kekkei Genkai? Serão devolvidos os itens utilizado nas quests com este removedor especial (NÃO CLIQUE EM CANCELAR, OU PERDERÁ O ITEM)";
+menu "Sim",doit,"Não",nao;
+
+doit:
+if (kg_seloceu > 0) {
+if (kg_seloceu == 3) {getitem 627,8;}
+if (kg_seloceu == 4) {getitem 627,23;}
+if (kg_seloceu == 5) {getitem 529,1; getitem 7116,5;  getitem 669,1; getitem 627,23;}
+set kg_seloceu,0; set pegoukg,0; if(countitem(19149) >= 1) {delitem 19149,1;} set SELO1,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;} 
+
+}
+
+if (kg_konan > 0) {
+if (kg_konan == 3) {getitem 627,8;}
+if (kg_konan == 4) {getitem 627,23;}
+if (kg_konan == 5) {getitem 529,1; getitem 7116,5;  getitem 7112,1; getitem 627,23;}
+set kg_konan,0; set pegoukg,0; if(countitem(7111) >= 1) {delitem 7111,1;} set KONAN2,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;} 
+
+}
+
+
+if (kg_ossos > 0) {
+if (kg_ossos == 3) {getitem 627,8;}
+if (kg_ossos == 4) {getitem 627,23;}
+if (kg_ossos == 5) {getitem 529,1; getitem 7116,5;  getitem 628,1; getitem 627,23;}
+set kg_ossos,0; set pegoukg,0; if(countitem(12641) >= 1) {delitem 12641,1;} set ossos,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;} 
+
+}
+
+if (kg_uzumaki > 0) {
+if (kg_uzumaki == 3) {getitem 627,8;}
+if (kg_uzumaki == 4) {getitem 627,23;}
+if (kg_uzumaki == 5) {getitem 529,1; getitem 7116,5;  getitem 12617,1; getitem 627,23;}
+set kg_uzumaki,0; set pegoukg,0; if(countitem(12612) >= 1) {delitem 12612,1;} set uzumaki,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;} 
+
+}
+
+if (kg_seloterra > 0) {
+if (kg_seloterra == 3) {getitem 627,8;}
+if (kg_seloterra == 4) {getitem 627,23;}
+if (kg_seloterra == 5) {getitem 529,1; getitem 7116,5;  getitem 681,1; getitem 627,23;}
+set kg_seloterra,0; set pegoukg,0; if(countitem(19150) >= 1) {delitem 19150,1;} set SELO2,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (kg_sharingan > 0) {
+if (kg_sharingan == 3) {getitem 627,8;}
+if (kg_sharingan == 4) {getitem 627,23;}
+if (kg_sharingan == 5) {getitem 930,100; getitem 7134,50; getitem 529,1; getitem 663,1;	getitem 7116,5; getitem 627,23;}
+set quest_mangekyou,0; set kg_sharingan,0; set pegoukg,0; set OlhoHipnotico,0; set sharingan_2,0; set OlhoPoderoso,0; set sharingan_3,0; set OlhoPerceptivo,0; set sharingan_4,0; set OlhoProtetor,0; set sharingan_1,0; if(countitem(19168) >= 1) {delitem 19168,1;} if(countitem(19169) >= 1) {delitem 19169,1;}  if(countitem(19170) >= 1) {delitem 19170,1;}  if(countitem(19003) >= 1) {delitem 19003,1;} if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (kg_byakugan > 0) {
+if (kg_byakugan == 3) {getitem 627,8;}
+if (kg_byakugan == 4) {getitem 627,23;}
+if (kg_byakugan == 5) {getitem 529,1; getitem 7116,5;  getitem 659,1; getitem 627,23;}
+set kg_byakugan,0; set pegoukg,0; if(countitem(19002) >= 1) {delitem 19002,1;} set byakugan,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (kg_hyouton > 0) {
+if (kg_hyouton == 3) {getitem 627,8;}
+if (kg_hyouton == 4) {getitem 627,23;}
+if (kg_hyouton == 5) {getitem 529,1; getitem 7116,5;  getitem 745,1; getitem 627,23;}
+set kg_hyouton,0; set pegoukg,0; if(countitem(19152) >= 1) {delitem 19152,1;} set GELO,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (kg_lee > 0) {
+if (kg_lee == 3) {getitem 627,8;}
+if (kg_lee == 4) {getitem 627,23;}
+if (kg_lee == 5) {getitem 529,1; getitem 7116,5;  getitem 735,1; getitem 627,23;}
+set kg_lee,0; set pegoukg,0; if(countitem(19155) >= 1) {delitem 19155,1;} set LEE2,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (kg_kugutsu > 0) {
+if (kg_kugutsu == 3) {getitem 627,8;}
+if (kg_kugutsu == 4) {getitem 627,23;}
+if (kg_kugutsu == 5) {getitem 529,1; getitem 7116,5;  getitem 744,1; getitem 627,23;}
+set kg_kugutsu,0; set pegoukg,0; if(countitem(19154) >= 1) {delitem 19154,1;} set MARIONETE,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+if (marionete_nivel_1 > 0) {set marionete_nivel_1,0;}
+if (marionete_nivel_2 > 0) {set marionete_nivel_2,0;}
+if (marionete_nivel_3 > 0) {set marionete_nivel_3,0;}
+if (marionete_roxa > 0) {set marionete_roxa,0;}
+if (linha_branca > 0) {set linha_branca,0;}
+if (linha_vermelha > 0 ) {set linha_vermelha,0;}
+if (MARIONETE_4_1 > 0) {set MARIONETE_4_1,0;}
+if (MARIONETE_4_2 > 0) {set MARIONETE_4_2,0;}
+if (MARIONETE_4_3 > 0) {set MARIONETE_4_3,0;}
+if (quest_karasu_A > 0) {set quest_karasu_A,0;}
+if (quest_karasu_B > 0) {set quest_karasu_B,0;}
+if (quest_karasu_C > 0) {set quest_karasu_C,0;}
+if (quest_kuroari_A  > 0) {set quest_kuroari_A ,0;}
+if (quest_kuroari_B  > 0) {set quest_kuroari_B ,0;}
+if (quest_kuroari_C  > 0) {set quest_kuroari_C ,0;}
+if (quest_sanshoouo_A  > 0) {set quest_sanshoouo_A ,0;}
+if (quest_sanshoouo_B  > 0) {set quest_sanshoouo_B ,0;}
+if (quest_sanshoouo_C  > 0) {set quest_sanshoouo_C ,0;}
+if (quest_kugutsu_quatro > 0) {set quest_kugutsu_quatro,0;}
+
+if (kgmobs1 > 0) {set kgmobs1,0;}
+if (kgmobs2 > 0) {set kgmobs2,0;}
+if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (kg_baika > 0) {
+if (kg_baika == 3) {getitem 627,8;}
+if (kg_baika == 4) {getitem 627,23;}
+if (kg_baika == 5) {getitem 529,1; getitem 7116,5;  getitem 685,1; getitem 627,23;}
+set kg_baika,0; set pegoukg,0; if(countitem(19153) >= 1) {delitem 19153,1;} set AKIMICHI,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (kg_nara > 0) {
+if (kg_nara == 3) {getitem 627,8;}
+if (kg_nara == 4) {getitem 627,23;}
+if (kg_nara == 5) {getitem 529,1; getitem 7116,5;  getitem 7328,1; getitem 627,23;}
+set kg_nara,0; set pegoukg,0; if(countitem(19151) >= 1) {delitem 19151,1;} set NARA2,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (kibaku > 0) {
+
+if (kibaku == 1) {getitem 12959,1; getitem 7116,1;}
+if (kibaku == 2) {getitem 12959,1; getitem 7116,3;}
+if (kibaku == 3) {getitem 12959,1; getitem 7116,6;}
+if (kibaku == 4) {getitem 12959,1; getitem 7116,6; getitem 973,1; getitem 12953,2;}
+set kg_kibaku,0; set pegoukg,0; if(countitem(19212) >= 1) {delitem 19212,1;} set kibaku,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (Jashin > 0) {
+
+if (Jashin == 1) {getitem 12959,1; getitem 7116,1;}
+if (Jashin == 2) {getitem 12959,1; getitem 7116,3;}
+if (Jashin == 3) {getitem 12959,1; getitem 7116,6;}
+if (Jashin == 4) {getitem 12959,1; getitem 7116,6; getitem 973,1; getitem 12949,2;}
+set kg_Jashin,0; set pegoukg,0; if(countitem(19210) >= 1) {delitem 19210,1;} set Jashin,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (hashirama > 0) {
+
+if (hashirama == 1) {getitem 12959,1; getitem 7116,1;}
+if (hashirama == 2) {getitem 12959,1; getitem 7116,3;}
+if (hashirama == 3) {getitem 12959,1; getitem 7116,6;}
+if (hashirama == 4) {getitem 12959,1; getitem 7116,6; getitem 973,1; getitem 12949,2;}
+set kg_hashirama,0; set pegoukg,0; if(countitem(12620) >= 1) {delitem 12620,1;} set hashirama,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (Ibuse > 0) {
+
+if (Ibuse == 1) {getitem 12959,1; getitem 7116,1;}
+if (Ibuse == 2) {getitem 12959,1; getitem 7116,3;}
+if (Ibuse == 3) {getitem 12959,1; getitem 7116,6;}
+if (Ibuse == 4) {getitem 12959,1; getitem 7116,6; getitem 973,1; getitem 12952,2;}
+set kg_Ibuse,0; set pegoukg,0; if(countitem(19218) >= 1) {delitem 19218,1;} set Ibuse,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (Mitsashi > 0) {
+
+if (Mitsashi == 1) {getitem 12959,1; getitem 7116,1;}
+if (Mitsashi == 2) {getitem 12959,1; getitem 7116,3;}
+if (Mitsashi == 3) {getitem 12959,1; getitem 7116,6;}
+if (Mitsashi == 4) {getitem 12959,1; getitem 7116,6; getitem 973,1; getitem 12954,2;}
+set kg_Bukijutsu,0; set pegoukg,0; if(countitem(19207) >= 1) {delitem 19207,1;} set Mitsashi,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (Tayuya > 0) {
+
+if (Tayuya == 1) {getitem 12959,1; getitem 7116,1;}
+if (Tayuya == 2) {getitem 12959,1; getitem 7116,3;}
+if (Tayuya == 3) {getitem 12959,1; getitem 7116,6;}
+if (Tayuya == 4) {getitem 12959,1; getitem 7116,6; getitem 973,1; getitem 12951,2;}
+set kg_flauta,0; set pegoukg,0; if(countitem(19211) >= 1) {delitem 19211,1;} set Tayuya,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+if (Aburame > 0) {
+
+if (Aburame == 1) {getitem 12959,1; getitem 7116,1;}
+if (Aburame == 2) {getitem 12959,1; getitem 7116,3;}
+if (Aburame == 3) {getitem 12959,1; getitem 7116,6;}
+if (Aburame == 4) {getitem 12959,1; getitem 7116,6; getitem 973,1; getitem 12950,2;}
+set kg_kikaichu,0; set pegoukg,0; if(countitem(19216) >= 1) {delitem 19216,1;} set Aburame,0; if (kgmobs1 > 0) {set kgmobs1,0;} if (kgmobs2 > 0) {set kgmobs2,0;} if (kgmobs3 > 0) {set kgmobs3,0;}
+
+}
+
+
+dispbottom "Kekkei Genkai removido com sucesso";
+close;
+
+nao:
+getitem 7242,1;
+close;
+
+}

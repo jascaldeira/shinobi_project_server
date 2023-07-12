@@ -13333,35 +13333,6 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
-  - Id: 12800
-    AegisName: Ktullanux_Scroll
-    Name: Ktullanux Scroll
-    Type: Usable
-    Buy: 20
-    Weight: 10
-    Script: |
-      mercenary_create 2346,1800000;
-  - Id: 12801
-    AegisName: Eddga_Scroll
-    Name: Eddga Scroll
-    Type: Usable
-    Buy: 20
-    Weight: 10
-    Script: |
-      mercenary_create 2347,1800000;
-  - Id: 12802
-    AegisName: Time_Guardian_Box
-    Name: Time Guardian Box
-    Type: Usable
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
   - Id: 12803
     AegisName: Beginner_Kit_Box
     Name: Beginner Kit Box

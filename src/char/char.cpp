@@ -612,7 +612,7 @@ int char_memitemdata_to_sql(const struct item items[], int max, int id, enum sto
 		SqlStmt_BindColumn(stmt, 11+offset+i, SQLDT_UINT, &item.card[i], 0, NULL, NULL);
 	for( i = 0; i < MAX_ITEM_RDM_OPT; ++i ) {
 		SqlStmt_BindColumn(stmt, 11+offset+MAX_SLOTS+i*3, SQLDT_SHORT, &item.option[i].id, 0, NULL, NULL);
-		SqlStmt_BindColumn(stmt, 12+offset+MAX_SLOTS+i*3, SQLDT_SHORT, &item.option[i].value, 0, NULL, NULL);
+		SqlStmt_BindColumn(stmt, 12+offset+MAX_SLOTS+i*3, SQLDT_INT, &item.option[i].value, 0, NULL, NULL);
 		SqlStmt_BindColumn(stmt, 13+offset+MAX_SLOTS+i*3, SQLDT_CHAR, &item.option[i].param, 0, NULL, NULL);
 	}
 	// bit array indicating which inventory items have already been matched
@@ -840,7 +840,7 @@ bool char_memitemdata_from_sql(struct s_storage* p, int max, int id, enum storag
 		SqlStmt_BindColumn(stmt, 11+offset+i, SQLDT_UINT, &item.card[i],   0, NULL, NULL);
  	for( i = 0; i < MAX_ITEM_RDM_OPT; ++i ) {
 		SqlStmt_BindColumn(stmt, 11+offset+MAX_SLOTS+i*3, SQLDT_SHORT, &item.option[i].id, 0, NULL, NULL);
-		SqlStmt_BindColumn(stmt, 12+offset+MAX_SLOTS+i*3, SQLDT_SHORT, &item.option[i].value, 0, NULL, NULL);
+		SqlStmt_BindColumn(stmt, 12+offset+MAX_SLOTS+i*3, SQLDT_INT, &item.option[i].value, 0, NULL, NULL);
 		SqlStmt_BindColumn(stmt, 13+offset+MAX_SLOTS+i*3, SQLDT_CHAR, &item.option[i].param, 0, NULL, NULL);
  	}
 

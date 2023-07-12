@@ -1,13 +1,13 @@
-//===== rAthena Script =======================================
-//= Juno Dungeon Warp Script
+//===== eAthena Script =======================================
+//= Yuno Dungeon Warp Script
 //===== By: ==================================================
 //= Nana (1.0)
 //===== Current Version: =====================================
 //= 1.0
 //===== Compatible With: =====================================
-//= rAthena Project; RO Episode 5+
+//= Any Athena Version; RO Episode 5+
 //===== Description: =========================================
-//= Warp Points for Juno Dungeon
+//= Warp Points for Yuno Dungeon
 //===== Additional Comments: =================================
 //= No Comment!
 //============================================================

@@ -1,13 +1,13 @@
-//===== rAthena Script ======================================= 
+//===== eAthena Script ======================================= 
 //= Dungeon Teleport Service
 //===== By: ================================================== 
 //= Evera
 //===== Current Version: ===================================== 
-//= 2.9a
+//= 2.5
 //===== Compatible With: ===================================== 
-//= rAthena Project
+//= eAthena SVN
 //===== Description: =========================================
-//= [Official Conversion]
+//= [Aegis Conversion]
 //= Cool Event Corp NPCs vs. Kafra Dungeon Teleport Service and voting system.
 //= This is a special event on official servers where there's a
 //= big competition between Kafra Corp. and Cool Event Corp.
@@ -26,35 +26,30 @@
 // the "Vote Globalvar Girl#yuno" NPC at the end of the file.
 // Character Variable in use: lhz_vote (how many times player has voted, keeps htem from re-voting.)
 //===== Additional Comments: ================================= 
-//= 1.0 Initial release [Evera]
-//= 1.1 SVN release, removed from major town (found true info after research),
-//=     put more arg(2) parameters, fixed a few bugs [Evera]
+//= 1.0	Initial release [Evera]
+//= 1.1	SVN release, removed from major town (found true info after research),
+//=	put more arg(2) parameters, fixed a few bugs [Evera]
 //= 1.2 Mushed some variables together, optimized a bit [Evera]
 //= 1.3 Removed selfconfig [Evera]
 //= 1.4 Changed global variables to read from 3 global variables, updated names,
-//=      fixed array bug [Evera]
+//= 	fixed array bug [Evera]
 //= 1.5 Mushed voting varialbes into 1 variable. [Evera]
 //= 1.6 Removed Duplicates [Silent]
-//= 1.7 Fixed bug of DTS_Admin not running by itself [Evera]
-//= 1.8 Changed requirement to lvl 60 [Evera]
+//= 1.7	Fixed bug of DTS_Admin not running by itself [Evera]
+//= 1.8	Changed requirement to lvl 60 [Evera]
 //= 1.9 Removed global eligibility option [Evera]
 //= 2.0 Fixed zeny bug [Evera]
 //= 2.1 Fixed headers with and updated with newer information [Evera]
 //= 2.2 Changed dtseligible 2 to MISC_QUEST|128, to clean up variable usage. [Evera]
-//=     Also added F_ClearGarbage function to the scripts. [Evera]
-//= 2.3 Changed dtseligible to be $dtsday when MISC_QUEST|128
-//=     Added $dtsday for vote session counter
-//=     Fixed bug that involved having both warpers enabled at the same time. [Evera]
-//=     New $dtsday system and bug fix[Evera]
+//=	Also added F_ClearGarbage function to the scripts. [Evera]
+//= 2.3	Changed dtseligible to be $dtsday when MISC_QUEST|128
+//=	Added $dtsday for vote session counter
+//=	Fixed bug that involved having both warpers enabled at the same time. [Evera]
+//=	New $dtsday system and bug fix[Evera]
 //= 2.3a fixed 2 bugs with comparision [Lupus]
 //= 2.3b corrected Glast warp coords [Lupus] 2.3c Bailand -> Bayalan
 //= 2.4 Corrected NPC names to fall within proper restrictions. [L0ne_W0lf]
 //= 2.5 Converted from Aegis file. (11.3) [L0ne_W0lf]
-//= 2.6 Moved Morocc NPCs to Morocc Ruins. [L0ne_W0lf]
-//= 2.7 Fixed a typo, a - to a +. Not sure how that happened. [L0ne_w0lf]
-//= 2.8 Corrected another typo this time in a variable.
-//= 2.9 Added GM management function. [Euphy]
-//= 2.9a Tweaked NPC sprite & cutin used. [Liam]
 //============================================================ 
 
 einbroch,246,70,0	script	Vote Timer#ein	-1,{
@@ -291,7 +286,7 @@ OnTimer60000:
 		donpcevent "Vote Timer#ein::OnEnable";
 	}
 	else {
-		set $DTS_PeriodCheck,$DTS_PeriodCheck+1; //Global Variable
+		set $DTS_PeriodCheck,$DTS_PeriodCheck-1; //Global Variable
 		donpcevent "Vote Timer4#ein::OnEnable";
 	}
 	end;
@@ -449,7 +444,7 @@ function	script	F_VoteKafra	{
 					mes " ";
 					mes " ";
 					if ($DTS_KafraWins == 0) {
-						mes "^FF0000Toy Factory, Level 2^000000";
+						mes "FF0000Toy Factory, Level 2^000000";
 					}
 					else if ($DTS_KafraWins == 1) {
 						mes "^FF0000Toy Factory, Level 2^000000";
@@ -537,7 +532,7 @@ function	script	F_VoteKafra	{
 				case 1:
 					if (Zeny >= 4000) {
 						cutin "",255;
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						warp "xmas_dun02",130,123;
 						end;
 					}
@@ -561,7 +556,7 @@ function	script	F_VoteKafra	{
 				switch(select("Toy Factory, Level 2 -> 4,000 z:Clock Tower, Level 3 -> 4,000 z:Cancel")) {
 				case 1:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "kafra_09",255;
 						warp "xmas_dun02",130,123;
 						end;
@@ -577,7 +572,7 @@ function	script	F_VoteKafra	{
 					break;
 				case 2:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "kafra_09",255;
 						warp "alde_dun03",265,22;
 						end;
@@ -602,7 +597,7 @@ function	script	F_VoteKafra	{
 				switch(select("Toy Factory, Level 2 -> 4,000 z:Clock Tower, Level 3 -> 4,000 z:Lava Dungeon, Level 2 -> 4,000 z:Cancel")) {
 				case 1:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "kafra_09",255;
 						warp "xmas_dun02",130,123;
 						end;
@@ -618,7 +613,7 @@ function	script	F_VoteKafra	{
 					break;
 				case 2:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "kafra_09",255;
 						warp "alde_dun03",265,22;
 						end;
@@ -634,7 +629,7 @@ function	script	F_VoteKafra	{
 					break;
 				case 3:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "kafra_09",255;
 						warp "mag_dun02",47,40;
 						end;
@@ -691,7 +686,7 @@ yuno,162,191,4	script	Kafra Voting Staff#yuno	861,{
 prontera,164,125,4	script	Kafra Voting Staff#prt	116,{
 	callfunc "F_VoteKafra",2;
 }
-moc_ruins,104,133,4	script	Kafra Voting Staff#moc	116,{
+morocc,164,114,4	script	Kafra Voting Staff#moc	116,{
 	callfunc "F_VoteKafra",2;
 }
 geffen,122,37,4	script	Kafra Voting Staff#gef	116,{
@@ -710,7 +705,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 	callfunc "F_VoteKafra",9;
 }
 
--	script	Cool Event Staff::VotingStaffCCE	874,{
+yuno,153,191,6	script	Cool Event Staff#yuno::VotingStaffCCE	874,{
 	callfunc "F_ClearGarbage";				//Clear outdated, unused variables
 	cutin "zonda_01",2;
 	mes "[Cool Event Corp. Voting Staff]";
@@ -755,7 +750,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 		mes "details, please visit our";
 		mes "headquarters in the city of";
 		mes "Lighthalzen located in the";
-		mes "Schwarzwald Republic.";
+		mes "Schwaltzvalt Republic.";
 		mes "Thank you for your time.";
 		break;
 	case 2:
@@ -772,7 +767,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 		//}
 		//else {
 			if ($DTS_Result == 0) {
-				if (lhz_vote <= $DTS_VoteCount) {
+				if (lhz_vote <= $DTRS_VoteCount) {
 					mes "[Cool Event Corp. Voting Staff]";
 					mes "Cool Event Corp.,";
 					mes "if chosen to provide the";
@@ -836,7 +831,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 				}
 			}
 			else if ($DTS_Result == 3) {
-				if (lhz_vote <= $DTS_VoteCount) {
+				if (lhz_vote <= $DTRS_VoteCount) {
 					mes "[Cool Event Corp. Voting Staff]";
 					mes "Unfortunately, there wasn't";
 					mes "enough voter turnout in the";
@@ -936,7 +931,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 				switch(select("Byalan Dungeon, Level 3 -> 4,000 z:Cancel")) {
 				case 1:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "zonda_01",255;
 						warp "iz_dun02",234,206;
 						end;
@@ -964,7 +959,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 				switch(select("Byalan Dungeon, Level 3 -> 4,000 z:Clock Tower, 3rd Floor -> 4,000 z:Cancel")) {
 				case 1:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "zonda_01",255;
 						warp "iz_dun02",234,206;
 						end;
@@ -979,7 +974,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 					break;
 				case 2:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "zonda_01",255;
 						warp "c_tower3",64,143;
 						end;
@@ -1014,7 +1009,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 				switch(select("Byalan Dungeon, Level 3 -> 4,000 z:Clock Tower, 3rd Floor -> 4,000 z:Glast Heim Entrance -> 4,000 z:Cancel")) {
 				case 1:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "zonda_01",255;
 						warp "iz_dun02",234,206;
 						end;
@@ -1029,7 +1024,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 					break;
 				case 2:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "zonda_01",255;
 						warp "c_tower3",64,143;
 						end;
@@ -1044,7 +1039,7 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 					break;
 				case 3:
 					if (Zeny >= 4000) {
-						set Zeny, Zeny-4000;
+						set zeny,zeny-4000;
 						cutin "zonda_01",255;
 						warp "glast_01",368,303;
 						end;
@@ -1102,9 +1097,8 @@ lighthalzen,163,60,4	script	Kafra Voting Staff#lght	861,{
 	end;
 }
 
-yuno,153,191,6	duplicate(VotingStaffCCE)	Cool Event Staff#yuno	874
 prontera,147,125,6	duplicate(VotingStaffCCE)	Cool Event Staff#prt	874
-moc_ruins,97,133,6	duplicate(VotingStaffCCE)	Cool Event Staff#moc	874
+morocc,155,114,6	duplicate(VotingStaffCCE)	Cool Event Staff#moc	874
 geffen,117,37,6	duplicate(VotingStaffCCE)	Cool Event Staff#gef	874
 payon,153,182,6	duplicate(VotingStaffCCE)	Cool Event Staff#pay	874
 alberta,114,70,6	duplicate(VotingStaffCCE)	Cool Event Staff#alb	874
@@ -1177,13 +1171,12 @@ OnTimer15000:
 
 /*
 // GM only NPC used for modifying values related to the DTS system.
-// Disabled in official script.
 sec_in02,17,160,4	script	Vote Globalvar Girl#yuno	864,{
-	callfunc "F_GM_NPC";
 	mes "[Christy's Maid]";
 	mes "Lady Christy!";
 	next;
-	if (callfunc("F_GM_NPC",1854,0) == 1) {
+	input .@input,0,9000;
+	if (input == 1854) {
 		mes "[Christy's Maid]";
 		mes "I am Lady Christy's Maid.";
 		next;

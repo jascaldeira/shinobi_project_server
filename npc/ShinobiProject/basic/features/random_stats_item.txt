@@ -1,0 +1,114 @@
+function	script	giveItemWithRandomStats	{
+	// Consts ============================================
+	setarray .@validtypes$[0],"weapon","cloak","armor","scroll","boot","trinket";
+	// Items list
+	setarray .@weapons[0],26199,26245,26300,26360,26734,27110,27486,27859,28235; // 9 tiers
+	setarray .@cloaks[0],14000,14026,14052,14078,14234,14390,14546,14702; // 8 tiers
+	setarray .@armors[0],15026,15062,15098,15134,15316,15498,15680,15862,16044,16388; // 10 tiers
+	setarray .@scrolls[0],16732,16772,16812,16852,17164,17476,11010,11322,11634,29654; // 10 tiers
+	setarray .@boots[0],20092,20104,20116,20128,20158,20188,20218,20248,20278,20310; // 10 tiers
+	setarray .@trinkets[0],20342,20396,20450,20504,20935,21364,21794,22225,22655,24423; // 10 tiers
+	
+	// Choosen path
+	set .@type$,getarg(0); // type
+	set .@tier,getarg(1)-1; // tier
+	
+	if (.@tier < 0 || .@tier >= 9 || inarray(.@validtypes$[0], .@type$) == -1) {
+		dispbottom "Erro: Por favor, contacte um administrador";
+	}
+
+	// Defaults
+	set .@itemId,512;
+	setarray .@OptID[0],0;
+	setarray .@OptVal[0],0;
+	setarray .@OptParam[0],0;
+
+	if (.@type$ =="weapon") {
+		// Bonus List==================================
+		setarray .@bonusList1[0],RDMOPT_VAR_MAXHPPERCENT,RDMOPT_VAR_MAXSPPERCENT,RDMOPT_VAR_STRAMOUNT,RDMOPT_VAR_AGIAMOUNT,RDMOPT_VAR_VITAMOUNT,RDMOPT_VAR_INTAMOUNT,RDMOPT_VAR_DEXAMOUNT,RDMOPT_VAR_LUKAMOUNT;
+		setarray .@bonusList2[0],RDMOPT_DAMAGE_PROPERTY_NOTHING_TARGET,RDMOPT_DAMAGE_PROPERTY_FIRE_TARGET,RDMOPT_DAMAGE_PROPERTY_WATER_TARGET,RDMOPT_DAMAGE_PROPERTY_GROUND_TARGET,RDMOPT_DAMAGE_PROPERTY_WIND_TARGET,RDMOPT_DAMAGE_PROPERTY_POISON_TARGET;
+		setarray .@bonusList3[0],RDMOPT_RACE_IGNORE_DEF_PERCENT_HUMAN,RDMOPT_RACE_IGNORE_DEF_PERCENT_DRAGON,RDMOPT_RACE_IGNORE_DEF_PERCENT_ANIMAL,RDMOPT_RACE_IGNORE_DEF_PERCENT_PLANT,RDMOPT_RACE_IGNORE_DEF_PERCENT_INSECT,RDMOPT_RACE_IGNORE_MDEF_PERCENT_HUMAN,RDMOPT_RACE_IGNORE_MDEF_PERCENT_DRAGON,RDMOPT_RACE_IGNORE_MDEF_PERCENT_ANIMAL,RDMOPT_RACE_IGNORE_MDEF_PERCENT_PLANT,RDMOPT_RACE_IGNORE_MDEF_PERCENT_INSECT,RDMOPT_DAMAGE_SIZE_SMALL_TARGET,RDMOPT_DAMAGE_SIZE_MIDIUM_TARGET,RDMOPT_DAMAGE_SIZE_LARGE_TARGET,RDMOPT_HEAL_MODIFY_PERCENT;
+		// ============================================
+		set .@itemId,.@weapons[.@tier];
+		if (.@tier >= 8) {
+			// Bonus List =================================
+			setarray .@bonusList1MinValues[0],20,20,200,200,200,200,200,200,200,200;
+			setarray .@bonusList1MaxValues[0],50,50,400,400,400,400,400,400,400,400;
+			setarray .@bonusList2MinValues[0],20,20,20,20,20,20,20,20,20,20;
+			setarray .@bonusList2MaxValues[0],50,50,50,50,50,50,50,50,50,50;
+			setarray .@bonusList3MinValues[0],20,20,20,20,20,20,20,20,20,20,10,10,10,20;
+			setarray .@bonusList3MaxValues[0],50,50,50,50,50,50,50,50,50,50,25,25,25,50;
+			// ============================================
+			set .@selectedBonus1,rand(0,7);
+			set .@selectedBonus2,rand(0,5);
+			set .@selectedBonus3,rand(0,13);
+			setarray .@OptID[0],.@bonusList1[.@selectedBonus1],.@bonusList2[.@selectedBonus2],.@bonusList3[.@selectedBonus3];
+			setarray .@OptVal[0],rand(.@bonusList1MinValues[.@selectedBonus1],.@bonusList1MaxValues[.@selectedBonus1]),rand(.@bonusList2MinValues[.@selectedBonus2],.@bonusList2MaxValues[.@selectedBonus2]),rand(.@bonusList3MinValues[.@selectedBonus3],.@bonusList3MaxValues[.@selectedBonus3]);
+			setarray .@OptParam[0],0;
+		} else if (.@tier >= 7) {
+			// Bonus List =================================
+			setarray .@bonusList1MinValues[0],20,20,100,100,100,100,100,100,100,100;
+			setarray .@bonusList1MaxValues[0],50,50,150,150,150,150,150,150,150,150;
+			setarray .@bonusList2MinValues[0],15,15,15,15,15,15,15,15,15,15;
+			setarray .@bonusList2MaxValues[0],20,20,20,20,20,20,20,20,20,20;
+			setarray .@bonusList3MinValues[0],10,10,10,10,10,10,10,10,10,10,5,5,5,10;
+			setarray .@bonusList3MaxValues[0],20,20,20,20,20,20,20,20,20,20,10,10,10,20;
+			// ============================================
+			set .@selectedBonus1,rand(0,7);
+			set .@selectedBonus2,rand(0,5);
+			set .@selectedBonus3,rand(0,13);
+			setarray .@OptID[0],.@bonusList1[.@selectedBonus1],.@bonusList2[.@selectedBonus2],.@bonusList3[.@selectedBonus3];
+			setarray .@OptVal[0],rand(.@bonusList1MinValues[.@selectedBonus1],.@bonusList1MaxValues[.@selectedBonus1]),rand(.@bonusList2MinValues[.@selectedBonus2],.@bonusList2MaxValues[.@selectedBonus2]),rand(.@bonusList3MinValues[.@selectedBonus3],.@bonusList3MaxValues[.@selectedBonus3]);
+			setarray .@OptParam[0],0;
+		} else if (.@tier >= 6) {
+			// Bonus List =================================
+			setarray .@bonusList1MinValues[0],20,20,70,70,70,70,70,70,70,70;
+			setarray .@bonusList1MaxValues[0],50,50,100,100,100,100,100,100,100,100;
+			setarray .@bonusList2MinValues[0],10,10,10,10,10,10,10,10,10,10;
+			setarray .@bonusList2MaxValues[0],15,15,15,15,15,15,15,15,15,15;
+			setarray .@bonusList3MinValues[0],0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+			setarray .@bonusList3MaxValues[0],10,10,10,10,10,10,10,10,10,10,5,5,5,10;
+			// ============================================
+			set .@selectedBonus1,rand(0,7);
+			set .@selectedBonus2,rand(0,5);
+			set .@selectedBonus3,rand(0,13);
+			setarray .@OptID[0],.@bonusList1[.@selectedBonus1],.@bonusList2[.@selectedBonus2],.@bonusList3[.@selectedBonus3];
+			setarray .@OptVal[0],rand(.@bonusList1MinValues[.@selectedBonus1],.@bonusList1MaxValues[.@selectedBonus1]),rand(.@bonusList2MinValues[.@selectedBonus2],.@bonusList2MaxValues[.@selectedBonus2]),rand(.@bonusList3MinValues[.@selectedBonus3],.@bonusList3MaxValues[.@selectedBonus3]);
+			setarray .@OptParam[0],0;
+		} else if (.@tier >= 3) {
+			// Bonus List =================================
+			setarray .@bonusList1MinValues[0],10,10,30,30,30,30,30,30,30,30;
+			setarray .@bonusList1MaxValues[0],20,20,50,50,50,50,50,50,50,50;
+			setarray .@bonusList2MinValues[0],0,0,0,0,0,0,0,0,0,0;
+			setarray .@bonusList2MaxValues[0],10,10,10,10,10,10,10,10,10,10;
+			// ============================================
+			set .@selectedBonus1,rand(0,7);
+			set .@selectedBonus2,rand(0,5);
+			setarray .@OptID[0],.@bonusList1[.@selectedBonus1],.@bonusList2[.@selectedBonus2];
+			setarray .@OptVal[0],rand(.@bonusList1MinValues[.@selectedBonus1],.@bonusList1MaxValues[.@selectedBonus1]),rand(.@bonusList2MinValues[.@selectedBonus2],.@bonusList2MaxValues[.@selectedBonus2]);
+			setarray .@OptParam[0],0;
+		} else  {
+			// Bonus List =================================
+			setarray .@bonusList1MinValues[0],0,0,0,0,0,0,0,0,0,0;
+			setarray .@bonusList1MaxValues[0],10,10,30,30,30,30,30,30,30,30;
+			// ============================================
+			set .@selectedBonus,rand(0,7);
+
+			setarray .@OptID[0],.@bonusList1[.@selectedBonus];
+			setarray .@OptVal[0],rand(.@bonusList1MinValues[.@selectedBonus],.@bonusList1MaxValues[.@selectedBonus]);
+			setarray .@OptParam[0],0;
+		}
+	} else if (.@type$ =="cloak") {
+		set .@itemId,.@cloaks[.@tier];
+	} else if (.@type$ == "armor") {
+		set .@itemId,.@armors[.@tier];
+	} else if (.@type$ == "scroll") {
+		set .@itemId,.@scrolls[.@tier];
+	} else if (.@type$ == "boot") {
+		set .@itemId,.@boots[.@tier];
+	} else if (.@type$ == "trinket") {
+		set .@itemId,.@trinkets[.@tier];
+	}
+
+	return getitem3(.@itemId,1,0,0,0,0,0,0,0,.@OptID,.@OptVal,.@OptParam);
+}

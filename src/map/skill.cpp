@@ -51,6 +51,46 @@ using namespace rathena;
 #define SKILLUNITTIMER_INTERVAL	100
 #define TIMERSKILL_INTERVAL	150
 
+int summons_2[5] = { 1790, 1790, 1790, 1790, 1790 };
+int summons_3[5] = { 1789, 1789, 1789, 1789, 1789 };
+int summons_4[5] = { 1788, 1788, 1788, 1788, 1788 };
+int summons_5[5] = { 1788, 1788, 1788, 1788, 1788 };
+int summons_6[5] = { 1781, 1781, 1781, 1781, 1781 };
+int summons_7[5] = { 1772, 1772, 1772, 1772, 1772 };
+int summons_8[5] = { 1784, 1784, 1784, 1784, 1784 };
+int summons_9[5] = { 1916, 1916, 1916, 1916, 1916 };
+int summons_10[5] = { 1782, 1782, 1782, 1782, 1782 };
+int summons_11[5] = { 1787, 1787, 1787, 1787, 1787 };
+int summons_12[5] = { 1011, 1011, 1011, 1011, 1011 };
+int summons_13[5] = { 1657, 1657, 1657, 1657, 1657 };
+int summons_14[5] = { 1993, 1993, 1993, 1993, 1993 };
+int summons_15[5] = { 1994, 1994, 1994, 1994, 1994 };
+int summons_16[5] = { 1658, 1658, 1658, 1658, 1658 };
+int summons_17[5] = { 1033, 1033, 1033, 1033, 1033 };
+int summons_18[5] = { 1589, 1579, 1575, 1555, 1590 };
+int summons_19[5] = { 1324, 1324, 1324, 1324, 1324 };
+int summons_20[5] = { 1325, 1325, 1325, 1325, 1325 };
+int summons_21[5] = { 1326, 1326, 1326, 1326, 1326 };
+int summons_22[5] = { 1327, 1327, 1327, 1327, 1327 };
+int summons_23[5] = { 1328, 1328, 1328, 1328, 1328 };
+int summons_24[5] = { 1329, 1329, 1329, 1329, 1329 };
+int summons_25[5] = { 1447, 1447, 1447, 1447, 1447 };
+int summons_26[5] = { 1448, 1448, 1448, 1448, 1448 };
+int summons_27[5] = { 1449, 1449, 1449, 1449, 1449 };
+int summons_28[5] = { 1500, 1500, 1500, 1500, 1500 };
+int summons_29[5] = { 1503, 1503, 1503, 1503, 1503 };
+int summons_30[5] = { 1504, 1504, 1504, 1504, 1504 };
+int summons_31[5] = { 1505, 1505, 1505, 1505, 1505 };
+int summons_32[5] = { 1506, 1506, 1506, 1506, 1506 };
+int summons_33[5] = { 1507, 1507, 1507, 1507, 1507 };
+int summons_34[5] = { 1508, 1508, 1508, 1508, 1508 };
+int summons_35[5] = { 1509, 1509, 1509, 1509, 1509 };
+int summons_36[5] = { 1521, 1521, 1521, 1521, 1521 };
+int summons_37[5] = { 1518, 1518, 1518, 1518, 1518 };
+int summons_38[5] = { 1519, 1519, 1519, 1519, 1519 };
+int summons_39[5] = { 1520, 1520, 1520, 1520, 1520 };
+int summons_40[5] = { 1589, 1579, 1575, 1555, 1590 };
+
 static struct eri *skill_timer_ers = NULL; //For handling skill_timerskills [Skotlex]
 static DBMap* bowling_db = NULL; // int mob_id -> struct mob_data*
 
@@ -1162,6 +1202,37 @@ bool skill_isNotOk_npcRange(struct block_list *src, uint16 skill_id, uint16 skil
 	return skill_check_unit_range2(src,pos_x,pos_y,skill_id,skill_lv,true) != 0;
 }
 
+void DOTASWAPfu (struct block_list *src, struct block_list *bl)
+{
+	int x=0, y=0;
+	if( bl->type == BL_MOB )
+	{
+		struct mob_data *md_ = BL_CAST(BL_MOB, bl);
+		unsigned int cannotuseon[] = { 1694,1089,1099,1331,1332,1333,1334,1576,1069,1045,1001,1330,1335,1336,1337,1338,1339,1340,1341 };
+		unsigned short array_ = ARRAYLENGTH(cannotuseon);
+		bool bool_ = false;
+		for(;array_>0;array_--)
+		{
+			if( md_->mob_id == cannotuseon[array_-1] )
+			{
+				bool_ = true;
+				break;
+			}
+		}
+		if( bool_ == true )
+			return;
+	}
+	x=src->x;
+	y=src->y;
+	unit_movepos(src, bl->x, bl->y, 1, 1);
+	clif_slide(src,bl->x,bl->y);
+	unit_movepos(bl, x, y, 1, 1);
+	clif_slide(bl,x,y);
+	clif_specialeffect(bl,34,AREA);
+	clif_specialeffect(src,34,AREA);
+	return;
+}
+
 struct s_skill_unit_layout *skill_get_unit_layout(uint16 skill_id, uint16 skill_lv, struct block_list* src, int x, int y)
 {
 	int pos = skill_get_unit_layout_type(skill_id,skill_lv);
@@ -1525,6 +1596,11 @@ int skill_additional_effect(struct block_list* src, struct block_list *bl, uint1
 	case TF_THROWSTONE:
 		if (!sc_start(src,bl,SC_STUN,3,skill_lv,skill_get_time(skill_id,skill_lv))) //only blind if success
 			sc_start(src,bl,SC_BLIND,3,skill_lv,skill_get_time2(skill_id,skill_lv));
+		break;
+
+	case DOTASWAP:
+		DOTASWAPfu(src,bl);
+		clif_skill_nodamage(src,bl,skill_id,skill_lv,0);
 		break;
 
 	case NPC_DARKCROSS:
@@ -5206,6 +5282,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 	case ABR_BATTLE_BUSTER:
 	case ABR_DUAL_CANNON_FIRE:
 	case ABR_INFINITY_BUSTER:
+	case BA_PANGVOICEZ2:
 		skill_attack(BF_WEAPON,src,src,bl,skill_id,skill_lv,tick,flag);
 		break;
 
@@ -6138,6 +6215,11 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 			clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
 			break;
 		}
+		skill_attack(BF_MAGIC,src,src,bl,skill_id,skill_lv,tick,flag);
+		break;
+
+	case BA_PANGVOICEZ1:
+		sc_start(src,bl,SC_LUKFOOD,100,skill_lv,5000);
 		skill_attack(BF_MAGIC,src,src,bl,skill_id,skill_lv,tick,flag);
 		break;
 
@@ -7203,6 +7285,253 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 	map_freeblock_lock();
 	switch(skill_id)
 	{
+		case NRO_CONFINE2:
+			if(!dstsd || !sd)
+				break;
+			clif_specialeffect(bl, 285, AREA);
+			//sc_start(src,src,SC_CONFINE21,100,dstsd->status.account_id,5000+skill_lv*500);
+			//sc_start(src,bl,SC_CONFINE22,100,skill_lv,5000+skill_lv*500);
+		break;
+
+		case NRO_OMOTE:
+			if(!dstsd)
+			break; 
+			sc_start2(src,src,SC_BERSERK,100,dstsd->status.account_id,skill_lv,skill_lv*500);
+			//sc_start(src,bl,SC_CONFINE22,100,skill_lv,skill_lv*700);
+			//sc_start(bl,SC_CONFINE22,100,skill_lv,skill_lv*1300);
+			break;
+
+		case NRO_OMOTE2:
+			skill_attack(BF_WEAPON,src,src,bl,skill_id,skill_lv,tick,flag);
+			break;
+
+		case NRO_LOTHUS:
+			// Temporary removal
+			/*if(!sd->sc.data[SC_LOTHUS])
+				break;
+			bl = map_id2bl(sd->sc.data[SC_LOTHUS]->val1);
+			//sc_start(bl,SC_CONFINE22,100,skill_lv,2000);
+			skill_addtimerskill(src,tick+300,bl->id,0,0,skill_id,skill_lv,2,flag);  //skill_attack(BF_WEAPON,src,src,bl,skill_id,skill_lv,tick,flag);
+			sc_start(src,bl,SC_LOTHUS2,100,1,300);
+			clif_specialeffect(src, 446, AREA);
+			clif_specialeffect(bl, 446, AREA);
+			status_change_end(src,SC_LOTHUS, INVALID_TIMER); 
+			status_change_end(bl,SC_LOTHUS, INVALID_TIMER);  */
+		break;
+
+		case BA_PANGVOICE:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE2:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE3:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE4:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE5:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE6:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE7:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE8:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE9:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE10:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE11:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE12:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE13:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE14:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE15:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE16:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE17:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE18:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE19:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE20:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE21:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE22:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE23:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE24:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE25:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE26:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE27:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE28:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+
+		case BA_PANGVOICE29:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+
+		case BA_PANGVOICE30:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE31:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE32:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE33:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE34:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE35:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE36:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE37:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE38:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE39:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE40:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE41:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE42:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE43:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE44:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE45:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE46:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE47:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE48:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE49:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE50:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICE51:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICEX:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
+
+		case BA_PANGVOICEZ:
+			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,50,7,skill_get_time(skill_id,skill_lv)));
+			break;
 	case HLIF_HEAL:	//[orn]
 	case AL_HEAL:
 	case AB_HIGHNESSHEAL:
@@ -8830,19 +9159,12 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 		}
 		break;
 
-	case BA_PANGVOICE:
-		clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,70,7,skill_get_time(skill_id,skill_lv)));
-#ifdef RENEWAL
-		sc_start(src, bl, SC_BLEEDING, 30, skill_lv, skill_get_time2(skill_id, skill_lv)); // TODO: Confirm success rate
-#endif
-		break;
-
 	case DC_WINKCHARM:
 		if( dstsd ) {
 			clif_skill_nodamage(src,bl,skill_id,skill_lv, sc_start(src,bl,SC_CONFUSION,10,7,skill_get_time2(skill_id,skill_lv)));
-#ifdef RENEWAL
-			sc_start(src, bl, SC_HALLUCINATION, 30, skill_lv, skill_get_time(skill_id, skill_lv)); // TODO: Confirm success rate and duration
-#endif
+			#ifdef RENEWAL
+						sc_start(src, bl, SC_HALLUCINATION, 30, skill_lv, skill_get_time(skill_id, skill_lv)); // TODO: Confirm success rate and duration
+			#endif
 		} else
 		if( dstmd )
 		{
@@ -9765,6 +10087,38 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 		//Have val4 passed as 6 is for "infinite cloak" (do not end on attack/skill use).
 		clif_skill_nodamage(src,bl,skill_id,skill_lv,
 			sc_start4(src,bl,type,100,skill_lv,0,0,6,skill_get_time(skill_id,skill_lv)));
+		break;
+
+	case NARUTO_CAPTUREBIJUU:
+		if( sd == NULL )
+			return 1;
+		if( dstmd == NULL )
+		{
+			clif_displaymessage(sd->fd, "Only can use on Bijuu.");
+			return 1;
+		}
+		if( dstmd->status.max_hp/dstmd->status.hp < 5  )
+		{
+			clif_displaymessage(sd->fd,"Its HP isn't lower than 20%.");
+			return 1;
+		}
+		else
+		{
+			//short bijuu_id[9] = {1584,1587,1588,1613,1622,1623,1629,1630,1631};
+			short bijuu_id[9] = {1086,1983,1738,1985,1981,1982,1737,1984,1986};
+			short h = 0;
+			for(;h<9;h++)
+			{
+				if(bijuu_id[h]==dstmd->mob_id)
+				{
+					pc_setreg(sd,add_str("@bijuu_class"),bijuu_id[h]);
+					pc_setreg(sd,add_str("@bijuu_gid"),bl->id);
+					npc_event(sd, "NarutoSKillMainEvent::OnCaptureBijuu", 0);
+					break;
+				}
+			}
+		}
+		clif_skill_nodamage(src,bl,skill_id,skill_lv,skill_get_time(skill_id,skill_lv));
 		break;
 
 	case NPC_SIEGEMODE:
@@ -13382,6 +13736,690 @@ int skill_castend_pos2(struct block_list* src, int x, int y, uint16 skill_id, ui
 
 	switch(skill_id)
 	{
+
+	case AM_CANNIBALIZE:
+	{
+		int summons[5] = { 1326, 1326, 1326, 1326, 1326 };
+		//int summons[5] = { 1020, 1068, 1118, 1500, 1368 };
+		int class_ = skill_id==AM_SPHEREMINE?1142:summons[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+
+		// Correct info, don't change any of this! [celest]
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE2:
+	{
+		int class_ = summons_2[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE3:
+	{
+		int class_ = summons_3[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE4:
+	{
+		int class_ = summons_4[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE5:
+	{
+		int class_ = summons_5[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE6:
+	{
+		int class_ = summons_6[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE7:
+	{
+		int class_ = summons_7[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE8:
+	{
+		int class_ = summons_8[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE9:
+	{
+		int class_ = summons_9[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE10:
+	{
+		int class_ = summons_10[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE11:
+	{
+		int class_ = summons_11[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE12:
+	{
+		int class_ = summons_12[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE13:
+	{
+		int class_ = summons_13[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE14:
+	{
+		int class_ = summons_14[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE15:
+	{
+		int class_ = summons_15[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE16:
+	{
+		int class_ = summons_16[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE17:
+	{
+		int class_ = summons_17[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE18:
+	{
+		int class_ = summons_18[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE19:
+	{
+		int class_ = summons_19[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE20:
+	{
+		int class_ = summons_20[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE21:
+	{
+		int class_ = summons_21[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE22:
+	{
+		int class_ = summons_22[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE23:
+	{
+		int class_ = summons_23[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE24:
+	{
+		int class_ = summons_24[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE25:
+	{
+		int class_ = summons_25[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE26:
+	{
+		int class_ = summons_26[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE27:
+	{
+		int class_ = summons_27[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE28:
+	{
+		int class_ = summons_28[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE29:
+	{
+		int class_ = summons_29[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE30:
+	{
+		int class_ = summons_30[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE31:
+	{
+		int class_ = summons_31[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE32:
+	{
+		int class_ = summons_32[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE33:
+	{
+		int class_ = summons_33[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE34:
+	{
+		int class_ = summons_34[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE35:
+	{
+		int class_ = summons_35[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE36:
+	{
+		int class_ = summons_36[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE37:
+	{
+		int class_ = summons_37[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE38:
+	{
+		int class_ = summons_38[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE39:
+	{
+		int class_ = summons_39[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+	break;
+
+	case AM_CANNIBALIZE40:
+	{
+		int class_ = summons_40[skill_lv-1];
+		enum mob_ai ai = AI_FLORA;
+		struct mob_data *md;
+		md = mob_once_spawn_sub(src, src->m, x, y, status_get_name(src),class_,"", SZ_SMALL, ai);
+		if (md) {
+			md->master_id = src->id;
+			md->special_state.ai = ai;
+			if( md->deletetimer != INVALID_TIMER )
+				delete_timer(md->deletetimer, mob_timer_delete);
+			md->deletetimer = add_timer (gettick() + skill_get_time(skill_id,skill_lv), mob_timer_delete, md->bl.id, 0);
+			mob_spawn (md); //Now it is ready for spawning.
+		}
+	}
+
 	case PR_BENEDICTIO:
 		skill_area_temp[1] = src->id;
 		i = skill_get_splash(skill_id, skill_lv);
@@ -13703,7 +14741,6 @@ int skill_castend_pos2(struct block_list* src, int x, int y, uint16 skill_id, ui
 		status_change_end(src, SC_HIDING);
 		break;
 	case AM_SPHEREMINE:
-	case AM_CANNIBALIZE:
 		{
 			int summons[5] = { MOBID_G_MANDRAGORA, MOBID_G_HYDRA, MOBID_G_FLORA, MOBID_G_PARASITE, MOBID_G_GEOGRAPHER };
 			int class_ = skill_id==AM_SPHEREMINE?MOBID_MARINE_SPHERE:summons[skill_lv-1];
@@ -17966,6 +19003,669 @@ bool skill_check_condition_castend(map_session_data* sd, uint16 skill_id, uint16
 			}
 			break;
 		}
+		case AM_CANNIBALIZE2:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_2[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE3:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_3[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE4:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_4[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE5:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_5[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE6:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_6[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE7:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_7[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE8:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_8[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE9:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_9[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+			
+			case AM_CANNIBALIZE10:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_10[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE11:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_11[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE12:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_12[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE13:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_13[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE14:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_14[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE15:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_15[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE16:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_16[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE17:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_17[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+			
+			case AM_CANNIBALIZE18:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_18[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE19:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_19[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE20:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_20[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE21:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_21[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE22:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_22[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE23:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_23[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE24:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_24[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE25:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_25[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+
+			
+			case AM_CANNIBALIZE26:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_26[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE27:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_27[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE28:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_28[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE29:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_29[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE30:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_30[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE31:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_31[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE32:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_32[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE33:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_33[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE34:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_34[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE35:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_35[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE36:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_36[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE37:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_37[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE38:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_38[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE39:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_39[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
+		
+		case AM_CANNIBALIZE40:
+		{
+			int c=0;
+			int maxcount = 5-skill_lv;
+			int mob_class = summons_40[skill_lv-1];
+			if(battle_config.land_skill_limit && maxcount>0 && (battle_config.land_skill_limit&BL_PC)) {
+				i = map_foreachinmap(skill_check_condition_mob_master_sub ,sd->bl.m, BL_MOB, sd->bl.id, mob_class, skill_id, &c);
+				if(c >= maxcount ||
+					(c != i && battle_config.summon_flora&2))
+				{	//Fails when: exceed max limit. There are other plant types already out.
+					clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+					return 0;
+				}
+			}
+			break;
+		}
 		case NC_SILVERSNIPER:
 		case NC_MAGICDECOY: {
 				int c = 0;
@@ -19028,7 +20728,6 @@ int skill_delayfix(struct block_list *bl, uint16 skill_id, uint16 skill_lv)
 
 	return max((int)time,0);
 }
-
 
 /*==========================================
  * Weapon Repair [Celest/DracoRPG]

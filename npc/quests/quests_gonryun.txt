@@ -1,25 +1,25 @@
-//===== rAthena Script ======================================= 
-//= Quest NPCs related to Kunlun
+//===== eAthena Script ======================================= 
+//= Quest NPCs related to Gonryun
 //===== By: ==================================================
 //= KarLaeda
 //===== Current Version: ===================================== 
 //= 1.2
 //===== Compatible With: ===================================== 
-//= rAthena Project
+//= eAthena SVN
 //===== Description: ========================================= 
-//= [Official Conversion]
+//= [Aegis Conversion]
 //= Broken Sword Quest (Kept old mechanics)
 //= Lost Knife Quest
 //===== Additional Comments: ================================= 
 //= 1.1 Fixed bad NPC header data to comply with rev. 11603. [L0ne_W0lf]
 //= 1.2 Rescripted to Aegis 10.3 standards. [L0ne_W0lf]
-//=     Added Lost Knife, updated dialog for Broken Sword
-//=     dungeon quest mechanics aportion is still the same.
+//=	Added Lost Knife, updated dialog for Broken Sword
+//=	dungeon quest mechanics aportion is still the same.
 //= 1.2a Bugfixes (bugreport:2404) [Paradox924X]
 //= 1.2b More Bugfixes (bugreport:2407) [Paradox924X]
 //============================================================ 
 
-// Broken Sword :: broken_sword
+// Broken Sword
 //============================================================ 
 gon_in,17,93,5	script	Chief#gon	775,{
 	if (BaseLevel > 50) {
@@ -521,7 +521,7 @@ gon_in,165,16,4	script	Man in hangover#gon	748,{
 		mes "Ahhh.. my stomach.. my head..";
 		mes "I shouldn't drink so much..";
 		mes "Ehhhh....";
-		emotion ET_PROFUSELY_SWEAT;
+		emotion e_swt2;
 		close;
 	}
 	else if (b_sword < 6) {
@@ -532,7 +532,7 @@ gon_in,165,16,4	script	Man in hangover#gon	748,{
 				mes "*Urk!* I feel sick...";
 				mes "Can somebody bring me a potion?";
 				mes "*Groan*....";
-				emotion ET_PROFUSELY_SWEAT;
+				emotion e_swt2;
 				close;
 			}
 			mes "[Xue Bong]";
@@ -603,7 +603,7 @@ gon_in,165,16,4	script	Man in hangover#gon	748,{
 			case 2:
 				delitem 506,1; //Green_Potion
 				set b_sword,5;
-				emotion ET_THANKS;
+				emotion e_thx;
 				mes "[Xue Bong]";
 				mes "Whew, Thanks!";
 				mes "I feel much better now.";
@@ -754,7 +754,7 @@ gon_in,165,16,4	script	Man in hangover#gon	748,{
 			mes "Ahhh.. my stomach.. my head..";
 			mes "I shouldn't drink so much..";
 			mes "ughh....";
-			emotion ET_PROFUSELY_SWEAT;
+			emotion e_swt2;
 			close;
 		case 12:
 			mes "[Xue Bong]";
@@ -764,7 +764,7 @@ gon_in,165,16,4	script	Man in hangover#gon	748,{
 			mes "blind eye to a";
 			mes "boozer's suffering?";
 			mes "Urk...!";
-			emotion ET_FRET;
+			emotion e_an;
 			close;
 		case 13:
 			mes "[Xue Bong]";
@@ -773,7 +773,7 @@ gon_in,165,16,4	script	Man in hangover#gon	748,{
 			mes "How could you turn away";
 			mes "a drunk in need...?";
 			mes "*Groan*...";
-			emotion ET_FRET;
+			emotion e_an;
 			close;
 		}
 	}
@@ -788,57 +788,57 @@ gon_in,165,16,4	script	Man in hangover#gon	748,{
 }
 
 gon_dun01,148,156,0	script	start01#gnbs	-1,{
-OnInit:
-	sleep 10000;
-OnCommandOn:
-	donpcevent "trace1-"+rand(1,5)+"#gnbs::OnCommandOn";
-	end;
+	OnInit:
+		sleep 10000;
+	OnCommandOn:
+		donpcevent "trace1-"+rand(1,5)+"#gnbs::OnCommandOn";
+		end;
 }
 
 gon_dun01,201,25,0	script	trace1-1#gnbs	139,1,1,{
 	if (b_sword == 7) donpcevent "timer1-1::OnCommandOn";
 	end;
 
-OnTimer10000:
-	stopnpctimer;
-	disablenpc "trace1-1#gnbs";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnTimer10000:
+		stopnpctimer;
+		disablenpc "trace1-1#gnbs";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace1-1#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace1-1#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace1-1#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace1-1#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun01,2,1,0	script	timer1-1	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer1-1";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer1-1";
+		end;
 
-OnCommandOn:
-	enablenpc "timer1-1";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer1-1";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer1-1";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer1-1";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem1-1::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem1-1::OnCommandOn";
+		end;
 }
 
 gon_dun01,202,25,0	script	#getitem1-1	111,2,1,{
@@ -848,65 +848,65 @@ gon_dun01,202,25,0	script	#getitem1-1	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem1-1";
-	end;
+	OnInit:
+		disablenpc "#getitem1-1";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem1-1";
-	donpcevent "timer1-1::OnCommandOff";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem1-1";
+		donpcevent "timer1-1::OnCommandOff";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem1-1";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem1-1";
+		end;
 }
 
 gon_dun01,190,160,0	script	trace1-2#gnbs	139,1,1,{
 	if (b_sword == 7) donpcevent "timer1-2::OnCommandOn";
 	end;
 
-OnTimer100000:
-	stopnpctimer;
-	disablenpc "trace1-2#gnbs";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnTimer100000:
+		stopnpctimer;
+		disablenpc "trace1-2#gnbs";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace1-2#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace1-2#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace1-2#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace1-2#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun01,3,1,0	script	timer1-2	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer1-2";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer1-2";
+		end;
 
-OnCommandOn:
-	enablenpc "timer1-2";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer1-2";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer1-2";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer1-2";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem1-2::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem1-2::OnCommandOn";
+		end;
 }
 
 gon_dun01,190,159,0	script	#getitem1-2	111,2,1,{
@@ -916,65 +916,65 @@ gon_dun01,190,159,0	script	#getitem1-2	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem1-2";
-	end;
+	OnInit:
+		disablenpc "#getitem1-2";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem1-2";
-	donpcevent "timer1-2::OnCommandOff";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem1-2";
+		donpcevent "timer1-2::OnCommandOff";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem1-2";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem1-2";
+		end;
 }
 
 gon_dun01,163,53,0	script	trace1-3#gnbs	139,1,1,{
 	if (b_sword == 7) donpcevent "timer1-3::OnCommandOn";
 	end;
 
-OnTimer90000:
-	stopnpctimer;
-	disablenpc "trace1-3#gnbs";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnTimer90000:
+		stopnpctimer;
+		disablenpc "trace1-3#gnbs";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace1-3#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace1-3#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace1-3#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace1-3#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun01,4,1,0	script	timer1-3	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer1-3";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer1-3";
+		end;
 
-OnCommandOn:
-	enablenpc "timer1-3";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer1-3";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer1-3";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer1-3";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem1-3::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem1-3::OnCommandOn";
+		end;
 }
 
 gon_dun01,164,53,0	script	#getitem1-3	111,2,1,{
@@ -984,65 +984,65 @@ gon_dun01,164,53,0	script	#getitem1-3	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem1-3";
-	end;
+	OnInit:
+		disablenpc "#getitem1-3";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem1-3";
-	donpcevent "timer1-3::OnCommandOff";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem1-3";
+		donpcevent "timer1-3::OnCommandOff";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem1-3";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem1-3";
+		end;
 }
 
 gon_dun01,133,183,0	script	trace1-4#gnbs	139,1,1,{
 	if (b_sword == 7) donpcevent "timer1-4::OnCommandOn";
 	end;
 
-OnTimer150000:
-	stopnpctimer;
-	disablenpc "trace1-4#gnbs";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnTimer150000:
+		stopnpctimer;
+		disablenpc "trace1-4#gnbs";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace1-4#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace1-4#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace1-4#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace1-4#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun01,5,1,0	script	timer1-4	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer1-4";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer1-4";
+		end;
 
-OnCommandOn:
-	enablenpc "timer1-4";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer1-4";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer1-4";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer1-4";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem1-4::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem1-4::OnCommandOn";
+		end;
 }
 
 gon_dun01,134,183,0	script	#getitem1-4	111,2,1,{
@@ -1052,65 +1052,65 @@ gon_dun01,134,183,0	script	#getitem1-4	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem1-4";
-	end;
+	OnInit:
+		disablenpc "#getitem1-4";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem1-4";
-	donpcevent "timer1-4::OnCommandOff";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem1-4";
+		donpcevent "timer1-4::OnCommandOff";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem1-4";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem1-4";
+		end;
 }
 
 gon_dun01,139,257,0	script	trace1-5#gnbs	139,1,1,{
 	if (b_sword == 7) donpcevent "timer1-5::OnCommandOn";
 	end;
 
-OnTimer170000:
-	stopnpctimer;
-	disablenpc "trace1-5#gnbs";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnTimer170000:
+		stopnpctimer;
+		disablenpc "trace1-5#gnbs";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace1-5#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace1-5#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace1-5#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace1-5#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun01,6,1,0	script	timer1-5	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer1-5";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer1-5";
+		end;
 
-OnCommandOn:
-	enablenpc "timer1-5";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer1-5";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer1-5";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer1-5";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem1-5::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem1-5::OnCommandOn";
+		end;
 }
 
 gon_dun01,140,257,0	script	#getitem1-5	111,2,1,{
@@ -1120,73 +1120,73 @@ gon_dun01,140,257,0	script	#getitem1-5	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem1-5";
-	end;
+	OnInit:
+		disablenpc "#getitem1-5";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem1-5";
-	donpcevent "timer1-5::OnCommandOff";
-	donpcevent "start01#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem1-5";
+		donpcevent "timer1-5::OnCommandOff";
+		donpcevent "start01#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem1-5";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem1-5";
+		end;
 }
 
 gon_dun02,1,1,0	script	start02#gnbs	-1,{
-OnInit:
-	sleep 10000;
-OnCommandOn:
-	donpcevent "trace2-"+rand(1,6)+"#gnbs::OnCommandOn";
-	end;
+	OnInit:
+		sleep 10000;
+	OnCommandOn:
+		donpcevent "trace2-"+rand(1,6)+"#gnbs::OnCommandOn";
+		end;
 }
 
 gon_dun02,65,168,0	script	trace2-1#gnbs	139,1,1,{
 	if (b_sword == 8) donpcevent "timer2-1::OnCommandOn";
 	end;
 
-OnTimer80000:
-	stopnpctimer;
-	disablenpc "trace2-1#gnbs";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnTimer80000:
+		stopnpctimer;
+		disablenpc "trace2-1#gnbs";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace2-1#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace2-1#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace2-1#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace2-1#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun02,2,1,0	script	timer2-1	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer2-1";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer2-1";
+		end;
 
-OnCommandOn:
-	enablenpc "timer2-1";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer2-1";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer2-1";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer2-1";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem2-1::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem2-1::OnCommandOn";
+		end;
 }
 
 gon_dun02,202,25,0	script	#getitem2-1	111,2,1,{
@@ -1196,65 +1196,65 @@ gon_dun02,202,25,0	script	#getitem2-1	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem2-1";
-	end;
+	OnInit:
+		disablenpc "#getitem2-1";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem2-1";
-	donpcevent "timer2-1::OnCommandOff";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem2-1";
+		donpcevent "timer2-1::OnCommandOff";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem2-1";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem2-1";
+		end;
 }
 
 gon_dun02,265,200,0	script	trace2-2#gnbs	139,1,1,{
 	if (b_sword == 8) donpcevent "timer2-2::OnCommandOn";
 	end;
 
-OnTimer130000:
-	stopnpctimer;
-	disablenpc "trace2-2#gnbs";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnTimer130000:
+		stopnpctimer;
+		disablenpc "trace2-2#gnbs";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace2-2#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace2-2#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace2-2#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace2-2#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun02,3,1,0	script	timer2-2	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer2-2";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer2-2";
+		end;
 
-OnCommandOn:
-	enablenpc "timer2-2";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer2-2";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer2-2";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer2-2";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem2-2::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem2-2::OnCommandOn";
+		end;
 }
 
 gon_dun02,265,201,0	script	#getitem2-2	111,2,1,{
@@ -1264,65 +1264,65 @@ gon_dun02,265,201,0	script	#getitem2-2	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem2-2";
-	end;
+	OnInit:
+		disablenpc "#getitem2-2";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem2-2";
-	donpcevent "timer2-2::OnCommandOff";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem2-2";
+		donpcevent "timer2-2::OnCommandOff";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem2-2";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem2-2";
+		end;
 }
 
 gon_dun02,247,129,0	script	trace2-3#gnbs	139,1,1,{
 	if (b_sword == 8) donpcevent "timer2-3::OnCommandOn";
 	end;
 
-OnTimer110000:
-	stopnpctimer;
-	disablenpc "trace2-3#gnbs";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnTimer110000:
+		stopnpctimer;
+		disablenpc "trace2-3#gnbs";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace2-3#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace2-3#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace2-3#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace2-3#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun02,4,1,0	script	timer2-3	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer2-3";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer2-3";
+		end;
 
-OnCommandOn:
-	enablenpc "timer2-3";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer2-3";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer2-3";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer2-3";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem2-3::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem2-3::OnCommandOn";
+		end;
 }
 
 gon_dun02,247,128,0	script	#getitem2-3	111,2,1,{
@@ -1332,65 +1332,65 @@ gon_dun02,247,128,0	script	#getitem2-3	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem2-3";
-	end;
+	OnInit:
+		disablenpc "#getitem2-3";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem2-3";
-	donpcevent "timer2-3::OnCommandOff";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem2-3";
+		donpcevent "timer2-3::OnCommandOff";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem2-3";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem2-3";
+		end;
 }
 
 gon_dun02,149,74,0	script	trace2-4#gnbs	139,1,1,{
 	if (b_sword == 8) donpcevent "timer2-4::OnCommandOn";
 	end;
 
-OnTimer230000:
-	stopnpctimer;
-	disablenpc "trace2-4#gnbs";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnTimer230000:
+		stopnpctimer;
+		disablenpc "trace2-4#gnbs";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace2-4#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace2-4#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace2-4#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace2-4#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun02,5,1,0	script	timer2-4	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer2-4";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer2-4";
+		end;
 
-OnCommandOn:
-	enablenpc "timer2-4";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer2-4";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer2-4";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer2-4";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem2-4::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem2-4::OnCommandOn";
+		end;
 }
 
 gon_dun02,149,75,0	script	#getitem2-4	111,2,1,{
@@ -1400,65 +1400,65 @@ gon_dun02,149,75,0	script	#getitem2-4	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem2-4";
-	end;
+	OnInit:
+		disablenpc "#getitem2-4";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem2-4";
-	donpcevent "timer2-4::OnCommandOff";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem2-4";
+		donpcevent "timer2-4::OnCommandOff";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem2-4";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem2-4";
+		end;
 }
 
 gon_dun02,23,105,0	script	trace2-5#gnbs	139,1,1,{
 	if (b_sword == 8) donpcevent "timer2-5::OnCommandOn";
 	end;
 
-OnTimer190000:
-	stopnpctimer;
-	disablenpc "trace2-5#gnbs";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnTimer190000:
+		stopnpctimer;
+		disablenpc "trace2-5#gnbs";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace2-5#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace2-5#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace2-5#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace2-5#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun02,6,1,0	script	timer2-5	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer2-5";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer2-5";
+		end;
 
-OnCommandOn:
-	enablenpc "timer2-5";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer2-5";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer2-5";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer2-5";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem2-5::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem2-5::OnCommandOn";
+		end;
 }
 
 gon_dun02,23,106,0	script	#getitem2-5	111,2,1,{
@@ -1468,65 +1468,65 @@ gon_dun02,23,106,0	script	#getitem2-5	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem2-5";
-	end;
+	OnInit:
+		disablenpc "#getitem2-5";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem2-5";
-	donpcevent "timer2-5::OnCommandOff";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem2-5";
+		donpcevent "timer2-5::OnCommandOff";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem2-5";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem2-5";
+		end;
 }
 
 gon_dun02,249,39,0	script	trace2-6#gnbs	139,1,1,{
 	if (b_sword == 8) donpcevent "timer2-6::OnCommandOn";
 	end;
 
-OnTimer110000:
-	stopnpctimer;
-	disablenpc "trace2-6#gnbs";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnTimer110000:
+		stopnpctimer;
+		disablenpc "trace2-6#gnbs";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace2-6#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace2-6#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace2-6#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace2-6#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun02,7,1,0	script	timer2-6	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer2-6";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer2-6";
+		end;
 
-OnCommandOn:
-	enablenpc "timer2-6";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer2-6";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer2-6";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer2-6";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem2-6::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem2-6::OnCommandOn";
+		end;
 }
 
 gon_dun02,249,40,0	script	#getitem2-6	111,2,1,{
@@ -1536,73 +1536,73 @@ gon_dun02,249,40,0	script	#getitem2-6	111,2,1,{
 	mes "Seems like it's a part of the sword you've been looking for.";
 	close;
 
-OnInit:
-	disablenpc "#getitem2-6";
-	end;
+	OnInit:
+		disablenpc "#getitem2-6";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem2-6";
-	donpcevent "timer2-6::OnCommandOff";
-	donpcevent "start02#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem2-6";
+		donpcevent "timer2-6::OnCommandOff";
+		donpcevent "start02#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem2-6";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem2-6";
+		end;
 }
 
 gon_dun03,1,1,0	script	start03#gnbs	-1,{
-OnInit:
-	sleep 10000;
-OnCommandOn:
-	donpcevent "trace3-"+rand(1,7)+"#gnbs::OnCommandOn";
-	end;
+	OnInit:
+		sleep 10000;
+	OnCommandOn:
+		donpcevent "trace3-"+rand(1,7)+"#gnbs::OnCommandOn";
+		end;
 }
 
 gon_dun03,11,75,0	script	trace3-1#gnbs	139,1,1,{
 	if (b_sword == 9) donpcevent "timer3-1::OnCommandOn";
 	end;
 
-OnTimer200000:
-	stopnpctimer;
-	disablenpc "trace3-1#gnbs";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnTimer200000:
+		stopnpctimer;
+		disablenpc "trace3-1#gnbs";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace3-1#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace3-1#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace3-1#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace3-1#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun03,2,1,0	script	timer3-1	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer3-1";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer3-1";
+		end;
 
-OnCommandOn:
-	enablenpc "timer3-1";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer3-1";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer3-1";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer3-1";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem3-1::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem3-1::OnCommandOn";
+		end;
 }
 
 gon_dun03,10,74,0	script	#getitem3-1	111,2,1,{
@@ -1616,65 +1616,65 @@ gon_dun03,10,74,0	script	#getitem3-1	111,2,1,{
 	mes "It looks like you've found all of the pieces of the blade.";
 	close;
 
-OnInit:
-	disablenpc "#getitem3-1";
-	end;
+	OnInit:
+		disablenpc "#getitem3-1";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem3-1";
-	donpcevent "timer3-1::OnCommandOff";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem3-1";
+		donpcevent "timer3-1::OnCommandOff";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem3-1";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem3-1";
+		end;
 }
 
 gon_dun03,199,103,0	script	trace3-2#gnbs	139,1,1,{
 	if (b_sword == 9) donpcevent "timer3-2::OnCommandOn";
 	end;
 
-OnTimer130000:
-	stopnpctimer;
-	disablenpc "trace3-2#gnbs";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnTimer130000:
+		stopnpctimer;
+		disablenpc "trace3-2#gnbs";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace3-2#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace3-2#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace3-2#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace3-2#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun03,3,1,0	script	timer3-2	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer3-2";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer3-2";
+		end;
 
-OnCommandOn:
-	enablenpc "timer3-2";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer3-2";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer3-2";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer3-2";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem3-2::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem3-2::OnCommandOn";
+		end;
 }
 
 gon_dun03,199,102,0	script	#getitem3-2	111,2,1,{
@@ -1688,65 +1688,65 @@ gon_dun03,199,102,0	script	#getitem3-2	111,2,1,{
 	mes "It looks like you've found all of the pieces of the blade.";
 	close;
 
-OnInit:
-	disablenpc "#getitem3-2";
-	end;
+	OnInit:
+		disablenpc "#getitem3-2";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem3-2";
-	donpcevent "timer3-2::OnCommandOff";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem3-2";
+		donpcevent "timer3-2::OnCommandOff";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem3-2";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem3-2";
+		end;
 }
 
 gon_dun03,14,162,0	script	trace3-3#gnbs	139,1,1,{
 	if (b_sword == 9) donpcevent "timer3-3::OnCommandOn";
 	end;
 
-OnTimer110000:
-	stopnpctimer;
-	disablenpc "trace3-3#gnbs";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnTimer110000:
+		stopnpctimer;
+		disablenpc "trace3-3#gnbs";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace3-3#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace3-3#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace3-3#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace3-3#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun03,4,1,0	script	timer3-3	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer3-3";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer3-3";
+		end;
 
-OnCommandOn:
-	enablenpc "timer3-3";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer3-3";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer3-3";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer3-3";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem3-3::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem3-3::OnCommandOn";
+		end;
 }
 
 gon_dun03,14,163,0	script	#getitem3-3	111,2,1,{
@@ -1760,65 +1760,65 @@ gon_dun03,14,163,0	script	#getitem3-3	111,2,1,{
 	mes "It looks like you've found all of the pieces of the blade.";
 	close;
 
-OnInit:
-	disablenpc "#getitem3-3";
-	end;
+	OnInit:
+		disablenpc "#getitem3-3";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem3-3";
-	donpcevent "timer3-3::OnCommandOff";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem3-3";
+		donpcevent "timer3-3::OnCommandOff";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem3-3";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem3-3";
+		end;
 }
 
 gon_dun03,155,263,0	script	trace3-4#gnbs	139,1,1,{
 	if (b_sword == 9) donpcevent "timer3-4::OnCommandOn";
 	end;
 
-OnTimer230000:
-	stopnpctimer;
-	disablenpc "trace3-4#gnbs";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnTimer230000:
+		stopnpctimer;
+		disablenpc "trace3-4#gnbs";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace3-4#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace3-4#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace3-4#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace3-4#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun03,5,1,0	script	timer3-4	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer3-4";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer3-4";
+		end;
 
-OnCommandOn:
-	enablenpc "timer3-4";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer3-4";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer3-4";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer3-4";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem3-4::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem3-4::OnCommandOn";
+		end;
 }
 
 gon_dun03,156,263,0	script	#getitem3-4	111,2,1,{
@@ -1832,65 +1832,65 @@ gon_dun03,156,263,0	script	#getitem3-4	111,2,1,{
 	mes "It looks like you've found all of the pieces of the blade.";
 	close;
 
-OnInit:
-	disablenpc "#getitem3-4";
-	end;
+	OnInit:
+		disablenpc "#getitem3-4";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem3-4";
-	donpcevent "timer3-4::OnCommandOff";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem3-4";
+		donpcevent "timer3-4::OnCommandOff";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem3-4";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem3-4";
+		end;
 }
 
 gon_dun03,169,90,0	script	trace3-5#gnbs	139,1,1,{
 	if (b_sword == 9) donpcevent "timer3-5::OnCommandOn";
 	end;
 
-OnTimer190000:
-	stopnpctimer;
-	disablenpc "trace3-5#gnbs";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnTimer190000:
+		stopnpctimer;
+		disablenpc "trace3-5#gnbs";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace3-5#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace3-5#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace3-5#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace3-5#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun03,6,1,0	script	timer3-5	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer3-5";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer3-5";
+		end;
 
-OnCommandOn:
-	enablenpc "timer3-5";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer3-5";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer3-5";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer3-5";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem3-5::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem3-5::OnCommandOn";
+		end;
 }
 
 gon_dun03,170,90,0	script	#getitem3-5	111,2,1,{
@@ -1904,65 +1904,65 @@ gon_dun03,170,90,0	script	#getitem3-5	111,2,1,{
 	mes "It looks like you've found all of the pieces of the blade.";
 	close;
 
-OnInit:
-	disablenpc "#getitem3-5";
-	end;
+	OnInit:
+		disablenpc "#getitem3-5";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem3-5";
-	donpcevent "timer3-5::OnCommandOff";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem3-5";
+		donpcevent "timer3-5::OnCommandOff";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem3-5";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem3-5";
+		end;
 }
 
 gon_dun03,162,40,0	script	trace3-6#gnbs	139,1,1,{
 	if (b_sword == 9) donpcevent "timer3-6::OnCommandOn";
 	end;
 
-OnTimer110000:
-	stopnpctimer;
-	disablenpc "trace3-6#gnbs";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnTimer110000:
+		stopnpctimer;
+		disablenpc "trace3-6#gnbs";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace3-6#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace3-6#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace3-6#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace3-6#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun03,7,1,0	script	timer3-6	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer3-6";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer3-6";
+		end;
 
-OnCommandOn:
-	enablenpc "timer3-6";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer3-6";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer3-6";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer3-6";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem3-6::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem3-6::OnCommandOn";
+		end;
 }
 
 gon_dun03,68,39,0	script	#getitem3-6	111,1,2,{
@@ -1976,65 +1976,65 @@ gon_dun03,68,39,0	script	#getitem3-6	111,1,2,{
 	mes "It looks like you've found all of the pieces of the blade.";
 	close;
 
-OnInit:
-	disablenpc "#getitem3-6";
-	end;
+	OnInit:
+		disablenpc "#getitem3-6";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem3-6";
-	donpcevent "timer3-6::OnCommandOff";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem3-6";
+		donpcevent "timer3-6::OnCommandOff";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem3-6";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem3-6";
+		end;
 }
 
 gon_dun03,68,212,0	script	trace3-7#gnbs	139,1,1,{
 	if (b_sword == 9) donpcevent "timer3-7::OnCommandOn";
 	end;
 
-OnTimer110000:
-	stopnpctimer;
-	disablenpc "trace3-7#gnbs";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnTimer110000:
+		stopnpctimer;
+		disablenpc "trace3-7#gnbs";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "trace3-7#gnbs";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "trace3-7#gnbs";
+		end;
 
-OnCommandOn:
-	enablenpc "trace3-7#gnbs";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "trace3-7#gnbs";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 }
 
 gon_dun03,6,1,0	script	timer3-7	-1,{
-OnInit:
-	initnpctimer;
-	stopnpctimer;
-	disablenpc "timer3-7";
-	end;
+	OnInit:
+		initnpctimer;
+		stopnpctimer;
+		disablenpc "timer3-7";
+		end;
 
-OnCommandOn:
-	enablenpc "timer3-7";
-	setnpctimer 0;
-	startnpctimer;
-	end;
+	OnCommandOn:
+		enablenpc "timer3-7";
+		setnpctimer 0;
+		startnpctimer;
+		end;
 
-OnCommandOff:
-	stopnpctimer;
-	disablenpc "timer3-7";
-	end;
+	OnCommandOff:
+		stopnpctimer;
+		disablenpc "timer3-7";
+		end;
 
-OnTimer3000:
-	donpcevent "#getitem3-7::OnCommandOn";
-	end;
+	OnTimer3000:
+		donpcevent "#getitem3-7::OnCommandOn";
+		end;
 }
 
 gon_dun03,68,213,0	script	#getitem3-7	111,1,2,{
@@ -2048,19 +2048,19 @@ gon_dun03,68,213,0	script	#getitem3-7	111,1,2,{
 	mes "It looks like you've found all of the pieces of the blade.";
 	close;
 
-OnInit:
-	disablenpc "#getitem3-7";
-	end;
+	OnInit:
+		disablenpc "#getitem3-7";
+		end;
 
-OnCommandOn:
-	enablenpc "#getitem3-7";
-	donpcevent "timer3-7::OnCommandOff";
-	donpcevent "start03#gnbs::OnCommandOn";
-	end;
+	OnCommandOn:
+		enablenpc "#getitem3-7";
+		donpcevent "timer3-7::OnCommandOff";
+		donpcevent "start03#gnbs::OnCommandOn";
+		end;
 
-OnCommandOff:
-	disablenpc "#getitem3-7";
-	end;
+	OnCommandOff:
+		disablenpc "#getitem3-7";
+		end;
 }
 
 gon_in,18,27,5	script	Madam#gnbs	771,{
@@ -2075,7 +2075,7 @@ gon_in,18,27,5	script	Madam#gnbs	771,{
 		mes "Hello, darling~";
 		close;
 	}
-	if (Sex == SEX_FEMALE) {
+	if (Sex == 0) {
 		mes "[Shang Hua Yen]";
 		mes "Hoho~ he's upstairs.";
 		mes "My, are you such a pretty lady~";
@@ -2088,7 +2088,7 @@ gon_in,18,27,5	script	Madam#gnbs	771,{
 	mes "My~! Aren't you a darling young";
 	mes "man. But still, not nearly as handsome as my husband~";
 	mes "Tee hee~";
-	emotion ET_THROB;
+	emotion e_lv;
 	close;
 }
 
@@ -2149,7 +2149,7 @@ gonryun,139,142,7	script	Girl##gnbs1	772,{
 		mes "I was happy meeting visitors";
 		mes "from outside the village,";
 		mes "but because of the thief, I feel terrible now...";
-		emotion ET_THINK;
+		emotion e_dots;
 		close;
 	}
 	mes "[Shi Ying Xiao]";
@@ -2172,7 +2172,7 @@ gonryun,139,142,7	script	Girl##gnbs1	772,{
 	mes "[ ^6699FF" + strcharinfo(0) + "^000000 ]";
 	mes "I AM YOUR HERO!";
 	next;
-	emotion ET_SMILE;
+	emotion e_heh;
 	mes "[Shi Ying Xiao]";
 	mes "Thank you so much for bringing hope to our village, hero~";
 	close;
@@ -2183,7 +2183,7 @@ gonryun,100,241,0	script	Stranger#gnbs	733,{
 		mes "[Zuo Hei]";
 		mes "Hmm...";
 		mes "I'm pretty busy right now, come back later.";
-		emotion ET_THINK;
+		emotion e_dots;
 		close;
 	}
 	else if (b_sword < 17) {
@@ -2234,7 +2234,7 @@ gonryun,100,241,0	script	Stranger#gnbs	733,{
 				mes "That's none of your business.";
 				mes "Take a look in the mirror first";
 				mes "before you say things like that.";
-				emotion ET_ANGER;
+				emotion e_ag;
 				close;
 			case 1:
 				mes "[Zuo Hei]";
@@ -2290,7 +2290,7 @@ gonryun,100,241,0	script	Stranger#gnbs	733,{
 				mes "That's none of your business.";
 				mes "Take a look in the mirror first";
 				mes "before you say things like that.";
-				emotion ET_ANGER;
+				emotion e_ag;
 				close;
 			case 4:
 				mes "[Zuo Hei]";
@@ -2312,7 +2312,7 @@ gonryun,100,241,0	script	Stranger#gnbs	733,{
 			mes "[Zuo Hei]";
 			mes "Sorry, I'm busy right now.";
 			mes "Why don't you come back later.";
-			emotion ET_THINK;
+			emotion e_dots;
 			close;
 		case 16:
 			switch(nakha) {
@@ -2374,7 +2374,7 @@ gonryun,100,241,0	script	Stranger#gnbs	733,{
 				mes "That's none of your business.";
 				mes "Take a look in the mirror first";
 				mes "before you say things like that.";
-				emotion ET_ANGER;
+				emotion e_ag;
 				close;
 			case 4:
 				mes "[Zuo Hei]";
@@ -2487,7 +2487,7 @@ geffen_in,71,112,2	script	Blacksmith#SaYumMoon	731,{
 				mes "granddaughter all of a sudden!?";
 				mes "Get the hell out of here!";
 				mes "Don't ever come back here again!";
-				emotion ET_HNG;
+				emotion e_pif;
 				close;
 			case 2:
 				mes "[Aumgarl]";
@@ -2511,7 +2511,7 @@ geffen_in,71,112,2	script	Blacksmith#SaYumMoon	731,{
 					mes "granddaughter all of a sudden!?";
 					mes "Get out of here you pervert!";
 					mes "Don't ever come back here again!";
-					emotion ET_HNG;
+					emotion e_pif;
 					close;
 				case 2:
 					mes "[Aumgarl]";
@@ -2559,7 +2559,7 @@ geffen_in,71,112,2	script	Blacksmith#SaYumMoon	731,{
 					mes "Soon after, she started to suffer";
 					mes "from a serious illness. I've met";
 					mes "doctors from all around";
-					mes "Midgard...";
+					mes "Rune-Midgard...";
 					next;
 					mes "[Aumgarl]";
 					mes "But not one of them could";
@@ -2573,7 +2573,7 @@ geffen_in,71,112,2	script	Blacksmith#SaYumMoon	731,{
 						mes "as her fate. I just feel";
 						mes "so sorry for Lyroo.";
 						mes "...";
-						emotion ET_THINK;
+						emotion e_dots;
 						close;
 					case 2:
 						mes "[Aumgarl]";
@@ -2678,7 +2678,7 @@ geffen_in,71,112,2	script	Blacksmith#SaYumMoon	731,{
 								mes "I hate people who lie like that. Get out of my sight.";
 								mes "Get out of my sight.";
 								mes " ";
-								emotion ET_HNG;
+								emotion e_pif;
 								close2;
 								warp "geffen",173,169;
 								end;
@@ -2758,7 +2758,7 @@ geffen_in,71,112,2	script	Blacksmith#SaYumMoon	731,{
 			mes "[Aumgarl]";
 			mes "Thank you so much...";
 			mes "Without your help...";
-			emotion ET_CRY;
+			emotion e_sob;
 			mes "it would have been hopeless.";
 			next;
 			mes "[Aumgarl]";
@@ -3029,7 +3029,7 @@ geffen_in,106,106,7	script	Girl#gnbs2	716,{
 	else if (b_sword == 24 || b_sword == 25 || b_sword == 26) {
 		mes "[Lyroo]";
 		mes "Ahh...ahh....";
-		if (Sex == SEX_FEMALE)
+		if (Sex == 0)
 			mes "It's ..you.. pretty...sister..";
 		else
 			mes "It's ..you.. handsome...brother..";
@@ -3077,7 +3077,7 @@ geffen_in,106,106,7	script	Girl#gnbs2	716,{
 	else if (b_sword == 27) {
 		mes "[Lyroo]";
 		mes "uh...umm?";
-		if (Sex == SEX_FEMALE)
+		if (Sex == 0)
 			mes "Ah....It's you, pretty sister...";
 		else
 			mes "Ah....It's you, handsome brother...";
@@ -3107,7 +3107,7 @@ geffen_in,106,106,7	script	Girl#gnbs2	716,{
 	}
 	mes "[Lyroo]";
 	mes "Heehehe...";
-	if (Sex == SEX_FEMALE)
+	if (Sex == 0)
 		mes "Thank you my pretty sister.";
 	else 
 		mes "Thank you handsome brother~";
@@ -3237,7 +3237,7 @@ yuno_in01,99,101,4	script	Doctor#gnbs	744,{
 								mes "Ah...I'm sorry..";
 								mes "I haven't seen a guy like you";
 								mes "for a long time.";
-								emotion ET_SMILE;
+								emotion e_heh;
 								next;
 								mes "[Cylrnel]";
 								mes "You make me laugh...";
@@ -3671,12 +3671,12 @@ yuno_in01,99,101,4	script	Doctor#gnbs	744,{
 	mes "[Cylrnel]";
 	mes "But I found a treatment...";
 	mes "And...it's..a...secret! Haha~!";
-	emotion ET_DELIGHT;
+	emotion e_ho;
 	close;
 }
 
 yuno_in01,104,94,0	script	go away#gnbs	139,2,1,{
-OnTouch_:
+OnTouch:
 	if (b_sword < 22) {
 		mes "[??????]";
 		mes "^FF0000What are you doing here?";
@@ -3700,9 +3700,9 @@ OnTouch_:
 		end;
 	}
 	end;
-}
+}					
 
-// Lost Knife :: gon_npc
+// Lost Knife
 //============================================================ 
 gonryun,237,226,3	script	Han Ran Jiao#gon	776,{
 	if (nakha == 0) {
@@ -3713,7 +3713,6 @@ gonryun,237,226,3	script	Han Ran Jiao#gon	776,{
 		next;
 		if (BaseLevel >= 20) {
 			set nakha,1;
-			setquest 10034;
 			mes "[Han Ran Jiao]";
 			mes "I need to go down to get it";
 			mes "but...the monsters...";
@@ -3760,7 +3759,6 @@ gonryun,237,226,3	script	Han Ran Jiao#gon	776,{
 		next;
 		if (select("Return the knife.:Refuse.") == 1) {
 			set nakha,3;
-			completequest 10035;
 			delitem 1201,1; //Knife
 			mes "[Han Ran Jiao]";
 			mes "Thank you! Thank you so much!";
@@ -3802,10 +3800,9 @@ gonryun,237,226,3	script	Han Ran Jiao#gon	776,{
 }
 
 gon_fild01,245,257,0	script	#gonknife	111,3,3,{
-OnTouch_:
+OnTouch:
 	if (nakha == 1) {
 		set nakha,2;
-		changequest 10034,10035;
 		mes "^3355FFHm? What's this?";
 		mes " ";
 		mes "Something was hidden beneath the leaves...^000000";

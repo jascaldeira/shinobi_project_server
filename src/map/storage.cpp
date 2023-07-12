@@ -686,7 +686,7 @@ enum e_guild_storage_log storage_guild_log_read_sub( map_session_data* sd, std::
 		SqlStmt_BindColumn(stmt, 12+j, SQLDT_UINT, &entry.item.card[j], 0, NULL, NULL);
 	for( j = 0; j < MAX_ITEM_RDM_OPT; ++j ) {
 		SqlStmt_BindColumn(stmt, 12+MAX_SLOTS+j*3, SQLDT_SHORT, &entry.item.option[j].id, 0, NULL, NULL);
-		SqlStmt_BindColumn(stmt, 12+MAX_SLOTS+j*3+1, SQLDT_SHORT, &entry.item.option[j].value, 0, NULL, NULL);
+		SqlStmt_BindColumn(stmt, 12+MAX_SLOTS+j*3+1, SQLDT_INT, &entry.item.option[j].value, 0, NULL, NULL);
 		SqlStmt_BindColumn(stmt, 12+MAX_SLOTS+j*3+2, SQLDT_CHAR, &entry.item.option[j].param, 0, NULL, NULL);
 	}
 

@@ -302,7 +302,7 @@ struct achievement {
 
 struct s_item_randomoption {
 	short id;
-	short value;
+	int value;
 	char param;
 } __attribute__((packed));
 

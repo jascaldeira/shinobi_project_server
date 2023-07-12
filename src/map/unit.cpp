@@ -2085,6 +2085,14 @@ int unit_skilluse_id2(struct block_list *src, int target_id, uint16 skill_id, ui
 	if( sd && battle_config.prevent_logout_trigger&PLT_SKILL )
 		sd->canlog_tick = gettick();
 
+	if(src->type == BL_PC && sd) {
+		//Jezznar OnPCSkillUseEvent
+		pc_setreg(sd, (uint64)(add_str("@lskillid")), skill_id);
+		pc_setreg(sd, (uint64)(add_str("@lskilllv")), skill_lv);
+		npc_script_event(sd, NPCE_SKILLUSE);
+		//Jezznar
+	}
+
 	return 1;
 }
 

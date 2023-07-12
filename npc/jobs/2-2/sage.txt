@@ -1,4 +1,4 @@
-//===== rAthena Script ======================================= 
+//===== eAthena Script ======================================= 
 //= Sage Job Quest
 //===== By: ==================================================
 //= jAthena (0.9) - I guess
@@ -7,13 +7,13 @@
 //===== Current Version: ===================================== 
 //= 2.8
 //===== Compatible With: ===================================== 
-//= rAthena Project
+//= eAthena SVN
 //===== Description: ========================================= 
-//= [Official Conversion]
+//= [Aegis Conversion]
 //= Job quest for Sage classes
 //===== Additional Comments: ================================= 
 //= 2.1 Rescripted to Aegis 10.3 stadards. [L0ne_W0lf]
-//=     No longer uses function "F_BlockHigh"
+//=	No longer uses function "F_BlockHigh"
 //= 2.2 Small bug fix (== -> !=) thanks to Saithis. [L0ne_W0lf]
 //= 2.2b ANotehr smaLL bugfix, pointed out by Cara. [L0ne_W0lf]
 //= 2.3 Corrected NPC names to fall within proper restrictions. [L0ne_W0lf]
@@ -21,8 +21,8 @@
 //= 2.4a Deleted unused variables. [Samuray22]
 //= 2.5 Updated waiting room. (Removes global var) [L0ne_W0lf]
 //= 2.5a Corrected some "mes"s without the getitemname. (bugreport:1564) [Samuray22]
-//=     -Changed an incorrect "!=" to "==". (bugreport:1572) 
-//=     -And Small Typo Error
+//	-Changed an incorrect "!=" to "==". (bugreport:1572) 
+//	-And Small Typo Error
 //= 2.6 Fixed Kayron Grik cutin not being removed as reported by jc1991, bugreport:1825 [Brainstorm]
 //= 2.6a Fixed a Little Bug with Whispers Summoned in the Last Test. (bugreport:2253) [Samuray22]
 //= 2.7 Added Quest Log commands. [Kisuka]
@@ -345,7 +345,7 @@ yuno_in03,154,35,4	script	Staff of the Academy#a	742,{
 				next;
 				if (select("Pay 70,000 zeny.:Give him Old Magicbook and Necklace of Wisdom.") == 1) {
 					if (Zeny > 69999) {
-						set Zeny, Zeny-70000;
+						set zeny,zeny-70000;
 						mes "[Metheus Sylphe]";
 						mes "Thank you, your application has been accepted.";
 						mes "Next, you will take an entrance test.";
@@ -517,7 +517,7 @@ yuno_in03,154,35,4	script	Staff of the Academy#a	742,{
 			next;
 		}
 		else if (Zeny > 69999) {
-			set Zeny, Zeny-70000;
+			set zeny,zeny-70000;
 			mes "[Metheus Sylphe]";
 			mes "Well done. Let me proceed with your application request.";
 			set SAGE_Q,4;
@@ -547,7 +547,7 @@ yuno_in03,154,35,4	script	Staff of the Academy#a	742,{
 				if (Zeny > 29999) {
 					for (set .@i, 0; .@i < .@size ; set .@i, .@i+1)
 						delitem .@item[.@i], .@count[.@i];  
-					set Zeny, Zeny-30000;
+					set zeny,zeny-30000;
 					mes "[Metheus Sylphe]";
 					mes "Well done. Let me proceed with your application request.";
 					set .@SAGE_Q_T,SAGE_Q;
@@ -719,7 +719,7 @@ L_AskQuestions:
 				set .@sage_t,.@sage_t+5;
 			mes "2. Choose a city where you cannot purchase a Stiletto.";
 			next;
-			if (select("Prontera:Morocc:Geffen:Lutie") == 1)
+			if (select("Prontera:Morroc:Geffen:Lutie") == 1)
 				set .@sage_t,.@sage_t+5;
 			mes "3. Choose the closest city to Turtle Island.";
 			next;
@@ -795,17 +795,17 @@ L_AskQuestions:
 				set .@sage_t,.@sage_t+5;
 			break;
 		case 2:
-			mes "1. Choose the jewel that the Morocc Jewel Merchant does not sell.";
+			mes "1. Choose the jewel that the Morroc Jewel Merchant does not sell.";
 			next;
 			if (select("Topaz:Garnet:Diamond:Sapphire") == 2)
 				set .@sage_t,.@sage_t+5;
 			mes "2. Choose the city where users cannot purchase Monster's Feed from an NPC.";
 			next;
-			if (select("Prontera:Morocc:Al De Baran:Alberta") == 3)
+			if (select("Prontera:Morroc:Al De Baran:Alberta") == 3)
 				set .@sage_t,.@sage_t+5;
 			mes "3. Choose the closest city to the Maze.";
 			next;
-			if (select("Prontera:Morocc:Geffen:Payon") == 1)
+			if (select("Prontera:Morroc:Geffen:Payon") == 1)
 				set .@sage_t,.@sage_t+5;
 			mes "4. Choose the monster that is a different type than the others.";
 			next;
@@ -827,7 +827,7 @@ L_AskQuestions:
 			next;
 			if (select("Paul:Sir Windsor:Peter S. Alberto:Cecilia") == 2)
 				set .@sage_t,.@sage_t+5;
-			mes "9. Choose the NPC that is not a citizen of Morocc.";
+			mes "9. Choose the NPC that is not a citizen of Morroc.";
 			next;
 			if (select("Syvia:Akira:Antonio:Dmitrii") == 3)
 				set .@sage_t,.@sage_t+5;
@@ -887,7 +887,7 @@ L_AskQuestions:
 				set .@sage_t,.@sage_t+5;
 			mes "3. Choose the closest city to Glast Heim.";
 			next;
-			if (select("Prontera:Geffen:Morocc:Payon") == 2)
+			if (select("Prontera:Geffen:Morroc:Payon") == 2)
 				set .@sage_t,.@sage_t+5;
 			mes "4. Choose the monster that is a different type than the others.";
 			next;
@@ -1535,7 +1535,7 @@ yuno_in03,62,176,2	script	History Professor#sa	109,{
 				mes "Lutie, the winter land,";
 				break;
 			}
-			switch(select("Midgard, where humans live,:Rune-Midgarts where humans live,:Tritonia, where mermaids live,:Morocc, the desert city,")) {
+			switch(select("Midgard, where humans live,:Rune-Midgarts where humans live,:Tritonia, where mermaids live,:Morroc, the desert city,")) {
 			case 1:
 				mes "Midgard, where humans live in,";
 				break;
@@ -1549,7 +1549,7 @@ yuno_in03,62,176,2	script	History Professor#sa	109,{
 				break;
 			case 4:
 				set .@w_point,.@w_point+1;
-				mes "Morocc, the desert city,";
+				mes "Morroc, the desert city,";
 				break;
 			}
 			switch(select("Abguard, where gods live.:Asgard, where gods live.:Schwarzwald, where citizens live.:Prontera, the capital of Rune-Midgarts.")) {
@@ -2431,9 +2431,9 @@ yuno_in03,244,31,3	script	Physics Professor#sa	120,{
 				mes "You never know the limits of magic";
 				break;
 			}
-			switch(select("Merchant Lady in Morocc is also as cute as YuPi.:Nobody knows why Red Potion tastes like strawberries.:It is not suggested to be too addicted to magic spells.")) {
+			switch(select("Merchant Lady in Morroc is also as cute as YuPi.:Nobody knows why Red Potion tastes like strawberries.:It is not suggested to be too addicted to magic spells.")) {
 			case 1:
-				mes "Merchant Lady in Morocc is also as cute as YuPi.";
+				mes "Merchant Lady in Morroc is also as cute as YuPi.";
 				break;
 			case 2:
 				mes "Nobody knows why Red Potion tastes like strawberries.";
@@ -2560,11 +2560,8 @@ job_sage,50,165,4	script	Test Helper#talk	700,{
 }
 
 job_sage,50,165,4	script	Waiting Room#sg	700,{
-	end;
-
 OnInit:
-	//disablenpc  "Waiting Room#sg";
-	hideonnpc "Waiting Room#sg";
+	disablenpc "Waiting Room#sg";
 	waitingroom "Waiting Room",20,"Waiting Room#sg::OnStartArena",1;
 	enablewaitingroomevent;
 	end;
@@ -2683,8 +2680,7 @@ OnInit:
 
 OnEnable:
 	enablenpc "Arena#2";
-	donpcevent "Arena#1::OnReset";
-	disablenpc "Arena#1";
+	disablenpc "Arena#1::OnReset";
 	set .MyMobs,24;
 	monster "job_sage",111,102,"Numerical Value",1063,1,"Arena#2::OnMyMobDead";
 	monster "job_sage",111,102,"Physics",1063,1,"Arena#2::OnMyMobDead";
@@ -2893,6 +2889,15 @@ OnTimer9000:
 	stopnpctimer;
 	end;
 }
+
+//============================================================ 
+// Mapflag
+//============================================================ 
+job_sage	mapflag	nomemo
+job_sage	mapflag	noteleport
+job_sage	mapflag	nosave	SavePoint
+job_sage	mapflag	nopenalty
+job_sage	mapflag	nobranch
 
 //============================================================ 
 // Old changelog

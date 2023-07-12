@@ -1,11 +1,11 @@
-//===== rAthena Script =======================================
+//===== eAthena Script =======================================
 //= War of Emperium N Guild Flags
 //===== By: ==================================================
 //= kobra_k88
 //===== Current Version: =====================================
 //= 1.3
 //===== Compatible With: =====================================
-//= rAthena Project; RO Episode 4+
+//= eAthena 0.1+; RO Episode 4+
 //===== Description: =========================================
 //= WoE flag scripts.  Display guild emblems on flags.
 //===== Additional Comments: =================================
@@ -21,9 +21,9 @@ function	script	F_Flags	{
 	set .@GID, GetCastleData(getarg(1),1);
 	if (getarg(5) == 0) return;
 	if (.@GID == 0) {
-		mes " [ Edict of the Divine Rune-Midgarts Kingdom ]";
+		mes " [ Edict of the Divine Rune Midgard Kingdom ]";
 		mes " ";
-		mes "1. Follow the ordinance of The Divine Rune-Midgarts Kingdom, ";
+		mes "1. Follow the ordinance of The Divine Rune Midgard Kingdom, ";
 		mes "We declare that";
 		mes "there is no formal master of this castle.";
 		mes " ";
@@ -45,10 +45,10 @@ function	script	F_Flags	{
 			}
 			return;
 		}
-		mes "[ Edict of the Divine Rune-Midgarts Kingdom ]";
+		mes "[ Edict of the Divine Rune Midgard Kingdom ]";
 		mes " ";
 		mes "1. Following the ordinance of the";
-		mes "Divine Rune-Midgarts Kingdom,";
+		mes "Divine Rune Midgard Kingdom,";
 		mes "we approve that this place is in";
 		mes "the private possession of ^ff0000" + GetGuildName(.@GID) + "^000000 Guild.";
 		mes " ";
