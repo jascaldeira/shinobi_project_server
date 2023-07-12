@@ -1,0 +1,35 @@
+-	script	skillLevelingSystem#1	-1,{
+    end;
+
+    onPcUseSkillEvent:
+        setarray .@skillId[0], 19, 48;
+        setarray .@skillName$[0], "Katon Gougakyuu", "Jyuuken Ryuu";
+        setarray .@skillMaxLevel[0], 10, 10;
+        
+
+
+        set .@index, inarray(.@skillId[0], @lskillid);
+        if (.@index != -1) {
+            if (getskilllv(@lskillid) < .@skillMaxLevel[.@index]) {
+                set .@currentXP, getd("skill_" + @lskillid + "_exp");
+                if ( ! .@currentXP) {
+                    set .@currentXP, 0;
+                }
+                set .@newXP, .@currentXP + 1;
+
+                set .@nextLevel, getskilllv(@lskillid) + 1;
+                set .@nextLevelXpRequirement, pow((.@nextLevel + 1),5);
+
+                if (.@newXP >= .@nextLevelXpRequirement) {
+                    setd "skill_" + @lskillid + "_exp", 0;
+                    
+                    dispbottom "[Jutsu level]: Parabéns, " + .@skillName$[0] + " subiu para o nivel " + .@nextLevel + ".";
+                    skill @lskillid,.@nextLevel,0;
+                } else {
+                    setd "skill_" + @lskillid + "_exp", .@newXP;
+                    dispbottom "[Jutsu level] " + .@skillName$[0] + " level " + getskilllv(@lskillid) + ": "+.@newXP+" de " + .@nextLevelXpRequirement;
+                }
+            }
+        }
+        end;
+}

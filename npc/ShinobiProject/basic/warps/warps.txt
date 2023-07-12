@@ -1,0 +1,30 @@
+// Konoha
+konoha3,210,72,0	warp	kon001	1,1,pay_fild06,307,370
+pay_fild06,307,375,0	warp	kon002	1,1,konoha3,210,75
+
+pay_fild06,29,288,0	warp	kon003	1,1,pay_fild05,267,284
+pay_fild05,271,284,0	warp	kon004	1,1,pay_fild06,34,290
+
+pay_fild05,127,378,0	warp	kon005	1,1,pay_fild09,112,22
+pay_fild09,112,16,0	warp	kon006	1,1,pay_fild05,127,373
+
+pay_fild09,16,92,0	warp	kon007	1,1,mjolnir_03,127,373 // going to neutral
+
+
+// Neutral
+
+mjolnir_03,212,18,0	warp	non001	1,1,pay_fild09,21,92 // right Going to konoha
+mjolnir_03,21,258,0	warp	non002	1,1,mjolnir_04,369,174 // right Going to left
+mjolnir_03,285,359,0	warp	non003	1,1,yuno_fild07,356,74 // right Going to top
+
+
+mjolnir_04,160,62,0	warp	non004	1,1,pay_fild04,334,335 // left Going to suna
+mjolnir_04,373,174,0	warp	non004	1,1,mjolnir_03,26,258 // left Going to right
+mjolnir_04,186,383,0	warp	non004	1,1,yuno_fild07,92,17 // left Going to top
+
+yuno_fild07,361,71,0	warp	non004	1,1,mjolnir_03,290,335 // top Going to right
+yuno_fild07,92,12,0	warp	non004	1,1,mjolnir_04,187,377 // top Going to left
+
+// suna
+
+pay_fild04,346,335,0	warp	kon007	1,1,mjolnir_04,160,69 // going to neutral

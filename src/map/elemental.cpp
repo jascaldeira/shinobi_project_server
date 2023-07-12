@@ -4,7 +4,8 @@
 #include "elemental.hpp"
 
 #include <cstring>
-#include <cmath>
+#include <ctgmath> //floor
+#include <math.h>
 #include <stdlib.h>
 
 #include <common/cbasetypes.hpp>

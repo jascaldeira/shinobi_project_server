@@ -1,149 +1,141 @@
-//===== rAthena Script =======================================
+//===== eAthena Script ======================================= 
 //= Card Removal NPC
-//===== By: ==================================================
+//===== By: ================================================== 
 //= TyrNemesis^
-//===== Current Version: =====================================
-//= 1.2a
-//===== Compatible With: =====================================
-//= rAthena Project
-//===== Description: =========================================
+//===== Current Version: ===================================== 
+//= 1.2
+//===== Compatible With: ===================================== 
+//= eAthena SVN
+//===== Description: ========================================= 
 //= Removes cards from equipped items.
-//===== Additional Comments: =================================
+//===== Additional Comments: ================================= 
 //= 1.0 First version. [TyrNemesis^]
 //= 1.2 Optimized and fixed getequipname menu. [Kisuka]
-//= 1.2a Added 'disable_items' command. [Euphy]
-//============================================================
+//============================================================ 
 
-prt_in,28,73,4	script	Wise Old Woman#eAcustom	78,{
-
-	set .zenycost,200000;    // base cost of the card remover services (in Zeny)
-	set .percardcost,25000;  // cost per card of the card remover services (in Zeny)
-	set .faildestroy,1;      // should the card remover have a chance of failure that destroys items? (1=yes, 0=no)
-
-	disable_items;
-	mes "[Wise Old Woman]";
-	mes "Good day, young one. I have the power to remove cards that you have compounded onto your equipment. Does this idea please you?";
+prontera,158,177,4	script	Mineirador Ancião	78,{
+	mes "[Mineirador Ancião]";
+	mes "Olá jovem, Eu sou o único mineirador capaz de remover os cristals selados em equipamentos, tem interesse nos meus serviços?";
 	next;
-	switch(select("Yes, it does.:What do you charge?:No thanks.")) {
-	case 1:
-		mes "[Wise Old Woman]";
-		mes "Very well. Which item shall I examine for you?";
-		next;
-
-		setarray .@indices[1], EQI_HEAD_TOP, EQI_ARMOR, EQI_HAND_L, EQI_HAND_R, EQI_GARMENT, EQI_SHOES, EQI_ACC_L, EQI_ACC_R, EQI_HEAD_MID, EQI_HEAD_LOW;
-		for( set .@i,1; .@i <= 10; set .@i,.@i+1 ) {
-			if( getequipisequiped(.@indices[.@i]) )
-				set .@menu$, .@menu$ + F_getpositionname(.@indices[.@i]) + "-[" + getequipname(.@indices[.@i]) + "]";
-			set .@menu$, .@menu$ + ":";
-		}
-		set .@part, .@indices[ select(.@menu$) ];
-		if(!getequipisequiped(.@part)) {
-			mes "[Wise Old Woman]";
-			mes "Young one... Your not wearing anything there that I can remove cards from.";
-			close;
-		}
-		if(getequipcardcnt(.@part) == 0) {
-			mes "[Wise Old Woman]";
-			mes "Young one... There are no cards compounded on this item. I can do nothing with it, I'm afraid.";
-			close;
-		}
-		set .@cardcount,getequipcardcnt(.@part);
-		
-		if (!checkweight(1202,(.@cardcount+1))) { 
-			mes "^3355FFJust a minute!";
-			mes "I can't offer any of my";
-			mes "services to you because";
-			mes "you're carrying too much";
-			mes "stuff. Put your extra items in";
-			mes "Kafra Storage and come again~";
-			close;
-		}
-		mes "[Wise Old Woman]";
-		mes "This item has " + .@cardcount + " cards compounded on it. To perform my magic, I will need " + (.zenycost+(.@cardcount * .percardcost)) + " zeny, a ^0000FFStar Crumb^000000, and a ^0000FFYellow Gemstone^000000.";
-		next;
-		if(select("Very well. Do it.:Never mind.") == 2) {
-			mes "[Wise Old Woman]";
-			mes "Very well. Return at once if you seek my services.";
-			close;
-		}
-		if((zeny < (.zenycost+(.@cardcount * .percardcost))) || (countitem(1000) < 1) || (countitem(715) < 1)) {
-			mes "[Wise Old Woman]";
-			mes "You do not have all the items I require to work my magic, child. Come again when you do.";
-			close;
-		}
-		mes "[Wise Old Woman]";
-		mes "Before I begin, I must warn you--I may fail. If I do, I may destroy the cards, the item, or both. I do not give refunds. That being said, which is more important to you: The cards, or the item?";
-		next;
-		switch(select("I changed my mind about this.:The item.:The cards.")) {
+	switch(select("Sim, eu tenho.:O que você cobra?:Não, obrigado.")) {
 		case 1:
-			mes "[Wise Old Woman]";
-			mes "Very well. Return at once if you seek my services.";
-			close;
-		case 2:
-			set .@failtype,1;
-			break;
-		case 3:
-			set .@failtype,2;
-		}
-		mes "[Wise Old Woman]";
-		mes "Very well. I shall begin.";
-		set Zeny, Zeny - (.zenycost+(.@cardcount * .percardcost));
-		delitem 1000,1; //Star_Crumb
-		delitem 715,1; //Yellow_Gemstone
-		
-		// Replace the constants in the next 3 lines with failure chance values defined in refine_db.txt
-		// First value = Total failure chance (item and cards destroyed)
-		// Second value = Partial failure chance (one or the other is destroyed, player decides which one is safe)
-		// Third value = Harmless failure chance (all that's lost is your investment)
+			mes "[Mineirador Ancião]";
+			mes "Muito bem. qual equipamento quer que eu examine?";
+			next;
 
-		set .@failchance,rand(100);
-		if (.faildestroy==1) {
+			setarray .@position$[1], "Cabeça","Colete","Mão esquerda","Mão direita","Capa","Bota","Acessório 1","Acessório 2","Cabeça 2","Cabeça 3";
+			set .@menu$,"";
+			for( set .@i,1; .@i <= 10; set .@i,.@i+1 )
+			{
+				if( getequipisequiped(.@i) )
+					set .@menu$, .@menu$ + .@position$[.@i] + "-" + "[" + getequipname(.@i) + "]";
+
+				set .@menu$, .@menu$ + ":";
+			}
+			set .@part,select(.@menu$);
+			if(!getequipisequiped(.@part)) {
+				mes "[Mineirador Ancião]";
+				mes "Meu jovem... você não tem nenhum item equipado do qual posso remover cristais.";
+				close;
+			}
+			if(getequipcardcnt(.@part) == 0) {
+				mes "[Mineirador Ancião]";
+				mes "Meu jovem... Não há cristais nesse equipamento.";
+				close;
+			}
+			set .@cardcount,getequipcardcnt(.@part);
+			
+			if (!checkweight(1202,(.@cardcount+1))) { 
+				mes "^3355FFSó um minuto!";
+				mes "Não posso concluir o serviço";
+				mes "porque você está com muito";
+				mes "peso em seu inventário";
+				close;
+			}
+			mes "[Mineirador Ancião]";
+			mes "Este equipamento possui " + .@cardcount + " cristais selados nele. Pra realizar o processo, eu preciso de um ^0000FFmetal de remoção^000000.";
+			next;
+			if(select("Entendi, pode finalizar.:Deixa pra lá...") == 2) {
+				mes "[Mineirador Ancião]";
+				mes "Certo. Volte quando precisar.";
+				close;
+			}
+			if (countitem(562) < 1){
+				mes "[Mineirador Ancião]";
+				mes "Você não possui o metal de remoção, volte quando tiver um.";
+				close;
+			}
+			mes "[Mineirador Ancião]";
+			mes "Antes que eu dou inicio ao processo, Devo avisar que tem chance de falhar. Se eu falhar, Os cristais podem ser quebrados, o equipamento, ou ambos. Eu não faço devoluções. Sendo assim, O que é mais importante pra você: Os cristais, ou o equipamento?";
+			next;
+			switch(select("Mudei de ideia, desisto.:O equipamento.:Os cristais.")) {
+				case 1:
+					mes "[Mineirador Ancião]";
+					mes "Entendido. volte quando precisar.";
+					close;
+				case 2:
+					set .@failtype,1;
+					break;
+				case 3:
+					set .@failtype,2;
+			}
+			mes "[Mineirador Ancião]";
+			mes "Ótimo. vou começar.";
+			delitem 562,1;
+			
+			// Replace the constants in the next 3 lines with failure chance values defined in refine_db.txt
+			// First value = Total failure chance (item and cards destroyed)
+			// Second value = Partial failure chance (one or the other is destroyed, player decides which one is safe)
+			// Third value = Harmless failure chance (all that's lost is your investment)
+
+			set .@failchance,rand(100);
+		/*	
 			if(.@failchance < 2) {
 				next;
 				failedremovecards .@part,0;
-				mes "[Wise Old Woman]";
-				mes "The process was a total failure. I am afraid the item and the cards were destroyed.";
+				mes "[Mineirador Ancião]";
+				mes "Infelizmente o processo falhou. infelizmente o equipamento e cristais foram perdidos.";
 				close;
 			}
 
 			if(.@failchance < 8) {
 				if (.@failtype == 1) {
 					next;
-					failedremovecards .@part,1;
-					mes "[Wise Old Woman]";
-					mes "While I have managed to remove the cards from the item, they were destroyed in the process. The item, however, is okay.";
+					failedremovecards .@part,1;					
+					mes "[Mineirador Ancião]";
+					mes "Jovem, infelizmente seus cristais foram perdidos no processo. Seu equipamento, no entanto, está okay.";
 					close;
 				}
 
 				if (.@failtype == 2) {
 					next;
 					failedremovecards .@part,2;
-					mes "[Wise Old Woman]";
-					mes "Most unfortunate. I succeeded at removing the cards, but the item itself was destroyed in the process.";
-					close;
+					mes "[Mineirador Ancião]";
+					mes "Infelizmente, Eu removi as cartas, mas o equipamento foi destruido no processo.";
+					close;	
 				}
 			}
-		}
+		*/
 
-		if(.@failchance < 10) {
+			if(.@failchance < 10) {
+				next;
+				failedremovecards .@part,3;				
+				mes "[Mineirador Ancião]";
+				mes "Eu falhei no processo de remoção. Mas pra sua sorte, os cristais e equipamento está intacto.";
+				close;	
+			}
 			next;
-			failedremovecards .@part,3;
-			mes "[Wise Old Woman]";
-			mes "I have failed to remove the cards. Luckily, however, both the item and the cards are still okay.";
+			successremovecards .@part;
+			mes "[Mineirador Ancião]";
+			mes "O processo foi um sucesso. Aqui está seu equipamento e cristais.";
+			close;			
+		case 2:
+			mes "[Mineirador Ancião]";
+			mes "A única coisa que preciso é de um metal de remoção.";
 			close;
-		}
-		next;
-		successremovecards .@part;
-		mes "[Wise Old Woman]";
-		mes "The process was a success. Here are your cards and your item. Farewell.";
-		close;
-	case 2:
-		mes "[Wise Old Woman]";
-		mes "I charge a flat fee of "+callfunc("F_InsertComma",.zenycost)+" zeny, plus "+callfunc("F_InsertComma",.percardcost)+" zeny for each card I remove from the item. In addition, I need a star crumb and a yellow gemstone to work my magic.";
-		close;
-	case 3:
-		mes "[Wise Old Woman]";
-		mes "Very well. Return at once if you seek my services.";
-		close;
+		case 3:
+			mes "[Mineirador Ancião]";
+			mes "Certo. Volte quando precisar de mim.";
+			close;
 	}
 }

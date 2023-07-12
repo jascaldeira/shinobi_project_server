@@ -629,15 +629,15 @@ void trade_tradecommit(map_session_data *sd)
 	}
 
 	if( sd->deal.zeny ) {
-		pc_payzeny(sd ,sd->deal.zeny, LOG_TYPE_TRADE, tsd->status.char_id);
-		pc_getzeny(tsd,sd->deal.zeny,LOG_TYPE_TRADE, sd->status.char_id);
+		pc_payzeny(sd ,sd->deal.zeny, LOG_TYPE_TRADE, tsd);
+		pc_getzeny(tsd,sd->deal.zeny,LOG_TYPE_TRADE, sd);
 		sd->deal.zeny = 0;
 
 	}
 
 	if ( tsd->deal.zeny) {
-		pc_payzeny(tsd,tsd->deal.zeny,LOG_TYPE_TRADE, sd->status.char_id);
-		pc_getzeny(sd ,tsd->deal.zeny,LOG_TYPE_TRADE, tsd->status.char_id);
+		pc_payzeny(tsd,tsd->deal.zeny,LOG_TYPE_TRADE, sd);
+		pc_getzeny(sd ,tsd->deal.zeny,LOG_TYPE_TRADE, tsd);
 		tsd->deal.zeny = 0;
 	}
 

@@ -58,8 +58,8 @@ Header:
 
 Footer:
   Imports:
-  - Path: db/pre-re/homunculus_db.yml
-    Mode: Prerenewal
-  - Path: db/re/homunculus_db.yml
-    Mode: Renewal
+#  - Path: db/pre-re/homunculus_db.yml
+#    Mode: Prerenewal
+#  - Path: db/re/homunculus_db.yml
+#    Mode: Renewal
   - Path: db/import/homunculus_db.yml

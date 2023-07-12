@@ -1,7 +1,13 @@
-//===== rAthena Script =======================================
+//===== eAthena Script ======================================= 
 //= Veins Quests
-//===== Description: =========================================
-//= [Official Conversion]
+//===== By: ================================================== 
+//= L0ne_W0lf
+//===== Current Version: ===================================== 
+//= 1.8
+//===== Compatible With: ===================================== 
+//= eAthena SVN
+//===== Description: ========================================= 
+//= [Aegis Conversion]
 //= Collection of Veins Quests 
 //= Stone Quest:
 //= - Help an Old Man with his job.
@@ -19,12 +25,12 @@
 //= - Missing addition to High Priest Zhed to start quest.
 //= - Infiltrate Thor Volcano Base. What is Arunafeltz up to?
 //= - Variable in use: rachel_camel (max 27)
-//===== Changelog: =========================================
+//===== Additional Comments: ================================= 
 //= 1.0 First version, Added Veins Stone quest. [L0ne_W0lf]
 //= 1.1 Added Veins Spy Quest. [L0ne_W0lf]
 //= 1.2 Added Veins Siblings Quest. [L0ne_W0lf]
-//=     Added Veins Thor Volcano Base Quest NPC. [L0ne_W0lf]
-//=     Start NPC is missing, but will be added when I get it.
+//=	Added Veins Thor Volcano Base Quest NPC. [L0ne_W0lf]
+//=	Start NPC is missing, but will be added when I get it.
 //= 1.3 Fixed two typos small in Asbar. [L0ne_W0lf]
 //= 1.3a More fixes to some of the Base quest NPCs. [L0ne_W0lf]
 //= 1.4 Added missing checkweights. [L0ne_W0lf]
@@ -34,21 +40,11 @@
 //= 1.6 Replaced effect numerics with constants. [L0ne_W0lf]
 //= 1.7 Moved a couple NPCs related to the Spy quest. [L0ne_W0lf]
 //= 1.8 Fixed some typos and confusing condition checks. [L0ne_W0lf]
-//= 1.9 Added quest log entries for:
-//=     - Siblings Quest
-//=     - Thor Volcano Base Quest
-//= 2.0 Removed level requirement. (bugreport:4678) [L0ne_W0lf]
-//= 2.1 Added missing changequest (3071-3076). [Joseph]
-//= 2.2 Moved "Wincing Old Man" to pre-re/re coordinates. [Euphy]
-//= 2.3 Fixed incorrect use of 'close'. [Joseph]
-//= 2.4 Updated RE/Pre-RE EXP. [Euphy]
-//= 2.5 Added GM management NPC and quest log support. [Euphy]
-//= 2.6 Commented custom quest log support for Nameless Island Access Quest [Everade]
-//============================================================
+//============================================================ 
 
-// Stone Quest :: veins_stone
-//============================================================
--	script	::WincingOldMan_veins	-1,{
+// Stone Quest
+//============================================================ 
+ve_fild05,257,130,4	script	Wincing Old Man#ve	945,{
 	if ((MaxWeight - Weight) < 2000 || checkweight(1201,1) == 0) {
 		mes "- Wait a moment! -";
 		mes "- Currently you are carrying -";
@@ -57,7 +53,7 @@
 		mes "- you put some items into Kafra Storage. -";
 		close;
 	}
-	if (veins_stone == 0) {
+	if ((veins_stone == 0) && (BaseLevel > 59)) {
 		mes "[Zabaroo]";
 		mes "My back is killing me";
 		mes "after stooping over to";
@@ -146,46 +142,46 @@
 				mes "Let's at least give it a try.";
 				next;
 				switch(select("What's with these stones?:Where's the old man?:Nothing.")) {
-					case 1:
-						mes "[Zabaroo]";
-						mes "Well, we use these dark";
-						mes "stones because they're";
-						mes "pretty and easy to process.";
-						mes "They're sort of a specialty";
-						mes "of this town. I get paid to";
-						mes "harvest these handy rocks.";
-						next;
-						mes "[Zabaroo]";
-						mes "We can sell these to tourists,";
-						mes "and we even have a factory";
-						mes "that uses these stones.";
-						mes "Still, it's not like the";
-						mes "townspeople are getting";
-						mes "rich off these stones.";
-						next;
-						mes "[Zabaroo]";
-						mes "All of us are still";
-						mes "barely making a living...";
-						next;
-						break;
-					case 2:
-						mes "[Zabaroo]";
-						mes "Absar? He's inside";
-						mes "the Tool Shop. You";
-						mes "can't miss him... Just";
-						mes "look for the man with";
-						mes "the crazy eyes!";
-						next;
-						break;
-					case 3:
-						mes "[Zabaroo]";
-						mes "Thanks for your help.";
-						mes "If you can't find Absar";
-						mes "in the Tool Shop, then";
-						mes "you might want to stop";
-						mes "by the Tavern. A-auuugh!";
-						set veins_stone,1;
-						close;
+				case 1:
+					mes "[Zabaroo]";
+					mes "Well, we use these dark";
+					mes "stones because they're";
+					mes "pretty and easy to process.";
+					mes "They're sort of a specialty";
+					mes "of this town. I get paid to";
+					mes "harvest these handy rocks.";
+					next;
+					mes "[Zabaroo]";
+					mes "We can sell these to tourists,";
+					mes "and we even have a factory";
+					mes "that uses these stones.";
+					mes "Still, it's not like the";
+					mes "townspeople are getting";
+					mes "rich off these stones.";
+					next;
+					mes "[Zabaroo]";
+					mes "All of us are still";
+					mes "barely making a living...";
+					next;
+					break;
+				case 2:
+					mes "[Zabaroo]";
+					mes "Absar? He's inside";
+					mes "the Tool Shop. You";
+					mes "can't miss him... Just";
+					mes "look for the man with";
+					mes "the crazy eyes!";
+					next;
+					break;
+				case 3:
+					mes "[Zabaroo]";
+					mes "Thanks for your help.";
+					mes "If you can't find Absar";
+					mes "in the Tool Shop, then";
+					mes "you might want to stop";
+					mes "by the Tavern. A-auuugh!";
+					set veins_stone,1;
+					close;
 				}
 			}
 		}
@@ -262,7 +258,7 @@
 		set veins_stone,5;
 		close;
 	}
-	else if (veins_stone > 4 && veins_stone < 7) {
+	else if (veins_stone < 7) {
 		mes "[Zabaroo]";
 		mes "Thanks again for your help!";
 		mes "What did Absar call this";
@@ -288,7 +284,7 @@
 		mes "find these useful. Anyway,";
 		mes "I hope you like these rocks...";
 		set veins_stone,8;
-		getexp (checkre(3))?30000:300000,0;
+		getexp 300000,0;
 		getitem 985,3; //Elunium
 		close;
 	}
@@ -301,6 +297,11 @@
 		mes "care of myself at my age...";
 		close;
 	}
+	mes "[Zabaroo]";
+	mes "I'm sorry dear.";
+	mes "You're not strong enough for this kind of work.";
+	mes "Put on some muscle and talk to me again.";
+	close;
 }
 
 ve_in,169,310,6	script	Strange Old Man#ve	121,{
@@ -400,7 +401,7 @@ ve_in,169,310,6	script	Strange Old Man#ve	121,{
 		close;
 	}
 	else if (veins_stone == 2) {
-		if (countitem(999) > 4 && countitem(1033) > 4 && countitem(7561) > 1) {
+		if (countitem(999) > 4 && countitem(7561) > 1 && countitem(1033) > 4) {
 			mes "[Absar]";
 			mes "Good, you finally";
 			mes "brought everthing.";
@@ -467,7 +468,7 @@ ve_in,169,310,6	script	Strange Old Man#ve	121,{
 }
 
 ve_in02,37,28,4	script	Factory Manager	898,{
-	if (veins_stone && veins_stone < 5) {
+	if (veins_stone < 5) {
 		mes "[Mirhen]";
 		mes "Hey, employees only beyond this point!";
 		mes "Geez, don't we have a sigh that says that?";
@@ -583,7 +584,7 @@ ve_in02,54,49,2	script	Factory Worker#ve1	943,{
 		mes "[Bahed]";
 		mes "Then, all of a sudden,";
 		mes "these people from--I guess";
-		mes "it was Schwarzwald--came";
+		mes "it was Schwaltzvalt--came";
 		mes "and bought a lot of these";
 		mes "stones. Later, they even built";
 		mes "this factory to process them!";
@@ -638,8 +639,8 @@ ve_in02,68,39,7	script	Factory Worker#ve2	943,{
 	close;
 }
 
-// Spy Quest :: veins_secret
-//============================================================
+// Spy Quest
+//============================================================ 
 prontera,202,122,0	script	Kid#sch	703,{
 	if (que_sch == 0) {
 		mes "[Rooney]";
@@ -648,46 +649,48 @@ prontera,202,122,0	script	Kid#sch	703,{
 		mes "He's got to be around here";
 		mes "somewhere, I think...";
 		next;
-		select("What's wrong?:...");
-		mes "[Rooney]";
-		mes "Oh, it's just...";
-		mes "Some guy sent me on a";
-		mes "delivery errand, but I can't";
-		mes "find the recipient. He said";
-		mes "that I can't miss him, but";
-		mes "I still can't figure it out.";
-		next;
-		mes "[Rooney]";
-		mes "I should have asked for";
-		mes "the exact location. I mean,";
-		mes "if I don't find him, then I'll";
-		mes "never get paid for doing";
-		mes "this delivery. ^333333*Sigh*^000000";
-		next;
-		if (select("Sounds tough. Good luck!:Do you need any help?") == 1) {
+		if (select("What's wrong?:...") == 1) {
 			mes "[Rooney]";
-			mes "Thanks. I think";
-			mes "I just might need it.";
-			mes "Where could this guy";
-			mes "be? If he's expecting";
-			mes "a delivery, he should";
-			mes "make himself easy to find...";
+			mes "Oh, it's just...";
+			mes "Some guy sent me on a";
+			mes "delivery errand, but I can't";
+			mes "find the recipient. He said";
+			mes "that I can't miss him, but";
+			mes "I still can't figure it out.";
+			next;
+			mes "[Rooney]";
+			mes "I should have asked for";
+			mes "the exact location. I mean,";
+			mes "if I don't find him, then I'll";
+			mes "never get paid for doing";
+			mes "this delivery. ^333333*Sigh*^000000";
+			next;
+			if (select("Sounds tough. Good luck!:Do you need any help?") == 1) {
+				mes "[Rooney]";
+				mes "Thanks. I think";
+				mes "I just might need it.";
+				mes "Where could this guy";
+				mes "be? If he's expecting";
+				mes "a delivery, he should";
+				mes "make himself easy to find...";
+				close;
+			}
+			mes "[Rooney]";
+			mes "Yeah, sure, it'd be great";
+			mes "if you could help me. Let's";
+			mes "see, I need to deliver this";
+			mes "letter to a bard named...";
+			mes "It was... Ah, ^FF0000Lasda Midar^000000!";
+			next;
+			mes "[Rooney]";
+			mes "I've looked everywhere";
+			mes "in town for someone that";
+			mes "looks like a Bard, but I'm";
+			mes "not having any luck. If you";
+			mes "find him, would you tell me?";
+			set que_sch,1;
 			close;
 		}
-		mes "[Rooney]";
-		mes "Yeah, sure, it'd be great";
-		mes "if you could help me. Let's";
-		mes "see, I need to deliver this";
-		mes "letter to a bard named...";
-		mes "It was... Ah, ^FF0000Lasda Midar^000000!";
-		next;
-		mes "[Rooney]";
-		mes "I've looked everywhere";
-		mes "in town for someone that";
-		mes "looks like a Bard, but I'm";
-		mes "not having any luck. If you";
-		mes "find him, would you tell me?";
-		set que_sch,1;
 		close;
 	}
 	else if (que_sch == 1) {
@@ -707,21 +710,23 @@ prontera,202,122,0	script	Kid#sch	703,{
 			mes "could that guy be?";
 			close;
 		}
-		mes "[Rooney]";
-		mes "Wow, did you really";
-		mes "find Lasda Midar?";
-		mes "Why couldn't I find him?";
-		mes "Anyway, thank you so much";
-		mes "for your help. I thought I was";
-		mes "going to fail my delivery!";
-		next;
-		select("He asked me to give you this.");
-		mes "[Rooney]";
-		mes "Hey, alright! Thanks";
-		mes "for the cash! Heh heh~";
-		set Zeny, Zeny-100;
-		set que_sch,3;
-		close;
+		else {
+			mes "[Rooney]";
+			mes "Wow, did you really";
+			mes "find Lasda Midar?";
+			mes "Why couldn't I find him?";
+			mes "Anyway, thank you so much";
+			mes "for your help. I thought I was";
+			mes "going to fail my delivery!";
+			next;
+			select("He asked me to give you this.");
+			mes "[Rooney]";
+			mes "Hey, alright! Thanks";
+			mes "for the cash! Heh heh~";
+			set zeny,zeny-100;
+			set que_sch,3;
+			close;
+		}
 	}
 	mes "[Rooney]";
 	mes "Nice day out, isn't it?";
@@ -757,7 +762,8 @@ prt_church,89,108,6	script	Bard#sch	741,{
 		mes "Ooooh... La la la-la~";
 		mes "Girls, girls, giiiirls...";
 		next;
-		if(select("Excuse me...:......") == 1) {
+		switch(select("Excuse me...:......")) {
+		case 1:
 			mes "[Lasda]";
 			mes "Why, what a glorious";
 			mes "day! I should sing a song";
@@ -765,64 +771,67 @@ prt_church,89,108,6	script	Bard#sch	741,{
 			mes "Ooooh... La la la-la~";
 			mes "Girls, girls, giiiirls...";
 			close;
-		}
-		mes "[Lasda]";
-		mes "Girls, girls, giiiirls...";
-		mes "Making my heart";
-		mes "beat like... Like it's";
-		mes "going too fast. My heart's";
-		mes "racing... And you're at the";
-		mes "finish line--Love Champion!";
-		next;
-		mes "[Lasda]";
-		mes "Oh? Don't stare at me";
-		mes "like that, you're making";
-		mes "me blush. Did you need to";
-		mes "talk to me or something?.";
-		next;
-		if(select("I'm sorry.:Are you ^ff0000Lasda Midar^000000?") == 1) {
+		case 2:
 			mes "[Lasda]";
-			mes "Oh, that's alright.";
-			mes "...............................";
-			mes "Girl, I'll laugh at all your";
-			mes "jokes, and agree with yourv";
-			mes "politics~ You're hot! But";
-			mes "baby, you're dumb as bricks~";
-			close;
+			mes "Girls, girls, giiiirls...";
+			mes "Making my heart";
+			mes "beat like... Like it's";
+			mes "going too fast. My heart's";
+			mes "racing... And you're at the";
+			mes "finish line--Love Champion!";
+			next;
+			mes "[Lasda]";
+			mes "Oh? Don't stare at me";
+			mes "like that, you're making";
+			mes "me blush. Did you need to";
+			mes "talk to me or something?.";
+			next;
+			switch(select("I'm sorry.:Are you ^ff0000Lasda Midar^000000?")) {
+			case 1:
+				mes "[Lasda]";
+				mes "Oh, that's alright.";
+				mes "...............................";
+				mes "Girl, I'll laugh at all your";
+				mes "jokes, and agree with yourv";
+				mes "politics~ You're hot! But";
+				mes "baby, you're dumb as bricks~";
+				close;
+			case 2:
+				mes "[Lasda]";
+				mes "Oh? Oh, yes, that's me.";
+				mes "How can I help you?";
+				next;
+				select("I'm here to deliver this to you.");
+				mes "[Lasda]";
+				mes "Ah! He must have finally";
+				mes "sent it. Would you please";
+				mes "give me a second? Let's see...";
+				next;
+				mes "^3355FFLasda opened the letter";
+				mes "and started reading it.^000000";
+				next;
+				mes "[Lasda]";
+				mes "Umm...";
+				mes "Oh, no...";
+				next;
+				mes "[Lasda]";
+				mes "Ah, I'm sorry for";
+				mes "making you wait.";
+				mes "Here, please give";
+				mes "this money to that";
+				mes "kid that was supposed";
+				mes "to come find me here.";
+				set que_sch,2;
+				set zeny,zeny+100;
+				next;
+				mes "[Lasda]";
+				mes "I'd like you to come";
+				mes "talk to me again later";
+				mes "if you have the time";
+				mes "See you around~";
+				close;
+			}
 		}
-		mes "[Lasda]";
-		mes "Oh? Oh, yes, that's me.";
-		mes "How can I help you?";
-		next;
-		select("I'm here to deliver this to you.");
-		mes "[Lasda]";
-		mes "Ah! He must have finally";
-		mes "sent it. Would you please";
-		mes "give me a second? Let's see...";
-		next;
-		mes "^3355FFLasda opened the letter";
-		mes "and started reading it.^000000";
-		next;
-		mes "[Lasda]";
-		mes "Umm...";
-		mes "Oh, no...";
-		next;
-		mes "[Lasda]";
-		mes "Ah, I'm sorry for";
-		mes "making you wait.";
-		mes "Here, please give";
-		mes "this money to that";
-		mes "kid that was supposed";
-		mes "to come find me here.";
-		set que_sch,2;
-		set Zeny, Zeny+100;
-		next;
-		mes "[Lasda]";
-		mes "I'd like you to come";
-		mes "talk to me again later";
-		mes "if you have the time";
-		mes "See you around~";
-		close;
 	}
 	else if (que_sch == 2) {
 		mes "^3355FFLasda seems to be";
@@ -860,7 +869,7 @@ prt_church,89,108,6	script	Bard#sch	741,{
 				mes "I guess the best thing";
 				mes "to do for now is to find";
 				mes "my friend in a prison in";
-				mes "^FF0000Morocc^000000, and see what";
+				mes "^FF0000Morroc^000000, and see what";
 				mes "you can do to help him..";
 				set que_sch,4;
 				close;
@@ -882,7 +891,7 @@ prt_church,89,108,6	script	Bard#sch	741,{
 		mes "[Lasda]";
 		mes "I still can't believe";
 		mes "Vitre is being held";
-		mes "in prison in Morocc. I mean,";
+		mes "in prison in Morroc. I mean,";
 		mes "what could have happened?";
 		mes "I hope you can help him...";
 		close;
@@ -972,7 +981,7 @@ prt_church,89,108,6	script	Bard#sch	741,{
 		mes "reward with our sincere thanks.";
 		set que_sch,26;
 		getitem 12106,1; //Accessory_Box
-		getexp (checkre(3))?60000:600000,0;
+		getexp 600000,0;
 		close;
 	}
 	else {
@@ -1032,7 +1041,7 @@ morocc,53,87,7	script	Prison Ward#sch	707,{
 			mes "Thanks for the Fried";
 			mes "Monkey Tails~ Alright,";
 			mes "go talk to ^FF0000Sir Krieg^000000 in";
-			mes "Morocc Castle. Get his";
+			mes "Morroc Castle. Get his";
 			mes "approval, and I'll let you in.";
 			delitem 12066,1; //Luk_Dish01
 			set que_sch,7;
@@ -1111,7 +1120,7 @@ morocc_in,79,163,0	script	Public Security Officer	748,{
 	if (que_sch < 7) {
 		mes "[Krieg]";
 		mes "I'm in charge of public";
-		mes "security here in Morocc.";
+		mes "security here in Morroc.";
 		mes "Lately, there have been";
 		mes "more incidents disturbing";
 		mes "the public peace and";
@@ -1438,7 +1447,7 @@ ra_in01,58,389,0	script	Guant Prisoner#sch	929,{
 	close;
 }
 
-// Escort Dancers to Schwarzwald Republic
+// Escort Dancers to Schwaltzvalt Republic
 job_duncer,93,106,6	script	Dance Instructor#sch	892,{
 	if ((MaxWeight-Weight) < 2000 || checkweight(1201,1) == 0) {
 		mes "^3355FFWait a second!";
@@ -1509,7 +1518,7 @@ job_duncer,93,106,6	script	Dance Instructor#sch	892,{
 			mes "I want you to do me a favor.";
 			next;
 			mes "[Hianna]";
-			mes "The Schwarzwald Republic";
+			mes "The Schwaltzvalt Republic";
 			mes "requested me to send some";
 			mes "Dancers for some party, but";
 			mes "I don't have enough guards";
@@ -1519,7 +1528,7 @@ job_duncer,93,106,6	script	Dance Instructor#sch	892,{
 			mes "[Hianna]";
 			mes "If you act as bodyguard";
 			mes "to my Dancers on the way";
-			mes "to the Schwarzwald Republic,";
+			mes "to the Schwaltzvalt Republic,";
 			mes "I'll lend you my Megaphone";
 			mes "once you come back. So...";
 			mes "How does that sound?";
@@ -1530,7 +1539,7 @@ job_duncer,93,106,6	script	Dance Instructor#sch	892,{
 				mes "Okay, the Dancers are";
 				mes "waiting are the entrance,";
 				mes "so bring them over to the";
-				mes "Schwarzwald Republic as";
+				mes "Schwaltzvalt Republic as";
 				mes "soon as you're ready.";
 				set que_sch,12;
 				close;
@@ -1578,7 +1587,7 @@ job_duncer,93,106,6	script	Dance Instructor#sch	892,{
 			mes "your Megaphone. Thanks";
 			mes "for everything, and I'll see";
 			mes "you around, adventurer~";
-			set Zeny, Zeny-500000;
+			set zeny,zeny-500000;
 			set que_sch,18;
 			getitem 7040,1; //Megaphone
 			close;
@@ -1596,7 +1605,7 @@ job_duncer,93,106,6	script	Dance Instructor#sch	892,{
 		mes "[Hianna]";
 		mes "Thanks for escorting";
 		mes "my Dancers over to the";
-		mes "Schwarzwald Republic.";
+		mes "Schwaltzvalt Republic.";
 		mes "Anything I can help";
 		mes "you with today?";
 		next;
@@ -1624,7 +1633,7 @@ job_duncer,93,106,6	script	Dance Instructor#sch	892,{
 				mes "so I'm not supposed to let";
 				mes "you have this. Don't let";
 				mes "anyone know I gave you this!";
-				set Zeny, Zeny-500000;
+				set zeny,zeny-500000;
 				getitem 7040,1; //Megaphone
 				close;
 			}
@@ -1798,7 +1807,7 @@ airplane,75,53,0	script	Cheerful Dancer#sch2	724,{
 		mes "I've performed at many";
 		mes "venues, but this is the";
 		mes "frist time I'll be dancing";
-		mes "in the Schwarzwald Republic.";
+		mes "in the Schwaltzvalt Republic.";
 		mes "This is also my first time on";
 		mes "an airship. How exciting!";
 		close;
@@ -1821,7 +1830,7 @@ airplane,79,55,2	script	Mature Looking Dancer#s2	724,{
 	else if (que_sch == 13) {
 		mes "[Dancer]";
 		mes "This is the first time that";
-		mes "the Schwarzwald Republic";
+		mes "the Schwaltzvalt Republic";
 		mes "requested a performance";
 		mes "from us. Isn't that amazing?";
 		mes "I guess we earned a reputation";
@@ -1962,6 +1971,7 @@ ein_in01,279,221,0	script	Hotel Manager#sch	903,5,5,{
 	}
 	end;
 
+//OnTouch2:
 OnTouch:
 	if (que_sch == 14) {
 		mes "[Manager]";
@@ -2019,7 +2029,8 @@ ein_in01,166,282,4	script	Employee#sch	904,{
 	close;
 }
 
-ein_in01,176,285,0	script	Bard Trigger#sch	-1,1,1,{
+ein_in01,176,285,0	script	°ÍµÂ ÌØÀæ¸ê#sch	-1,1,1,{
+//OnTouch2:
 OnTouch:
 	if (que_sch == 15) {
 		disablenpc "Corporate Figure#sch";
@@ -2584,12 +2595,12 @@ comodo,135,299,0	script	Young Man#sch2	809,{
 		mes "No, they're too weak! His";
 		mes "steps now head to the group";
 		mes "of evil men trying to revive";
-		mes "Satan Morocc. I mean, come on!";
+		mes "Satan Morroc. I mean, come on!";
 		next;
 		mes "[Nosdan]";
 		mes "Sad news from an old comrade,";
 		mes "the evil group discovered...";
-		mes "Time to stop Satan Morocc's";
+		mes "Time to stop Satan Morroc's";
 		mes "revival~ La la la la la la la";
 		mes "la la la la la la la la la la";
 		mes "la la la la la la la la la la";
@@ -2617,12 +2628,12 @@ comodo,135,299,0	script	Young Man#sch2	809,{
 		mes "No, they're too weak! His";
 		mes "steps now head to the group";
 		mes "of evil men trying to revive";
-		mes "Satan Morocc. I mean, come on!";
+		mes "Satan Morroc. I mean, come on!";
 		next;
 		mes "[Nosdan]";
 		mes "Sad news from an old comrade,";
 		mes "the evil group discovered...";
-		mes "Time to stop Satan Morocc's";
+		mes "Time to stop Satan Morroc's";
 		mes "revival~ La la la la la la la";
 		mes "la la la la la la la la la la";
 		mes "la la la la la la la la la la";
@@ -2645,22 +2656,8 @@ comodo,135,299,0	script	Young Man#sch2	809,{
 	}
 }
 
-sec_in02,10,43,4	script	Extra Story Patch	809,{
-	callfunc "F_GM_NPC";
-	mes "[Patch]";
-	mes "Yeah, you can try.";
-	next;
-	if(select("Now:How many?") == 2) {
-		input .@input,0,1000;
-		set que_sch, .@input;
-	}
-	mes " ";
-	mes ""+que_sch;
-	close;
-}
-
-// Siblings Quest :: veins_camel
-//============================================================
+// Siblings Quest
+//============================================================ 
 veins,327,185,3	script	Kid#camelcamel	944,{
 	if (MISC_QUEST & 8192) {
 		if (rachel_camel == 0) {
@@ -2797,7 +2794,6 @@ veins,327,185,3	script	Kid#camelcamel	944,{
 				mes "I'll go search Thor";
 				mes "Volcano to find your";
 				mes "little sister Curdie.";
-				setquest 3060;
 				set rachel_camel,1;
 				close;
 			}
@@ -2837,32 +2833,16 @@ veins,327,185,3	script	Kid#camelcamel	944,{
 			mes "locksmith in the market";
 			mes "street! You can ask him";
 			mes "to help free Curdie!";
-			changequest 3061,3062;
 			set rachel_camel,3;
 			close;
 		}
-		else if (rachel_camel == 3) {
-			mes "[Kid Karyn]";
+		else if (rachel_camel <= 5) {
+			mes "["+strcharinfo(0)+"]";
 			mes "Let's see...";
 			mes "I'd better find the";
 			mes "locksmith in the market";
 			mes "street, and ask him to help";
 			mes "me unlock Curdie's shackles.";
-			close;
-		}
-		else if (rachel_camel == 4) {
-			mes "[Kid Karyn]";
-			mes "Huh... I'd better talk";
-			mes "to Mr. Lockenlock first, the";
-			mes "locksmith in the market street.";
-			close;
-		}
-		else if (rachel_camel == 5) {
-			mes "["+strcharinfo(0)+"]";
-			mes "Hmm... I'd better talk";
-			mes "to Ms. Ivory, the organic";
-			mes "soap maker if I want to help";
-			mes "Karyn free his sister Curdie.";
 			close;
 		}
 		else if (rachel_camel == 6) {
@@ -2931,7 +2911,7 @@ veins,327,185,3	script	Kid#camelcamel	944,{
 			mes "if I want to free Curdie.";
 			close;
 		}
-		else if (rachel_camel > 11 && rachel_camel < 17) {
+		else if ((rachel_camel >= 12) && (rachel_camel <= 16)) {
 			mes "["+strcharinfo(0)+"]";
 			mes "Well... I found the";
 			mes "camel. Now I need to get";
@@ -3052,28 +3032,14 @@ veins,327,185,3	script	Kid#camelcamel	944,{
 			mes "Good, good...";
 			mes "It's a promise, then.";
 			mes "I'll see you later~";
-			completequest 3083;
 			set rachel_camel,25;
 			specialeffect2 EF_ABSORBSPIRITS;
-			if (checkre(3))
-				getexp 100000,50000;
-			else
-				getexp 1000000,700000;
+			getexp 1000000,700000;
 			close;
 		}
 		else {
 // Start Nameless Island Access Quest Addition
-			if (aru_monas < 15) {
-				mes "[Kid Karyn]";
-				mes "Oh, hello! Thank you";
-				mes "so much for helping me";
-				mes "last time! When I get";
-				mes "older, I'm gonna do my";
-				mes "best to help you the same";
-				mes "way that you helped me!";
-				close;
-			}
-			else if (aru_monas == 15) {
+			if (aru_monas == 15) {
 				mes "[Kid Karyn]";
 				mes "Hi! It's good to see";
 				mes "you again! Kurdi just came";
@@ -3142,25 +3108,23 @@ veins,327,185,3	script	Kid#camelcamel	944,{
 				mes "I'm happy that";
 				mes "I can help you too!";
 				set aru_monas,16;
-				//changequest 17011,17012;
 				close;
 			}
-			else if (aru_monas < 26) {
+			else if (aru_monas > 15) {
 				mes "[Kid Karyn]";
 				mes "Hi! How do you like";
 				mes "fishing on my dad's boat?";
 				mes "Oh, and Kurdi says hi!";
 				close;
 			}
-			else {
-				mes "[Kid Karyn]";
-				mes "Dad says that he'll";
-				mes "be able to go fishing";
-				mes "again soon! I hope that";
-				mes "he'll catch a lot of fish!";
-				close;
-			}
 // End Nameless Island Access Quest Addition.
+			mes "[Kid Karyn]";
+			mes "Hello, hello!";
+			mes "Hey, did you need";
+			mes "me to help you? No...?";
+			mes "Awww, there must be";
+			mes "something I can do...";
+			close;
 		}
 	}
 	else {
@@ -3253,7 +3217,6 @@ que_thor,36,66,5	script	Little Curdie	941,{
 		mes "in town will know of a way";
 		mes "to unlock your shackles.";
 		mes "I'll be back as soon as I can!";
-		changequest 3060,3061;
 		set rachel_camel,2;
 		close;
 	}
@@ -3266,7 +3229,7 @@ que_thor,36,66,5	script	Little Curdie	941,{
 		mes "from these chains.^000000";
 		close;
 	}
-	else if (rachel_camel == 3 || rachel_camel == 6 || rachel_camel == 8 || rachel_camel == 22) {
+	else if (rachel_camel == 3) {
 		mes "^3355FFCurdie is lying";
 		mes "feebly on the ground.^000000";
 		close;
@@ -3291,10 +3254,20 @@ que_thor,36,66,5	script	Little Curdie	941,{
 		mes "the Rachel soldiers.^000000";
 		close;
 	}
+	else if (rachel_camel == 6) {
+		mes "^3355FFCurdie is lying";
+		mes "feebly on the ground.^000000";
+		close;
+	}
 	else if (rachel_camel == 7) {
 		mes "^3355FFIt seems that someone";
 		mes "has come by to give";
 		mes "Curdie food and water.^000000";
+		close;
+	}
+	else if (rachel_camel == 8) {
+		mes "^3355FFCurdie is lying";
+		mes "feebly on the ground.^000000";
 		close;
 	}
 	else if (rachel_camel == 9) {
@@ -3323,7 +3296,7 @@ que_thor,36,66,5	script	Little Curdie	941,{
 		mes "if I want to free Curdie.";
 		close;
 	}
-	else if (rachel_camel > 11 && rachel_camel < 17) {
+	else if (rachel_camel <= 16) {
 		mes "^3355FFYou already found the";
 		mes "camel, so you need to collect";
 		mes "the soap ingredients if you";
@@ -3436,7 +3409,6 @@ que_thor,36,66,5	script	Little Curdie	941,{
 		mes "Now you need to take";
 		mes "the mold back to town";
 		mes "to Mr. Lockenlock.^000000";
-		changequest 3079,3080;
 		set rachel_camel,21;
 		close;
 	}
@@ -3446,6 +3418,11 @@ que_thor,36,66,5	script	Little Curdie	941,{
 		mes "key mold to Mr. Lockenlock";
 		mes "so that he can make a key";
 		mes "to unlock Curdie's shackles.^000000";
+		close;
+	}
+	else if (rachel_camel == 22) {
+		mes "^3355FFCurdie is lying";
+		mes "feebly on the ground.^000000";
 		close;
 	}
 	else if (rachel_camel == 23) {
@@ -3501,27 +3478,18 @@ que_thor,36,66,5	script	Little Curdie	941,{
 		mes "volcano? It must have been";
 		mes "dangerous... Something";
 		mes "related to the Rachel Army...";
-		changequest 3082,3083;
 		set rachel_camel,24;
 		close;
 	}
 	else {
 		mes "[Little Curdie]";
-		mes " ...Wah....";
+		mes " .......";
 		close;
 	}
 }
 
 veins,181,166,3	script	Lockenlock	900,{
-	if (rachel_camel && rachel_camel < 4) {
-		mes "^3355FFIt's a drunkard...";
-		mes "The scent of pure";
-		mes "alcohol wafts around him.";
-		mes "There's a certain beauty";
-		mes "to his disheveled misery.^000000";
-		close;
-	}
-	else if (rachel_camel == 4) {
+	if (rachel_camel == 4) {
 		if (countitem(503) > 0) {
 			mes "["+strcharinfo(0)+"]";
 			mes "Excuse me...?";
@@ -3652,7 +3620,6 @@ veins,181,166,3	script	Lockenlock	900,{
 			mes "["+strcharinfo(0)+"]";
 			mes "...........";
 			delitem 503,1; //Yellow_Potion
-			changequest 3063,3064;
 			set rachel_camel,5;
 			close;
 		}
@@ -3665,6 +3632,14 @@ veins,181,166,3	script	Lockenlock	900,{
 			mes "a Yellow Potion first.^000000";
 			close;
 		}
+	}
+	else if (rachel_camel <= 3) {
+		mes "^3355FFIt's a drunkard...";
+		mes "The scent of pure";
+		mes "alcohol wafts around him.";
+		mes "There's a certain beauty";
+		mes "to his disheveled misery.^000000";
+		close;
 	}
 	else if (rachel_camel == 5) {
 		mes "[Locksmith Lockenlock]";
@@ -3763,7 +3738,7 @@ veins,181,166,3	script	Lockenlock	900,{
 		mes "sooner I can help Curdie.";
 		close;
 	}
-	else if (rachel_camel > 12 && rachel_camel < 17) {
+	else if (rachel_camel <= 16) {
 		mes "^3355FFYou already found the";
 		mes "camel, so you need to collect";
 		mes "the soap ingredients if you";
@@ -3835,7 +3810,6 @@ veins,181,166,3	script	Lockenlock	900,{
 		next;
 		mes "["+strcharinfo(0)+"]";
 		mes "Alright.";
-		changequest 3078,3079;
 		set rachel_camel,20;
 		close;
 	}
@@ -3882,7 +3856,6 @@ veins,181,166,3	script	Lockenlock	900,{
 		mes "the key, so I can get it done";
 		mes "as soon as you can bring";
 		mes "me the Steel. I'll be waiting.";
-		changequest 3080,3081;
 		set rachel_camel,22;
 		close;
 	}
@@ -3976,7 +3949,6 @@ veins,181,166,3	script	Lockenlock	900,{
 			mes "Make sure that you";
 			mes "bring that child back";
 			mes "safe to her family!";
-			changequest 3081,3082;
 			set rachel_camel,23;
 			close;
 		}
@@ -4023,7 +3995,7 @@ veins,181,166,3	script	Lockenlock	900,{
 		mes "The army's rotten to the core";
 		mes "for doing something like this.";
 		next;
-		mes "[Locksmith Lockenlock]";
+		mes "	[Locksmith Lockenlock]";
 		mes "You're a real good person,";
 		mes "and I'm glad I got to know";
 		mes "you. I don't know if we'll";
@@ -4070,17 +4042,7 @@ veins,181,166,3	script	Lockenlock	900,{
 }
 
 veins,227,127,5	script	Ivory	940,{
-	if (rachel_camel && rachel_camel < 5) {
-		mes "[Organic Soap Maker Ivory]";
-		mes "I need to make more of";
-		mes "my soap, but I've run out";
-		mes "of ingredients. Well, there's";
-		mes "not much I can do without them,";
-		mes "so maybe it'd be better if";
-		mes "I just close up shop today...";
-		close;
-	}
-	else if (rachel_camel == 5) {
+	if (rachel_camel == 5) {
 		mes "["+strcharinfo(0)+"]";
 		mes "Excuse me...?";
 		next;
@@ -4156,12 +4118,11 @@ veins,227,127,5	script	Ivory	940,{
 		mes "^4D4DFF5 Empty Bottles^000000.";
 		mes "Then we can move";
 		mes "on to the hard part.";
-		changequest 3064,3065;
 		set rachel_camel,6;
 		close;
 	}
 	else if (rachel_camel == 6) {
-		if ((countitem(511) > 99) && (countitem(909) > 49) && (countitem(519) > 9) && (countitem(713) > 4)) {
+		if ((countitem(519) > 9) && (countitem(511) > 99) && (countitem(909) > 49) && (countitem(713) > 4)) {
 			mes "[Organic Soap Maker Ivory]";
 			mes "Oh, great! You brought";
 			mes "everything! Now... It's";
@@ -4202,7 +4163,6 @@ veins,227,127,5	script	Ivory	940,{
 			mes "Okay, so I need to visit";
 			mes "him if I really need you";
 			mes "to make the soap...";
-			changequest 3065,3066;
 			set rachel_camel,7;
 			close;
 		}
@@ -4225,11 +4185,23 @@ veins,227,127,5	script	Ivory	940,{
 			close;
 		}
 	}
+	else if (rachel_camel <= 4) {
+		mes "[Organic Soap Maker Ivory]";
+		mes "I need to make more of";
+		mes "my soap, but I've run out";
+		mes "of ingredients. Well, there's";
+		mes "not much I can do without them,";
+		mes "so maybe it'd be better if";
+		mes "I just close up shop today...";
+		close;
+	}
 	else if (rachel_camel == 7) {
-		mes "["+strcharinfo(0)+"]";
-		mes "I need to talk to";
-		mes "someone named Saraman";
-		mes "to get the soap ingredients...";
+		mes "[Beautiful Lady]";
+		mes "Hm? Did you need";
+		mes "something? I'm still";
+		mes "setting up shop now";
+		mes "so I'm not really ready";
+		mes "to sell anything yet.";
 		close;
 	}
 	else if (rachel_camel == 8) {
@@ -4285,7 +4257,7 @@ veins,227,127,5	script	Ivory	940,{
 		mes "sooner I can help Curdie.";
 		close;
 	}
-	else if (rachel_camel > 12 && rachel_camel < 17) {
+	else if (rachel_camel <= 16) {
 		mes "^3355FFYou already found the";
 		mes "camel, so you need to collect";
 		mes "the soap ingredients if you";
@@ -4363,7 +4335,6 @@ veins,227,127,5	script	Ivory	940,{
 		mes "Silk Sand Camel Soap.";
 		mes "you should bring it";
 		mes "to Mr. Lockenlock.^000000";
-		changequest 3077,3078;
 		set rachel_camel,19;
 		close;
 	}
@@ -4374,7 +4345,7 @@ veins,227,127,5	script	Ivory	940,{
 		mes "to Mr. Lockenlock.^000000";
 		close;
 	}
-	else if (rachel_camel > 19 && rachel_camel < 26) {
+	else if (rachel_camel <= 25) {
 		mes "[Organic Soap Maker Ivory]";
 		mes "^333333*Phew!*^000000 It's been";
 		mes "a long day. I think";
@@ -4393,7 +4364,7 @@ veins,227,127,5	script	Ivory	940,{
 }
 
 veins,115,59,5	script	Saraman	847,{
-	if (rachel_camel && rachel_camel < 7) {
+	if (rachel_camel < 7) {
 		mes "[Saraman]";
 		mes "Zzzzz...";
 		mes "Zzz... Zzzzzz...";
@@ -4448,7 +4419,7 @@ veins,115,59,5	script	Saraman	847,{
 		mes "Sadly, Silk Sand Camels";
 		mes "are almost extinct, so I only";
 		mes "have one on this farm. That's";
-		mes "why we have a special contract with Ms. Ivory to make her soap.";
+		mes "why we have a special contract^FFFFFF ^000000 with Ms. Ivory to make her soap.";
 		next;
 		mes "[Camel Farm Owner Saraman]";
 		mes "Say... I wasn't expecting";
@@ -4509,7 +4480,6 @@ veins,115,59,5	script	Saraman	847,{
 		mes "^4D4DFF5 Monster's Feed^000000,";
 		mes "^4D4DFF1 Empty Bottle^000000, and";
 		mes "^4D4DFF1 Yellow Potion^000000.";
-		changequest 3066,3067;
 		set rachel_camel,8;
 		close;
 	}
@@ -4554,7 +4524,6 @@ veins,115,59,5	script	Saraman	847,{
 			delitem 503,1; //Yellow_Potion
 			delitem 619,1; //Unripe_Apple
 			delitem 713,1; //Empty_Bottle
-			changequest 3067,3068;
 			set rachel_camel,9;
 			close;
 		}
@@ -4637,7 +4606,6 @@ veins,115,59,5	script	Saraman	847,{
 		mes "so she shouldn't be far from";
 		mes "here. Please find my camel";
 		mes "Soony as soon as you can!";
-		changequest 3069,3070;
 		set rachel_camel,11;
 		close;
 	}
@@ -4664,7 +4632,7 @@ veins,115,59,5	script	Saraman	847,{
 		mes "sooner I can help Curdie.";
 		close;
 	}
-	else if (rachel_camel > 12 && rachel_camel < 17) {
+	else if (rachel_camel <= 16) {
 		mes "^3355FFYou already found the";
 		mes "camel, so you need to collect";
 		mes "the soap ingredients if you";
@@ -4707,7 +4675,6 @@ veins,115,59,5	script	Saraman	847,{
 		mes "what you've done for me.";
 		mes "Good luck with getting";
 		mes "that soap you want made.";
-		changequest 3076,3077;
 		getitem 617,1; //Old_Violet_Box
 		set rachel_camel,18;
 		close;
@@ -4719,7 +4686,7 @@ veins,115,59,5	script	Saraman	847,{
 		mes "to see Ms. Ivory now?";
 		close;
 	}
-	else if (rachel_camel > 18 && rachel_camel < 24) {
+	else if (rachel_camel <= 23) {
 		mes "[Camel Farm Owner Saraman]";
 		mes "Thank you for finding my";
 		mes "precious Silk Sand Camel";
@@ -4746,7 +4713,6 @@ veins,78,226,5	script	Camel#camelcc1::VeinsCamel	938,{
 		mes "appetite stimulant, but";
 		mes "brusquely turned its";
 		mes "nose away from it.^000000";
-		changequest 3068,3069;
 		set rachel_camel,10;
 		close;
 	}
@@ -4757,6 +4723,7 @@ veins,78,226,5	script	Camel#camelcc1::VeinsCamel	938,{
 		mes "nose away from it.";
 		mes "This probably isn't the";
 		mes "camel you're looking for.^000000";
+		set rachel_camel,10;
 		close;
 	}
 	else {
@@ -4798,24 +4765,23 @@ ve_fild07,235,42,3	script	Silk Sand Camel	938,{
 		mes "I guess all I need to";
 		mes "do is collect some of";
 		mes "that precious camel dung.";
-		changequest 3070,3071;
 		set rachel_camel,12;
 		close;
 	}
-	else if (rachel_camel > 11 && rachel_camel < 17) {
-		if (countitem(511) > 19 && countitem(909) > 9 && countitem(519) > 1 && countitem(713) > 0) {
+	else if (rachel_camel >= 12 && rachel_camel <= 16) {
+		if (countitem(519) > 1 && countitem(511) > 19 && countitem(909) > 9 && countitem(713) > 0) {
 			mes "^3355FFThe camel can smell";
 			mes "that you have food for";
 			mes "it, and started salivating.";
 			mes "You may as well just feed it.^000000";
 			next;
-			switch(rand(3)) {
+			mes "[Silk Sand Camel]";
+			mes "^333333*Chew Chew~*^000000";
+			mes "^333333*Smacks lips*^000000";
+			next;
+			switch(rand(1,7)) {
 			case 1:
 				if (rachel_camel == 12) {
-					mes "[Silk Sand Camel]";
-					mes "^333333*Chew Chew~*^000000";
-					mes "^333333*Smacks lips*^000000";
-					next;
 					mes "^3355FFThe camel ate everything,";
 					mes "but it doesn't seem like";
 					mes "it'll go through any bowel";
@@ -4835,6 +4801,41 @@ ve_fild07,235,42,3	script	Silk Sand Camel	938,{
 				delitem 909,10; //Jellopy
 				close;
 			case 2:
+				mes "^3355FFThe camel grimaced";
+				mes "as if it were suffering";
+				mes "from a stomachache...";
+				mes "And... Out pops a Sweet";
+				mes "Potato. It's probably";
+				mes "safe to eat... Maybe.^000000";
+				delitem 519,2; //Milk
+				delitem 511,20; //Green_Herb
+				delitem 909,10; //Jellopy
+				getitem 516,1; //Sweet_Potato
+				close;
+			case 3:
+				mes "^3355FFThe camel grimaced";
+				mes "as if it were suffering";
+				mes "from a stomachache...";
+				if (rachel_camel == 12) {
+					mes "And... Out pops 3 Sweet";
+					mes "Potatoes. They're probably";
+				}
+				else {
+					mes "And... Out pops a Sweet";
+					mes "Potato. It's probably";
+				}
+				mes "safe to eat... Hopefully.^000000";
+				delitem 519,2; //Milk
+				delitem 511,20; //Green_Herb
+				delitem 909,10; //Jellopy
+				if (rachel_camel == 12) {
+					getitem 516,3; //Sweet_Potato
+				}
+				else {
+					getitem 516,1; //Sweet_Potato
+				}
+				close;
+			case 4:
 				mes "[Silk Sand Camel]";
 				mes "^333333*Chew Chew~*^000000";
 				mes "^333333*Smacks lips*^000000";
@@ -4842,40 +4843,56 @@ ve_fild07,235,42,3	script	Silk Sand Camel	938,{
 				mes "^3355FFThe camel grimaced";
 				mes "as if it were suffering";
 				mes "from a stomachache...";
+				if (rachel_camel == 12) {
+					mes "And... Out pops 7 Sweet";
+					mes "Potatoes. They're probably";
+				}
+				else {
+					mes "And... Out pops a Sweet";
+					mes "Potato. It's probably";
+				}
+				mes "safe to eat... Hopefully.^000000";
+				delitem 519,2; //Milk
+				delitem 511,20; //Green_Herb
+				delitem 909,10; //Jellopy
+				if (rachel_camel == 12) {
+					getitem 516,7; //Sweet_Potato
+				}
+				else {
+					getitem 516,1; //Sweet_Potato
+				}
+
+				close;
+			case 5:
+				mes "^3355FFThe camel grimaced";
+				mes "as if it were suffering";
+				mes "from a stomachache...";
 				mes "Huzzah! You got a lump";
 				mes "of steaming camel dung!";
 				mes "This is cause for celebration!^000000";
 				next;
-				mes "[" + strcharinfo(0) + "]";
+				mes "["+strcharinfo(0)+"]";
 				if (rachel_camel == 12) {
 					mes "Now all I need is";
 					mes "just 4 more lumps";
 					mes "of this nasty old dung.";
-					set rachel_camel, 13;
-					changequest 3071,3072;
 				}
 				else if (rachel_camel == 13) {
 					mes "Awesome! I got";
 					mes "2 glorious camel dung";
 					mes "lumps! Only 3 more to go!";
-					set rachel_camel, 14;
-					changequest 3072,3073;
 				}
 				else if (rachel_camel == 14) {
 					mes "Yes! Now I have";
 					mes "3 camel dung lumps.";
 					mes "Just 2 more... I'm more";
 					mes "than halfway done!";
-					set rachel_camel, 15;
-					changequest 3073,3074;
 				}
 				else if (rachel_camel == 15) {
 					mes "4 lumps of camel dung...";
 					mes "Heh heh! This is going";
 					mes "better than I thought!";
 					mes "Only 1 more to go!";
-					set rachel_camel, 16;
-					changequest 3074,3075;
 				}
 				else if (rachel_camel == 16) {
 					mes "In my hands...";
@@ -4883,7 +4900,7 @@ ve_fild07,235,42,3	script	Silk Sand Camel	938,{
 					mes "5 lumps of camel dung.";
 					mes "This is my finest moment.";
 					next;
-					mes "[" + strcharinfo(0) + "]";
+					mes "["+strcharinfo(0)+"]";
 					mes "Never, in all my years";
 					mes "of adventuring, saving the";
 					mes "oppressed, protecting the";
@@ -4891,7 +4908,7 @@ ve_fild07,235,42,3	script	Silk Sand Camel	938,{
 					mes "that I'd accomplish such";
 					mes "a magnificent feat.";
 					next;
-					mes "[" + strcharinfo(0) + "]";
+					mes "["+strcharinfo(0)+"]";
 					mes "I am so happy--nay--";
 					mes "^4D4DFFproud^000000 that my strength, my";
 					mes "valor, and my determination";
@@ -4901,15 +4918,31 @@ ve_fild07,235,42,3	script	Silk Sand Camel	938,{
 					next;
 					mes "^3355FFIt's time for you to";
 					mes "return to Mr. Saraman.^000000";
-					set rachel_camel, 17;
-					changequest 3075,3076;
+
 				}
 				delitem 519,2; //Milk
 				delitem 511,20; //Green_Herb
 				delitem 909,10; //Jellopy
 				delitem 713,1; //Empty_Bottle
+				set rachel_camel,rachel_camel+1;
 				close;
-			default:
+			case 6:
+				mes "[Silk Sand Camel]";
+				mes "^333333*Chew Chew~*^000000";
+				mes "^333333*Smacks lips*^000000";
+				next;
+				mes "^3355FFThe camel grimaced";
+				mes "as if it were suffering";
+				mes "from a stomachache...";
+				mes "And... Out pops a Sweet";
+				mes "Potato. It's probably";
+				mes "safe to eat... Maybe.^000000";
+				delitem 519,2; //Milk
+				delitem 511,20; //Green_Herb
+				delitem 909,10; //Jellopy
+				getitem 516,1; //Sweet_Potato
+				close;
+			case 7:
 				mes "[Silk Sand Camel]";
 				mes "^333333*Chew Chew~*^000000";
 				mes "^333333*Smacks lips*^000000";
@@ -4929,26 +4962,18 @@ ve_fild07,235,42,3	script	Silk Sand Camel	938,{
 		}
 		else {
 			mes "["+strcharinfo(0)+"]";
-			if (rachel_camel == 12) {
-				mes "I need to feed this camel if";
-				mes "I ever want to get any dung";
-				mes "from it. Let's see, Mr. Saraman";
-				mes "mentioned that the items I got";
-				mes "for Ms. Ivory were actually";
-				mes "camel feed. I need to have...";
-			}
-			else {
-				mes "Did I run out of feed";
-				mes "already? Nuts, if I want";
-				mes "to feed this camel again,";
-				mes "then I need to bring it...";
-			}
+			mes "I need to feed this camel if";
+			mes "I ever want to get any dung";
+			mes "from it. Let's see, Mr. Saraman";
+			mes "mentioned that the items I got";
+			mes "for Ms. Ivory were actually";
+			mes "camel feed. I need to have...";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "^4D4DFF2 Milk^000000,";
-			mes "^4D4DFF20 Green Herbs^000000,";
-			mes "^4D4DFF10 Jellopies^000000, and";
-			mes "^4D4DFF1 Empty Bottles^000000.";
+			mes "^4D4DFF10 Milk^000000,";
+			mes "^4D4DFF100 Green Herbs^000000,";
+			mes "^4D4DFF50 Jellopies^000000, and";
+			mes "^4D4DFF5 Empty Bottles^000000.";
 			next;
 			mes "[Silk Sand Camel]";
 			mes "*Chew Chew*";
@@ -5031,7 +5056,6 @@ veins,221,120,5	script	Young Town Native	943,{
 		mes "^3355FFFind Mr. Lockenlock";
 		mes "in the market street, and";
 		mes "bring him a Yellow Potion.^000000";
-		changequest 3062,3063;
 		set rachel_camel,4;
 		close;
 	}
@@ -5068,8 +5092,9 @@ veins,221,120,5	script	Young Town Native	943,{
 	}
 }
 
-// Thor Volcano Base Quest :: veins_camp
-//============================================================
+// Thor Volcano Base Quest
+//============================================================ 
+
 ra_temin,87,133,1	script	Rachel Guard#vol1	934,5,2,{
 	if (aru_vol == 2) {
 		mes "[Guard Karlum]";
@@ -5127,7 +5152,7 @@ ra_temin,87,133,1	script	Rachel Guard#vol1	934,5,2,{
 		mes "["+strcharinfo(0)+"]";
 		mes "You know ^3131FFLamir^000000, right?";
 		next;
-		emotion ET_HUK;
+		emotion e_omg;
 		mes "[Guard Karlum]";
 		mes "Lamir? Oh... My.";
 		mes "Oh no! Did something";
@@ -5167,7 +5192,7 @@ ra_temin,87,133,1	script	Rachel Guard#vol1	934,5,2,{
 		disablenpc "Rachel Guard#vol1";
 		end;
 	}
-	else if ((aru_vol > 2) && (aru_vol < 5)) {
+	else if ((aru_vol> 2) && (aru_vol < 5)) {
 		mes "[Guard Karlum]";
 		mes "Hey! Lamir told me that";
 		mes "she didn't want to see";
@@ -5195,20 +5220,23 @@ ra_temin,87,133,1	script	Rachel Guard#vol1	934,5,2,{
 		disablenpc "Rachel Guard#vol1";
 		end;
 	}
-	mes "[Guard Karlum]";
-	mes "High Priest Vildt isn't";
-	mes "here right now. Please";
-	mes "come back later if you";
-	mes "wish to see him.";
-	close;
+	else {
+		mes "[Guard Karlum]";
+		mes "High Priest Vildt isn't";
+		mes "here right now. Please";
+		mes "come back later if you";
+		mes "wish to see him.";
+		close;
+	}
 
 OnInit:
 	enablenpc "Rachel Guard#vol1";
 	end;
 
 OnTouch:
+//OnTouch2:
 	warp "ra_temin",85,137;
-	end;
+	close;
 }
 
 ra_temin,82,133,7	script	Rachel Guard#vol2	934,5,2,{
@@ -5224,12 +5252,13 @@ OnInit:
 	end;
 
 OnTouch:
+//OnTouch2:
 	warp "ra_temin",85,137;
-	end;
+	close;
 }
 
 ra_temin,115,140,1	script	Flower Vase#vol	111,{
-	if ((aru_vol > 2) && (aru_vol < 5)) {
+	if ((aru_vol> 2) && (aru_vol < 5)) {
 		mes "^3355FFYou find a giant";
 		mes "vase full of beautiful";
 		mes "flowers that look freshly";
@@ -5272,6 +5301,7 @@ ra_temin,115,140,1	script	Flower Vase#vol	111,{
 
 ra_temin,85,131,0	script	path_vol1	-1,5,0,{
 OnTouch:
+//OnTouch2:
 	if ((aru_vol != 3) && (aru_vol != 4)) {
 		warp "ra_temin",85,137;
 	}
@@ -5280,6 +5310,7 @@ OnTouch:
 
 ra_temin,82,131,0	script	path_vol1#2	-1,5,0,{
 OnTouch:
+//OnTouch2:
 	if (aru_vol != 4) {
 		warp "ra_temin",85,137;
 	}
@@ -5288,6 +5319,7 @@ OnTouch:
 
 ra_temin,82,127,0	script	path_vol1#3	-1,5,1,{
 OnTouch:
+//OnTouch2:
 	if (aru_vol == 5) {
 		warp "ra_temin",84,124;
 	}
@@ -5471,7 +5503,6 @@ ra_temin,85,118,3	script	Drawer#vol3	111,{
 			mes "Research Institute'' on";
 			mes "the cover, and then you";
 			mes "close the drawer.^000000";
-			changequest 2114,2115;
 			set aru_vol,5;
 			getitem 7342,1; //File01
 			close;
@@ -5537,6 +5568,7 @@ ra_temin,73,126,1	script	Ladder#vol1	111,{
 
 ve_in,280,223,0	script	#volroom	-1,2,2,{
 OnTouch:
+//OnTouch2:
 	if (aru_vol == 6) {
 		mes "^3355FFThis house looks like";
 		mes "it's been abandoned for";
@@ -5621,8 +5653,8 @@ ve_in,233,116,3	script	Drunken Man#vol	901,{
 		mes "Hahahaha! Guess I look";
 		mes "pretty tough, don't I?";
 		next;
-		emotion ET_THROB, getnpcid(0, "Drunken Lady#1");
-		emotion ET_THROB, getnpcid(0, "Drunken Lady#2");
+		emotion e_lv,0,"Drunken Lady#1";
+		emotion e_lv,0,"Drunken Lady#2";
 		mes "[Ladies]";
 		mes "Oh, my God!";
 		mes "You're so cool~!";
@@ -5651,8 +5683,8 @@ ve_in,233,116,3	script	Drunken Man#vol	901,{
 		mes "Hahahaha! Guess I look";
 		mes "pretty tough, don't I?";
 		next;
-		emotion ET_THROB, getnpcid(0, "Drunken Lady#1");
-		emotion ET_THROB, getnpcid(0, "Drunken Lady#2");
+		emotion e_lv,0,"Drunken Lady#1";
+		emotion e_lv,0,"Drunken Lady#2";
 		mes "[Ladies]";
 		mes "Oh, my God!";
 		mes "You're so cool~!";
@@ -5719,8 +5751,8 @@ ve_in,233,116,3	script	Drunken Man#vol	901,{
 		mes "but duty calls.";
 		mes "Hahahahahahha~";
 		next;
-		emotion ET_THROB, getnpcid(0, "Drunken Lady#1");
-		emotion ET_THROB, getnpcid(0, "Drunken Lady#2");
+		emotion e_lv,0,"Drunken Lady#1";
+		emotion e_lv,0,"Drunken Lady#2";
 		mes "[Ladies]";
 		mes "Please don't go~";
 		next;
@@ -5743,7 +5775,7 @@ ve_in,233,116,3	script	Drunken Man#vol	901,{
 		mes "["+strcharinfo(0)+"]";
 		mes "Yes?";
 		next;
-		emotion ET_BEST;
+		emotion e_no1;
 		mes "[Drunken Man]";
 		mes "I hereby promote you as";
 		mes "chief researcher of the";
@@ -5804,8 +5836,8 @@ ve_in,233,116,3	script	Drunken Man#vol	901,{
 		mes "I should stay here and";
 		mes "entreat them to a lecture.";
 		next;
-		emotion ET_THROB, getnpcid(0, "Drunken Lady#1");
-		emotion ET_THROB, getnpcid(0, "Drunken Lady#2");
+		emotion e_lv,0,"Drunken Lady#1";
+		emotion e_lv,0,"Drunken Lady#2";
 		mes "[Ladies]";
 		mes "Oh~! You'll really";
 		mes "teach us geology?";
@@ -5831,7 +5863,6 @@ ve_in,233,116,3	script	Drunken Man#vol	901,{
 		mes "the feeling that this will";
 		mes "all turn out in your favor.";
 		mes "You know that feeling, right?^000000";
-		changequest 2116,2117;
 		set aru_vol,8;
 		getitem 7705,1; //Note_Of_Geologist
 		close;
@@ -5954,7 +5985,6 @@ ve_in,233,116,3	script	Drunken Man#vol	901,{
 		mes "well done. Good work!";
 		mes "I expected nothing less";
 		mes "from my star pupil!";
-		changequest 60211,60212;
 		set aru_vol,25;
 		delitem 7342,1; //File01
 		delitem 7704,1; //Broken_Thermometer
@@ -5977,8 +6007,8 @@ ve_in,233,116,3	script	Drunken Man#vol	901,{
 	mes "Hahahaha! Guess I look";
 	mes "pretty tough, don't I?";
 	next;
-	emotion ET_THROB, getnpcid(0, "Drunken Lady#1");
-	emotion ET_THROB, getnpcid(0, "Drunken Lady#2");
+	emotion e_lv,0,"Drunken Lady#1";
+	emotion e_lv,0,"Drunken Lady#2";
 	mes "[Ladies]";
 	mes "Oh, my God!";
 	mes "You're so cool~!";
@@ -6082,7 +6112,6 @@ ve_in,281,214,3	script	Bookshelf#vol	111,{
 		mes "your eyes, and reach inside";
 		mes "Gio's purple box of goodies.^000000";
 		next;
-		changequest 60212,60213;
 		set aru_vol,26;
 		set .@box_box,rand(1,20);
 		if (.@box_box < 7) {
@@ -6097,7 +6126,7 @@ ve_in,281,214,3	script	Bookshelf#vol	111,{
 		else {
 			getitem 12103,1; //Bloody_Dead_Branch
 		}
-		getexp (checkre(3))?100000:800000,0;
+		getexp 800000,0;
 		mes "^3355FFWell, you've done all";
 		mes "that you could here.";
 		mes "Now would be a good time";
@@ -6126,7 +6155,6 @@ thor_v01,37,234,3	script	Hot Land Surface#1	111,{
 			mes "^3355FFYou record the";
 			mes "temperature in";
 			mes "your report.^000000";
-			changequest 2117,2118;
 			set aru_vol,9;
 			next;
 			mes "["+strcharinfo(0)+"]";
@@ -6164,7 +6192,6 @@ thor_v02,165,37,3	script	Hot Land Surface#2	111,{
 			mes "^3355FFYou record the";
 			mes "temperature in";
 			mes "your report.^000000";
-			changequest 2118,2119;
 			set aru_vol,10;
 			close;
 		}
@@ -6202,7 +6229,6 @@ thor_v02,170,100,3	script	Hot Land Surface#3	111,{
 			mes "measurements. I should";
 			mes "submit this report to the";
 			mes "geological camp now~";
-			changequest 2119,2120;
 			set aru_vol,11;
 			close;
 		}
@@ -6249,7 +6275,6 @@ que_thor,145,66,3	script	Guard#vol::VeinsGuard	939,{
 		mes "ask Sahedi to help you.";
 		mes "He's at the airship just";
 		mes "south of the train station.";
-		changequest 2120,2121;
 		set aru_vol,12;
 		close2;
 		warp "thor_camp",248,190;
@@ -6329,7 +6354,7 @@ thor_camp,250,104,3	script	Sahedi#vol	934,{
 		mes "[Sahedi]";
 		mes "Let's see...";
 		next;
-		emotion ET_HUK;
+		emotion e_omg;
 		mes "[Sahedi]";
 		mes "Oh God! Why is the";
 		mes "temperature so high?!";
@@ -6337,7 +6362,7 @@ thor_camp,250,104,3	script	Sahedi#vol	934,{
 		mes "like this in the past, but...";
 		mes "Is this... How bad is this?";
 		next;
-		emotion ET_PROFUSELY_SWEAT, playerattached();
+		emotion 19,1;
 		mes "["+strcharinfo(0)+"]";
 		mes "Oh... Oh, no!";
 		mes "Yikes! I guess if it's";
@@ -6362,7 +6387,6 @@ thor_camp,250,104,3	script	Sahedi#vol	934,{
 		mes "Please go ahead, and";
 		mes "see if this camp will be";
 		mes "safe from any disaster.";
-		changequest 2121,2122;
 		set aru_vol,13;
 		delitem 7342,1; //File01
 		close;
@@ -6419,7 +6443,7 @@ thor_camp,250,104,3	script	Sahedi#vol	934,{
 				next;
 			}
 		}
-		emotion ET_HUK;
+		emotion e_omg;
 		mes "[Sahedi]";
 		mes "Huh? Are you serious?";
 		mes "Thor Volcano's gonna";
@@ -6428,7 +6452,7 @@ thor_camp,250,104,3	script	Sahedi#vol	934,{
 		mes "It'll be a disaster, just";
 		mes "like it happened in the past!";
 		next;
-		emotion ET_SPARK, playerattached();
+		emotion 52,1;
 		mes "["+strcharinfo(0)+"]";
 		mes "Yes, I agree. There's";
 		mes "a good chance of an...";
@@ -6440,7 +6464,7 @@ thor_camp,250,104,3	script	Sahedi#vol	934,{
 		mes "How much time do we";
 		mes "have to evacuate?";
 		next;
-		emotion ET_SPARK, playerattached();
+		emotion 52,1;
 		mes "["+strcharinfo(0)+"]";
 		mes "Well... Uh...";
 		mes "According to my data...";
@@ -6477,7 +6501,6 @@ thor_camp,250,104,3	script	Sahedi#vol	934,{
 		mes "Hopefully he'll have some";
 		mes "advice for what we can";
 		mes "do about this disaster...";
-		changequest 2128,60211;
 		set aru_vol,24;
 		getitem 7342,1; //File01
 		close;
@@ -6490,6 +6513,7 @@ thor_camp,250,104,3	script	Sahedi#vol	934,{
 
 thor_camp,194,220,0	script	#Colonel1	-1,5,5,{
 OnTouch:
+//OnTouch2:
 	if (aru_vol == 13) {
 		enablenpc "Colonel Vito#1";
 		mes "[????]";
@@ -6522,7 +6546,6 @@ OnTouch:
 		mes "great Colonel Vito. I'll mold";
 		mes "you into a true warrior for";
 		mes "Freya! Now follow me!";
-		changequest 2122,2123;
 		set aru_vol,14;
 		close2;
 		disablenpc "Colonel Vito#1";
@@ -6545,6 +6568,7 @@ OnTouch:
 
 thor_camp,162,182,0	script	#Colonel2	-1,7,7,{
 OnTouch:
+//OnTouch2:
 	if (aru_vol == 13) {
 		enablenpc "Colonel Vito#2";
 		mes "[????]";
@@ -6577,7 +6601,6 @@ OnTouch:
 		mes "great Colonel Vito. I'll mold";
 		mes "you into a true warrior for";
 		mes "Freya! Now follow me!";
-		changequest 2122,2123;
 		set aru_vol,14;
 		disablenpc "Colonel Vito#2";
 		close2;
@@ -6828,7 +6851,6 @@ thor_camp,159,74,3	script	Colonel Vito#3	946,{
 		mes "in Freya's service. That";
 		mes "is all for the first exercise,";
 		mes "but there's one more left.";
-		changequest 2123,2124;
 		set aru_vol,16;
 		close;
 	}
@@ -6870,7 +6892,6 @@ thor_camp,159,74,3	script	Colonel Vito#3	946,{
 		mes "body. See the dummy in";
 		mes "front of you? Practice by";
 		mes "chopping it 10 times. Go!";
-		changequest 2125,2126;
 		set aru_vol,19;
 		next;
 		if (select("Yes, sir!:What do you mean by chop?") == 1) {
@@ -6921,7 +6942,6 @@ thor_camp,159,74,3	script	Colonel Vito#3	946,{
 		mes "he'll think of me as";
 		mes "a geological researcher";
 		mes "instead of as a soldier.^000000)";
-		changequest 2126,2127;
 		set aru_vol,21;
 		close;
 	}
@@ -6935,7 +6955,8 @@ thor_camp,159,74,3	script	Colonel Vito#3	946,{
 
 thor_camp,141,62,0	script	#vol_study1::VeinsWarp	-1,3,3,{
 OnTouch:
-	if ((aru_vol > 13 && aru_vol < 17) || (aru_vol == 19)) {
+//OnTouch2:
+	if ((aru_vol >= 14 && aru_vol <= 16) || (aru_vol == 19)) {
 		warp "thor_camp",156,67;
 	}
 	end;
@@ -6946,6 +6967,7 @@ thor_camp,172,38,0	duplicate(VeinsWarp)	#vol_study3	-1,3,3
 
 thor_camp,172,132,0	script	#sita_vol	-1,3,3,{
 OnTouch:
+//OnTouch2:
 	if (aru_vol == 21) {
 		mes "^3355FFThere's a stream of";
 		mes "magma running down";
@@ -6964,18 +6986,18 @@ OnTouch:
 
 thor_camp,148,310,0	script	#buki_vol	-1,5,5,{
 OnTouch:
+//OnTouch2:
 	if (aru_vol == 22) {
 		mes "^3355FFPeople are carrying";
 		mes "many heavy wooden boxes";
 		mes "imprinted with the stamp";
-		mes "of the Schwarzwald Republic.";
+		mes "of the Schwaltzvalt Republic.";
 		mes "These must contain military";
 		mes "supplies for the camp.^000000";
 		next;
 		mes "["+strcharinfo(0)+"]";
 		mes "I should go back";
 		mes "to Sahedi now.";
-		changequest 2127,2128;
 		set aru_vol,23;
 		close;
 	}
@@ -7031,7 +7053,6 @@ thor_camp,109,167,3	script	Control Panel#vol	111,{
 		mes "No problems here.";
 		mes "I guess I can go";
 		mes "back to that colonel.";
-		changequest 2124,2125;
 		set aru_vol,18;
 		close;
 	}
@@ -7108,7 +7129,7 @@ thor_camp,150,65,3	script	Dummy#1::VeinsDummy	111,{
 	else if (aru_vol == 20) {
 		mes "^3355FF*THUD*^000000";
 		specialeffect EF_HIT2;
-		emotion ET_HUK, playerattached();
+		emotion e_omg,1;
 		next;
 		mes "[Colonel Vito]";
 		mes "Soldier...";
@@ -7144,7 +7165,6 @@ thor_camp,156,57,3	duplicate(VeinsDummy)	Dummy#5	111
 thor_camp,162,57,3	duplicate(VeinsDummy)	Dummy#6	111
 
 thor_camp,248,104,5	script	Aitra#vol	939,{
-	end;
 OnInit:
 	disablenpc "Aitra#vol";
 	end;
@@ -7183,7 +7203,7 @@ thor_camp,59,79,1	script	Thor Volcano Soldier#vo3	939,{
 }
 
 thor_camp,143,114,1	script	Thor Volcano Soldier#vo4	939,{
-	emotion ET_CRY;
+	emotion e_sob;
 	mes "[Soldier]";
 	mes "Oh Freya...";
 	mes "Bless this Old Blue Box";
@@ -7242,7 +7262,7 @@ thor_camp,98,213,5	script	Thor Volcano Soldier#vo8	939,{
 	close;
 }
 
-thor_camp,98,209,5	script	Thor Volcano Soldier#vo9	939,{
+thor_camp,98,213,5	script	Thor Volcano Soldier#vo9	939,{
 	mes "[Soldier]";
 	mes "Why am I always";
 	mes "stationed here?!";
@@ -7252,7 +7272,7 @@ thor_camp,98,209,5	script	Thor Volcano Soldier#vo9	939,{
 }
 
 thor_v02,143,78,0	script	#totcamp	45,2,2,{
-OnTouch_:
+OnTouch:
 	if (rachel_camel < 24) {
 		warp "que_thor",65,55;
 		end;
@@ -7262,19 +7282,20 @@ OnTouch_:
 }
 
 que_thor,69,56,0	script	#tov_1	45,2,2,{
-OnTouch_:
+OnTouch:
 	warp "thor_v02",146,84;
 	end;
 }
 
 que_thor,187,56,0	script	#tov_2	45,2,2,{
-OnTouch_:
+OnTouch:
 	warp "thor_v02",146,84;
 	end;
 }
 
 thor_camp,62,98,0	script	#volbq	-1,5,5,{
 OnTouch:
+//OnTouch2:
 	mes "^3355FFThere is an old man";
 	mes "in high priest robes";
 	mes "in front of you.^000000";
@@ -7305,7 +7326,7 @@ thor_camp,246,191,3	script	Guard#goto	939,{
 }
 
 veins,302,166,0	script	#whoau	-1,2,2,{
-OnTouch_:
+OnTouch:
 	mes "[House Owner]";
 	mes "Wh-who the hell";
 	mes "are you? Honey!";
@@ -7334,7 +7355,7 @@ ve_in,237,131,1	script	Female Customer#ve1	940,{
 	mes "men? You know, I've been";
 	mes "pretty lonely lately...";
 	next;
-	if (Sex == SEX_FEMALE) {
+	if (Sex == 0) {
 		mes "[Bartender]";
 		mes "Haha, well,";
 		mes "I'm not so sure..";
@@ -7348,7 +7369,7 @@ ve_in,237,131,1	script	Female Customer#ve1	940,{
 		mes "[Bartender]";
 		mes "Oh, come on!";
 		mes "I was kidding~";
-		emotion ET_CRY;
+		emotion e_sob;
 		close;
 	}
 	mes "[Bartender]";
@@ -7359,12 +7380,12 @@ ve_in,237,131,1	script	Female Customer#ve1	940,{
 	next;
 	mes "["+strcharinfo(0)+"]";
 	mes "Meee?";
-	emotion ET_PROFUSELY_SWEAT, playerattached();
+	emotion 19,1;
 	next;
 	mes "[Female Customer]";
 	mes "Mmm...";
 	mes "Not my style.";
-	emotion ET_THINK, playerattached();
+	emotion e_dots,1;
 	close;
 }
 

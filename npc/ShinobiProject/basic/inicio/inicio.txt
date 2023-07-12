@@ -1,0 +1,383 @@
+job_sage.gat,115,100,5	script	Mestre Ebisu#1	4_m_job_knight2,{
+    //cutin "cutin_ebisu",2;
+    mes "[^FF0000Mestre Ebisu^000000]";
+    mes "Olá jovem";
+    next;
+    mes "[^FF0000Mestre Ebisu^000000]";
+    mes "Olá jovem";
+    mes "...";
+    next;
+    mes "[^FF0000Mestre Ebisu^000000]";
+    mes "Olá jovem";
+    mes "Está perante o melhor sensei que terá na vida!";
+    next;
+    mes "[^FF0000Mestre Ebisu^000000]";
+    mes "Antes de mais nada.";
+    mes "Qual o seu nome?";
+    next;
+    input .@name$;
+    mes "[^FF0000Mestre Ebisu^000000]";
+    mes "É um prazer conhecê lo " + .@name$;
+    mes "O meu nome é ^FF0000Ebisu^000000 e estou aqui para lhe dar uma ajuda basica sobre como sobreviver nesse mundo e assim se graduar genin.";
+    next;
+    mes "[^FF0000Mestre Ebisu^000000]";
+    mes "Antes de começarmos a sua formação ninja, tenho umas perguntas para lhe fazer, ok?";
+    mes "Entao...";
+    next;
+    mes "[^FF0000Mestre Ebisu^000000]";
+    mes "Qual a natureza do seu chakra?";
+    next;
+    switch(select("Katon:Suiton:Raiton:Doton:Fuuton:Não sei controlar o meu chakra" )) {
+        case 1:
+            set chakraElement,1;
+            mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Otimo, ^910000Katon^000000 é uma ótima natureza de chakra.";
+            mes "É claro que eu sei escolher os meus discípulos.";
+			break;
+		case 2:
+            set chakraElement,2;
+			mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Otimo, ^0009b0Suiton^000000 é uma ótima natureza de chakra.";
+            mes "É claro que eu sei escolher os meus discípulos.";
+			break;
+        case 3:
+            set chakraElement,3;
+			mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Otimo, ^9c9400Raiton^000000 é uma ótima natureza de chakra.";
+            mes "É claro que eu sei escolher os meus discípulos.";
+			break;
+        case 4:
+            set chakraElement,4;
+			mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Otimo, ^663800Doton^000000 é uma ótima natureza de chakra.";
+            mes "É claro que eu sei escolher os meus discípulos.";
+			break;
+		case 5:
+            set chakraElement,5;
+            mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Otimo, ^30b500Fuuton^000000 é uma ótima natureza de chakra.";
+            mes "É claro que eu sei escolher os meus discípulos.";
+			break;
+        case 6:
+            set chakraElement,0;
+			mes "[^FF0000Mestre Ebisu^000000]";
+            mes "Infelizmente nem todos nascem com a capacidade de controlar o seu chakra.";
+            mes "No entanto, nada precisa temer jovem gafanhoto. Trabalhando arduamente nada o irá impedir de ser um super talento nas artes de ^616161Taijutsu^000000 e ^d900d5Medicina^000000!";
+			break;
+    }
+    next;
+    mes "[^FF0000Mestre Ebisu^000000]";
+    mes "Bom, continuando...";
+    mes "Qual a sua vila de origem?";
+    next;
+    switch(select("Konoha:Suna")) {
+        case 1:
+            set village,1;
+            mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Serio? Tambem sou de ^0f4700Konoha^000000.";
+            mes "Talvez, se quiser, podemos dar continuidade a formação, afinal de contas, eu sou um criador de hokages.";
+            mes "hehehe";
+			break;
+		case 2:
+            set village,2;
+			mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Por isso que você é meio seco ne? hehehe";
+            mes "Estou brincado, talvez esteja formando o futuro kazekage?!";
+			break;
+    }
+    next;
+    mes "[^FF0000Mestre Ebisu^000000]";
+    mes "E só mais uma ultima pergunta...";
+    mes "Tem descendencia de alguma familia com algum kekkei genkai?";
+    next;
+    switch(select("Infelizmente, não.:Hyuga:Uchiha:Akimichi:Nara:Haku")) {
+        case 1:
+            set kekkeigenkai,0;
+            mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Sempre dei valor aos grandes ninjas que aparecem sem nenhuma vantagem sub natural.";
+            mes "Nada lhe impede de ser tão ou mais forte que outros ninjas com alguma linhagem.";
+            mes "Vamos, se dedique!";
+			break;
+		case 2:
+            set kekkeigenkai,1;
+			mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Hyuga ein?!";
+            mes "Familia de grandes ninjas, sem duvida você não será exceção.";
+            mes "Vamos, se dedique!";
+			break;
+        case 3:
+            set kekkeigenkai,2;
+			mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Uchiha ein?!";
+            mes "Familia de grandes ninjas, sem duvida você não será exceção.";
+            mes "Vamos, se dedique!";
+			break;
+        case 4:
+            set kekkeigenkai,3;
+			mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Akimichi ein?!";
+            mes "Familia de grandes ninjas, sem duvida você não será exceção.";
+            mes "Vamos, se dedique!";
+			break;
+        case 5:
+            set kekkeigenkai,4;
+			mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Nara ein?!";
+            mes "Familia de grandes ninjas, sem duvida você não será exceção.";
+            mes "Vamos, se dedique!";
+			break;
+        case 6:
+            set kekkeigenkai,5;
+			mes "[^FF0000Mestre Ebisu^000000]";
+			mes "Haku?";
+            mes "Essa familia é lá do país da água. Sua linhagem vem de longe.";
+            mes "Aposto que será um otimo ninja.";
+			break;
+    }
+    set kekkeigenkai_lvl,0;
+    set kekkeigenkai_exp,0;
+    next;
+    mes "[^FF0000Mestre Ebisu^000000]";
+	mes "Bom, acho que fiquei sem questáes.";
+    mes "Vamos entao agora seguir para o treinamento de combate.";
+    mes "Lets go!";
+    close2;
+    //cutin "cutin_ebisu",255;
+    warp "kakashi",91,141;
+	end;
+}
+
+kakashi,98,141,3	script	Mestre Ebisu#2	4_m_job_knight2,{
+    //cutin "cutin_ebisu",2;
+    if ( ! tutorial) {
+        mes "[^FF0000Mestre Ebisu^000000]";
+        mes "Bem vindo ao nosso campo de treino.";
+        mes "Como primeiro exercicio, eu quero que você estude este pergaminho.";
+        mes "Esse pergaminho tem um passo a passo de como fazer uma hablidade basica.";
+        mes "Não se preocupe, estou lhe dando um pergaminho adequado a natureza do seu chakra.";
+        mes "Volte assim que terminar de ler.";
+        getitem 12800,1;
+        set tutorial,1;
+        setquest 1000;
+    }
+
+    if (tutorial == 1) {
+        mes "[^FF0000Mestre Ebisu^000000]";
+        mes "Já leu o pergaminho?";
+        if (countitem(12800) < 1) {
+            mes "Ótimo, Vamos agora passar a proxima etapa.";
+            emotion ET_OK;
+            next;
+            mes "[^FF0000Mestre Ebisu^000000]";
+            mes "Preciso que você derrote 3 desses bonecos de treino.";
+            mes "Assim que o fizer, volte a falar comigo.";
+            completequest 1000;
+			getitem 13250,5;
+            setquest 1001;
+            set tutorial,2;
+			close2;
+			//cutin "cutin_ebisu",255;
+			end;
+        } else {
+            mes "Volte quando o fizer.";
+        }
+        emotion ET_GO;
+    }
+
+    if (tutorial == 2) {
+        mes "[^FF0000Mestre Ebisu^000000]";
+        mes "Como vai esse progresso?";
+        if (checkquest(1001,HUNTING) == 2) {
+            mes "Ótimo, Agora vou lhe ensinar sobre jutsus relativos ao seu chakra.";
+            emotion ET_OK;
+            next;
+            mes "[^FF0000Mestre Ebisu^000000]";
+            mes "Está vendo esse pergaminho que tenho na mão?";
+            mes "Aqui está como fazer alguns jutsus basicos com o seu chakra.";
+            mes "Pratique esses jutsus derrotando 10 bonecos dessa vez.";
+            mes "Assim que o fizer, volte a falar comigo.";
+
+            switch(chakraElement) {
+                case 1: // katon
+                    skill 19,1,0;
+                    break;
+
+                case 2: // suiton
+                    skill 14,1,0;
+                    break;
+
+                case 3: // raiton
+                    skill 20,1,0;
+                    break;
+
+                case 4: // doton
+                    skill 90,1,0;
+                    break;
+
+                case 5: // fuuton
+                    skill 11,1,0;
+                    break;
+
+                case 0: // sem elemento
+                    skill 48,1,0;
+                    break;
+            }
+
+            completequest 1001;
+            setquest 1002;
+            set tutorial,3;
+        } else {
+            mes "Volte quando destruir os 3 bonecos.";
+        }
+        emotion ET_GO;
+    }
+
+    if (tutorial == 3) {
+        mes "[^FF0000Mestre Ebisu^000000]";
+        mes "Como vai esse progresso?";
+        if (checkquest(1002,HUNTING) == 2) {
+            mes "Ótimo, Está parecendo um verdadeiro ninja.";
+            emotion ET_OK;
+            next;
+            mes "[^FF0000Mestre Ebisu^000000]";
+            mes "Acho que está pronto para se tornar um ninja.";
+            mes "Antes de eu lhe mandar para a sua vila, irei permitir que escolha a sua bandana favorita.";
+            mes "Isso mesmo, terá direito a escolher!";
+            mes "No entanto, lhe darei um tempo, caso queira ficar pelo campo de treinamento durante mais um tempo.";
+            next;
+            switch(select("Quero ficar por aqui um pouco mais:Quero ser Genin")) {
+                case 1:
+                    mes "[^FF0000Mestre Ebisu^000000]";
+                    mes "Tudo bem, se divirta.";
+                    mes "Volte quando estiver pronto";
+                    completequest 1002;
+                    set tutorial,4;
+					close2;
+					//cutin "cutin_ebisu",255;
+					end;
+                    break;
+                case 2:
+                    mes "[^FF0000Mestre Ebisu^000000]";
+                    mes "Otimo.";
+                    mes "Vamos lá tratar da papelada.";
+                    set tutorial,4;
+                    break;
+            }
+        } else {
+            mes "Volte quando destruir os 10 bonecos.";
+        }
+        emotion ET_GO;
+    }
+
+    if (tutorial == 4) {
+        mes "[^FF0000Mestre Ebisu^000000]";
+        mes "Então.";
+        mes "Está pronto?";
+        next;
+        switch(select("Sim:Não")) {
+            case 1:
+                mes "[^FF0000Mestre Ebisu^000000]";
+                mes "Qual dessas bandanas é a sua favorita?";
+                next;
+                set .@bandanaSelector, select("Bandana normal:Bandana de lado:Bandana no pescoço:Bandana yamato:Bandana Kisame:Bandana Kakashi");
+                mes "[^FF0000Mestre Ebisu^000000]";
+                mes "Ótimo, nos vemos por ai, caro genin!";
+                next;
+                set tutorial,5;
+                switch(.@bandanaSelector) {
+                    case 1:
+                        switch(village) {
+                            case 1:
+                                getitem 19008,1;
+                                break;
+                            case 2:
+                                getitem 19006,1;
+                                break;
+                        }
+                        break;
+                        
+                    case 2:
+                        switch(village) {
+                            case 1:
+                                getitem 19034,1;
+                                break;
+                            case 2:
+                                getitem 19018,1;
+                                break;
+                        }
+                        break;
+
+                    case 3:
+                        switch(village) {
+                            case 1:
+                                getitem 19025,1;
+                                break;
+                            case 2:
+                                getitem 19096,1;
+                                break;
+                        }
+                        break;
+                    
+                    case 4:
+                        switch(village) {
+                            case 1:
+                                getitem 19170,1;
+                                break;
+                            case 2:
+                                getitem 19168,1;
+                                break;
+                        }
+                        break;
+                        
+                    case 5:
+                        switch(village) {
+                            case 1:
+                                getitem 19030,1;
+                                break;
+                            case 2:
+                                getitem 19156,1;
+                                break;
+                        }
+                        break;
+
+                    case 6:
+                        switch(village) {
+                            case 1:
+                                getitem 19004,1;
+                                break;
+                            case 2:
+                                getitem 19076,1;
+                                break;
+                        }
+                        break;
+                }
+                switch(village) {
+                    case 1:
+                        jobchange 1;
+                        warp "konoha3",196,221;
+                        savepoint "hospital",25,92;
+                        break;
+                    case 2:
+                        jobchange 2;
+                        warp "job_sage",49,165;
+                        savepoint "job_sage",49,165;
+                        break;
+                }
+                break;
+            case 2:
+                mes "[^FF0000Mestre Ebisu^000000]";
+                mes "Tudo bem, volte quando estiver pronto.";
+                break;
+        }
+    }
+
+    if (tutorial == 5) {
+        mes "[^FF0000Mestre Ebisu^000000]";
+        mes "Faz tempo que não vejo você.";
+        mes "Como está grandão.";
+        emotion ET_OK;
+    }
+    close2;
+    //cutin "cutin_ebisu",255;
+	end;
+}

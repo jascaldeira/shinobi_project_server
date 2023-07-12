@@ -1,0 +1,40 @@
+-	script	ninjaSystem#1	-1,{
+    OnPCLoginEvent:
+    OnPCLoadMapEvent:
+        callfunc "kg_akimichi";
+        callfunc "kg_uchiha";
+        callfunc "kg_nara";
+        callfunc "kg_hyuga";
+        callfunc "kg_haku";
+        callfunc "elemental_bonus";
+        end;
+}
+
+function	script	elemental_bonus	{
+    switch(chakraElement) {
+        case 1: // katon
+            bonus_script "{bonus2 bMagicAtkEle,Ele_Fire,5;}",172800, 520;
+            break;
+
+        case 2: // suiton
+            bonus_script "{bonus2 bMagicAtkEle,Ele_Water,5;}",172800, 520;
+            break;
+
+        case 3: // raiton
+            bonus_script "{bonus2 bMagicAtkEle,Ele_Wind,5;}",172800, 520;
+            break;
+
+        case 4: // doton
+            bonus_script "{bonus2 bMagicAtkEle,Ele_Earth,5;}",172800, 520;
+            break;
+
+        case 5: // fuuton
+            bonus_script "{bonus2 bMagicAtkEle,Ele_Dark,5;}",172800, 520;
+            break;
+
+        case 0: // sem elemento
+            bonus_script "{bonus bAtkRate,5;}",172800, 520;
+            break;
+    }
+	return;
+}

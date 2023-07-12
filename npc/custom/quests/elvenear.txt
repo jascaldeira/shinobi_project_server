@@ -1,11 +1,11 @@
-//===== rAthena Script =======================================
+//===== eAthena Script =======================================
 //= Daily Job Quest For Elven Ears
 //===== By: ==================================================
-//= someone
+//= Someone
 //===== Current Version: =====================================
 //= 1.2
 //===== Compatible With: =====================================
-//= rAthena Project
+//= eAthena 1.0
 //===== Description: =========================================
 //= Elven Ears (require 75+ Base Level)
 //===== Additional Comments: =================================
@@ -63,6 +63,6 @@ L_Cancel:
 	mes "[Elven Ears quest]";
 	mes "Aw, what a shame";
 	mes "Giving up already?";
-	mes "Oh well maybe you will participate in tomorrow's quest.";
+	mes "Oh well maybe you will participate in tommorow's quest.";
 	close;
 }

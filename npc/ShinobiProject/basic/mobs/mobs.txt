@@ -1,0 +1,2 @@
+// Campo de treinamento
+kakashi,0,0,0,0	monster	Boneco de treino	1582,50,0,0

@@ -537,7 +537,6 @@
 	export_constant(MF_NOPETCAPTURE);
 	export_constant(MF_NOBUYINGSTORE);
 	export_constant(MF_NODYNAMICNPC);
-	export_constant(MF_NOBANK);
 
 	/* setcell types */
 	export_constant(CELL_WALKABLE);
@@ -963,7 +962,6 @@
 	export_constant2("Eff_Freezing",SC_FREEZING);
 	export_constant2("Eff_Heat",SC_BURNT);
 	export_constant2("Eff_Deepsleep",SC_DEEPSLEEP);
-	export_constant2("Eff_WhiteImprison",SC_WHITEIMPRISON);
 
 	export_constant2("SC_ALL",SC_NONE);
 
@@ -1874,24 +1872,6 @@
 	export_constant(SC_TOXIN_OF_MANDARA);
 	export_constant(SC_GOLDENE_TONE);
 	export_constant(SC_TEMPERING);
-	export_constant(SC_GRADUAL_GRAVITY);
-	export_constant(SC_ALL_STAT_DOWN);
-	export_constant(SC_KILLING_AURA);
-	export_constant(SC_DAMAGE_HEAL);
-	export_constant(SC_IMMUNE_PROPERTY_NOTHING);
-	export_constant(SC_IMMUNE_PROPERTY_WATER);
-	export_constant(SC_IMMUNE_PROPERTY_GROUND);
-	export_constant(SC_IMMUNE_PROPERTY_FIRE);
-	export_constant(SC_IMMUNE_PROPERTY_WIND);
-	export_constant(SC_IMMUNE_PROPERTY_POISON);
-	export_constant(SC_IMMUNE_PROPERTY_SAINT);
-	export_constant(SC_IMMUNE_PROPERTY_DARKNESS);
-	export_constant(SC_IMMUNE_PROPERTY_TELEKINESIS);
-	export_constant(SC_IMMUNE_PROPERTY_UNDEAD);
-	export_constant(SC_RELIEVE_ON);
-	export_constant(SC_RELIEVE_OFF);
-	export_constant(SC_RUSH_QUAKE1);
-	export_constant(SC_RUSH_QUAKE2);
 
 #ifdef RENEWAL
 	export_constant(SC_EXTREMITYFIST2);
@@ -4217,9 +4197,6 @@
 	export_constant(RC2_TEMPLE_DEMON);
 	export_constant(RC2_ILLUSION_VAMPIRE);
 	export_constant(RC2_MALANGDO);
-	export_constant(RC2_EP172ALPHA);
-	export_constant(RC2_EP172BETA);
-	export_constant(RC2_EP172BATH);
 	export_constant(RC2_MAX);
 
 	/* monster ai */
@@ -6775,7 +6752,6 @@
 	export_constant(IG_CLASS_SHADOW_PD_CUBE);
 	export_constant(IG_CLASS_SHADOW_EA_CUBE);
 	export_constant(IG_ENCHANT_STONE_BOX30);
-	export_constant(IG_ENCHANT_STONE_BOX31);
 
 	/* unit stop walking */
 	export_constant(USW_NONE);
@@ -10097,7 +10073,6 @@
 	export_constant(SCF_REMOVEONUNEQUIPWEAPON);
 	export_constant(SCF_REMOVEONUNEQUIPARMOR);
 	export_constant(SCF_REMOVEONHERMODE);
-	export_constant(SCF_REQUIRENOWEAPON);
 
 	/* enchantgrades */
 	export_constant(ENCHANTGRADE_NONE);

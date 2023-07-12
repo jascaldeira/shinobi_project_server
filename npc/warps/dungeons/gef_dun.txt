@@ -1,11 +1,11 @@
-//===== rAthena Script =======================================
+//===== eAthena Script =======================================
 //= Geffen Warp Script
 //===== By: ==================================================
 //= Nana (1.0)
 //===== Current Version: =====================================
 //= 1.1
 //===== Compatible With: =====================================
-//= rAthena Project
+//= Any Athena Version
 //===== Description: =========================================
 //= Warp Points for Geffen Tower
 //===== Additional Comments: =================================
@@ -43,4 +43,4 @@ gef_dun01,115,240,0	warp	gefd01-1	2,2,gef_dun00,107,165
 gef_dun01,197,38,0	warp	gefd02	2,1,gef_dun02,106,132
 gef_dun02,106,134,0	warp	gefd02-1	2,1,gef_dun01,197,40
 //gef_dun02,215,67,0	warp	gefd03	2,1,gef_dun03,203,200
-gef_dun03,203,204,0	warp	gefd03-1	2,1,gef_dun02,215,63
+//gef_dun03,203,204,0	warp	gefd03-1	2,1,gef_dun02,215,63

@@ -1,0 +1,6 @@
+function	script	kg_nara	{
+    if (kekkeigenkai != 4) return;
+    bonus_script "{bonus bMatkRate,-((20/100)*kekkeigenkai_lvl); bonus bAtkRate,-((20/100)*kekkeigenkai_lvl);}",172800, 520;
+    
+	return;
+}

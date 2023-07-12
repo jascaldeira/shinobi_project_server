@@ -1,11 +1,11 @@
-//===== rAthena Script =======================================
+//===== eAthena Script =======================================
 //= Imitation of Dumpling Festival
 //===== By ===================================================
 //= Massdriller
 //===== Version ==============================================
 //= 1.01
 //===== Compatible With ======================================
-//= rAthena Project; 0.52+
+//= eAthena 0.52+
 //===== Description ==========================================
 //= A complete redering of the Dumpling Festival.
 //===== Comments =============================================
@@ -53,7 +53,7 @@ L_SORRY:
   
 M_FIN:
 	mes "[Exorcist Master Fahae]";
-	mes "The path of fully vanquishing evil is far, help me in the way of God.";
+	mes "The path of fully venquishing evil is far, help me in the way of God.";
 	close;
   
 M_HERB:
@@ -79,28 +79,33 @@ L_NOZENY:
 	close;
 }
   
-// Monsters
-//============================================================
-gef_fild00,0,0	monster	Dumpling	1520,20,60000,66000
-gef_fild07,0,0	monster	Dumpling	1520,20,60000,66000
-gef_fild04,0,0	monster	Dumpling	1520,20,60000,66000
-gef_fild00,0,0	monster	Dumpling	1520,20,60000,66000
-prt_fild06,0,0	monster	Dumpling	1520,20,60000,66000
-prt_fild01,0,0	monster	Dumpling	1520,20,60000,66000
-prt_fild05,0,0	monster	Dumpling	1520,20,60000,66000
-prt_fild08,0,0	monster	Dumpling	1520,20,60000,66000
-pay_fild04,0,0	monster	Dumpling	1520,20,60000,66000
-moc_fild02,0,0	monster	Dumpling	1520,20,60000,66000
-pay_fild01,0,0	monster	Dumpling	1520,20,60000,66000
-pay_fild07,0,0	monster	Dumpling	1520,20,60000,66000
-moc_fild03,0,0	monster	Dumpling	1520,20,60000,66000
-pay_fild06,0,0	monster	Dumpling	1520,20,60000,66000
-pay_fild05,0,0	monster	Dumpling	1520,20,60000,66000
-pay_fild02,0,0	monster	Dumpling	1520,20,60000,66000
-pay_fild09,0,0	monster	Dumpling	1520,20,60000,66000
-
-moc_fild03,0,0	monster	Bacsojin	1518,1,60000,66000
-
-moc_fild03,0,0	monster	Chung E	1519,1,60000,66000
-moc_fild13,0,0	monster	Chung E	1519,1,60000,66000
-pay_fild01,0,0	monster	Chung E	1519,1,60000,66000
+//////////////////////////////////////////////
+// Monster Spawning /\Secial only for event.//
+//////////////////////////////////////////////
+  
+// ~Dumpling~
+gef_fild00,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+gef_fild07,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+gef_fild04,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+gef_fild00,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+prt_fild06,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+prt_fild01,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+prt_fild05,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+prt_fild08,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild04,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+moc_fild02,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild01,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild07,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+moc_fild03,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild06,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild05,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild02,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild09,0,0,0,0	monster	Dumpling	1520,20,60000,66000
+  
+// ~Bacsojin~
+moc_fild03,0,0,0,0	monster	Bacsojin	1518,1,60000,66000
+  
+// ~Chung E~
+moc_fild03,0,0,0,0	monster	Chung E	1519,1,60000,66000
+moc_fild13,0,0,0,0	monster	Chung E	1519,1,60000,66000
+pay_fild01,0,0,0,0	monster	Chung E	1519,1,60000,66000

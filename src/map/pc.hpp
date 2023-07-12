@@ -33,8 +33,6 @@ enum e_instance_mode : uint8;
 enum e_log_pick_type : uint32;
 enum sc_type : int16;
 
-class MapGuild;
-
 #define MAX_PC_BONUS 50 /// Max bonus, usually used by item bonus
 #define MAX_PC_FEELHATE 3 /// Max feel hate info
 #define DAMAGELOG_SIZE_PC 100	/// Damage log
@@ -718,7 +716,7 @@ public:
 	int party_invite, party_invite_account; // for handling party invitation (holds party id and account id)
 	int adopt_invite; // Adoption
 
-	std::shared_ptr<MapGuild> guild; // [Ind] speed everything up
+	struct guild *guild; // [Ind] speed everything up
 	int guild_invite,guild_invite_account;
 	int guild_emblem_id,guild_alliance,guild_alliance_account;
 	short guild_x,guild_y; // For guildmate position display. [Skotlex] should be short [zzo]
@@ -791,7 +789,6 @@ public:
 		uint32 pending_weight;
 		uint32 pending_zeny;
 		uint16 pending_slots;
-		uint32 dest_id;
 	} mail;
 
 	//Quest log system
@@ -1421,9 +1418,9 @@ bool pc_memo(map_session_data* sd, int pos);
 char pc_checkadditem(map_session_data *sd, t_itemid nameid, int amount);
 uint8 pc_inventoryblank(map_session_data *sd);
 short pc_search_inventory(map_session_data *sd, t_itemid nameid);
-char pc_payzeny(map_session_data *sd, int zeny, enum e_log_pick_type type, uint32 log_charid = 0);
+char pc_payzeny(map_session_data *sd, int zeny, enum e_log_pick_type type, map_session_data *tsd);
 enum e_additem_result pc_additem(map_session_data *sd, struct item *item, int amount, e_log_pick_type log_type);
-char pc_getzeny(map_session_data *sd, int zeny, enum e_log_pick_type type, uint32 log_charid = 0);
+char pc_getzeny(map_session_data *sd, int zeny, enum e_log_pick_type type, map_session_data *tsd);
 char pc_delitem(map_session_data *sd, int n, int amount, int type, short reason, e_log_pick_type log_type);
 
 uint64 pc_generate_unique_id(map_session_data *sd);

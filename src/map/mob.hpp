@@ -219,7 +219,7 @@ public:
 
 struct s_mob_item_drop_ratio {
 	t_itemid nameid;
-	uint32 drop_ratio;
+	uint16 drop_ratio;
 	std::vector<uint16> mob_ids;
 };
 
@@ -300,7 +300,7 @@ struct s_map_drops{
 
 class MapDropDatabase : public TypesafeYamlDatabase<uint16, s_map_drops>{
 public:
-	MapDropDatabase() : TypesafeYamlDatabase( "MAP_DROP_DB", 2 ){
+	MapDropDatabase() : TypesafeYamlDatabase( "MAP_DROP_DB", 1 ){
 
 	}
 

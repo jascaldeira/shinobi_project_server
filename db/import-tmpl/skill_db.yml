@@ -115,7 +115,7 @@
 #         Amount              Ammo amount required at specific skill level.
 #     State                   Special state required to cast. (Default: None)
 #     Status:                 Status change required to cast. (Default: nullptr)
-#     SpiritSphereCost:       Spirit sphere required to cast. (Default: 0)
+#     SphereCost:             Spirit sphere required to cast. (Default: 0)
 #       - Level               Skill level.
 #         Amount              Spirit sphere required at specific skill level.
 #     ItemCost:               Item required to cast. (Default: 0)
@@ -141,3 +141,9422 @@
 Header:
   Type: SKILL_DB
   Version: 3
+
+Body:
+  - Id: 90
+    Name: WZ_EARTHSPIKE
+    Description: Earth Spike
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 10
+      - Level: 2
+        Count: 18
+      - Level: 3
+        Count: 22
+      - Level: 4
+        Count: 28
+      - Level: 5
+        Count: 33
+      - Level: 6
+        Count: 40
+      - Level: 7
+        Count: 46
+      - Level: 8
+        Count: 52
+      - Level: 9
+        Count: 58
+      - Level: 10
+        Count: 62
+    Element: Earth
+  - Id: 185
+    Name: NPC_GROUNDATTACK
+    Description: Earth Attribute Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 13
+      - Level: 3
+        Count: 16
+      - Level: 4
+        Count: 20
+      - Level: 5
+        Count: 24
+      - Level: 6
+        Count: 29
+      - Level: 7
+        Count: 33
+      - Level: 8
+        Count: 36
+      - Level: 9
+        Count: 40
+      - Level: 10
+        Count: 45
+    Element: Earth
+  - Id: 484
+    Name: HW_GRAVITATION
+    Description: Gravitation Field
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      IgnoreElement: true
+      IgnoreDefCard: true
+    Range: 9
+    Hit: Single
+    HitCount: 20
+    Element: Earth
+  - Id: 91
+    Name: WZ_HEAVENDRIVE
+    Description: Heaven's Drive
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Ground
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 4
+      - Level: 2
+        Count: 6
+      - Level: 3
+        Count: 7
+      - Level: 4
+        Count: 10
+      - Level: 5
+        Count: 13
+      - Level: 6
+        Count: 16
+      - Level: 7
+        Count: 19
+      - Level: 8
+        Count: 22
+      - Level: 9
+        Count: 25
+      - Level: 10
+        Count: 30
+    Element: Earth
+    SplashArea: 5
+  - Id: 356
+    Name: LK_PARRYING
+    Description: Parrying
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 116
+    Name: HT_LANDMINE
+    Description: Land Mine
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    SplashArea: 2
+  - Id: 92
+    Name: WZ_QUAGMIRE
+    Description: Quagmire
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Earth
+    ActiveInstance: 3
+  - Id: 16
+    Name: MG_STONECURSE
+    Description: Stone Curse
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    Element: Earth
+  - Id: 653
+    Name: NPC_EARTHQUAKE
+    Description: Earthquake
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+      SplashSplit: true
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 3
+      - Level: 4
+        Count: 4
+      - Level: 5
+        Count: 5
+    Element: Earth
+    SplashArea: 7
+    CastCancel: true
+  - Id: 534
+    Name: NJ_KOUENKA
+    Description: Crimson Fire Petal
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 2
+      - Level: 2
+        Count: 8
+      - Level: 3
+        Count: 13
+      - Level: 4
+        Count: 18
+      - Level: 5
+        Count: 22
+      - Level: 6
+        Count: 29
+      - Level: 7
+        Count: 35
+      - Level: 8
+        Count: 40
+      - Level: 9
+        Count: 44
+      - Level: 10
+        Count: 50
+    Element: Fire
+  - Id: 19
+    Name: MG_FIREBOLT
+    Description: Fire Bolt
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 6
+      - Level: 2
+        Count: 12
+      - Level: 3
+        Count: 18
+      - Level: 4
+        Count: 24
+      - Level: 5
+        Count: 30
+      - Level: 6
+        Count: 36
+      - Level: 7
+        Count: 42
+      - Level: 8
+        Count: 48
+      - Level: 9
+        Count: 54
+      - Level: 10
+        Count: 60
+    Element: Fire
+  - Id: 186
+    Name: NPC_FIREATTACK
+    Description: Fire Attribute Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 6
+      - Level: 3
+        Count: 9
+      - Level: 4
+        Count: 14
+      - Level: 5
+        Count: 18
+      - Level: 6
+        Count: 23
+      - Level: 7
+        Count: 28
+      - Level: 8
+        Count: 33
+      - Level: 9
+        Count: 39
+      - Level: 10
+        Count: 46
+    Element: Water
+  - Id: 17
+    Name: MG_FIREBALL
+    Description: Fire Ball
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 4
+      - Level: 4
+        Count: 6
+      - Level: 5
+        Count: 8
+      - Level: 6
+        Count: 10
+      - Level: 7
+        Count: 12
+      - Level: 8
+        Count: 14
+      - Level: 9
+        Count: 16
+      - Level: 10
+        Count: 18
+    Element: Fire
+    SplashArea: 5
+  - Id: 18
+    Name: MG_FIREWALL
+    Description: Amaterasu
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      IgnoreElement: true
+      IgnoreDefense: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 5
+    Element: Dark
+    ActiveInstance: 3
+  - Id: 535
+    Name: NJ_KAENSIN
+    Description: Crimson Fire Formation
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 4
+      - Level: 3
+        Count: 5
+      - Level: 4
+        Count: 6
+      - Level: 5
+        Count: 7
+      - Level: 6
+        Count: 8
+      - Level: 7
+        Count: 9
+      - Level: 8
+        Count: 10
+      - Level: 9
+        Count: 20
+      - Level: 10
+        Count: 30
+    Element: Fire
+    Knockback: 1
+  - Id: 536
+    Name: NJ_BAKUENRYU
+    Description: Raging Fire Dragon
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 3
+      - Level: 3
+        Count: 4
+      - Level: 4
+        Count: 6
+      - Level: 5
+        Count: 9
+      - Level: 6
+        Count: 11
+      - Level: 7
+        Count: 14
+    Element: Fire
+    SplashArea: 2
+  - Id: 80
+    Name: WZ_FIREPILLAR
+    Description: Fire Pillar
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      IgnoreDefense: true
+    Flags:
+      IsTrap: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 20
+    Element: Fire
+    SplashArea:
+      - Level: 1
+        Area: 1
+      - Level: 2
+        Area: 1
+      - Level: 3
+        Area: 1
+      - Level: 4
+        Area: 1
+      - Level: 5
+        Area: 1
+      - Level: 6
+        Area: 2
+      - Level: 7
+        Area: 2
+      - Level: 8
+        Area: 2
+      - Level: 9
+        Area: 2
+      - Level: 10
+        Area: 2
+      - Level: 11
+        Area: 2
+    ActiveInstance: 5
+  - Id: 83
+    Name: WZ_METEOR
+    Description: Meteor Storm
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Ground
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 40
+      - Level: 2
+        Count: 40
+      - Level: 3
+        Count: 40
+      - Level: 4
+        Count: 40
+      - Level: 5
+        Count: 40
+      - Level: 6
+        Count: 40
+      - Level: 7
+        Count: 40
+      - Level: 8
+        Count: 40
+      - Level: 9
+        Count: 40
+      - Level: 10
+        Count: 40
+      - Level: 11
+        Count: 40
+    Element: Fire
+    SplashArea: 3
+  - Id: 540
+    Name: NJ_HUUJIN
+    Description: Wind Blade
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 13
+      - Level: 2
+        Count: 18
+      - Level: 3
+        Count: 23
+      - Level: 4
+        Count: 25
+      - Level: 5
+        Count: 33
+      - Level: 6
+        Count: 38
+      - Level: 7
+        Count: 43
+      - Level: 8
+        Count: 48
+      - Level: 9
+        Count: 53
+      - Level: 10
+        Count: 57
+    Element: Dark
+  - Id: 11
+    Name: MG_NAPALMBEAT
+    Description: Napalm Beat
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 4
+      - Level: 2
+        Count: 5
+      - Level: 3
+        Count: 6
+      - Level: 4
+        Count: 8
+      - Level: 5
+        Count: 11
+      - Level: 6
+        Count: 13
+      - Level: 7
+        Count: 15
+      - Level: 8
+        Count: 18
+      - Level: 9
+        Count: 20
+      - Level: 10
+        Count: 22
+    Element: Dark
+    SplashArea: 5
+  - Id: 191
+    Name: NPC_TELEKINESISATTACK
+    Description: Ghost Attribute Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 5
+      - Level: 2
+        Count: 10
+      - Level: 3
+        Count: 15
+      - Level: 4
+        Count: 20
+      - Level: 5
+        Count: 25
+      - Level: 6
+        Count: 30
+      - Level: 7
+        Count: 35
+      - Level: 8
+        Count: 40
+      - Level: 9
+        Count: 45
+      - Level: 10
+        Count: 53
+    Element: Dark
+  - Id: 542
+    Name: NJ_KAMAITACHI
+    Description: Kamaitachi
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 1
+    Element: Dark
+    SplashArea: 3
+    ActiveInstance:
+      - Level: 1
+        Max: 11
+      - Level: 2
+        Max: 22
+      - Level: 3
+        Max: 33
+      - Level: 4
+        Max: 44
+      - Level: 5
+        Max: 55
+      - Level: 6
+        Max: 61
+      - Level: 7
+        Max: 72
+      - Level: 8
+        Max: 83
+      - Level: 9
+        Max: 94
+      - Level: 10
+        Max: 100
+  - Id: 148
+    Name: AC_CHARGEARROW
+    Description: Arrow Repel
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Flags:
+      IsQuest: true
+    Range: -9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 5
+      - Level: 2
+        Count: 9
+      - Level: 3
+        Count: 14
+      - Level: 4
+        Count: 19
+      - Level: 5
+        Count: 24
+      - Level: 6
+        Count: 28
+      - Level: 7
+        Count: 33
+      - Level: 8
+        Count: 38
+      - Level: 9
+        Count: 42
+      - Level: 10
+        Count: 47
+    Element: Dark
+    Knockback: 3
+  - Id: 115
+    Name: HT_SKIDTRAP
+    Description: Skid Trap
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    Element: Dark
+    Knockback:
+      - Level: 1
+        Amount: 6
+      - Level: 2
+        Amount: 7
+      - Level: 3
+        Amount: 8
+      - Level: 4
+        Amount: 9
+      - Level: 5
+        Amount: 10
+  - Id: 287
+    Name: SA_VIOLENTGALE
+    Description: Whirlwind
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 2
+    Hit: Single
+    HitCount: 1
+    Element: Dark
+  - Id: 13
+    Name: MG_SOULSTRIKE
+    Description: Soul Strike
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 5
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 5
+      - Level: 2
+        Count: 8
+      - Level: 3
+        Count: 11
+      - Level: 4
+        Count: 14
+      - Level: 5
+        Count: 19
+      - Level: 6
+        Count: 22
+      - Level: 7
+        Count: 26
+      - Level: 8
+        Count: 30
+      - Level: 9
+        Count: 35
+      - Level: 10
+        Count: 40
+    Element: Holy
+    Knockback: 3
+  - Id: 400
+    Name: HW_NAPALMVULCAN
+    Description: Napalm Vulcan
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 5
+      - Level: 2
+        Count: 10
+      - Level: 3
+        Count: 15
+      - Level: 4
+        Count: 20
+      - Level: 5
+        Count: 25
+      - Level: 6
+        Count: 32
+      - Level: 7
+        Count: 42
+    Element: Dark
+    SplashArea: 5
+  - Id: 394
+    Name: CG_ARROWVULCAN
+    Description: Vulcan Arrow
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 9
+      - Level: 2
+        Count: 18
+      - Level: 3
+        Count: 27
+      - Level: 4
+        Count: 36
+      - Level: 5
+        Count: 44
+      - Level: 6
+        Count: 52
+      - Level: 7
+        Count: 60
+    Element: Dark
+    SplashArea: 5
+    Knockback: 4
+  - Id: 428
+    Name: SG_SUN_WARM
+    Description: Warmth of the Sun
+    MaxLevel: 3
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+      IgnoreFlee: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 1
+    Knockback: 2
+  - Id: 20
+    Name: MG_LIGHTNINGBOLT
+    Description: Lightning Bolt
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 6
+      - Level: 2
+        Count: 12
+      - Level: 3
+        Count: 18
+      - Level: 4
+        Count: 24
+      - Level: 5
+        Count: 29
+      - Level: 6
+        Count: 36
+      - Level: 7
+        Count: 42
+      - Level: 8
+        Count: 48
+      - Level: 9
+        Count: 54
+      - Level: 10
+        Count: 58
+    Element: Wind
+  - Id: 21
+    Name: MG_THUNDERSTORM
+    Description: Thunderstorm
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 11
+      - Level: 2
+        Count: 14
+      - Level: 3
+        Count: 17
+      - Level: 4
+        Count: 20
+      - Level: 5
+        Count: 23
+      - Level: 6
+        Count: 26
+      - Level: 7
+        Count: 29
+      - Level: 8
+        Count: 32
+      - Level: 9
+        Count: 35
+      - Level: 10
+        Count: 38
+    Element: Wind
+    SplashArea: 5
+  - Id: 192
+    Name: NPC_MAGICALATTACK
+    Description: Demon Shock Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 4
+      - Level: 2
+        Count: 9
+      - Level: 3
+        Count: 14
+      - Level: 4
+        Count: 17
+      - Level: 5
+        Count: 20
+      - Level: 6
+        Count: 25
+      - Level: 7
+        Count: 29
+      - Level: 8
+        Count: 32
+      - Level: 9
+        Count: 37
+      - Level: 10
+        Count: 41
+    Element: Wind
+  - Id: 187
+    Name: NPC_WINDATTACK
+    Description: Wind Attribute Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 5
+      - Level: 2
+        Count: 11
+      - Level: 3
+        Count: 16
+      - Level: 4
+        Count: 21
+      - Level: 5
+        Count: 26
+      - Level: 6
+        Count: 32
+      - Level: 7
+        Count: 38
+      - Level: 8
+        Count: 43
+      - Level: 9
+        Count: 48
+      - Level: 10
+        Count: 53
+    Element: Wind
+  - Id: 85
+    Name: WZ_VERMILION
+    Description: Lord of Vermilion
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    Range: 9
+    Hit: Single
+    HitCount: -1
+    Element: Wind
+  - Id: 84
+    Name: WZ_JUPITEL
+    Description: Jupitel Thunder
+    MaxLevel: 11
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: 1
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 6
+      - Level: 3
+        Count: 9
+      - Level: 4
+        Count: 12
+      - Level: 5
+        Count: 15
+      - Level: 6
+        Count: 20
+      - Level: 7
+        Count: 25
+      - Level: 8
+        Count: 30
+      - Level: 9
+        Count: 36
+      - Level: 10
+        Count: 43
+    Element: Wind
+    SplashArea: 8
+    Knockback:
+      - Level: 1
+        Amount: 2
+      - Level: 2
+        Amount: 3
+      - Level: 3
+        Amount: 3
+      - Level: 4
+        Amount: 4
+      - Level: 5
+        Amount: 4
+      - Level: 6
+        Amount: 5
+      - Level: 7
+        Amount: 5
+      - Level: 8
+        Amount: 6
+      - Level: 9
+        Amount: 6
+      - Level: 10
+        Amount: 7
+  - Id: 541
+    Name: NJ_RAIGEKISAI
+    Description: Lightning Strike of Destruction
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 2
+      - Level: 2
+        Count: 4
+      - Level: 3
+        Count: 6
+      - Level: 4
+        Count: 8
+      - Level: 5
+        Count: 10
+      - Level: 6
+        Count: 14
+    Element: Wind
+    SplashArea: 7
+  - Id: 119
+    Name: HT_SANDMAN
+    Description: Sandman
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    SplashArea: 2
+  - Id: 515
+    Name: GS_RAPIDSHOWER
+    Description: Rapid Shower
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -9
+    Hit: Single
+    HitCount: 5
+    Element: Weapon
+  - Id: 84
+    Name: WZ_JUPITEL
+    Description: Jupitel Thunder
+    MaxLevel: 11
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: 1
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 8
+      - Level: 2
+        Count: 16
+      - Level: 3
+        Count: 24
+      - Level: 4
+        Count: 31
+      - Level: 5
+        Count: 38
+      - Level: 6
+        Count: 46
+      - Level: 7
+        Count: 54
+      - Level: 8
+        Count: 62
+      - Level: 9
+        Count: 70
+      - Level: 10
+        Count: 79
+    Element: Wind
+    SplashArea: 8
+    Knockback:
+      - Level: 1
+        Amount: 2
+      - Level: 2
+        Amount: 3
+      - Level: 3
+        Amount: 3
+      - Level: 4
+        Amount: 4
+      - Level: 5
+        Amount: 4
+      - Level: 6
+        Amount: 5
+      - Level: 7
+        Amount: 5
+      - Level: 8
+        Amount: 6
+      - Level: 9
+        Amount: 6
+      - Level: 10
+        Amount: 7
+  - Id: 184
+    Name: NPC_WATERATTACK
+    Description: Water Attribute Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 5
+      - Level: 2
+        Count: 11
+      - Level: 3
+        Count: 17
+      - Level: 4
+        Count: 20
+      - Level: 5
+        Count: 25
+      - Level: 6
+        Count: 30
+      - Level: 7
+        Count: 38
+      - Level: 8
+        Count: 42
+      - Level: 9
+        Count: 48
+      - Level: 10
+        Count: 55
+    Element: Water
+  - Id: 15
+    Name: MG_FROSTDIVER
+    Description: Frost Diver
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 7
+      - Level: 3
+        Count: 13
+      - Level: 4
+        Count: 15
+      - Level: 5
+        Count: 16
+      - Level: 6
+        Count: 19
+      - Level: 7
+        Count: 20
+      - Level: 8
+        Count: 25
+      - Level: 9
+        Count: 28
+      - Level: 10
+        Count: 31
+    Element: Water
+  - Id: 14
+    Name: MG_COLDBOLT
+    Description: Cold Bolt
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 9
+      - Level: 3
+        Count: 15
+      - Level: 4
+        Count: 21
+      - Level: 5
+        Count: 29
+      - Level: 6
+        Count: 35
+      - Level: 7
+        Count: 42
+      - Level: 8
+        Count: 48
+      - Level: 9
+        Count: 54
+      - Level: 10
+        Count: 63
+    Element: Water
+  - Id: 88
+    Name: WZ_FROSTNOVA
+    Description: Frost Nova
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 3
+      - Level: 3
+        Count: 7
+      - Level: 4
+        Count: 13
+      - Level: 5
+        Count: 15
+      - Level: 6
+        Count: 16
+      - Level: 7
+        Count: 19
+      - Level: 8
+        Count: 20
+      - Level: 9
+        Count: 25
+      - Level: 10
+        Count: 28
+    Element: Water
+    SplashArea: 5
+  - Id: 121
+    Name: HT_FREEZINGTRAP
+    Description: Freezing Trap
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Ground
+    DamageFlags:
+      Splash: true
+      IgnoreFlee: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    Element: Water
+    SplashArea: 1
+  - Id: 87
+    Name: WZ_ICEWALL
+    Description: Ice Wall
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Water
+  - Id: 538
+    Name: NJ_SUITON
+    Description: Hidden Water
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Water
+  - Id: 539
+    Name: NJ_HYOUSYOURAKU
+    Description: Ice Meteor
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 1
+      - Level: 3
+        Count: 2
+      - Level: 4
+        Count: 2
+      - Level: 5
+        Count: 3
+      - Level: 6
+        Count: 3
+      - Level: 7
+        Count: 4
+    Element: Water
+    SplashArea: 3
+  - Id: 89
+    Name: WZ_STORMGUST
+    Description: Storm Gust
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    Range: 9
+    Hit: Single
+    HitCount: 3
+    Element: Water
+    SplashArea: 6
+    Knockback: 2
+  - Id: 1
+    Name: NV_BASIC
+    Description: Basic Skill
+    MaxLevel: 9
+  - Id: 2
+    Name: SM_SWORD
+    Description: Sword Mastery
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 3
+    Name: SM_TWOHAND
+    Description: Two-Handed Sword Mastery
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 4
+    Name: SM_RECOVERY
+    Description: Increase HP Recovery
+    MaxLevel: 10
+  - Id: 5
+    Name: SM_BASH
+    Description: Bash
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -1
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 3
+      - Level: 3
+        Count: 4
+      - Level: 4
+        Count: 5
+      - Level: 5
+        Count: 6
+      - Level: 6
+        Count: 7
+      - Level: 7
+        Count: 7
+      - Level: 8
+        Count: 8
+      - Level: 9
+        Count: 8
+      - Level: 10
+        Count: 9
+    Element: Holy
+  - Id: 6
+    Name: SM_PROVOKE
+    Description: Provoke
+    MaxLevel: 10
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 7
+    Name: SM_MAGNUM
+    Description: Magnum Break
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    SplashArea: 4
+  - Id: 8
+    Name: SM_ENDURE
+    Description: Endure
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 9
+    Name: MG_SRECOVERY
+    Description: Increase SP Recovery
+    MaxLevel: 10
+  - Id: 10
+    Name: MG_SIGHT
+    Description: Sight
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    SplashArea: 3
+    CastCancel: true
+  - Id: 12
+    Name: MG_SAFETYWALL
+    Description: Safety Wall
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 1
+    Element: Ghost
+    CastCancel: true
+  - Id: 22
+    Name: AL_DP
+    Description: Divine Protection
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 23
+    Name: AL_DEMONBANE
+    Description: Demon Bane
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 24
+    Name: AL_RUWACH
+    Description: Ruwach
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+    SplashArea: 2
+    CastCancel: true
+  - Id: 25
+    Name: AL_PNEUMA
+    Description: Pneuma
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 26
+    Name: AL_TELEPORT
+    Description: Teleport
+    MaxLevel: 2
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 27
+    Name: AL_WARP
+    Description: Warp Portal
+    MaxLevel: 4
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 3
+    CastCancel: true
+  - Id: 28
+    Name: AL_HEAL
+    Description: Heal
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+      IgnoreDefense: true
+    Flags:
+      PartyOnly: true
+      NoTargetEnemy: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+  - Id: 29
+    Name: AL_INCAGI
+    Description: Increase AGI
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 30
+    Name: AL_DECAGI
+    Description: Decrease AGI
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 31
+    Name: AL_HOLYWATER
+    Description: Aqua Benedicta
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 32
+    Name: AL_CRUCIS
+    Description: Signum Crucis
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 15
+    CastCancel: true
+  - Id: 33
+    Name: AL_ANGELUS
+    Description: Angelus
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+    CastCancel: true
+  - Id: 34
+    Name: AL_BLESSING
+    Description: Blessing
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 35
+    Name: AL_CURE
+    Description: Cure
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 36
+    Name: MC_INCCARRY
+    Description: Enlarge Weight Limit
+    MaxLevel: 10
+  - Id: 37
+    Name: MC_DISCOUNT
+    Description: Discount
+    MaxLevel: 10
+  - Id: 38
+    Name: MC_OVERCHARGE
+    Description: Overcharge
+    MaxLevel: 10
+  - Id: 39
+    Name: MC_PUSHCART
+    Description: Pushcart
+    MaxLevel: 10
+    Range: 1
+  - Id: 40
+    Name: MC_IDENTIFY
+    Description: Item Appraisal
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 41
+    Name: MC_VENDING
+    Description: Vending
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 42
+    Name: MC_MAMMONITE
+    Description: Mammonite
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 43
+    Name: AC_OWL
+    Description: Owl's Eye
+    MaxLevel: 10
+  - Id: 44
+    Name: AC_VULTURE
+    Description: Vulture's Eye
+    MaxLevel: 10
+  - Id: 45
+    Name: AC_CONCENTRATION
+    Description: Improve Concentration
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 3
+  - Id: 46
+    Name: AC_DOUBLE
+    Description: Double Strafe
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -9
+    Hit: Multi_Hit
+    HitCount: 2
+    Element: Weapon
+  - Id: 47
+    Name: AC_SHOWER
+    Description: Arrow Shower
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Ground
+    DamageFlags:
+      Splash: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 2
+    Knockback: 2
+  - Id: 48
+    Name: TF_DOUBLE
+    Description: Double Attack
+    MaxLevel: 10
+    Type: Weapon
+    Range: -1
+    Hit: Multi_Hit
+    HitCount: 6
+    Element: Holy
+  - Id: 49
+    Name: TF_MISS
+    Description: Improve Dodge
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 50
+    Name: TF_STEAL
+    Description: Steal
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 51
+    Name: TF_HIDING
+    Description: Hiding
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 52
+    Name: TF_POISON
+    Description: Envenom
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -2
+    Hit: Single
+    HitCount: 1
+    Element: Poison
+  - Id: 53
+    Name: TF_DETOXIFY
+    Description: Detoxify
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Poison
+  - Id: 54
+    Name: ALL_RESURRECTION
+    Description: Shikon no Jutsu
+    MaxLevel: 4
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+    CastCancel: true
+  - Id: 55
+    Name: KN_SPEARMASTERY
+    Description: Spear Mastery
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 56
+    Name: KN_PIERCE
+    Description: Pierce
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -2
+    Hit: Multi_Hit
+    HitCount: 3
+    Element: Weapon
+  - Id: 57
+    Name: KN_BRANDISHSPEAR
+    Description: Brandish Spear
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: -2
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    Knockback: 3
+    CastDefenseReduction: 33
+  - Id: 58
+    Name: KN_SPEARSTAB
+    Description: Spear Stab
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: -1
+    Hit: Single
+    HitCount: 10
+    Element: Holy
+    Knockback: 6
+  - Id: 59
+    Name: KN_SPEARBOOMERANG
+    Description: Spear Boomerang
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range:
+      - Level: 1
+        Size: 3
+      - Level: 2
+        Size: 5
+      - Level: 3
+        Size: 7
+      - Level: 4
+        Size: 9
+      - Level: 5
+        Size: 11
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 60
+    Name: KN_TWOHANDQUICKEN
+    Description: Twohand Quicken
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 61
+    Name: KN_AUTOCOUNTER
+    Description: Counter Attack
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      IgnoreDefense: true
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 62
+    Name: KN_BOWLINGBASH
+    Description: Bowling Bash
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: 3
+    Hit: Single
+    HitCount: 4
+    Element: Holy
+    SplashArea: 1
+    Knockback: 1
+    CastDefenseReduction: 33
+  - Id: 63
+    Name: KN_RIDING
+    Description: Peco Peco Riding
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+  - Id: 64
+    Name: KN_CAVALIERMASTERY
+    Description: Cavalier Mastery
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 65
+    Name: PR_MACEMASTERY
+    Description: Mace Mastery
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 66
+    Name: PR_IMPOSITIO
+    Description: Impositio Manus
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 67
+    Name: PR_SUFFRAGIUM
+    Description: Suffragium
+    MaxLevel: 3
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 68
+    Name: PR_ASPERSIO
+    Description: Aspersio
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+      IgnoreElement: true
+      IgnoreDefense: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+    CastCancel: true
+  - Id: 69
+    Name: PR_BENEDICTIO
+    Description: B.S. Sacramenti
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+      IgnoreDefense: true
+    Flags:
+      IsEnsemble: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    SplashArea: 1
+    CastCancel: true
+  - Id: 70
+    Name: PR_SANCTUARY
+    Description: Sanctuary
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      IgnoreDefense: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+    Knockback: 1
+    CastCancel: true
+  - Id: 71
+    Name: PR_SLOWPOISON
+    Description: Slow Poison
+    MaxLevel: 4
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 72
+    Name: PR_STRECOVERY
+    Description: Status Recovery
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 73
+    Name: PR_KYRIE
+    Description: Kyrie Eleison
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 74
+    Name: PR_MAGNIFICAT
+    Description: Magnificat
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+    CastCancel: true
+  - Id: 75
+    Name: PR_GLORIA
+    Description: Gloria
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+    CastCancel: true
+  - Id: 76
+    Name: PR_LEXDIVINA
+    Description: Lex Divina
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 5
+    Hit: Single
+    SplashArea:
+      - Level: 1
+        Area: 0
+      - Level: 2
+        Area: 0
+      - Level: 3
+        Area: 0
+      - Level: 4
+        Area: 0
+      - Level: 5
+        Area: 0
+      - Level: 6
+        Area: 0
+      - Level: 7
+        Area: 0
+      - Level: 8
+        Area: 0
+      - Level: 9
+        Area: 0
+      - Level: 10
+        Area: 0
+      - Level: 11
+        Area: -1
+    CastCancel: true
+  - Id: 77
+    Name: PR_TURNUNDEAD
+    Description: Turn Undead
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      IgnoreAtkCard: true
+      IgnoreDefense: true
+    Range: 5
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+    CastCancel: true
+  - Id: 78
+    Name: PR_LEXAETERNA
+    Description: Lex Aeterna
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 5
+    Hit: Single
+    CastCancel: true
+  - Id: 79
+    Name: PR_MAGNUS
+    Description: Magnus Exorcismus
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    Range: 9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 3
+      - Level: 4
+        Count: 4
+      - Level: 5
+        Count: 5
+      - Level: 6
+        Count: 6
+      - Level: 7
+        Count: 7
+      - Level: 8
+        Count: 8
+      - Level: 9
+        Count: 9
+      - Level: 10
+        Count: 10
+    Element: Holy
+    CastCancel: true
+  - Id: 81
+    Name: WZ_SIGHTRASHER
+    Description: Sightrasher
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    Hit: Single
+    HitCount: 22
+    Element: Fire
+    SplashArea: 3
+    Knockback: 5
+    CastCancel: true
+  - Id: 86
+    Name: WZ_WATERBALL
+    Description: Water Ball
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 1
+    Element: Water
+    CastCancel: true
+  - Id: 93
+    Name: WZ_ESTIMATION
+    Description: Sense
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 94
+    Name: BS_IRON
+    Description: Iron Tempering
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 95
+    Name: BS_STEEL
+    Description: Steel Tempering
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 96
+    Name: BS_ENCHANTEDSTONE
+    Description: Enchanted Stone Craft
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 97
+    Name: BS_ORIDEOCON
+    Description: Oridecon Research
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 98
+    Name: BS_DAGGER
+    Description: Smith Dagger
+    MaxLevel: 3
+    Type: Weapon
+  - Id: 99
+    Name: BS_SWORD
+    Description: Smith Sword
+    MaxLevel: 3
+    Type: Weapon
+  - Id: 100
+    Name: BS_TWOHANDSWORD
+    Description: Smith Two-handed Sword
+    MaxLevel: 3
+    Type: Weapon
+  - Id: 101
+    Name: BS_AXE
+    Description: Smith Axe
+    MaxLevel: 3
+    Type: Weapon
+  - Id: 102
+    Name: BS_MACE
+    Description: Smith Mace
+    MaxLevel: 3
+    Type: Weapon
+  - Id: 103
+    Name: BS_KNUCKLE
+    Description: Smith Knucklebrace
+    MaxLevel: 3
+    Type: Weapon
+  - Id: 104
+    Name: BS_SPEAR
+    Description: Smith Spear
+    MaxLevel: 3
+    Type: Weapon
+  - Id: 105
+    Name: BS_HILTBINDING
+    Description: Hilt Binding
+    MaxLevel: 1
+    Type: Weapon
+  - Id: 106
+    Name: BS_FINDINGORE
+    Description: Ore Discovery
+    MaxLevel: 1
+    Type: Weapon
+  - Id: 107
+    Name: BS_WEAPONRESEARCH
+    Description: Weaponry Research
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 108
+    Name: BS_REPAIRWEAPON
+    Description: Weapon Repair
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 2
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 109
+    Name: BS_SKINTEMPER
+    Description: Skin Tempering
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 110
+    Name: BS_HAMMERFALL
+    Description: Hammer Fall
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    SplashArea:
+      - Level: 1
+        Area: 2
+      - Level: 2
+        Area: 2
+      - Level: 3
+        Area: 2
+      - Level: 4
+        Area: 2
+      - Level: 5
+        Area: 2
+      - Level: 6
+        Area: 14
+  - Id: 111
+    Name: BS_ADRENALINE
+    Description: Adrenaline Rush
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+  - Id: 112
+    Name: BS_WEAPONPERFECT
+    Description: Weapon Perfection
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+  - Id: 113
+    Name: BS_OVERTHRUST
+    Description: Power-Thrust
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+  - Id: 114
+    Name: BS_MAXIMIZE
+    Description: Maximize Power
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 117
+    Name: HT_ANKLESNARE
+    Description: Ankle Snare
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+  - Id: 118
+    Name: HT_SHOCKWAVE
+    Description: Shockwave Trap
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      Splash: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    SplashArea: 1
+  - Id: 120
+    Name: HT_FLASHER
+    Description: Flasher
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    SplashArea: 1
+  - Id: 122
+    Name: HT_BLASTMINE
+    Description: Blast Mine
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      Splash: true
+      IgnoreFlee: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    Element: Wind
+    SplashArea: 1
+  - Id: 123
+    Name: HT_CLAYMORETRAP
+    Description: Claymore Trap
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      Splash: true
+      IgnoreFlee: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    SplashArea: 2
+  - Id: 124
+    Name: HT_REMOVETRAP
+    Description: Remove Trap
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Trap
+    DamageFlags:
+      NoDamage: true
+    Range: 2
+    Hit: Single
+    HitCount: 1
+  - Id: 125
+    Name: HT_TALKIEBOX
+    Description: Talkie Box
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+  - Id: 126
+    Name: HT_BEASTBANE
+    Description: Beast Bane
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 127
+    Name: HT_FALCON
+    Description: Falconry Mastery
+    MaxLevel: 1
+    Type: Misc
+  - Id: 128
+    Name: HT_STEELCROW
+    Description: Steel Crow
+    MaxLevel: 10
+    Type: Misc
+  - Id: 129
+    Name: HT_BLITZBEAT
+    Description: Blitz Beat
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+      IgnoreFlee: true
+    Range: 5
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 3
+      - Level: 4
+        Count: 4
+      - Level: 5
+        Count: 5
+    SplashArea: 1
+    CastCancel: true
+  - Id: 130
+    Name: HT_DETECTING
+    Description: Detect
+    MaxLevel: 4
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Range:
+      - Level: 1
+        Size: 3
+      - Level: 2
+        Size: 5
+      - Level: 3
+        Size: 7
+      - Level: 4
+        Size: 9
+    Hit: Single
+    HitCount: 1
+    SplashArea: 3
+  - Id: 131
+    Name: HT_SPRINGTRAP
+    Description: Spring Trap
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Trap
+    DamageFlags:
+      NoDamage: true
+    Range:
+      - Level: 1
+        Size: 4
+      - Level: 2
+        Size: 5
+      - Level: 3
+        Size: 6
+      - Level: 4
+        Size: 7
+      - Level: 5
+        Size: 8
+    Hit: Single
+    HitCount: 1
+  - Id: 132
+    Name: AS_RIGHT
+    Description: Righthand Mastery
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 133
+    Name: AS_LEFT
+    Description: Lefthand Mastery
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 134
+    Name: AS_KATAR
+    Description: Katar Mastery
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 135
+    Name: AS_CLOAKING
+    Description: Cloaking
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 136
+    Name: AS_SONICBLOW
+    Description: Sonic Blow
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -1
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 5
+      - Level: 3
+        Count: 8
+      - Level: 4
+        Count: 11
+      - Level: 5
+        Count: 14
+      - Level: 6
+        Count: 17
+      - Level: 7
+        Count: 21
+      - Level: 8
+        Count: 25
+      - Level: 9
+        Count: 29
+      - Level: 10
+        Count: 33
+    Element: Holy
+  - Id: 137
+    Name: AS_GRIMTOOTH
+    Description: Grimtooth
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range:
+      - Level: 1
+        Size: 3
+      - Level: 2
+        Size: 4
+      - Level: 3
+        Size: 5
+      - Level: 4
+        Size: 6
+      - Level: 5
+        Size: 7
+    Hit: Single
+    HitCount: 1
+    Element: Earth
+    SplashArea: 1
+  - Id: 138
+    Name: AS_ENCHANTPOISON
+    Description: Enchant Poison
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      PartyOnly: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    Element: Poison
+  - Id: 139
+    Name: AS_POISONREACT
+    Description: Poison React
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    Hit: Single
+    HitCount: 1
+    Element: Poison
+  - Id: 140
+    Name: AS_VENOMDUST
+    Description: Venom Dust
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 2
+    Hit: Single
+    HitCount: 1
+    Element: Poison
+    ActiveInstance: 2
+  - Id: 141
+    Name: AS_SPLASHER
+    Description: Venom Splasher
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+      SplashSplit: true
+      IgnoreAtkCard: true
+    Range: 1
+    Hit: Single
+    HitCount: 3
+    Element: Weapon
+    SplashArea: 2
+    CastCancel: true
+  - Id: 142
+    Name: NV_FIRSTAID
+    Description: First Aid
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Hit: Single
+    HitCount: 1
+  - Id: 143
+    Name: NV_TRICKDEAD
+    Description: Play Dead
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Hit: Single
+    HitCount: 1
+  - Id: 144
+    Name: SM_MOVINGRECOVERY
+    Description: Moving HP-Recovery
+    MaxLevel: 1
+    Flags:
+      IsQuest: true
+  - Id: 145
+    Name: SM_FATALBLOW
+    Description: Fatal Blow
+    MaxLevel: 1
+    Type: Weapon
+    Flags:
+      IsQuest: true
+  - Id: 146
+    Name: SM_AUTOBERSERK
+    Description: Auto Berserk
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 147
+    Name: AC_MAKINGARROW
+    Description: Arrow Crafting
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+  - Id: 149
+    Name: TF_SPRINKLESAND
+    Description: Sand Attack
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsQuest: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+  - Id: 150
+    Name: TF_BACKSLIDING
+    Description: Back Slide
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    Knockback: 5
+  - Id: 151
+    Name: TF_PICKSTONE
+    Description: Find Stone
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Hit: Single
+    HitCount: 1
+  - Id: 152
+    Name: TF_THROWSTONE
+    Description: Stone Fling
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Range: 7
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    SplashArea: 4
+    Knockback: 6
+  - Id: 153
+    Name: MC_CARTREVOLUTION
+    Description: Cart Revolution
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Flags:
+      IsQuest: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 1
+    Knockback: 2
+  - Id: 154
+    Name: MC_CHANGECART
+    Description: Change Cart
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 155
+    Name: MC_LOUD
+    Description: Crazy Uproar
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Hit: Single
+    HitCount: 1
+  - Id: 156
+    Name: AL_HOLYLIGHT
+    Description: Holy Light
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Flags:
+      IsQuest: true
+    Range: 9
+    Hit: Single
+    HitCount: 5
+    Element: Earth
+    CastCancel: true
+  - Id: 157
+    Name: MG_ENERGYCOAT
+    Description: Energy Coat
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Hit: Single
+    HitCount: 1
+  - Id: 158
+    Name: NPC_PIERCINGATT
+    Description: Piercing Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 159
+    Name: NPC_MENTALBREAKER
+    Description: Spirit Destruction
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Flags:
+      IsNpc: true
+    Range: -1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 160
+    Name: NPC_RANGEATTACK
+    Description: Stand off attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 161
+    Name: NPC_ATTRICHANGE
+    Description: Attribute Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 162
+    Name: NPC_CHANGEWATER
+    Description: Water Attribute Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    Element: Water
+  - Id: 163
+    Name: NPC_CHANGEGROUND
+    Description: Earth Attribute Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    Element: Earth
+  - Id: 164
+    Name: NPC_CHANGEFIRE
+    Description: Fire Attribute Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    Element: Fire
+  - Id: 165
+    Name: NPC_CHANGEWIND
+    Description: Wind Attribute Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    Element: Wind
+  - Id: 166
+    Name: NPC_CHANGEPOISON
+    Description: Poison Attribute Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    Element: Poison
+  - Id: 167
+    Name: NPC_CHANGEHOLY
+    Description: Holy Attribute Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    Element: Holy
+  - Id: 168
+    Name: NPC_CHANGEDARKNESS
+    Description: Shadow Attribute Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    Element: Dark
+  - Id: 169
+    Name: NPC_CHANGETELEKINESIS
+    Description: Ghost Attribute Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    Element: Ghost
+  - Id: 170
+    Name: NPC_CRITICALSLASH
+    Description: Defense disregard attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreDefense: true
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 171
+    Name: NPC_COMBOATTACK
+    Description: Multi-stage Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 2
+      - Level: 2
+        Count: 3
+      - Level: 3
+        Count: 4
+      - Level: 4
+        Count: 5
+      - Level: 5
+        Count: 6
+      - Level: 6
+        Count: 7
+      - Level: 7
+        Count: 8
+      - Level: 8
+        Count: 9
+      - Level: 9
+        Count: 10
+      - Level: 10
+        Count: 13
+    Element: Weapon
+  - Id: 172
+    Name: NPC_GUIDEDATTACK
+    Description: Guided Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 173
+    Name: NPC_SELFDESTRUCTION
+    Description: Suicide bombing
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+      IgnoreElement: true
+      IgnoreFlee: true
+      IgnoreDefCard: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+    SplashArea: 6
+    Knockback: 3
+    CastCancel: true
+  - Id: 174
+    Name: NPC_SPLASHATTACK
+    Description: Splash attack
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 3
+  - Id: 175
+    Name: NPC_SUICIDE
+    Description: Suicide
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      IgnoreFlee: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 176
+    Name: NPC_POISON
+    Description: Poison Attack
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 177
+    Name: NPC_BLINDATTACK
+    Description: Blind Attack
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 178
+    Name: NPC_SILENCEATTACK
+    Description: Silence Attack
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 179
+    Name: NPC_STUNATTACK
+    Description: Stun Attack
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 180
+    Name: NPC_PETRIFYATTACK
+    Description: Petrify Attack
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 181
+    Name: NPC_CURSEATTACK
+    Description: Curse Attack
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Dark
+  - Id: 182
+    Name: NPC_SLEEPATTACK
+    Description: Sleep attack
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 183
+    Name: NPC_RANDOMATTACK
+    Description: Random Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 188
+    Name: NPC_POISONATTACK
+    Description: Poison Attribute Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Poison
+  - Id: 189
+    Name: NPC_HOLYATTACK
+    Description: Holy Attribute Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+  - Id: 190
+    Name: NPC_DARKNESSATTACK
+    Description: Shadow Attribute Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 35
+  - Id: 193
+    Name: NPC_METAMORPHOSIS
+    Description: Metamorphosis
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 194
+    Name: NPC_PROVOCATION
+    Description: Provocation
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 195
+    Name: NPC_SMOKING
+    Description: Smoking
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      IgnoreElement: true
+      IgnoreFlee: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+  - Id: 196
+    Name: NPC_SUMMONSLAVE
+    Description: Follower Summons
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 197
+    Name: NPC_EMOTION
+    Description: Emotion
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 198
+    Name: NPC_TRANSFORMATION
+    Description: Transformation
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 199
+    Name: NPC_BLOODDRAIN
+    Description: Sucking Blood
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Dark
+  - Id: 200
+    Name: NPC_ENERGYDRAIN
+    Description: Energy Drain
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 6
+    Element: Water
+  - Id: 201
+    Name: NPC_KEEPING
+    Description: Keeping
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 202
+    Name: NPC_DARKBREATH
+    Description: Dark Breath
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Dark
+  - Id: 203
+    Name: NPC_DARKBLESSING
+    Description: Dark Blessing
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Dark
+  - Id: 204
+    Name: NPC_BARRIER
+    Description: Barrier
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+    CastCancel: true
+  - Id: 205
+    Name: NPC_DEFENDER
+    Description: Defender
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 206
+    Name: NPC_LICK
+    Description: Lick
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 207
+    Name: NPC_HALLUCINATION
+    Description: Hallucination
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 209
+    Name: NPC_SUMMONMONSTER
+    Description: Monster Summons
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 210
+    Name: RG_SNATCHER
+    Description: Gank
+    MaxLevel: 10
+    Type: Weapon
+    Element: Weapon
+  - Id: 211
+    Name: RG_STEALCOIN
+    Description: Mug
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 212
+    Name: RG_BACKSTAP
+    Description: Back Stab
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: -1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 213
+    Name: RG_TUNNELDRIVE
+    Description: Stalk
+    MaxLevel: 5
+  - Id: 214
+    Name: RG_RAID
+    Description: Sightless Mind
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Hit: Single
+    HitCount: 8
+    Element: Holy
+    SplashArea: 2
+  - Id: 215
+    Name: RG_STRIPWEAPON
+    Description: Divest Weapon
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 216
+    Name: RG_STRIPSHIELD
+    Description: Divest Shield
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 217
+    Name: RG_STRIPARMOR
+    Description: Divest Armor
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+  - Id: 218
+    Name: RG_STRIPHELM
+    Description: Divest Helm
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 219
+    Name: RG_INTIMIDATE
+    Description: Snatch
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: -1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 220
+    Name: RG_GRAFFITI
+    Description: Scribble
+    MaxLevel: 1
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 221
+    Name: RG_FLAGGRAFFITI
+    Description: Piece
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 222
+    Name: RG_CLEANER
+    Description: Remover
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    SplashArea: 5
+  - Id: 223
+    Name: RG_GANGSTER
+    Description: Slyness
+    MaxLevel: 1
+    SplashArea: 1
+  - Id: 224
+    Name: RG_COMPULSION
+    Description: Haggle
+    MaxLevel: 5
+  - Id: 225
+    Name: RG_PLAGIARISM
+    Description: Intimidate
+    MaxLevel: 10
+  - Id: 226
+    Name: AM_AXEMASTERY
+    Description: Axe Mastery
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 227
+    Name: AM_LEARNINGPOTION
+    Description: Potion Research
+    MaxLevel: 10
+  - Id: 228
+    Name: AM_PHARMACY
+    Description: Prepare Potion
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+  - Id: 229
+    Name: AM_DEMONSTRATION
+    Description: Bomb
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      IgnoreAtkCard: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Poison
+    CastCancel: true
+  - Id: 230
+    Name: AM_ACIDTERROR
+    Description: Acid Terror
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreAtkCard: true
+      IgnoreFlee: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 231
+    Name: AM_POTIONPITCHER
+    Description: Aid Potion
+    MaxLevel: 5
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      PartyOnly: true
+      GuildOnly: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 232
+    Name: AM_CANNIBALIZE
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 233
+    Name: AM_SPHEREMINE
+    Description: Summon Marine Sphere
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 3
+  - Id: 234
+    Name: AM_CP_WEAPON
+    Description: Alchemical Weapon
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 235
+    Name: AM_CP_SHIELD
+    Description: Synthesized Shield
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 236
+    Name: AM_CP_ARMOR
+    Description: Synthetic Armor
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 237
+    Name: AM_CP_HELM
+    Description: Biochemical Helm
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 238
+    Name: AM_BIOETHICS
+    Description: Bioethics
+    MaxLevel: 1
+    Flags:
+      IsQuest: true
+  - Id: 243
+    Name: AM_CALLHOMUN
+    Description: Call Homunculus
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    SplashArea: 1
+  - Id: 244
+    Name: AM_REST
+    Description: Vaporize
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+  - Id: 247
+    Name: AM_RESURRECTHOMUN
+    Description: Homunculus Resurrection
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    SplashArea: 1
+  - Id: 248
+    Name: CR_TRUST
+    Description: Faith
+    MaxLevel: 10
+  - Id: 249
+    Name: CR_AUTOGUARD
+    Description: Guard
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 250
+    Name: CR_SHIELDCHARGE
+    Description: Smite
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    Knockback:
+      - Level: 1
+        Amount: 5
+      - Level: 2
+        Amount: 6
+      - Level: 3
+        Amount: 7
+      - Level: 4
+        Amount: 8
+      - Level: 5
+        Amount: 9
+  - Id: 251
+    Name: CR_SHIELDBOOMERANG
+    Description: Shield Boomerang
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range:
+      - Level: 1
+        Size: 3
+      - Level: 2
+        Size: 5
+      - Level: 3
+        Size: 7
+      - Level: 4
+        Size: 9
+      - Level: 5
+        Size: 11
+    Hit: Single
+    HitCount: 1
+  - Id: 252
+    Name: CR_REFLECTSHIELD
+    Description: Shield Reflect
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    Hit: Single
+    HitCount: 1
+  - Id: 253
+    Name: CR_HOLYCROSS
+    Description: Holy Cross
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount: 15
+    Element: Holy
+  - Id: 254
+    Name: CR_GRANDCROSS
+    Description: Grand Cross
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      IgnoreAtkCard: true
+      IgnoreFlee: true
+    Flags:
+      TargetSelf: true
+    Range: 5
+    Hit: Single
+    HitCount: 3
+    Element: Holy
+    CastDefenseReduction: 33
+  - Id: 255
+    Name: CR_DEVOTION
+    Description: Sacrifice
+    MaxLevel: 5
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+      PartyOnly: true
+    Range:
+      - Level: 1
+        Size: 7
+      - Level: 2
+        Size: 8
+      - Level: 3
+        Size: 9
+      - Level: 4
+        Size: 10
+      - Level: 5
+        Size: 11
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 256
+    Name: CR_PROVIDENCE
+    Description: Resistant Souls
+    MaxLevel: 5
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 257
+    Name: CR_DEFENDER
+    Description: Defending Aura
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 258
+    Name: CR_SPEARQUICKEN
+    Description: Spear Quicken
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 259
+    Name: MO_IRONHAND
+    Description: Iron Fists
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 260
+    Name: MO_SPIRITSRECOVERY
+    Description: Spiritual Cadence
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 261
+    Name: MO_CALLSPIRITS
+    Description: Summon Spirit Sphere
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 262
+    Name: MO_ABSORBSPIRITS
+    Description: Absorb Spirit Sphere
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 263
+    Name: MO_TRIPLEATTACK
+    Description: Raging Trifecta Blow
+    MaxLevel: 10
+    Type: Weapon
+    Range: -1
+    Hit: Multi_Hit
+    HitCount: -6
+    Element: Holy
+  - Id: 264
+    Name: MO_BODYRELOCATION
+    Description: Snap
+    MaxLevel: 1
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 265
+    Name: MO_DODGE
+    Description: Dodge
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 266
+    Name: MO_INVESTIGATE
+    Description: Chakra no Mesu
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: 2
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+  - Id: 267
+    Name: MO_FINGEROFFENSIVE
+    Description: Throw Spirit Sphere
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: 7
+    Hit: Multi_Hit
+    HitCount: 5
+    Element: Holy
+  - Id: 268
+    Name: MO_STEELBODY
+    Description: Mental Strength
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 269
+    Name: MO_BLADESTOP
+    Description: Root
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 270
+    Name: MO_EXPLOSIONSPIRITS
+    Description: Fury
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+  - Id: 271
+    Name: MO_EXTREMITYFIST
+    Description: Asura Strike
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount: 2
+  - Id: 272
+    Name: MO_CHAINCOMBO
+    Description: Raging Quadruple Blow
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    Flags:
+      NoTargetSelf: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount: -4
+    Element: Holy
+  - Id: 273
+    Name: MO_COMBOFINISH
+    Description: Raging Thrust
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Flags:
+      NoTargetSelf: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount: 3
+    Element: Holy
+    SplashArea: 2
+  - Id: 274
+    Name: SA_ADVANCEDBOOK
+    Description: Study
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+  - Id: 275
+    Name: SA_CASTCANCEL
+    Description: Cast Cancel
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 276
+    Name: SA_MAGICROD
+    Description: Magic Rod
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 277
+    Name: SA_SPELLBREAKER
+    Description: Spell Breaker
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 278
+    Name: SA_FREECAST
+    Description: Free Cast
+    MaxLevel: 10
+    Type: Magic
+  - Id: 279
+    Name: SA_AUTOSPELL
+    Description: Hindsight
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 280
+    Name: SA_FLAMELAUNCHER
+    Description: Endow Blaze
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      PartyOnly: true
+      GuildOnly: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    CastCancel: true
+  - Id: 281
+    Name: SA_FROSTWEAPON
+    Description: Endow Tsunami
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      PartyOnly: true
+      GuildOnly: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Water
+    CastCancel: true
+  - Id: 282
+    Name: SA_LIGHTNINGLOADER
+    Description: Endow Tornado
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      PartyOnly: true
+      GuildOnly: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Wind
+    CastCancel: true
+  - Id: 283
+    Name: SA_SEISMICWEAPON
+    Description: Endow Quake
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      PartyOnly: true
+      GuildOnly: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Earth
+    CastCancel: true
+  - Id: 284
+    Name: SA_DRAGONOLOGY
+    Description: Dragonology
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 285
+    Name: SA_VOLCANO
+    Description: Volcano
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 2
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    CastCancel: true
+  - Id: 286
+    Name: SA_DELUGE
+    Description: Deluge
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 2
+    Hit: Single
+    HitCount: 1
+    Element: Water
+    CastCancel: true
+  - Id: 288
+    Name: SA_LANDPROTECTOR
+    Description: Kekkai Houjin
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 289
+    Name: SA_DISPELL
+    Description: Dispell
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    SplashArea:
+      - Level: 1
+        Area: 0
+      - Level: 2
+        Area: 0
+      - Level: 3
+        Area: 0
+      - Level: 4
+        Area: 0
+      - Level: 5
+        Area: 0
+      - Level: 6
+        Area: -1
+    CastCancel: true
+  - Id: 290
+    Name: SA_ABRACADABRA
+    Description: Hocus-pocus
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 291
+    Name: SA_MONOCELL
+    Description: Monocell
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 292
+    Name: SA_CLASSCHANGE
+    Description: Class Change
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 294
+    Name: SA_REVERSEORCISH
+    Description: Grampus Morph
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 295
+    Name: SA_DEATH
+    Description: Grim Reaper
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 296
+    Name: SA_FORTUNE
+    Description: Gold Digger
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 297
+    Name: SA_TAMINGMONSTER
+    Description: Beastly Hypnosis
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 298
+    Name: SA_QUESTION
+    Description: Questioning
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 299
+    Name: SA_GRAVITY
+    Description: Gravity
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 300
+    Name: SA_LEVELUP
+    Description: Leveling
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 301
+    Name: SA_INSTANTDEATH
+    Description: Suicide
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 302
+    Name: SA_FULLRECOVERY
+    Description: Rejuvenation
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 303
+    Name: SA_COMA
+    Description: Coma
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 304
+    Name: BD_ADAPTATION
+    Description: Amp
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 305
+    Name: BD_ENCORE
+    Description: Encore
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 306
+    Name: BD_LULLABY
+    Description: Lullaby
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 307
+    Name: BD_RICHMANKIM
+    Description: Mental Sensing
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsEnsemble: true
+    Hit: Single
+    HitCount: 1
+  - Id: 308
+    Name: BD_ETERNALCHAOS
+    Description: Down Tempo
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsEnsemble: true
+    Hit: Single
+    HitCount: 1
+  - Id: 309
+    Name: BD_DRUMBATTLEFIELD
+    Description: Battle Theme
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsEnsemble: true
+    Hit: Single
+    HitCount: 1
+  - Id: 310
+    Name: BD_RINGNIBELUNGEN
+    Description: Harmonic Lick
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsEnsemble: true
+    Hit: Single
+    HitCount: 1
+  - Id: 311
+    Name: BD_ROKISWEIL
+    Description: Classical Pluck
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Single
+    HitCount: 1
+  - Id: 312
+    Name: BD_INTOABYSS
+    Description: Power Chord
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 313
+    Name: BD_SIEGFRIED
+    Description: Acoustic Rhythm
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsEnsemble: true
+    Hit: Single
+    HitCount: 1
+  - Id: 315
+    Name: BA_MUSICALLESSON
+    Description: Music Lessons
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 316
+    Name: BA_MUSICALSTRIKE
+    Description: Melody Strike
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 317
+    Name: BA_DISSONANCE
+    Description: Unchained Serenade
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      IgnoreFlee: true
+    Flags:
+      IsSong: true
+    Hit: Multi_Hit
+    HitCount: 1
+  - Id: 318
+    Name: BA_FROSTJOKE
+    Description: Unbarring Octave
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+  - Id: 319
+    Name: BA_WHISTLE
+    Description: Perfect Tablature
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Single
+    HitCount: 1
+  - Id: 320
+    Name: BA_ASSASSINCROSS
+    Description: Impressive Riff
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Single
+    HitCount: 1
+  - Id: 321
+    Name: BA_POEMBRAGI
+    Description: Nehan Shouja no Jutsu
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Single
+    HitCount: 1
+  - Id: 322
+    Name: BA_APPLEIDUN
+    Description: Song of Lutie
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Single
+    HitCount: 1
+  - Id: 323
+    Name: DC_DANCINGLESSON
+    Description: Dance Lessons
+    MaxLevel: 10
+    Type: Weapon
+  - Id: 324
+    Name: DC_THROWARROW
+    Description: Slinging Arrow
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 325
+    Name: DC_UGLYDANCE
+    Description: Hip Shaker
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Multi_Hit
+    HitCount: 1
+  - Id: 326
+    Name: DC_SCREAM
+    Description: Dazzler
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+  - Id: 327
+    Name: DC_HUMMING
+    Description: Focus Ballet
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Single
+    HitCount: 1
+  - Id: 328
+    Name: DC_DONTFORGETME
+    Description: Slow Grace
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Single
+    HitCount: 1
+  - Id: 329
+    Name: DC_FORTUNEKISS
+    Description: Lady Luck
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Single
+    HitCount: 1
+  - Id: 330
+    Name: DC_SERVICEFORYOU
+    Description: Gypsy's Kiss
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSong: true
+    Hit: Single
+    HitCount: 1
+  - Id: 331
+    Name: NPC_RANDOMMOVE
+    Description: Random Move
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+  - Id: 332
+    Name: NPC_SPEEDUP
+    Description: Speed UP
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+  - Id: 333
+    Name: NPC_REVENGE
+    Description: Revenge
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+  - Id: 334
+    Name: WE_MALE
+    Description: I Will Protect You
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsWedding: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 335
+    Name: WE_FEMALE
+    Description: I Look up to You
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsWedding: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 336
+    Name: WE_CALLPARTNER
+    Description: I miss You
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsWedding: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    SplashArea: 3
+    ActiveInstance: 1
+    CastCancel: true
+  - Id: 337
+    Name: ITM_TOMAHAWK
+    Description: Throw Tomahawk
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 338
+    Name: NPC_DARKCROSS
+    Description: Cross of Darkness
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -1
+    Hit: Multi_Hit
+    HitCount: -2
+    Element: Dark
+  - Id: 339
+    Name: NPC_GRANDDARKNESS
+    Description: Grand cross of Darkness
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      IgnoreAtkCard: true
+      IgnoreFlee: true
+    Flags:
+      IsNpc: true
+      TargetSelf: true
+    Range: 5
+    Hit: Single
+    HitCount: 1
+    Element: Dark
+    CastDefenseReduction: 33
+  - Id: 340
+    Name: NPC_DARKSTRIKE
+    Description: Soul Strike of Darkness
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 1
+      - Level: 3
+        Count: 2
+      - Level: 4
+        Count: 2
+      - Level: 5
+        Count: 3
+      - Level: 6
+        Count: 3
+      - Level: 7
+        Count: 4
+      - Level: 8
+        Count: 4
+      - Level: 9
+        Count: 5
+      - Level: 10
+        Count: 5
+    Element: Dark
+    CastCancel: true
+  - Id: 341
+    Name: NPC_DARKTHUNDER
+    Description: Darkness Jupitel
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 4
+      - Level: 3
+        Count: 5
+      - Level: 4
+        Count: 6
+      - Level: 5
+        Count: 7
+      - Level: 6
+        Count: 8
+      - Level: 7
+        Count: 9
+      - Level: 8
+        Count: 10
+      - Level: 9
+        Count: 11
+      - Level: 10
+        Count: 12
+    Element: Dark
+    Knockback:
+      - Level: 1
+        Amount: 2
+      - Level: 2
+        Amount: 3
+      - Level: 3
+        Amount: 3
+      - Level: 4
+        Amount: 4
+      - Level: 5
+        Amount: 4
+      - Level: 6
+        Amount: 5
+      - Level: 7
+        Amount: 5
+      - Level: 8
+        Amount: 6
+      - Level: 9
+        Amount: 6
+      - Level: 10
+        Amount: 7
+    CastCancel: true
+  - Id: 342
+    Name: NPC_STOP
+    Description: Stop
+    MaxLevel: 1
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+  - Id: 343
+    Name: NPC_WEAPONBRAKER
+    Description: Break weapon
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 344
+    Name: NPC_ARMORBRAKE
+    Description: Break armor
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 345
+    Name: NPC_HELMBRAKE
+    Description: Break helm
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 346
+    Name: NPC_SHIELDBRAKE
+    Description: Break shield
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 347
+    Name: NPC_UNDEADATTACK
+    Description: Undead Element Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Undead
+  - Id: 348
+    Name: NPC_CHANGEUNDEAD
+    Description: Undead Attribute Change
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    HitCount: 1
+    Element: Undead
+  - Id: 349
+    Name: NPC_POWERUP
+    Description: Power Up
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+  - Id: 350
+    Name: NPC_AGIUP
+    Description: Agility UP
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+  - Id: 351
+    Name: NPC_SIEGEMODE
+    Description: Siege Mode
+    MaxLevel: 1
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+  - Id: 352
+    Name: NPC_CALLSLAVE
+    Description: Recall Slaves
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 2
+  - Id: 353
+    Name: NPC_INVISIBLE
+    Description: Invisible
+    MaxLevel: 1
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+  - Id: 354
+    Name: NPC_RUN
+    Description: Run
+    MaxLevel: 20
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: 2
+    Hit: Single
+  - Id: 355
+    Name: LK_AURABLADE
+    Description: Aura Blade
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 357
+    Name: LK_CONCENTRATION
+    Description: Concentration
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 358
+    Name: LK_TENSIONRELAX
+    Description: Relax
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 359
+    Name: LK_BERSERK
+    Description: Frenzy
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 361
+    Name: HP_ASSUMPTIO
+    Description: Assumptio
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    SplashArea: 1
+    CastCancel: true
+  - Id: 362
+    Name: HP_BASILICA
+    Description: Basilica
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    Knockback: 2
+    CastCancel: true
+  - Id: 363
+    Name: HP_MEDITATIO
+    Description: Meditatio
+    MaxLevel: 10
+    Type: Magic
+  - Id: 364
+    Name: HW_SOULDRAIN
+    Description: Soul Drain
+    MaxLevel: 10
+    Type: Magic
+    HitCount: 1
+  - Id: 365
+    Name: HW_MAGICCRASHER
+    Description: Stave Crasher
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 10
+    Element: Holy
+    CastCancel: true
+  - Id: 366
+    Name: HW_MAGICPOWER
+    Description: Mystical Amplification
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 367
+    Name: PA_PRESSURE
+    Description: Gloria Domini
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Attack
+    DamageFlags:
+      IgnoreElement: true
+      IgnoreFlee: true
+      IgnoreDefCard: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 1
+  - Id: 368
+    Name: PA_SACRIFICE
+    Description: Omote Renge
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      IgnoreDefense: true
+      IgnoreFlee: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 369
+    Name: PA_GOSPEL
+    Description: Battle Chant
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      IgnoreFlee: true
+    Hit: Single
+    HitCount: 2
+    CastCancel: true
+  - Id: 370
+    Name: CH_PALMSTRIKE
+    Description: Raging Palm Strike
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: -2
+    Hit: Single
+    HitCount: 4
+    Element: Holy
+    Knockback: 3
+    CastCancel: true
+  - Id: 371
+    Name: CH_TIGERFIST
+    Description: Glacier Fist
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    Flags:
+      NoTargetSelf: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount: 3
+    Element: Holy
+  - Id: 372
+    Name: CH_CHAINCRUSH
+    Description: Chain Crush Combo
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      IgnoreDefense: true
+    Flags:
+      NoTargetSelf: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount: 8
+    Element: Holy
+  - Id: 373
+    Name: PF_HPCONVERSION
+    Description: Indulge
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 374
+    Name: PF_SOULCHANGE
+    Description: Soul Exhale
+    MaxLevel: 1
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+      PartyOnly: true
+      GuildOnly: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 375
+    Name: PF_SOULBURN
+    Description: Soul Siphon
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      IgnoreAtkCard: true
+      IgnoreElement: true
+      IgnoreDefCard: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 376
+    Name: ASC_KATAR
+    Description: Advanced Katar Mastery
+    MaxLevel: 5
+    Type: Weapon
+    DamageFlags:
+      NoDamage: true
+    HitCount: 1
+  - Id: 378
+    Name: ASC_EDP
+    Description: Enchant Deadly Poison
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    Element: Poison
+  - Id: 379
+    Name: ASC_BREAKER
+    Description: Soul Destroyer
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreAtkCard: true
+    Range: 9
+    Hit: Single
+    HitCount: 3
+    Element: Holy
+  - Id: 380
+    Name: SN_SIGHT
+    Description: Falcon Eyes
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 381
+    Name: SN_FALCONASSAULT
+    Description: Falcon Assault
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: 5
+    Hit: Single
+    HitCount: 15
+    Knockback: 3
+    CastCancel: true
+  - Id: 382
+    Name: SN_SHARPSHOOTING
+    Description: Focused Arrow Strike
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 4
+    Hit: Multi_Hit
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 2
+    ActiveInstance: 14
+    CastCancel: true
+  - Id: 383
+    Name: SN_WINDWALK
+    Description: Wind Walker
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+    CastCancel: true
+  - Id: 384
+    Name: WS_MELTDOWN
+    Description: Shattering Strike
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    HitCount: 1
+    CastCancel: true
+  - Id: 387
+    Name: WS_CARTBOOST
+    Description: Cart Boost
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 389
+    Name: ST_CHASEWALK
+    Description: Stealth
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 390
+    Name: ST_REJECTSWORD
+    Description: Counter Instinct
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    HitCount: 1
+    CastCancel: true
+  - Id: 392
+    Name: CR_ALCHEMY
+    Description: Alchemy
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    HitCount: 1
+    CastCancel: true
+  - Id: 393
+    Name: CR_SYNTHESISPOTION
+    Description: Potion Synthesis
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    HitCount: 1
+    CastCancel: true
+  - Id: 395
+    Name: CG_MOONLIT
+    Description: Sheltering Bliss
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsEnsemble: true
+    HitCount: 1
+    SplashArea: 3
+    Knockback: 2
+    CastCancel: true
+  - Id: 396
+    Name: CG_MARIONETTE
+    Description: Marionette Control
+    MaxLevel: 1
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 397
+    Name: LK_SPIRALPIERCE
+    Description: Spiral Pierce
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreDefense: true
+    Range: 5
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 23
+      - Level: 2
+        Count: 33
+      - Level: 3
+        Count: 43
+      - Level: 4
+        Count: 61
+      - Level: 5
+        Count: 82
+    Element: Holy
+  - Id: 398
+    Name: LK_HEADCRUSH
+    Description: Traumatic Blow
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 399
+    Name: LK_JOINTBEAT
+    Description: Vital Strike
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: 4
+    Hit: Single
+    HitCount: 6
+    Element: Weapon
+  - Id: 401
+    Name: CH_SOULCOLLECT
+    Description: Zen
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 402
+    Name: PF_MINDBREAKER
+    Description: Mind Breaker
+    MaxLevel: 5
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 403
+    Name: PF_MEMORIZE
+    Description: Foresight
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    HitCount: 1
+    CastCancel: true
+  - Id: 404
+    Name: PF_FOGWALL
+    Description: Blinding Mist
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      TargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Earth
+    ActiveInstance: 1
+    CastCancel: true
+  - Id: 405
+    Name: PF_SPIDERWEB
+    Description: Fiber Lock
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 7
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 3
+  - Id: 406
+    Name: ASC_METEORASSAULT
+    Description: Meteor Assault
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+      IgnoreAtkCard: true
+    Hit: Single
+    HitCount: 13
+    Element: Poison
+    SplashArea: 3
+    CastDefenseReduction: 33
+  - Id: 407
+    Name: ASC_CDP
+    Description: Create Deadly Poison
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+  - Id: 408
+    Name: WE_BABY
+    Description: Baby
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsWedding: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 409
+    Name: WE_CALLPARENT
+    Description: Call Parent
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsWedding: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    SplashArea: 3
+    ActiveInstance: 1
+    CastCancel: true
+  - Id: 410
+    Name: WE_CALLBABY
+    Description: Call Baby
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsWedding: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    SplashArea: 3
+    ActiveInstance: 1
+    CastCancel: true
+  - Id: 411
+    Name: TK_RUN
+    Description: Running
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    Knockback: 4
+    CastCancel: true
+  - Id: 412
+    Name: TK_READYSTORM
+    Description: Tornado Stance
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 413
+    Name: TK_STORMKICK
+    Description: Tornado Kick
+    MaxLevel: 7
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Flags:
+      NoTargetSelf: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: -5
+      - Level: 2
+        Count: -9
+      - Level: 3
+        Count: -13
+      - Level: 4
+        Count: -16
+      - Level: 5
+        Count: -21
+      - Level: 6
+        Count: -25
+      - Level: 7
+        Count: -30
+    Element: Holy
+    SplashArea: 2
+  - Id: 414
+    Name: TK_READYDOWN
+    Description: Heel Drop Stance
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 415
+    Name: TK_DOWNKICK
+    Description: Heel Drop
+    MaxLevel: 7
+    Type: Weapon
+    TargetType: Self
+    Flags:
+      NoTargetSelf: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: -5
+      - Level: 2
+        Count: -9
+      - Level: 3
+        Count: -13
+      - Level: 4
+        Count: -16
+      - Level: 5
+        Count: -22
+      - Level: 6
+        Count: -26
+      - Level: 7
+        Count: -32
+    Element: Holy
+  - Id: 416
+    Name: TK_READYTURN
+    Description: Roundhouse Stance
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 417
+    Name: TK_TURNKICK
+    Description: Roundhouse Kick
+    MaxLevel: 7
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Flags:
+      NoTargetSelf: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: -3
+      - Level: 2
+        Count: -7
+      - Level: 3
+        Count: -12
+      - Level: 4
+        Count: -15
+      - Level: 5
+        Count: -17
+      - Level: 6
+        Count: -21
+      - Level: 7
+        Count: -23
+    Element: Holy
+    SplashArea: 1
+    Knockback: 2
+  - Id: 418
+    Name: TK_READYCOUNTER
+    Description: Counter Kick Stance
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 419
+    Name: TK_COUNTER
+    Description: Counter Kick
+    MaxLevel: 7
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      IgnoreFlee: true
+    Flags:
+      NoTargetSelf: true
+    Range: -2
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: -6
+      - Level: 2
+        Count: -13
+      - Level: 3
+        Count: -17
+      - Level: 4
+        Count: -22
+      - Level: 5
+        Count: -25
+      - Level: 6
+        Count: -31
+      - Level: 7
+        Count: -37
+    Element: Holy
+  - Id: 420
+    Name: TK_DODGE
+    Description: Tumbling
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 421
+    Name: TK_JUMPKICK
+    Description: Flying Kick
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 1
+    Element: Holy
+    CastCancel: true
+  - Id: 422
+    Name: TK_HPTIME
+    Description: Peaceful Break
+    MaxLevel: 10
+    SplashArea: 1
+  - Id: 423
+    Name: TK_SPTIME
+    Description: Happy Break
+    MaxLevel: 10
+    SplashArea: 1
+  - Id: 424
+    Name: TK_POWER
+    Description: Kihop
+    MaxLevel: 5
+    Type: Weapon
+  - Id: 425
+    Name: TK_SEVENWIND
+    Description: Mild Wind
+    MaxLevel: 7
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    Element:
+      - Level: 1
+        Element: Fire
+      - Level: 2
+        Element: Fire
+      - Level: 3
+        Element: Fire
+      - Level: 4
+        Element: Fire
+      - Level: 5
+        Element: Fire
+      - Level: 6
+        Element: Fire
+      - Level: 7
+        Element: Fire
+  - Id: 426
+    Name: TK_HIGHJUMP
+    Description: Taekwon Jump
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 427
+    Name: ""
+    Description: ""
+    MaxLevel: 3
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 429
+    Name: SG_MOON_WARM
+    Description: Warmth of the Moon
+    MaxLevel: 3
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+      IgnoreFlee: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 1
+    Knockback: 2
+    CastCancel: true
+  - Id: 430
+    Name: SG_STAR_WARM
+    Description: Warmth of the Stars
+    MaxLevel: 3
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+      IgnoreFlee: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 1
+    Knockback: 2
+    CastCancel: true
+  - Id: 431
+    Name: SG_SUN_COMFORT
+    Description: Comfort of the Sun
+    MaxLevel: 4
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    HitCount: 1
+    CastCancel: true
+  - Id: 432
+    Name: SG_MOON_COMFORT
+    Description: Comfort of the Moon
+    MaxLevel: 4
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    HitCount: 1
+    CastCancel: true
+  - Id: 433
+    Name: SG_STAR_COMFORT
+    Description: Comfort of the Stars
+    MaxLevel: 4
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    HitCount: 1
+    CastCancel: true
+  - Id: 434
+    Name: ""
+    Description: ""
+    MaxLevel: 3
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 10
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 435
+    Name: SG_SUN_ANGER
+    Description: Anger of the Sun
+    MaxLevel: 3
+  - Id: 436
+    Name: SG_MOON_ANGER
+    Description: Anger of the Moon
+    MaxLevel: 3
+  - Id: 437
+    Name: SG_STAR_ANGER
+    Description: Anger of the Stars
+    MaxLevel: 3
+  - Id: 438
+    Name: SG_SUN_BLESS
+    Description: Blessing of the Sun
+    MaxLevel: 5
+  - Id: 439
+    Name: SG_MOON_BLESS
+    Description: Blessing of the Moon
+    MaxLevel: 5
+  - Id: 440
+    Name: SG_STAR_BLESS
+    Description: Blessing of the Stars
+    MaxLevel: 5
+  - Id: 441
+    Name: ""
+    Description: ""
+    MaxLevel: 10
+  - Id: 442
+    Name: ""
+    Description: ""
+    MaxLevel: 3
+  - Id: 443
+    Name: ""
+    Description: ""
+    MaxLevel: 10
+  - Id: 444
+    Name: ""
+    Description: ""
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 445
+    Name: SL_ALCHEMIST
+    Description: Spirit of the Alchemist
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 446
+    Name: AM_BERSERKPITCHER
+    Description: Aid Berserk Potion
+    MaxLevel: 1
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSpirit: true
+      PartyOnly: true
+      GuildOnly: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 447
+    Name: SL_MONK
+    Description: Spirit of the Monk
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 448
+    Name: SL_STAR
+    Description: Spirit of the Star Gladiator
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 449
+    Name: SL_SAGE
+    Description: Spirit of the Sage
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 450
+    Name: SL_CRUSADER
+    Description: Spirit of the Crusader
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 451
+    Name: SL_SUPERNOVICE
+    Description: Spirit of the Supernovice
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 452
+    Name: SL_KNIGHT
+    Description: Spirit of the Knight
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 453
+    Name: SL_WIZARD
+    Description: Spirit of the Wizard
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 454
+    Name: SL_PRIEST
+    Description: Spirit of the Priest
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 455
+    Name: SL_BARDDANCER
+    Description: Spirit of the Artist
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 456
+    Name: SL_ROGUE
+    Description: Spirit of the Rogue
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 457
+    Name: SL_ASSASIN
+    Description: Spirit of the Assasin
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 458
+    Name: SL_BLACKSMITH
+    Description: Spirit of the Blacksmith
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 459
+    Name: BS_ADRENALINE2
+    Description: Advanced Adrenaline Rush
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+  - Id: 460
+    Name: SL_HUNTER
+    Description: Spirit of the Hunter
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 461
+    Name: SL_SOULLINKER
+    Description: Spirit of the Soul Linker
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 462
+    Name: SL_KAIZEL
+    Description: Kaizel
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 463
+    Name: SL_KAAHI
+    Description: Kaahi
+    MaxLevel: 7
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 464
+    Name: SL_KAUPE
+    Description: Kaupe
+    MaxLevel: 3
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 465
+    Name: SL_KAITE
+    Description: Kaite
+    MaxLevel: 7
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 466
+    Name: SL_KAINA
+    Description: Kaina
+    MaxLevel: 7
+    Type: Magic
+    CastCancel: true
+  - Id: 467
+    Name: SL_STIN
+    Description: Estin
+    MaxLevel: 7
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Endowed
+    Knockback: 2
+  - Id: 468
+    Name: SL_STUN
+    Description: Estun
+    MaxLevel: 7
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Endowed
+  - Id: 469
+    Name: SL_SMA
+    Description: Esma
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 3
+      - Level: 4
+        Count: 4
+      - Level: 5
+        Count: 5
+      - Level: 6
+        Count: 6
+      - Level: 7
+        Count: 7
+      - Level: 8
+        Count: 8
+      - Level: 9
+        Count: 9
+      - Level: 10
+        Count: 10
+    Element: Endowed
+    CastCancel: true
+  - Id: 470
+    Name: SL_SWOO
+    Description: Eswoo
+    MaxLevel: 7
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 471
+    Name: SL_SKE
+    Description: Eske
+    MaxLevel: 3
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 472
+    Name: SL_SKA
+    Description: Eska
+    MaxLevel: 3
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 473
+    Name: SM_SELFPROVOKE
+    Description: Provoke Self
+    MaxLevel: 0
+  - Id: 474
+    Name: NPC_EMOTION_ON
+    Description: Emotion ON
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 475
+    Name: ST_PRESERVE
+    Description: Preserve
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    HitCount: 1
+    CastCancel: true
+  - Id: 476
+    Name: ST_FULLSTRIP
+    Description: Divest All
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 477
+    Name: WS_WEAPONREFINE
+    Description: Upgrade Weapon
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 478
+    Name: CR_SLIMPITCHER
+    Description: Aid Condensed Potion
+    MaxLevel: 10
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    SplashArea: 3
+  - Id: 479
+    Name: CR_FULLPROTECTION
+    Description: Full Protection
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 480
+    Name: PA_SHIELDCHAIN
+    Description: Shield Chain
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 5
+    Hit: Multi_Hit
+    HitCount: 13
+    Element: Holy
+  - Id: 481
+    Name: HP_MANARECHARGE
+    Description: Mana Recharge
+    MaxLevel: 5
+  - Id: 482
+    Name: PF_DOUBLECASTING
+    Description: Double Casting
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 483
+    Name: HW_GANBANTEIN
+    Description: Ganbantein
+    MaxLevel: 1
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    SplashArea: 6
+  - Id: 485
+    Name: WS_CARTTERMINATION
+    Description: Cart Termination
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreAtkCard: true
+    Range: -2
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 486
+    Name: WS_OVERTHRUSTMAX
+    Description: Maximum Power Thrust
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 487
+    Name: CG_LONGINGFREEDOM
+    Description: Longing for Freedom
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 488
+    Name: CG_HERMODE
+    Description: Wand of Hermode
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 1
+  - Id: 489
+    Name: CG_TAROTCARD
+    Description: Tarot Card of Fate
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+      IgnoreFlee: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 490
+    Name: CR_ACIDDEMONSTRATION
+    Description: Acid Demonstration
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 3
+      - Level: 4
+        Count: 4
+      - Level: 5
+        Count: 5
+      - Level: 6
+        Count: 6
+      - Level: 7
+        Count: 7
+      - Level: 8
+        Count: 8
+      - Level: 9
+        Count: 9
+      - Level: 10
+        Count: 10
+    Element: Poison
+    CastCancel: true
+  - Id: 491
+    Name: CR_CULTIVATION
+    Description: Plant Cultivation
+    MaxLevel: 2
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 1
+    Hit: Single
+    HitCount: 1
+  - Id: 492
+    Name: ITEM_ENCHANTARMS
+    Description: Weapon Enchantment
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    Element:
+      - Level: 1
+        Element: Neutral
+      - Level: 2
+        Element: Water
+      - Level: 3
+        Element: Earth
+      - Level: 4
+        Element: Fire
+      - Level: 5
+        Element: Wind
+      - Level: 6
+        Element: Poison
+      - Level: 7
+        Element: Holy
+      - Level: 8
+        Element: Dark
+      - Level: 9
+        Element: Ghost
+      - Level: 10
+        Element: Undead
+  - Id: 493
+    Name: TK_MISSION
+    Description: Taekwon Mission
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 494
+    Name: SL_HIGH
+    Description: Spirit of Rebirth
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 495
+    Name: KN_ONEHAND
+    Description: Onehand Quicken
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 496
+    Name: AM_TWILIGHT1
+    Description: Twilight Alchemy 1
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSpirit: true
+    Hit: Single
+  - Id: 497
+    Name: AM_TWILIGHT2
+    Description: Twilight Alchemy 2
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSpirit: true
+    Hit: Single
+  - Id: 498
+    Name: AM_TWILIGHT3
+    Description: Twilight Alchemy 3
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsSpirit: true
+    Hit: Single
+  - Id: 499
+    Name: HT_POWER
+    Description: Beast Strafing
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    Flags:
+      IsSpirit: true
+      NoTargetSelf: true
+    Range: -9
+    Hit: Multi_Hit
+    HitCount: 2
+    Element: Weapon
+  - Id: 500
+    Name: GS_GLITTERING
+    Description: Flip the Coin
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      IgnoreFlee: true
+    Hit: Single
+    HitCount: 1
+  - Id: 501
+    Name: GS_FLING
+    Description: Fling
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Attack
+    DamageFlags:
+      IgnoreElement: true
+      IgnoreFlee: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 502
+    Name: GS_TRIPLEACTION
+    Description: Triple Action
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    Range: -9
+    Hit: Multi_Hit
+    HitCount: 3
+    Element: Weapon
+  - Id: 503
+    Name: GS_BULLSEYE
+    Description: Bulls Eye
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreAtkCard: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 504
+    Name: GS_MADNESSCANCEL
+    Description: Madness Canceller
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 505
+    Name: GS_ADJUSTMENT
+    Description: AdJustment
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 506
+    Name: GS_INCREASING
+    Description: Increasing Accuracy
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 507
+    Name: GS_MAGICALBULLET
+    Description: Magical Bullet
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Ghost
+  - Id: 508
+    Name: GS_CRACKER
+    Description: Cracker
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 509
+    Name: GS_SINGLEACTION
+    Description: Single Action
+    MaxLevel: 10
+  - Id: 510
+    Name: GS_SNAKEEYE
+    Description: Snake Eye
+    MaxLevel: 10
+  - Id: 511
+    Name: GS_CHAINACTION
+    Description: Chain Action
+    MaxLevel: 10
+    Type: Weapon
+    Range: -9
+    Hit: Multi_Hit
+    HitCount: 2
+    Element: Weapon
+  - Id: 512
+    Name: GS_TRACKING
+    Description: Tracking
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -6
+    Hit: Single
+    HitCount: 4
+    Element: Weapon
+  - Id: 513
+    Name: GS_DISARM
+    Description: Disarm
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 514
+    Name: GS_PIERCINGSHOT
+    Description: Piercing Shot
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreDefense: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 516
+    Name: GS_DESPERADO
+    Description: Desperado
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Hit: Multi_Hit
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 3
+  - Id: 517
+    Name: GS_GATLINGFEVER
+    Description: Gatling Fever
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    Element: Holy
+  - Id: 518
+    Name: GS_DUST
+    Description: Dust
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: 2
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    Knockback: 5
+  - Id: 519
+    Name: GS_FULLBUSTER
+    Description: Full Buster
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    CastCancel: true
+  - Id: 520
+    Name: GS_SPREADATTACK
+    Description: Spread Attack
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea:
+      - Level: 1
+        Area: 1
+      - Level: 2
+        Area: 1
+      - Level: 3
+        Area: 1
+      - Level: 4
+        Area: 2
+      - Level: 5
+        Area: 2
+      - Level: 6
+        Area: 2
+      - Level: 7
+        Area: 3
+      - Level: 8
+        Area: 3
+      - Level: 9
+        Area: 3
+      - Level: 10
+        Area: 4
+  - Id: 521
+    Name: GS_GROUNDDRIFT
+    Description: Ground Drift
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Ground
+    DamageFlags:
+      IgnoreFlee: true
+    Flags:
+      IsTrap: true
+    Range: -9
+    Hit: Single
+    HitCount: 8
+    Element: Weapon
+    SplashArea: 1
+    Knockback: 3
+  - Id: 522
+    Name: NJ_TOBIDOUGU
+    Description: Shuriken Training
+    MaxLevel: 10
+    Type: Weapon
+    HitCount: 1
+  - Id: 523
+    Name: NJ_SYURIKEN
+    Description: Throw Shuriken
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: 6
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 3
+      - Level: 4
+        Count: 5
+      - Level: 5
+        Count: 6
+      - Level: 6
+        Count: 7
+      - Level: 7
+        Count: 9
+      - Level: 8
+        Count: 10
+      - Level: 9
+        Count: 11
+      - Level: 10
+        Count: 13
+      - Level: 11
+        Count: 15
+      - Level: 12
+        Count: 16
+      - Level: 13
+        Count: 18
+    Element: Holy
+  - Id: 524
+    Name: NJ_KUNAI
+    Description: Throw Kunai
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: 6
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 3
+      - Level: 4
+        Count: 5
+      - Level: 5
+        Count: 6
+      - Level: 6
+        Count: 7
+      - Level: 7
+        Count: 9
+      - Level: 8
+        Count: 10
+      - Level: 9
+        Count: 11
+      - Level: 10
+        Count: 13
+      - Level: 11
+        Count: 15
+      - Level: 12
+        Count: 16
+      - Level: 13
+        Count: 18
+    Element: Holy
+  - Id: 525
+    Name: NJ_HUUMA
+    Description: Throw Huuma Shuriken
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreFlee: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: -3
+      - Level: 2
+        Count: -3
+      - Level: 3
+        Count: -4
+      - Level: 4
+        Count: -4
+      - Level: 5
+        Count: -5
+      - Level: 6
+        Count: -6
+      - Level: 7
+        Count: -7
+      - Level: 8
+        Count: -8
+      - Level: 9
+        Count: -9
+      - Level: 10
+        Count: -10
+      - Level: 11
+        Count: -11
+      - Level: 12
+        Count: -12
+      - Level: 13
+        Count: -13
+    Element: Holy
+    SplashArea: 3
+    CastCancel: true
+  - Id: 526
+    Name: NJ_ZENYNAGE
+    Description: Throw Zeny
+    MaxLevel: 10
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      IgnoreElement: true
+      IgnoreFlee: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 527
+    Name: NJ_TATAMIGAESHI
+    Description: Improvised Defense
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    Knockback: 3
+  - Id: 528
+    Name: NJ_KASUMIKIRI
+    Description: Vanishing Slash
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount: 3
+    Element: Weapon
+  - Id: 529
+    Name: NJ_SHADOWJUMP
+    Description: Shadow Leap
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range:
+      - Level: 1
+        Size: 7
+      - Level: 2
+        Size: 9
+      - Level: 3
+        Size: 11
+      - Level: 4
+        Size: 13
+      - Level: 5
+        Size: 13
+    Hit: Single
+    HitCount: 1
+  - Id: 530
+    Name: NJ_KIRIKAGE
+    Description: Shadow Slash
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 9
+    Hit: Single
+    HitCount: 4
+    Element: Weapon
+  - Id: 531
+    Name: NJ_UTSUSEMI
+    Description: Cicada Skin Sheeding
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    Knockback: 7
+  - Id: 532
+    Name: NJ_BUNSINJYUTSU
+    Description: Mirror Image
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 533
+    Name: NJ_NINPOU
+    Description: Spirit of the Blade
+    MaxLevel: 10
+  - Id: 537
+    Name: NJ_HYOUSENSOU
+    Description: Spear of Ice
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    Range: 9
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: 3
+      - Level: 2
+        Count: 4
+      - Level: 3
+        Count: 5
+      - Level: 4
+        Count: 6
+      - Level: 5
+        Count: 7
+      - Level: 6
+        Count: 8
+      - Level: 7
+        Count: 9
+      - Level: 8
+        Count: 10
+      - Level: 9
+        Count: 11
+      - Level: 10
+        Count: 12
+    Element: Water
+    CastCancel: true
+  - Id: 543
+    Name: NJ_NEN
+    Description: Soul
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 544
+    Name: NJ_ISSEN
+    Description: Shiki Fujin
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreDefense: true
+      IgnoreFlee: true
+    Range: -1
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 654
+    Name: NPC_FIREBREATH
+    Description: Fire Breath
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    SplashArea: 5
+    ActiveInstance: 14
+  - Id: 655
+    Name: NPC_ICEBREATH
+    Description: Ice Breath
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Water
+    SplashArea: 5
+    ActiveInstance: 14
+  - Id: 656
+    Name: NPC_THUNDERBREATH
+    Description: Thunder Breath
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Wind
+    SplashArea: 5
+    ActiveInstance: 14
+  - Id: 657
+    Name: NPC_ACIDBREATH
+    Description: Acid Breath
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Poison
+    SplashArea: 5
+    ActiveInstance: 14
+  - Id: 658
+    Name: NPC_DARKNESSBREATH
+    Description: Darkness Breath
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Dark
+    SplashArea: 5
+    ActiveInstance: 14
+  - Id: 659
+    Name: NPC_DRAGONFEAR
+    Description: Dragon Fear
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 4
+  - Id: 660
+    Name: NPC_BLEEDING
+    Description: Bleeding
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 661
+    Name: NPC_PULSESTRIKE
+    Description: Pulse Strike
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 7
+    Knockback: 7
+  - Id: 662
+    Name: NPC_HELLJUDGEMENT
+    Description: Hell's Judgement
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 8
+  - Id: 663
+    Name: NPC_WIDESILENCE
+    Description: Wide Silence
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 6
+  - Id: 664
+    Name: NPC_WIDEFREEZE
+    Description: Wide Freeze
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea:
+      - Level: 1
+        Area: 2
+      - Level: 2
+        Area: 5
+      - Level: 3
+        Area: 8
+      - Level: 4
+        Area: 11
+      - Level: 5
+        Area: 14
+  - Id: 665
+    Name: NPC_WIDEBLEEDING
+    Description: Wide Bleeding
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea:
+      - Level: 1
+        Area: 2
+      - Level: 2
+        Area: 5
+      - Level: 3
+        Area: 8
+      - Level: 4
+        Area: 11
+      - Level: 5
+        Area: 14
+  - Id: 666
+    Name: NPC_WIDESTONE
+    Description: Wide Petrify
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea:
+      - Level: 1
+        Area: 3
+      - Level: 2
+        Area: 5
+      - Level: 3
+        Area: 8
+      - Level: 4
+        Area: 11
+      - Level: 5
+        Area: 14
+  - Id: 667
+    Name: NPC_WIDECONFUSE
+    Description: Wide Confusion
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 6
+  - Id: 668
+    Name: NPC_WIDESLEEP
+    Description: Wide Sleep
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 4
+  - Id: 669
+    Name: NPC_WIDESIGHT
+    Description: Wide Sight
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    SplashArea: 5
+  - Id: 670
+    Name: NPC_EVILLAND
+    Description: Evil Land
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      IgnoreDefense: true
+    Flags:
+      IsNpc: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Dark
+  - Id: 671
+    Name: NPC_MAGICMIRROR
+    Description: Magic Mirror
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+  - Id: 672
+    Name: NPC_SLOWCAST
+    Description: Slow Cast
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 3
+    CastCancel: true
+  - Id: 673
+    Name: NPC_CRITICALWOUND
+    Description: Critical Wounds
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -1
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 2
+      - Level: 2
+        Count: 4
+      - Level: 3
+        Count: 6
+      - Level: 4
+        Count: 8
+      - Level: 5
+        Count: 10
+      - Level: 6
+        Count: 12
+      - Level: 7
+        Count: 14
+      - Level: 8
+        Count: 16
+      - Level: 9
+        Count: 18
+      - Level: 10
+        Count: 25
+    Element: Weapon
+  - Id: 674
+    Name: NPC_EXPULSION
+    Description: Expulsion
+    MaxLevel: 1
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 675
+    Name: NPC_STONESKIN
+    Description: Stone Skin
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+  - Id: 676
+    Name: NPC_ANTIMAGIC
+    Description: Anti Magic
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+  - Id: 677
+    Name: NPC_WIDECURSE
+    Description: Wide Curse
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 6
+  - Id: 678
+    Name: NPC_WIDESTUN
+    Description: Wide Stun
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsNpc: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: 6
+  - Id: 679
+    Name: NPC_VAMPIRE_GIFT
+    Description: Vampire Gift
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 680
+    Name: NPC_WIDESOULDRAIN
+    Description: Wide Soul Drain
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
+    HitCount: 1
+  - Id: 681
+    Name: ALL_INCCARRY
+    Description: Increase Weight Limit R
+    MaxLevel: 10
+    Flags:
+      IsQuest: true
+  - Id: 1001
+    Name: KN_CHARGEATK
+    Description: Charge Attack
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsQuest: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 1002
+    Name: CR_SHRINK
+    Description: Shrink
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Hit: Single
+    Knockback: 2
+  - Id: 1003
+    Name: AS_SONICACCEL
+    Description: Sonic Acceleration
+    MaxLevel: 1
+    Type: Weapon
+    Flags:
+      IsQuest: true
+  - Id: 1004
+    Name: AS_VENOMKNIFE
+    Description: Throw Venom Knife
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreDefense: true
+      IgnoreFlee: true
+    Flags:
+      IsQuest: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 10
+  - Id: 1005
+    Name: RG_CLOSECONFINE
+    Description: Close Confine
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 1006
+    Name: WZ_SIGHTBLASTER
+    Description: Sight Blaster
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    Flags:
+      IsQuest: true
+    Hit: Single
+    HitCount: 56
+    Element: Fire
+    SplashArea: 2
+    Knockback: 3
+    CastCancel: true
+  - Id: 1007
+    Name: SA_CREATECON
+    Description: Create Elemental Converter
+    MaxLevel: 10
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Hit: Single
+  - Id: 1008
+    Name: SA_ELEMENTWATER
+    Description: Elemental Change Water
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Water
+    CastCancel: true
+  - Id: 1009
+    Name: HT_PHANTASMIC
+    Description: Phantasmic Arrow
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsQuest: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Knockback: 3
+  - Id: 1010
+    Name: BA_PANGVOICE
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 1011
+    Name: DC_WINKCHARM
+    Description: Wink of Charm
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Range: 9
+    Hit: Single
+  - Id: 1012
+    Name: BS_UNFAIRLYTRICK
+    Description: Unfair Trick
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    Flags:
+      IsQuest: true
+  - Id: 1013
+    Name: BS_GREED
+    Description: Greed
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    SplashArea: 2
+  - Id: 1014
+    Name: PR_REDEMPTIO
+    Description: Redemptio
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    Element: Holy
+    SplashArea: 14
+    CastCancel: true
+  - Id: 1015
+    Name: MO_KITRANSLATION
+    Description: Ki Translation
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+      PartyOnly: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 1016
+    Name: MO_BALKYOUNG
+    Description: Ki Explosion
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Flags:
+      IsQuest: true
+    Range: -1
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 4
+      - Level: 2
+        Count: 6
+      - Level: 3
+        Count: 9
+      - Level: 4
+        Count: 11
+      - Level: 5
+        Count: 15
+    Element: Holy
+    SplashArea: 5
+    Knockback: 5
+  - Id: 1017
+    Name: SA_ELEMENTGROUND
+    Description: Elemental Change Earth
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Earth
+    CastCancel: true
+  - Id: 1018
+    Name: SA_ELEMENTFIRE
+    Description: Elemental Change Fire
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    CastCancel: true
+  - Id: 1019
+    Name: SA_ELEMENTWIND
+    Description: Elemental Change Wind
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsQuest: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    Element: Wind
+    CastCancel: true
+  - Id: 8001
+    Name: HLIF_HEAL
+    Description: Healing Touch
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 8002
+    Name: HLIF_AVOID
+    Description: Avoid
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+  - Id: 8003
+    Name: HLIF_BRAIN
+    Description: Brain Surgery
+    MaxLevel: 5
+    SplashArea: 1
+  - Id: 8004
+    Name: HLIF_CHANGE
+    Description: Change
+    MaxLevel: 3
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+  - Id: 8005
+    Name: HAMI_CASTLE
+    Description: Castling
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+  - Id: 8006
+    Name: HAMI_DEFENCE
+    Description: Defense
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+  - Id: 8007
+    Name: HAMI_SKIN
+    Description: Adamantium Skin
+    MaxLevel: 5
+    DamageFlags:
+      NoDamage: true
+  - Id: 8008
+    Name: HAMI_BLOODLUST
+    Description: Bloodlust
+    MaxLevel: 3
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+  - Id: 8009
+    Name: HFLI_MOON
+    Description: Moonlight
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 1
+    Hit: Multi_Hit
+    HitCount:
+      - Level: 1
+        Count: -1
+      - Level: 2
+        Count: -2
+      - Level: 3
+        Count: -2
+      - Level: 4
+        Count: -2
+      - Level: 5
+        Count: -3
+  - Id: 8010
+    Name: HFLI_FLEET
+    Description: Fleeting Move
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+  - Id: 8011
+    Name: HFLI_SPEED
+    Description: Speed
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    CastCancel: true
+  - Id: 8012
+    Name: HFLI_SBR44
+    Description: S.B.R.44
+    MaxLevel: 3
+    TargetType: Attack
+    Range: 1
+    Hit: Single
+  - Id: 8013
+    Name: HVAN_CAPRICE
+    Description: Caprice
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Attack
+    Range: 5
+    Hit: Single
+    HitCount:
+      - Level: 1
+        Count: 1
+      - Level: 2
+        Count: 2
+      - Level: 3
+        Count: 3
+      - Level: 4
+        Count: 4
+      - Level: 5
+        Count: 5
+  - Id: 8014
+    Name: HVAN_CHAOTIC
+    Description: Benediction of Chaos
+    MaxLevel: 5
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+  - Id: 8015
+    Name: HVAN_INSTRUCT
+    Description: Instruct
+    MaxLevel: 5
+    DamageFlags:
+      NoDamage: true
+  - Id: 8016
+    Name: HVAN_EXPLOSION
+    Description: Bio Explosion
+    MaxLevel: 3
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+      IgnoreElement: true
+      IgnoreFlee: true
+      IgnoreDefCard: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 4
+  - Id: 10000
+    Name: GD_APPROVAL
+    Description: Official Guild Approval
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+  - Id: 10001
+    Name: GD_KAFRACONTRACT
+    Description: Kafra Contract
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+  - Id: 10002
+    Name: GD_GUARDRESEARCH
+    Description: Guardian Research
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+  - Id: 10003
+    Name: GD_GUARDUP
+    Description: Strengthen Guardians
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+  - Id: 10004
+    Name: GD_EXTENSION
+    Description: Guild Extension
+    MaxLevel: 10
+    Flags:
+      IsGuild: true
+  - Id: 10005
+    Name: GD_GLORYGUILD
+    Description: Guild's Glory
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+  - Id: 10006
+    Name: GD_LEADERSHIP
+    Description: Great Leadership
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+    SplashArea: 2
+  - Id: 10007
+    Name: GD_GLORYWOUNDS
+    Description: Glorious Wounds
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+    SplashArea: 2
+  - Id: 10008
+    Name: GD_SOULCOLD
+    Description: Cold Heart
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+    SplashArea: 2
+  - Id: 10009
+    Name: GD_HAWKEYES
+    Description: Sharp Gaze
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+    SplashArea: 2
+  - Id: 10010
+    Name: GD_BATTLEORDER
+    Description: Battle Orders
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsGuild: true
+    SplashArea: 15
+    CastCancel: true
+  - Id: 10011
+    Name: GD_REGENERATION
+    Description: Regeneration
+    MaxLevel: 3
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsGuild: true
+    SplashArea: 15
+    CastCancel: true
+  - Id: 10012
+    Name: GD_RESTORE
+    Description: Restoration
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsGuild: true
+    SplashArea: 15
+    CastCancel: true
+  - Id: 10013
+    Name: GD_EMERGENCYCALL
+    Description: Urgent Call
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsGuild: true
+    CastCancel: true
+  - Id: 10014
+    Name: GD_DEVELOPMENT
+    Description: Permanent Development
+    MaxLevel: 1
+    Flags:
+      IsGuild: true
+  - Id: 721
+    Name: AM_CANNIBALIZE2
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 722
+    Name: AM_CANNIBALIZE3
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 723
+    Name: AM_CANNIBALIZE4
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 724
+    Name: AM_CANNIBALIZE5
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 725
+    Name: AM_CANNIBALIZE6
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 726
+    Name: AM_CANNIBALIZE7
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 727
+    Name: AM_CANNIBALIZE8
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 728
+    Name: AM_CANNIBALIZE9
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 729
+    Name: AM_CANNIBALIZE10
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 730
+    Name: AM_CANNIBALIZE11
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 731
+    Name: AM_CANNIBALIZE12
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 732
+    Name: AM_CANNIBALIZE13
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 733
+    Name: AM_CANNIBALIZE14
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 734
+    Name: AM_CANNIBALIZE15
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 735
+    Name: AM_CANNIBALIZE16
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 736
+    Name: AM_CANNIBALIZE17
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 737
+    Name: AM_CANNIBALIZE18
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 738
+    Name: AM_CANNIBALIZE19
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 739
+    Name: AM_CANNIBALIZE20
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 740
+    Name: AM_CANNIBALIZE21
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 741
+    Name: AM_CANNIBALIZE22
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 742
+    Name: AM_CANNIBALIZE23
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 743
+    Name: AM_CANNIBALIZE24
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 744
+    Name: AM_CANNIBALIZE25
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 745
+    Name: AM_CANNIBALIZE26
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 746
+    Name: AM_CANNIBALIZE27
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 747
+    Name: AM_CANNIBALIZE28
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 748
+    Name: AM_CANNIBALIZE29
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 970
+    Name: AM_CANNIBALIZE30
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 971
+    Name: AM_CANNIBALIZE31
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 972
+    Name: AM_CANNIBALIZE32
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 973
+    Name: AM_CANNIBALIZE33
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 974
+    Name: AM_CANNIBALIZE34
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 975
+    Name: AM_CANNIBALIZE35
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 976
+    Name: AM_CANNIBALIZE36
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 977
+    Name: AM_CANNIBALIZE37
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 978
+    Name: AM_CANNIBALIZE38
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 979
+    Name: AM_CANNIBALIZE39
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 980
+    Name: AM_CANNIBALIZE40
+    Description: Summon Flora
+    MaxLevel: 5
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Range: 4
+    Hit: Single
+    HitCount: 1
+    ActiveInstance: 5
+  - Id: 981
+    Name: BA_PANGVOICE50
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 985
+    Name: BA_PANGVOICEZ
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 987
+    Name: BA_PANGVOICEZ2
+    Description: Throw Venom Knife
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreDefense: true
+      IgnoreFlee: true
+    Flags:
+      IsQuest: true
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 15
+  - Id: 749
+    Name: BA_PANGVOICE2
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 750
+    Name: BA_PANGVOICE3
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 751
+    Name: BA_PANGVOICE4
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 752
+    Name: BA_PANGVOICE5
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    CastCancel: true
+  - Id: 753
+    Name: BA_PANGVOICE6
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 754
+    Name: BA_PANGVOICE7
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 755
+    Name: BA_PANGVOICE8
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 756
+    Name: BA_PANGVOICE9
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 757
+    Name: BA_PANGVOICE10
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 758
+    Name: BA_PANGVOICE11
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 759
+    Name: BA_PANGVOICE12
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 760
+    Name: BA_PANGVOICE13
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 761
+    Name: BA_PANGVOICE14
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    CastCancel: true
+  - Id: 762
+    Name: BA_PANGVOICE15
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 763
+    Name: BA_PANGVOICE16
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 764
+    Name: BA_PANGVOICE17
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 765
+    Name: BA_PANGVOICE18
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 766
+    Name: BA_PANGVOICE19
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 767
+    Name: BA_PANGVOICE20
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 768
+    Name: BA_PANGVOICE21
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 769
+    Name: BA_PANGVOICE22
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 770
+    Name: BA_PANGVOICE23
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 771
+    Name: BA_PANGVOICE24
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 772
+    Name: BA_PANGVOICE25
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 773
+    Name: BA_PANGVOICE26
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 774
+    Name: BA_PANGVOICE27
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 775
+    Name: BA_PANGVOICE28
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 776
+    Name: BA_PANGVOICE29
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 777
+    Name: BA_PANGVOICE30
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 945
+    Name: BA_PANGVOICE31
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 946
+    Name: BA_PANGVOICE32
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 947
+    Name: BA_PANGVOICE33
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 948
+    Name: BA_PANGVOICE34
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 949
+    Name: BA_PANGVOICE35
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 950
+    Name: BA_PANGVOICE36
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 951
+    Name: BA_PANGVOICE37
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 957
+    Name: BA_PANGVOICE38
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 958
+    Name: BA_PANGVOICE39
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 959
+    Name: BA_PANGVOICE40
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 960
+    Name: BA_PANGVOICE41
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 961
+    Name: BA_PANGVOICE42
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 962
+    Name: BA_PANGVOICE43
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 963
+    Name: BA_PANGVOICE44
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 964
+    Name: BA_PANGVOICE45
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 965
+    Name: BA_PANGVOICE46
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 966
+    Name: BA_PANGVOICE47
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 967
+    Name: BA_PANGVOICE48
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 968
+    Name: BA_PANGVOICE49
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 969
+    Name: BA_PANGVOICE50
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 992
+    Name: BA_PANGVOICEX
+    Description: Pang Voice
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+  - Id: 986
+    Name: BA_PANGVOICEZ1
+    Description: Pang Voice
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Flags:
+      IsNpc: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 8201
+    Name: MS_BASH
+    Description: Bash
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -1
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+  - Id: 8202
+    Name: MS_MAGNUM
+    Description: Magnum_Break
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    SplashArea: 2
+    Knockback: 2
+  - Id: 8203
+    Name: MS_BOWLINGBASH
+    Description: Bowling_Bash
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Range: -2
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 1
+    Knockback: 1
+    CastDefenseReduction: 33
+  - Id: 8204
+    Name: MS_PARRYING
+    Description: Parry
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 8205
+    Name: MS_REFLECTSHIELD
+    Description: Shield_Reflect
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    Hit: Single
+    HitCount: 1
+  - Id: 8206
+    Name: MS_BERSERK
+    Description: Frenzy
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 8207
+    Name: MA_DOUBLE
+    Description: Double_Strafe
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -9
+    Hit: Multi_Hit
+    HitCount: 2
+    Element: Weapon
+  - Id: 8208
+    Name: MA_SHOWER
+    Description: Arrow_Shower
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Ground
+    DamageFlags:
+      Splash: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 2
+    Knockback: 2
+  - Id: 8209
+    Name: MA_SKIDTRAP
+    Description: Skid_Trap
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    Knockback:
+      - Level: 1
+        Amount: 6
+      - Level: 2
+        Amount: 7
+      - Level: 3
+        Amount: 8
+      - Level: 4
+        Amount: 9
+      - Level: 5
+        Amount: 10
+  - Id: 8210
+    Name: MA_LANDMINE
+    Description: Land_Mine
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      IgnoreFlee: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    Element: Earth
+  - Id: 8211
+    Name: MA_SANDMAN
+    Description: Sandman
+    MaxLevel: 5
+    Type: Misc
+    TargetType: Ground
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    SplashArea: 2
+  - Id: 8212
+    Name: MA_FREEZINGTRAP
+    Description: Freezing_Trap
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Ground
+    DamageFlags:
+      Splash: true
+      IgnoreFlee: true
+    Flags:
+      IsTrap: true
+    Range: 3
+    Hit: Single
+    HitCount: 1
+    Element: Water
+    SplashArea: 1
+  - Id: 8213
+    Name: MA_REMOVETRAP
+    Description: Remove_Trap
+    MaxLevel: 1
+    Type: Misc
+    TargetType: Trap
+    DamageFlags:
+      NoDamage: true
+    Range: 2
+    Hit: Single
+    HitCount: 1
+  - Id: 8214
+    Name: MA_CHARGEARROW
+    Description: Arrow_Repel
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      Splash: true
+    Flags:
+      IsQuest: true
+    Range: -9
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    Knockback: 6
+  - Id: 8215
+    Name: MA_SHARPSHOOTING
+    Description: Focused_Arrow_Strike
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 9
+    Hit: Multi_Hit
+    HitCount: 1
+    Element: Weapon
+    SplashArea: 2
+    ActiveInstance: 13
+    CastCancel: true
+  - Id: 8216
+    Name: ML_PIERCE
+    Description: Pierce
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    Range: -2
+    Hit: Multi_Hit
+    HitCount: 3
+    Element: Weapon
+  - Id: 8217
+    Name: ML_BRANDISH
+    Description: Brandish_Spear
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: -2
+    Hit: Single
+    HitCount: 1
+    Element: Weapon
+    Knockback: 3
+    CastDefenseReduction: 33
+  - Id: 8218
+    Name: ML_SPIRALPIERCE
+    Description: Spiral_Pierce
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    DamageFlags:
+      IgnoreDefense: true
+    Range: 5
+    Hit: Multi_Hit
+    HitCount: 5
+    Element: Weapon
+  - Id: 8219
+    Name: ML_DEFENDER
+    Description: Defending_Aura
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 8220
+    Name: ML_AUTOGUARD
+    Description: Guard
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 8221
+    Name: ML_DEVOTION
+    Description: Sacrifice
+    MaxLevel: 5
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetSelf: true
+      PartyOnly: true
+    Range:
+      - Level: 1
+        Size: 7
+      - Level: 2
+        Size: 8
+      - Level: 3
+        Size: 9
+      - Level: 4
+        Size: 10
+      - Level: 5
+        Size: 11
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8222
+    Name: MER_MAGNIFICAT
+    Description: Magnificat
+    MaxLevel: 5
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    SplashArea: -1
+    CastCancel: true
+  - Id: 8223
+    Name: MER_QUICKEN
+    Description: Two-Hand_Quicken
+    MaxLevel: 10
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 8224
+    Name: MER_SIGHT
+    Description: Sight
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+      Splash: true
+    Hit: Single
+    HitCount: 1
+    Element: Fire
+    SplashArea: 3
+    CastCancel: true
+  - Id: 8225
+    Name: MER_CRASH
+    Description: Crash
+    MaxLevel: 5
+    Type: Weapon
+    TargetType: Attack
+    Range: 1
+    Hit: Multi_Hit
+    HitCount: 3
+    Element: Weapon
+  - Id: 8226
+    Name: MER_REGAIN
+    Description: Regain
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetEnemy: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8227
+    Name: MER_TENDER
+    Description: Tender
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetEnemy: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8228
+    Name: MER_BENEDICTION
+    Description: Benediction
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetEnemy: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8229
+    Name: MER_RECUPERATE
+    Description: Recuperate
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetEnemy: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8230
+    Name: MER_MENTALCURE
+    Description: Mental_Cure
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetEnemy: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8231
+    Name: MER_COMPRESS
+    Description: Compress
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      NoTargetEnemy: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8232
+    Name: MER_PROVOKE
+    Description: Provoke
+    MaxLevel: 10
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+  - Id: 8233
+    Name: MER_AUTOBERSERK
+    Description: Berserk
+    MaxLevel: 1
+    Type: Weapon
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+  - Id: 8234
+    Name: MER_DECAGI
+    Description: Decrease_AGI
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8235
+    Name: MER_SCAPEGOAT
+    Description: Scapegoat
+    MaxLevel: 1
+    TargetType: Self
+    DamageFlags:
+      NoDamage: true
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8236
+    Name: MER_LEXDIVINA
+    Description: Lex_Divina
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 5
+    Hit: Single
+    CastCancel: true
+  - Id: 8237
+    Name: MER_ESTIMATION
+    Description: Sense
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8238
+    Name: MER_KYRIE
+    Description: Kyrie Eleison
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8239
+    Name: MER_BLESSING
+    Description: Blessing
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 8240
+    Name: MER_INCAGI
+    Description: Increase Agility
+    MaxLevel: 10
+    Type: Magic
+    TargetType: Support
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    HitCount: 1
+    CastCancel: true
+  - Id: 990
+    Name: GODD_STEALSOMETHING
+    Description: Roubar chakra
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    CastCancel: true
+  - Id: 994
+    Name: GODD_SPLASPD
+    Description: Diminuir ASPD
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    CastCancel: true
+  - Id: 993
+    Name: GODD_SPLSWALK
+    Description: Diminuir movespeed
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    CastCancel: true
+  - Id: 995
+    Name: GODD_PULLEN
+    Description: Hook
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    CastCancel: true
+  - Id: 996
+    Name: DOTASWAP
+    Description: DOTASWAP
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range:
+      - Level: 1
+        Size: 4
+      - Level: 2
+        Size: 5
+      - Level: 3
+        Size: 6
+      - Level: 4
+        Size: 7
+      - Level: 5
+        Size: 9
+    Hit: Single
+    CastCancel: true
+  - Id: 997
+    Name: GM_INCREASESP
+    Description: Increase Sp
+    MaxLevel: 10
+  - Id: 998
+    Name: GM_INCREASEHP
+    Description: Increase Hp
+    MaxLevel: 10
+  - Id: 999
+    Name: NARUTO_CAPTUREBIJUU
+    Description: Capture Bijuu
+    MaxLevel: 1
+    Type: Magic
+    TargetType: Attack
+    DamageFlags:
+      NoDamage: true
+    Range: 9
+    Hit: Single
+    CastCancel: true
