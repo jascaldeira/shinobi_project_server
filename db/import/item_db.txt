@@ -1,0 +1,1051 @@
+//    _/      _/  _/      _/  _/_/_/_/  _/_/_/      _/_/    
+//   _/_/    _/  _/_/    _/  _/        _/    _/  _/    _/   
+//  _/  _/  _/  _/  _/  _/  _/_/_/    _/_/_/    _/    _/    
+// _/    _/_/  _/    _/_/  _/        _/    _/  _/    _/     
+//_/      _/  _/      _/  _/        _/    _/    _/_/      
+// ========================================================
+
+//Bandanas
+
+//normais
+19001,water,Bandana Da Névoa,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,501,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuunevoa"; },{},{}
+19006,wind,Bandana Da Areia,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,506,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5;skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuuareia";},{},{}
+19007,sound,Bandana Do Som,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,507,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5;skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;},{},{}
+19008,konoha,Bandana De Konoha,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,508,{if(med_basico == 1)  {skill 304,1;}  bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuukonoha";},{},{}
+19039,Naruto_Earth_Head_Protector,Naruto_Earth_Head_Protector,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,539,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;},{},{}
+19040,Naruto_Lightning_Head_Protector,Naruto_Lightning_Head_Protector,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,540,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; bonus2 bExpAddRace,255,50; callfunc "bijuunuvem"; },{},{}
+19110,rain,Bandana Da Chuva,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,619,{},{},{}
+
+
+//kakashi
+19072,Pedra_kakashi,Pedra Kakashi,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,603,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;},{},{}
+19073,Nevoa_kakashi,Nevoa Kakashi,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,604,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuunevoa";   },{},{}
+19074,Nuvem_kakashi,Nuvem Kakashi,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,605,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; bonus2 bExpAddRace,255,50; callfunc "bijuunuvem"; },{},{}
+19075,Som_kakashi,Som Kakashi,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,606,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;},{},{}
+19076,Suna_kakashi,Suna Kakashi,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,607,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuuareia"; },{},{}
+19004,kakashi,Bandana Kakashi,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,504,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuukonoha"; },{},{}
+
+//nukenins
+19078,Mist,Bandana Nukenin Nevoa,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,609,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;},{},{changebase Class;}
+19079,suna,Bandana Nukenin Areia,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,610,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;},{},{changebase Class;}
+19080,pedra,Bandana Nukenin Pedra,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,611,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;},{},{changebase Class;}
+19081,folha,Bandana Nukenin konoha,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,612,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;},{},{changebase Class;}
+19082,som,Bandana Nukenin Som,5,,10,100,,3,,4,0xFFFFFFFF,7,2,512,,0,1,613,{skill 522,10; skill 523,10; skill 117,5;},{},{}
+
+//Bandanas lado
+19034,Anbu,Bandana de lado konoha,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,534,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuukonoha";},{},{}
+19018,dragao_gelo,Bandana de lado suna,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,518,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuuareia"; },{},{}
+19019,dragao_fogo,Bandana de lado névoa,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,519,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuunevoa";   },{},{}
+19165,oculos_gatou,Bandana de lado núvem,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,729,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; bonus2 bExpAddRace,255,50; callfunc "bijuunuvem"; },{},{}
+
+//Bandana pescoço
+19025,BandAid,Bandana de pesçoco konoha,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,525,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuukonoha";},{},{}
+19096,mario_cap,Bandana pescoço suna,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,616,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuuareia"; },{},{}
+19097,fred_asaselementais,Bandana pescoço névoa,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,617,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuunevoa";},{},{}
+19098,fred_asadefada,Bandana pescoço núvem,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,618,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; bonus2 bExpAddRace,255,50; callfunc "bijuunuvem"; },{},{}
+
+//yamatos
+19168,yamato_suna,Bandana Yamato suna,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,727,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuuareia"; },{},{}
+19169,yamato_kiri,Bandana Yamato kiri,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,728,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuunevoa";   },{},{}
+19170,bandana_yamato,Bandana Yamato konoha,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,730,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuukonoha";},{},{}
+19095,golden_wings,Yamato núvem,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,615,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; bonus2 bExpAddRace,255,50; callfunc "bijuunuvem"; },{},{}
+
+//kisame
+19030,Orelhas_Kyuubi,Kisame konoha,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,530,{if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuukonoha";},{},{}
+19156,kaiza,Kisame suna,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,726,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuuareia"; },{},{}
+19016,capitao_anbu,Kisame névoa,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,516,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "bijuunevoa";   },{},{}
+19127,Sombrancelhas_Grossas,Kisame núvem,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,623,{ if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; bonus2 bExpAddRace,255,50; callfunc "bijuunuvem"; },{},{}
+
+//cabeça inteira
+19077,jiraya,Inteira konoha,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,608,{},{},{}
+19024,Asas_Chouji,Inteira suna,5,,10,100,,0,,0,0xFFFFFFFF,7,2,256,,0,1,524,{bonus2 bAddRace,RC_NonBoss,15; bonus2 bAddRace,RC_Boss,15; bonus2 bAddRace2,5,15; bonus bSpeedRate,20; bonus bSplashRange,2; bonus bMaxHPRate,7; bonus2 bSCResist,SC_Stun,20; bonus2 bSCResist,SC_Freeze,20; bonus2 bSCResist,Eff_Silence,20; bonus2 bSCResist,Eff_Poison,20;},{},{}
+19028,Radio,Inteira névoa,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,528,{skill 950,1;},{},{}
+19033,Kankuro_Mask,Aura vermelha,5,,10,100,,0,,0,0xFFFFFFFF,7,2,256,,0,1,533,{},{},{}
+
+//Chapeus Kage
+19009,Hokage_Hat,Hokage,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,509,{skill 27,4; bonus3 bCompare,bInt,(ISMORE|ADDINC),10; bonus3 bCompare,bStr,(ISMORE|ADDINC),10; changebase 19;  bonus bSkillMove,50; bonus bMaxHPRate,30; bonus bMaxSPRate,30; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 999,1; bonus bAllStats,50; bonus2 bAddRace,RC_NonBoss,20; bonus2 bAddRace,RC_Boss,20; bonus2 bAddRace2,5,20; bonus bMatkRate,20; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9;  bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;  callfunc "konohaskills"; },{},{changebase Class;}
+19010,black,Otokage,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,510,{skill 522,10; skill 523,10; skill 117,5; bonus bStr,5; bonus bAgi,25; bonus bAllStats,20;},{},{}
+//19011,blue,Kazekage,5,,10,100,,3,,1,0xFFFFFFFF,7,2,512,,99,1,511,{skill 522,10; skill 523,10; skill 117,5; bonus bStr,5; bonus bAgi,25; bonus bAllStats,20;},{},{}
+19012,yellow,Mizukage,5,,10,100,,3,,1,0xFFFFFFFF,7,2,512,,99,1,512,{skill 27,4; bonus3 bCompare,bInt,(ISMORE|ADDINC),10; bonus3 bCompare,bStr,(ISMORE|ADDINC),10; changebase 4015; skill 522,10; skill 523,10; skill 117,5; bonus bMaxHPRate,30; bonus bMaxSPRate,30; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 999,1; bonus bAllStats,50; bonus2 bAddRace,RC_NonBoss,20; bonus2 bAddRace,RC_Boss,20; bonus2 bAddRace2,5,20; bonus bMatkRate,20; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "nevoaskills";},{},{changebase Class;}
+19035,marron,Tsuchikage,5,,10,100,,3,,1,0xFFFFFFFF,7,2,512,,99,1,535,{skill 522,10; skill 523,10; skill 117,5; bonus bStr,5; bonus bAgi,25; bonus bAllStats,20;},{},{}
+19036,cinza,Raikage,5,,10,100,,3,,1,0xFFFFFFFF,7,2,512,,99,1,536,{skill 27,4; bonus3 bCompare,bInt,(ISMORE|ADDINC),10; bonus3 bCompare,bStr,(ISMORE|ADDINC),10; changebase 14; bonus bMaxHPRate,30; bonus bMaxSPRate,30; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 999,1; bonus bAllStats,50; bonus2 bAddRace,RC_NonBoss,20; bonus2 bAddRace,RC_Boss,20; bonus2 bAddRace2,5,20; bonus bMatkRate,20; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; bonus2 bExpAddRace,255,50; callfunc "nuvemskills"; },{},{changebase Class;}
+19148,blue,Kazekage,5,,10,100,,3,,1,0xFFFFFFFF,7,2,512,,99,1,511,{ skill 27,4; bonus3 bCompare,bInt,(ISMORE|ADDINC),10; bonus3 bCompare,bStr,(ISMORE|ADDINC),10; changebase 8; bonus bMaxHPRate,30; bonus bMaxSPRate,30; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 999,1; bonus bAllStats,50; bonus2 bAddRace,RC_NonBoss,20; bonus2 bAddRace,RC_Boss,20; bonus2 bAddRace2,5,20; bonus bMatkRate,20; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; callfunc "areiaskills"; },{},{changebase Class;}
+
+
+
+//Hats diversos
+//19024,Asas_Chouji,Asas_Chouji,5,20,,100,,10,,4,0xFFFFFFFF,7,2,1,,0,1,524,{},{},{}
+19026,Kyuubi_hat,Kyuubi_hat,5,20,,0,,0,,1,0xFFFFFFFF,7,2,1,,0,1,256,{},{},{}
+19027,Tobi_Mask,Mascara Tobi,5,1000,10,10,,0,,0,0xFFFFFFFF,7,2,256,1,0,0,527,{},{},{}
+
+19029,Cauda_Kyuubi,Cauda_Kyuubi,5,,10,100,,10,,2,0xFFFFFFFF,7,2,136,,200,0,529,{bonus bInt,20;},{},{}
+19031,Akamaru_Hat,Akamaru_Hat,5,20,,0,,0,,2,0xFFFFFFFF,7,2,256,,0,1,531,{},{},{}
+19037,Dowry,Dowry,5,,10,100,,0,,0,0xFFFFFFFF,7,2,256,,1,0,537,{},{},{}
+19005,kanku,Kankuro_cap,5,500,,300,,0,,0,0xFFFFFFFF,7,2,256,,0,1,505,{},{},{}
+19083,sasuke,Asas_Do_Sasuke,5,20,,100,,0,,4,0xFFFFFFFF,7,2,256,,0,1,614,{},{},{}
+
+19128,Mascara_Zabuza,Mascara Zabuza,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,0,1,621,{bonus bInt,5; bonus bDex,5;},{},{}
+
+
+//Itens ANBU
+19015,elite,AnbuMask,5,,10,100,,0,,4,0xFFFFFFFF,7,2,256,,99,1,515,{skill 5,10; skill 379,10; skill 263,10; skill 48,10; skill 58,10; skill 399,10; skill 379,10; skill 266,5; skill 61,5; skill 509,10; skill 421,7; skill 110,4; skill 136,10; skill 517,10; skill 480,5; skill 357,5; skill 62,10; skill 254,10; skill 370,10; skill 171,10; skill 365,1;},{},{}
+19017,capuz_anbu,capuz_anbu,5,,10,100,,0,,0,0xFFFFFFFF,7,2,256,,99,0,517,{skill 27,3; skill 255,2; skill 999,1; bonus bAllStats,5;},{if(strcharinfo(3) == "job3_arch01") {unequip(256);}},{}
+19022,Capuz_Anbu2,Capuz_Anbu2,5,,10,100,,0,,0,0xFFFFFFFF,7,2,512,,99,0,522,{skill 724,4;},{},{}
+19038,anbu3,AnbuMask,5,,10,100,,0,,4,0xFFFFFFFF,7,2,256,,99,1,538,{skill 152,1;},{},{}
+
+//Jinchuuriki's
+
+
+//Itens Akatsuki
+19020,akatsuki_hat,akatsuki_hat,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,520,{skill 27,2; savepoint "akatsuki",154,188; bonus bAllStats,25; bonus2 bAddRace,RC_NonBoss,15; bonus2 bAddRace,RC_Boss,15; bonus2 bAddRace2,5,15; bonus bMatkRate,15;  bonus bMaxHPRate,50; bonus bMaxSPRate,20; changebase 4009; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; bonus bAllstats,10; skill 999,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9;  bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; skill 990,1; callfunc "akatskills"; set nukenin,1;},{if(strcharinfo(3) == "job3_arch01") unequip(512); set aka_predio,1;},{ changebase Class; savepoint "lou_ino02",237,167; set aka_predio,0;}
+19195,espada1,Gola,5,,10,100,,3,,2,0xFFFFFFFF,7,2,512,,0,1,732,{ skill 27,2; savepoint "akatsuki",154,188; bonus bAllStats,25; bonus2 bAddRace,RC_NonBoss,15; bonus2 bAddRace,RC_Boss,15; bonus2 bAddRace2,5,15; bonus bMatkRate,15;  bonus bMaxHPRate,50; bonus bMaxSPRate,20; changebase 4009; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; bonus bAllstats,10; skill 999,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9;  bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;  skill 990,1; callfunc "akatskills";},{if(strcharinfo(3) == "job3_arch01") unequip(512); set aka_predio,1;},{ changebase Class; savepoint "lou_ino02",237,167;  set aka_predio,0;}
+19196,espada2,Chapeu com Gola,5,,10,100,,3,,2,0xFFFFFFFF,7,2,512,,0,1,733,{ skill 27,2; savepoint "akatsuki",154,188; bonus bAllStats,25; bonus2 bAddRace,RC_NonBoss,15; bonus2 bAddRace,RC_Boss,15; bonus2 bAddRace2,5,15; bonus bMatkRate,15;  bonus bMaxHPRate,50; bonus bMaxSPRate,20; changebase 4009; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; bonus bAllstats,10; skill 999,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9;  bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;  skill 990,1; callfunc "akatskills";},{if(strcharinfo(3) == "job3_arch01") unequip(512); set aka_predio,1;},{ changebase Class; savepoint "lou_ino02",237,167; set aka_predio,0;}
+19197,espada3,Chapeu invisivel,5,,10,100,,3,,2,0xFFFFFFFF,7,2,512,,0,1,0,{ skill 27,2; savepoint "akatsuki",154,188; bonus bAllStats,25; bonus2 bAddRace,RC_NonBoss,15; bonus2 bAddRace,RC_Boss,15; bonus2 bAddRace2,5,15; bonus bMatkRate,15;  bonus bMaxHPRate,50; bonus bMaxSPRate,20; changebase 4009; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; bonus bAllstats,10; skill 999,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9;  bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;  skill 990,1; callfunc "akatskills";},{if(strcharinfo(3) == "job3_arch01") unequip(512); set aka_predio,1;},{ changebase Class; savepoint "lou_ino02",237,167; set aka_predio,0;}
+//19020,akatsuki_hat,akatsuki_hat,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,520,{skill 27,2; savepoint "akatsuki",154,188; bonus bAllStats,25; bonus2 bAddRace,RC_NonBoss,15; bonus2 bAddRace,RC_Boss,15; bonus2 bAddRace2,5,15; bonus bMatkRate,15;  bonus bMaxHPRate,50; bonus bMaxSPRate,20; changebase 4009; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; bonus bAllstats,10; skill 999,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9;  bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; skill 990,1; callfunc "akatskills";},{if(strcharinfo(3) == "job3_arch01") unequip(512); set aka_predio,1;},{ changebase Class; savepoint "lou_ino02",237,167; set aka_predio,0;}
+19023,rinnegan,rinnegan,5,,10,100,,0,,0,0xFFFFFFFF,7,2,256,,0,1,523,{ skill 758,1; bonus bAllStats,20; skill 1014,1; skill 995,1; bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,5; bonus2 bSubEle,Ele_Poison,3; bonus2 bSubEle,Ele_Dark,5; bonus bSpeedAddRate,5; skill 152,1;  skill 990,1; },{if(strcharinfo(3) == "job3_arch01") {unequip(256);}},{}
+
+//Aneis Akatsuki
+19042,Anel_Rei,Anel_Rei,5,,20,100,,0,,2,0xFFFFFFFF,2,2,008,,150,0,731,{ changebase 4009; skill 260,5; skill 401,1; skill 261,5; skill 370,10; skill 262,1; skill 264,1; skill 267,5; skill 270,10; skill 29,10; skill 154,1; skill 115,5; skill 542,10; skill 134,10; skill 376,5; skill 132,5; skill 133,5; skill 486,5; skill 282,10; skill 220,1; skill 221,5; skill 222,1; skill 389,5; skill 525,9; skill 426,5; skill 522,10; skill 540,10; skill 271,5; skill 150,1;},{},{changebase Class;}
+19043,Anel_Sei,Anel_Sei,5,,20,100,,0,,2,0x00000100,2,2,008,,150,0,,{ skill 14,10; skill 29,10; skill 51,10; skill 15,10; skill 87,10; skill 286,5; skill 86,10; skill 88,10; skill 89,10; skill 3,10; skill 60,10; skill 403,1; skill 121,5; skill 357,10; skill 355,10; skill 404,10; skill 281,10; skill 537,10; skill 538,10; skill 539,10; skill 528,5; skill 525,9; skill 20,10; skill 150,1;},{},{}
+19044,Anel_Haku,Anel_Haku,5,,20,100,,0,,2,0x00000100,2,2,008,,150,0,,{  skill 39,10; skill 153,10; skill 387,10; skill 41,10; skill 1,9; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 36,10; skill 49,10; skill 424,5; skill 425,7; skill 426,5; skill 113,5; skill 257,5; skill 383,10; skill 421,5; skill 425,7; skill 420,1; skill 524,9; skill 523,9; skill 525,9; skill 522,10; skill 533,10; skill 117,5; skill 150,1; skill 411,10; skill 412,1; skill 413,7; skill 414,1; skill 415,7; skill 416,1; skill 417,7; skill 418,1; skill 419,7; skill 420,1; skill 265,10; skill 29,10; skill 368,5; skill 74,5; skill 111,5; skill 527,5; skill 410,1; skill 359,1; skill 261,5; skill 479,10; skill 228,10; skill 268,5; skill 51,10; skill 257,5; skill 485,10;},{},{}
+19045,Anel_Shu,Anel_Shu,5,,20,100,,0,,2,0x00000100,2,2,008,,150,0,,{  skill 39,10; skill 41,10; skill 1,9; skill 150,1; skill 19,10; skill 29,10; skill 49,10; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 17,10; skill 18,10; skill 84,10; skill 83,10; skill 154,1; skill 523,9; skill 2,10; skill 145,1; skill 123,5; skill 524,9; skill 536,5; skill 541,10; skill 280,10; skill 5,10; skill 525,9; skill 522,10; skill 426,5; skill 533,10; skill 117,5; skill 51,10; skill 219,5; skill 489,5; skill 30,10; skill 475,1; skill 225,10; skill 285,5; skill 318,5;},{},{}
+19046,Anel_Kai,Anel_Kai,5,,20,100,,0,,2,0x00000100,2,2,008,,150,0,,{  skill 54,10; skill 1,9; skill 2,10; skill 49,10; skill 52,20; skill 261,5; skill 270,5; skill 40,1; skill 6,10; skill 36,10; skill 39,10; skill 41,10; skill 29,10; skill 53,1; skill 51,10; skill 137,5; skill 138,10; skill 139,10; skill 140,10; skill 141,10; skill 1004,1; skill 25,1; skill 35,1; skill 42,10; skill 522,10; skill 523,10; skill 524,5; skill 525,5; skill 110,5; skill 78,1; skill 71,4; skill 289,5; skill 227,10; skill 228,10; skill 231,5; skill 399,10; skill 363,10; skill 483,1; skill 135,10; skill 379,10; skill 406,10; skill 390,5; skill 490,10; skill 426,5; skill 396,1; skill 243,1; skill 247,5;},{},{}
+19047,Anel_Kuu,Anel_Kuu,5,,20,100,,0,,2,0xFFFFFFFF,2,2,4224,,150,0,520,{  skill 39,10; skill 41,10; skill 1,9; skill 150,1; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 62,10; skill 22,10; skill 25,1; skill 28,20; skill 29,10; skill 31,1; skill 33,10; skill 72,1; skill 156,1; skill 259,10; skill 261,5; skill 268,5; skill 421,5; skill 265,10; skill 266,5; skill 154,1; skill 399,10; skill 401,1; skill 70,10; skill 534,10; skill 407,1; skill 378,5; skill 54,10; skill 228,10; skill 478,10; skill 120,5; skill 369,10; skill 524,9; skill 523,9; skill 525,9; skill 426,5; skill 522,10; skill 533,10; skill 68,5; skill 270,10; skill 27,4;},{},{}
+19048,Anel_Nan,Anel_Nan,5,,20,100,,0,,2,0x00000100,2,2,128,,150,0,,{  skill 39,10; skill 153,10; skill 387,10; skill 41,10; skill 1,9; skill 150,1; skill 117,5; skill 48,10; skill 118,5; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 43,10; skill 261,5; skill 262,1; skill 263,10; skill 252,10; skill 93,1; skill 272,10; skill 45,10; skill 49,10; skill 380,10; skill 375,10; skill 273,10; skill 371,5; skill 372,10; skill 136,10; skill 154,1; skill 7,10; skill 362,10; skill 76,10; skill 29,10; skill 523,9; skill 524,9; skill 525,9; skill 426,5; skill 522,10; skill 480,10; skill 1003,2; skill 533,10; skill 398,10; skill 384,10; skill 379,10; skill 485,10; skill 479,10; skill 268,5; skill 228,10;},{},{}
+19049,Anel_Kita,Anel_Kita,5,,20,100,,0,,2,0x00000100,2,2,128,,150,0,,{  skill 39,10; skill 153,10; skill 154,1; skill 387,10; skill 41,10; skill 1,9; skill 150,1; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 90,10; skill 29,10; skill 91,10; skill 92,5; skill 8,10; skill 249,10; skill 157,1; skill 476,5; skill 16,10; skill 396,1; skill 279,10; skill 13,10; skill 119,5; skill 523,9; skill 524,9; skill 283,10; skill 484,10; skill 73,10; skill 540,9; skill 524,9; skill 525,9; skill 426,5; skill 448,5; skill 444,1; skill 522,10; skill 366,10; skill 533,10; skill 85,10; skill 485,10; skill 458,5; skill 540,10; skill 283,10;},{},{}
+19050,Anel_San,Anel_San,5,,20,100,,0,,2,0x00000100,2,2,128,,150,0,,{ skill 39,10; skill 153,10; skill 387,10; skill 41,10; skill 1,9; skill 51,10; skill 80,20; skill 117,5; skill 123,5; skill 125,1; skill 122,5; skill 510,10; skill 29,10; skill 500,5; skill 501,1; skill 213,5; skill 135,10; skill 401,1; skill 269,5; skill 228,10; skill 229,5; skill 115,5; skill 116,5; skill 118,5; skill 119,5; skill 120,5; skill 121,5; skill 12,10; skill 93,1; skill 524,9; skill 266,5; skill 405,1; skill 214,5; skill 1005,1; skill 268,5; skill 288,5; skill 389,5; skill 529,5; skill 358,1; skill 402,5; skill 427,3; skill 441,10; skill 438,5; skill 439,5; skill 440,5; skill 114,5; skill 384,10; skill 434,3; skill 426,5; skill 485,10;},{},{}
+19051,Anel_Gyoku,Anel_Gyoku,5,,20,100,,0,,2,0x00000100,2,2,128,,150,0,,{ skill 1,9; skill 153,10; skill 387,10; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 36,10; skill 39,10; skill 41,10; skill 49,10; skill 424,5; skill 425,7; skill 426,5; skill 113,5; skill 257,5; skill 383,10; skill 421,5; skill 425,7; skill 420,1; skill 154,1; skill 524,9; skill 523,9; skill 525,9; skill 522,10; skill 533,10; skill 117,5; skill 150,1; skill 411,10; skill 412,1; skill 413,7; skill 414,1; skill 415,7; skill 416,1; skill 417,7; skill 418,1; skill 419,7; skill 420,1; skill 265,10; skill 29,10; skill 368,5; skill 74,5; skill 111,5; skill 527,5; skill 410,1; skill 485,10; skill 359,1; skill 261,5; skill 387,10; skill 479,10; skill 228,10; skill 268,5; skill 51,10; skill 257,5; },{},{}
+
+//Calçados
+19052,Sandalias_Ninjas,Sandalias Ninjas,5,,10,100,,6,,2,0xFFFFFFFF,7,2,64,,0,1,,{ bonus bMaxSPrate,15; bonus bMaxHPrate,15; bonus bAgi,10;},{},{}
+19065,Botas_Lee,Botas_Lee,5,,10,100,,6,,2,0xFFFFFFFF,7,2,64,,0,1,,{ bonus bSpeedAddRate,25; bonus bAspdRate,10; bonus bAgi,5; },{},{}
+
+//Armaduras
+19053,Traje_Jounin,Traje Jounin,5,10,,100,,13,,1,0xFFFFFFFF,7,2,16,,0,1,0,{bonus bMdef,11; bonus bInt,5; bonus bDex,5;},{},{}
+19062,Traje_Gai,Traje_Gai,5,10,,100,,11,,1,0xFFFFFFFF,7,2,16,,0,1,0,{ bonus bDefEle,Ele_Wind; bonus bMdef,1; bonus bAgi,2;},{},{}
+19066,Armadura_Shodaime,Armadura_Shodaime,5,10,,100,,12,,1,0xFFFFFFFF,7,2,16,,0,1,0,{bonus bDefEle,Ele_Earth; bonus bAllStats,2; skill 283,5;},{},{}
+19067,Armadura_Nidaime,Armadura_Nidaime,5,10,,100,,12,,1,0xFFFFFFFF,7,2,16,,0,1,0,{ bonus bDefEle,Ele_Water; bonus bAllStats,2; skill 281,5;},{},{}
+
+//Itens misc
+19054,Pedra_Suiton,Cabeça de treino,3,,20,10,,,,,,,,,,,,,{},{},{}
+19055,Pedra_Katon,Pedra_katon,3,,20,10,,,,,,,,,,,,,{},{},{}
+19056,Pedra_Fuuton,Pedra_Fuuton,3,,20,10,,,,,,,,,,,,,{},{},{}
+19057,Pedra_Doton,Pedra_Doton,3,,20,10,,,,,,,,,,,,,{},{},{}
+19058,Pedra_Raiton,Pedra_Raiton,3,,20,10,,,,,,,,,,,,,{},{},{}
+19060,Retrato,Retrato,2,50000,,10,,,,,0xFFFFFFFF,7,2,,,,,,{},{},{}
+19061,Icha_Icha_Paradise,Icha_Icha_Paradise,2,50000,,10,,,,,0xFFFFFFFF,7,3,,,,,,{},{},{}
+19013,clone,Mission Checker,11,0,,0,,,,,0xFFFFFFFF,7,2,,,,,,{ doevent "mission::OnWhisperGlobal"; },{},{}
+19014,clone2,Clonning_Scroll2,2,10,0,10,,,1,,0x00001000,2,2,,,,,,{ if(readparam(Sp) <= 1000) {dispbottom "Não tem sp o suficiente"; end;} soundeffect "kage.wav",1; getmapxy @map$,@x,@y,0; for(set .@i,0;.@i < 1; set .@i,.@i + 1) clone @map$,@x,@y,"NPCNAME::OnEVENT",getcharid(0),getcharid(0),0x83,1,15;  set SP, SP - 1000; set HP, HP - 500;},{},{}
+
+//Acessorios
+19059,Colar_Tsunade,Colar_Tsunade,5,,10,100,,10,,1,0xFFFFFFFF,7,2,136,,200,0,,{ bonus bVit,20;},{},{}
+19064,luvas_kakashi,luvas_kakashi,5,,10,100,,0,,0,0xFFFFFFFF,7,2,136,,1,0,,{ skill 39,9; skill 41,4; skill 154,1; skill 40,1; skill 41,1;},{ setcart 1; },{ setoption 0; }
+
+//Itens usáveis
+19063,Ramen,Ramen,0,1200,,150,,,,,0xFFFFFFFF,7,2,,,,,,{ if (callfunc("ItemDelay",19063,3,2,7,8)) {percentheal 5,0; }},{},{}
+19041,kuty,Pergaminho da Invocação,0,50,,70,,,,,0xFFFFFFFF,7,2,,,,,,{summon "--ja--",1312,10000000;percentheal -99,0;end;},{},{}
+19084,Tyashu,Tyashu-Ramen,0,1200,,150,,,,,0xFFFFFFFF,7,2,,,,,,{ if (callfunc("ItemDelay",19084,3,15,7,8)) {itemheal rand(5000,5000),0;} },{},{}
+19085,Yasai,Yasai-Ramen,0,1200,,150,,,,,0xFFFFFFFF,7,2,,,,,,{ if (callfunc("ItemDelay",19085,3,2,7,8)) {itemheal rand(5000,5000),0;} },{},{}
+19086,Ebi,Ebi-Ramen,0,1200,,150,,,,,0xFFFFFFFF,7,2,,,,,,{ if (callfunc("ItemDelay",19086,3,2,7,8)) {percentheal 10,0;} },{},{}
+19087,Kani,Kani-Ramen,0,1200,,150,,,,,0xFFFFFFFF,7,2,,,,,,{ if (callfunc("ItemDelay",19087,3,2,7,8)) {itemheal rand(5000,5000),0;} },{},{}
+19088,Gyoza,Kit Médico de Vitalidade,0,1200,,150,,,,,0xFFFFFFFF,7,2,,,,,,{ if (callfunc("ItemDelay",19088,3,2,7,8)) {percentheal 10,0;}},{},{}
+19089,Shio,Shio-Ramen,0,1200,,150,,,,,0xFFFFFFFF,7,2,,,,,,{ if (callfunc("ItemDelay",19089,3,2,7,8)) {percentheal 0,5;}},{},{}
+19090,Shoyu,Shoyu-Ramen,0,1200,,150,,,,,0xFFFFFFFF,7,2,,,,,,{ if (callfunc("ItemDelay",19090,3,2,7,8)) {percentheal 0,10;}},{},{}
+19091,Misso,Kit Médico de Stamina,0,1200,,150,,,,,0xFFFFFFFF,7,2,,,,,,{ if (callfunc("ItemDelay",19091,3,2,7,8)) {percentheal 0,10;}},{},{}
+
+//Capas
+19092,capa_yondaime,Capa Do Yondaime,5,0,,500,,3,,1,0xFFFFFFFF,7,2,4,,1,1,0,{skill 756,1; skill 532,10;skill 464,3; skill 14,10; skill 89,5; skill 19,10; skill 83,5; skill 421,7; skill 322,10; skill 667,10; skill 668,10; skill 663,10; skill 311,10; skill 996,1; skill 62,10; skill 89,5; skill 83,5; skill 428,7; skill 653,5; skill 541,5; skill 394,5; skill 177,5;  skill 678,5; skill 182,5; skill 667,5; skill 668,5; skill 663,5; skill 369,5; skill 14,10; skill 488,5; skill 28,10; skill 659,10; skill 670,10; skill 999,1;},{},{}
+19093,capa_sasuke,Capa Do Sasuke,5,0,,500,,3,,1,0xFFFFFFFF,7,2,4,,1,1,0,{bonus bInt,10; bonus bDex,10; skill 51,10;},{},{}
+
+//Escudos
+//19094,escudo_rashoumon,Aura Jinchuuriki,5,,10,100,,0,,0,0xFFFFFFFF,7,2,256,,0,1,505,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,15; bonus2 bAddRace,RC_Boss,15; bonus2 bAddRace2,5,15; bonus bMatkRate,15;  bonus bMaxHPRate,25; bonus bMaxSPRate,25; skill 761,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5;},{if(strcharinfo(3) == "job3_arch01") {unequip(256);}},{}
+19094,escudo_rashoumon,Aura Jinchuuriki,5,,10,100,,0,,0,0xFFFFFFFF,7,2,256,,0,1,505,{bonus bAllStats,20; bonus2 bAddRace,RC_NonBoss,5; bonus2 bAddRace,RC_Boss,5; bonus2 bAddRace2,5,5; bonus bMatkRate,5;  bonus bMaxHPRate,5; bonus bMaxSPRate,5; skill 761,1;  skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5;},{if(strcharinfo(3) == "job3_arch01") {unequip(256);}},{}
+
+//Máscaras ANBU
+19130,Mask1,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,701,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10;  bonus bMaxHPRate,15; bonus bMaxSPRate,15; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19131,Mask2,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,702,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19132,Mask3,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,703,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19133,Mask4,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,704,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19134,Mask5,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,705,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19135,Mask6,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,706,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19136,Mask7,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,707,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19137,Mask8,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,708,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19138,Mask9,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,709,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19139,Mask10,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,710,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19140,Mask11,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,711,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19141,Mask12,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,712,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19142,Mask13,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,713,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19143,Mask14,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,714,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19144,Mask15,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,715,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+19145,Mask16,Máscara ANBU,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,716,{bonus bAllStats,35; bonus2 bAddRace,RC_NonBoss,10; bonus2 bAddRace,RC_Boss,10; bonus2 bAddRace2,5,10; bonus bMatkRate,10; bonus bMaxHPRate,15; bonus bMaxSPRate,15;; changebase 4017; bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;   skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5; skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1; if (#nevoa == 1) {callfunc "bijuunevoa";} if (#nuvem == 1) {callfunc "bijuunuvem";} if (#konoha == 1) {callfunc "bijuukonoha";} if (#suna == 1) {callfunc "bijuuareia";} },{if(strcharinfo(3) == "job3_arch01") {unequip(512);}},{changebase Class;}
+
+
+//KG's
+19002,Byakugan,Byakugan,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,502,{skill 401,1; bonus bIntravision,0; callfunc "kg_byakugan";},{},{DelTimer "FOME_BYAKUGAN_DICREASE::OnHPBYAKUGAN1"; DelTimer "FOME_BYAKUGAN_DICREASE::OnHPBYAKUGAN2"; DelTimer "FOME_BYAKUGAN_DICREASE::OnHPBYAKUGAN3"; DelTimer "FOME_BYAKUGAN_DICREASE::OnHPBYAKUGAN4"; end;}
+
+19068,sharingan,Sharingan lvl 1,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,503,{bonus bCopycat,5; bonus bMatkRate,6; bonus bSpeedAddRate,5;},{},{DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA1";}
+19069,sharingan2,Sharingan lvl 2,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,503,{bonus bCopycat,10; bonus bMatkRate,13; bonus bSpeedAddRate,5;},{},{DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA2";}
+19070,sharingan3,Sharingan lvl 3,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,503,{bonus bCopycat,15; bonus bMatkRate,20; bonus bSpeedAddRate,5;},{},{DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA3";}
+19003,Mangekyou,Mangekyou Sharingan,5,,10,1,,3,,4,0xFFFFFFFF,7,2,1,,99,1,503,{bonus bDex,8; bonus bMatkRate,20; callfunc "sharingan";},{},{DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA4";}
+
+//19068,sharingan,Sharingan lvl 1,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,503,{bonus bCopycat,5; bonus bSpeedAddRate,20; bonus bMatkRate,5; },{},{DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA1";}
+//19069,sharingan2,Sharingan lvl 2,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,503,{bonus bCopycat,10; bonus bSpeedAddRate,20; bonus bMatkRate,10;},{},{DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA2";}
+//19070,sharingan3,Sharingan lvl 3,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,503,{bonus bCopycat,15; bonus bSpeedAddRate,20; bonus bMatkRate,15; },{},{DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA3";}
+//19003,Mangekyou,Mangekyou Sharingan,5,,10,1,,3,,4,0xFFFFFFFF,7,2,1,,99,1,503,{bonus bCopycat,20; bonus bSpeedAddRate,20; bonus bMatkRate,17; bonus bDex,8; skill 157,1; skill 18,100; skill 660,10;},{},{DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA4";}
+
+19149,jarro_gaara,Selo_amaldicoado1,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,719,{callfunc "KG_SELO1";},{},{DelTimer "FOME_SELO1_DICREASE::OnHPSELO11"; DelTimer "FOME_SELO1_DICREASE::OnHPSELO12"; DelTimer "FOME_SELO1_DICREASE::OnHPSELO13"; DelTimer "FOME_SELO1_DICREASE::OnHPSELO14"; end;}
+19150,pergaminho_eremita,Selo_amaldicoado2,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,720,{callfunc "KG_SELO2";},{},{DelTimer "FOME_SELO2_DICREASE::OnHPSELO21"; DelTimer "FOME_SELO2_DICREASE::OnHPSELO22"; DelTimer "FOME_SELO2_DICREASE::OnHPSELO23"; DelTimer "FOME_SELO2_DICREASE::OnHPSELO24"; end;}
+
+19151,aura_de_sombra,Controle das Sombras,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,721,{ skill 1005,1; callfunc "ROMARIO";},{},{DelTimer "FOME_NARA_DICREASE::OnHPNARA1"; DelTimer "FOME_NARA_DICREASE::OnHPNARA2"; DelTimer "FOME_NARA_DICREASE::OnHPNARA3"; DelTimer "FOME_NARA_DICREASE::OnHPNARA4"; end;}
+
+19152,Koori,Hyouton,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,722,{callfunc "KG_GELO";},{},{DelTimer "FOME_GELO_DICREASE::OnHPGELO1"; DelTimer "FOME_GELO_DICREASE::OnHPGELO2"; DelTimer "FOME_GELO_DICREASE::OnHPGELO3"; DelTimer "FOME_GELO_DICREASE::OnHPGELO4"; end;}
+
+19153,selo_tsunade,Akimichi,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,723,{callfunc "kg_AKIMICHI";},{},{DelTimer "FOME_AKIMICHI_DICREASE::OnHPAKIMICHI1"; DelTimer "FOME_AKIMICHI_DICREASE::OnHPAKIMICHI2"; DelTimer "FOME_AKIMICHI_DICREASE::OnHPAKIMICHI3"; DelTimer "FOME_AKIMICHI_DICREASE::OnHPAKIMICHI4"; atcommand "@size 3"; end; }
+
+19154,Asas_sasori,Kugutsu,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,724,{callfunc "kg_MARIONETE";},{},{DelTimer "FOME_MARIONETE_DICREASE::OnHPMARIONETE1"; DelTimer "FOME_MARIONETE_DICREASE::OnHPMARIONETE2"; DelTimer "FOME_MARIONETE_DICREASE::OnHPMARIONETE3"; DelTimer "FOME_MARIONETE_DICREASE::OnHPMARIONETE4"; end;}
+
+19155,aura_de_fogo,portoes,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,725,{callfunc "RONALDO";},{},{ DelTimer "FOME_LEE_DICREASE::OnHPLEE1"; DelTimer "FOME_LEE_DICREASE::OnHPLEE2"; DelTimer "FOME_LEE_DICREASE::OnHPLEE3"; DelTimer "FOME_LEE_DICREASE::OnHPLEE4";}
+//set meucabelo,getlook(1); setlook(1),37; setlook(1),meucabelo; end;
+
+19147,Mask18,Haku,5,,10,1,,0,,0,0xFFFFFFFF,7,2,256,,0,1,718,{bonus bCopycat,100; bonus bShortWeaponDamageReturn,80;},{},{}
+
+19146,Mask17,Nara,5,,10,1,,0,,0,0xFFFFFFFF,7,2,256,,0,1,717,{bonus bCastrate,-50; bonus bDelayRate,-35; },{},{}
+
+4436,Mask17,Deidara,5,,10,1,,3,,0,0xFFFFFFFF,7,2,1,,0,1,,{changebase 4047; callfunc "kg_kibaku";},{},{changebase Class;}
+
+//itens misc epi 1
+19157,bengala_gatou,bengala gatou,3,500,,10,,,,,,,,,,,,,{},{},{}
+19158,botas_zabuza,botas zabuza,5,,10,100,,6,,2,0xFFFFFFFF,7,2,64,,0,1,,{ bonus2 bAddEffWhenHit,Eff_Freeze,1000; bonus bMaxSPrate,-50; bonus bMaxHPrate,-50;},{},{}
+19159,Espada_Samurai,Espada samurai,3,500,,10,,,,,,,,,,,,,{},{},{}
+19160,garrafa_dagua,garrafa dagua,3,500,,10,,,,,,,,,,,,,{},{},{}
+19161,Inari-hat,Chapéu inari,3,500,,10,,,,,,,,,,,,,{},{},{}
+19162,Lasca_de_zambatou,Lasca de zambatou,3,500,,10,,,,,,,,,,,,,{},{},{}
+19163,mascara_haku,mascara haku,3,500,,10,,,,,,,,,,,,,{},{},{}
+19164,mask_zabuza,mask zabuza,3,500,,10,,,,,,,,,,,,,{},{},{}
+19166,sandalias_haku,sandalias haku,5,,10,100,,6,,2,0xFFFFFFFF,7,2,64,,0,1,,{bonus bMagicDamageReturn,10; bonus bMaxSPrate, 32; bonus bMaxHPrate, 32;},{},{}
+19167,senbons_haku,senbons haku,3,500,,10,,,,,,,,,,,,,{},{},{}
+
+
+//expansão
+
+19171,Chave_Mestra_da_Vila,Chave Mestra da Vila,3,,,10,,,,,,0,2,,,,,,{},{},{}
+19172,Chave_Mestra_Nukenin,Chave Mestra Nukenin,3,,,10,,,,,,0,2,,,,,,{},{},{}
+19173,Selo_do_Goffu_Kekkai,Selo do Goffu Kekkai,3,,,10,,,,,,0,2,,,,,,{},{},{}
+19174,Chakra_Ichibi,Fragmento de Chakra Ichibi,3,,,1,,,,,,0,2,,,,,,{},{},{}
+19175,Chakra_Nibi,Fragmento de Chakra Nibi,3,,,1,,,,,,0,2,,,,,,{},{},{}
+19176,Chakra_Sanbi,Fragmento de Chakra Sanbi,3,,,1,,,,,,0,2,,,,,,{},{},{}
+19177,Chakra_Yonbi,Fragmento de Chakra Yonbi,3,,,1,,,,,,0,2,,,,,,{},{},{}
+19178,Chakra_Gobi,Fragmento de Chakra Gobi,3,,,1,,,,,,0,2,,,,,,{},{},{}
+19179,Chakra_Rokubi,Fragmento de Chakra Rokubi,3,,,1,,,,,,0,2,,,,,,{},{},{}
+19180,Chakra_Shichibi,Fragmento de Chakra Shichibi,3,,,1,,,,,,0,2,,,,,,{},{},{}
+19181,Chakra_Hachibi,Fragmento de Chakra Hachibi,3,,,1,,,,,,0,2,,,,,,{},{},{}
+19182,Chakra_Kyuubi,Fragmento de Chakra Kyuubi,12,50,,70,,,,,0xFFFFFFFF,7,2,,,,,,{  },{},{}
+
+//coletes
+2383,Armadura_de_Brynhildr,Colete básico suiton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5; },{},{}
+2352,Traje_do_Aprendiz,Colete reforçado suiton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,30; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15;},{},{}
+2353,Bênção_de_Odin,Colete avançado suiton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,50; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25;  bonus2 bSubEle,Ele_Dark,25;},{},{}
+
+2356,Batina_da_Fé_,Colete básico Katon,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5;},{},{}
+2347,Couraça_da_Submissão_Oceânica,Colete reforçado Katon,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,30; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15;  bonus2 bSubEle,Ele_Dark,15;},{},{}
+2349,Couraça_da_Liberdade_Celestial,Colete avançãdo Katon,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,50; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25;  bonus2 bSubEle,Ele_Dark,25;},{},{}
+
+19183,coleteraiton1,Colete Básico Raiton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5;},{},{}
+19184,coleteraiton2,Colete Reforçado Raiton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,30; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15;  bonus2 bSubEle,Ele_Dark,15;},{},{}
+19185,coleteraiton3,Colete avançado Raiton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,50; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25;},{},{}
+
+19186,coletedoton1,Colete Básico Doton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5;},{},{}
+19187,coletedoton2,Colete reforçado Doton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,30; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15;},{},{}
+19188,coletedoton3,Colete Avançado Doton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,50; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25;},{},{}
+
+19189,coletefuton1,Colete Básico Fuuton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,15;},{},{}
+19190,coletefuuton2,Colete reforçado Fuuton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,30;},{},{}
+19191,coletefuuton3,Colete Avançado Fuuton,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,50;},{},{}
+
+19192,coletetai1,Colete Básico Taijutsu,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,15; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5;},{},{}
+19193,coletetai2,Colete reforçado Taijutsu,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15;},{},{}
+19194,coletetai3,Colete Avançado Taijutsu,5,0,0,30,,,,0,0xFFFFFFFF,7,2,16,,180,0,0,{ bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,65; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25;},{},{}
+
+//hats
+
+19300,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,756,{},{},{}
+19301,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,757,{},{},{}
+19302,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,758,{},{},{}
+//19303,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,759,{},{},{}
+19304,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,760,{},{},{}
+19305,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,761,{},{},{}
+19306,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,762,{},{},{}
+19307,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,763,{},{},{}
+19308,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,764,{},{},{}
+19309,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,765,{},{},{}
+19310,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,766,{},{},{}
+
+19311,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,767,{},{},{}
+19312,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,768,{},{},{}
+19313,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,769,{},{},{}
+19314,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,770,{},{},{}
+19315,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,771,{},{},{}
+19316,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,772,{},{},{}
+19317,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,773,{},{},{}
+19318,Pavio,Chifres Natalinos,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,774,{},{},{}
+19319,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,775,{},{},{}
+19320,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,776,{},{},{}
+
+19321,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,777,{},{},{}
+19322,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,778,{},{},{}
+19323,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,779,{},{},{}
+19324,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,780,{},{},{}
+19325,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,781,{},{},{}
+19326,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,782,{},{},{}
+19327,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,783,{},{},{}
+19328,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,784,{},{},{}
+19329,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,785,{},{},{}
+19330,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,786,{},{},{}
+
+19331,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,787,{},{},{}
+19332,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,788,{},{},{}
+19333,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,789,{},{},{}
+19334,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,790,{},{},{}
+19335,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,791,{},{},{}
+19336,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,792,{},{},{}
+19337,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,793,{},{},{}
+19338,Pavio,Chapéu do Pequeno Fantasma,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,794,{},{},{}
+19339,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,795,{},{},{}
+19340,Pavio,Chapéu do Soldado,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,796,{},{},{}
+
+19341,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,797,{},{},{}
+19342,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,798,{},{},{}
+19343,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,799,{},{},{}
+19344,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,800,{},{},{}
+19345,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,801,{},{},{}
+19346,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,802,{},{},{}
+19347,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,803,{},{},{}
+19348,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,804,{},{},{}
+19349,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,805,{},{},{}
+19350,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,806,{},{},{}
+
+19351,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,807,{},{},{}
+19352,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,808,{},{},{}
+19353,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,809,{},{},{}
+19354,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,810,{},{},{}
+19355,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,811,{},{},{}
+19356,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,812,{},{},{}
+19357,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,813,{},{},{}
+19358,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,814,{},{},{}
+19359,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,815,{},{},{}
+19360,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,816,{},{},{}
+
+19361,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,817,{},{},{}
+19362,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,818,{},{},{}
+19363,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,819,{},{},{}
+19364,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,820,{},{},{}
+19365,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,821,{},{},{}
+19366,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,822,{},{},{}
+19367,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,823,{},{},{}
+19368,Pavio,Chapéu Bovino,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,824,{},{},{}
+19369,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,825,{},{},{}
+19370,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,826,{},{},{}
+
+19371,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,827,{},{},{}
+19372,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,828,{},{},{}
+19373,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,829,{},{},{}
+19374,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,830,{},{},{}
+19375,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,831,{},{},{}
+19376,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,832,{},{},{}
+19377,Pavio,Chapéu Espartano,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,833,{},{},{}
+19378,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,834,{},{},{}
+19379,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,835,{},{},{}
+19380,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,836,{},{},{}
+
+19381,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,837,{},{},{}
+19382,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,838,{},{},{}
+19383,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,839,{},{},{}
+19384,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,840,{},{},{}
+19385,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,841,{},{},{}
+19386,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,842,{},{},{}
+19387,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,843,{},{},{}
+19388,Pavio,Chapéu da Timidez,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,844,{},{},{}
+19389,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,845,{},{},{}
+19390,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,846,{},{},{}
+
+19391,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,847,{},{},{}
+19392,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,848,{},{},{}
+19393,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,849,{},{},{}
+19394,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,850,{},{},{}
+19395,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,851,{},{},{}
+19396,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,852,{},{},{}
+19397,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,853,{},{},{}
+19398,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,854,{},{},{}
+19399,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,855,{},{},{}
+19400,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,856,{},{},{}
+
+19401,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,857,{},{},{}
+19402,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,858,{},{},{}
+19403,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,859,{},{},{}
+19404,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,860,{},{},{}
+19405,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,861,{},{},{}
+19406,Pavio,Hat Especial,5,20,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,862,{},{},{}
+
+//Equipamentos raros
+
+//botas
+19407,Nome,BotaRara1,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19408,Nome,BotaRara2,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19409,Nome,BotaRara3,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19410,Nome,BotaRara4,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19411,Nome,BotaRara5,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19412,Nome,BotaRara6,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19413,Nome,BotaRara7,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19414,Nome,BotaRara8,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19415,Nome,BotaRara9,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19416,Nome,BotaRara10,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+
+//capas
+
+19417,Capa,CapaRara1,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19418,Capa,CapaRara2,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19419,Capa,CapaRara3,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19420,Capa,CapaRara4,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19421,Capa,CapaRara5,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19422,Capa,CapaRara6,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19423,Capa,CapaRara7,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19424,Capa,CapaRara8,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19425,Capa,CapaRara9,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19426,Capa,CapaRara10,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+
+//armas
+
+19427,Arma,ArmaRara1,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19428,Arma,ArmaRara2,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19429,Arma,ArmaRara3,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19430,Arma,ArmaRara4,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19431,Arma,ArmaRara5,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19432,Arma,ArmaRara6,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19433,Arma,ArmaRara7,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19434,Arma,ArmaRara8,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19435,Arma,ArmaRara9,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19436,Arma,ArmaRara10,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+
+//pergaminhos
+
+19437,Pergaminho,PergaminhoRaro1,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19438,Pergaminho,PergaminhoRaro2,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19439,Pergaminho,PergaminhoRaro3,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19440,Pergaminho,PergaminhoRaro4,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19441,Pergaminho,PergaminhoRaro5,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19442,Pergaminho,PergaminhoRaro6,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19443,Pergaminho,PergaminhoRaro7,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19444,Pergaminho,PergaminhoRaro8,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19445,Pergaminho,PergaminhoRaro9,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19446,Pergaminho,PergaminhoRaro10,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+
+//armaduras
+
+19447,Armadura,ArmaduraRara1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19448,Armadura,ArmaduraRara2,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19449,Armadura,ArmaduraRara3,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19450,Armadura,ArmaduraRara4,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19451,Armadura,ArmaduraRara5,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19452,Armadura,ArmaduraRara6,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19453,Armadura,ArmaduraRara7,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19454,Armadura,ArmaduraRara8,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19455,Armadura,ArmaduraRara9,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19456,Armadura,ArmaduraRara10,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+
+//acessórios
+
+19457,Amuleto,AmuletoRaro1,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19458,Amuleto,AmuletoRaro2,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19459,Amuleto,AmuletoRaro3,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19460,Amuleto,AmuletoRaro4,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19461,Amuleto,AmuletoRaro5,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19462,Amuleto,AmuletoRaro6,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19463,Amuleto,AmuletoRaro7,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19464,Amuleto,AmuletoRaro8,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19465,Amuleto,AmuletoRaro9,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19466,Amuleto,AmuletoRaro10,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+
+/////////////////Lendários
+
+//capas
+19547,Capa,CapaLendaria1,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19548,Capa,CapaLendaria2,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19549,Capa,CapaLendaria3,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19550,Capa,CapaLendaria4,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19551,Capa,CapaLendaria5,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19552,Capa,CapaLendaria6,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19553,Capa,CapaLendaria7,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19554,Capa,CapaLendaria8,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19555,Capa,CapaLendaria9,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+19556,Capa,CapaLendaria10,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{},{},{}
+
+//armas
+19557,Arma,ArmaLendaria1,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19558,Arma,ArmaLendaria2,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19559,Arma,ArmaLendaria3,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19560,Arma,ArmaLendaria4,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19561,Arma,ArmaLendaria5,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19562,Arma,ArmaLendaria6,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19563,Arma,ArmaLendaria7,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19564,Arma,ArmaLendaria8,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19565,Arma,ArmaLendaria9,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+19566,Arma,ArmaLendaria10,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{},{},{}
+
+//pergaminhos
+19567,Pergaminho,PergaminhoLendario1,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19568,Pergaminho,PergaminhoLendario2,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19569,Pergaminho,PergaminhoLendario3,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19570,Pergaminho,PergaminhoLendario4,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19571,Pergaminho,PergaminhoLendario5,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19572,Pergaminho,PergaminhoLendario6,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19573,Pergaminho,PergaminhoLendario7,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19574,Pergaminho,PergaminhoLendario8,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19575,Pergaminho,PergaminhoLendario9,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+19576,Pergaminho,PergaminhoLendario10,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{},{},{}
+
+//armaduras
+19577,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19578,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19579,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19580,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19581,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19582,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19583,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19584,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19585,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19586,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+19587,Armadura,ArmaduraLendario1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{},{},{}
+
+//acessórios
+19588,Amuleto,AmuletoLendario1,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19589,Amuleto,AmuletoLendario2,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19590,Amuleto,AmuletoLendario3,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19591,Amuleto,AmuletoLendario4,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19592,Amuleto,AmuletoLendario5,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19593,Amuleto,AmuletoLendario6,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19594,Amuleto,AmuletoLendario7,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19595,Amuleto,AmuletoLendario8,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19596,Amuleto,AmuletoLendario9,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+19597,Amuleto,AmuletoLendario10,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{},{},{}
+
+//botas
+19598,Nome,BotaLendario1,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19599,Nome,BotaLendario2,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19600,Nome,BotaLendario3,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19601,Nome,BotaLendario4,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19602,Nome,BotaLendario5,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19603,Nome,BotaLendario6,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19604,Nome,BotaLendario7,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19605,Nome,BotaLendario8,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19606,Nome,BotaLendario9,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+19607,Nome,BotaLendario10,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{},{},{}
+
+
+//===================================================================
+// Epoque's Expansion Pack
+//-------------------------------------------------------------------
+3999,No_Slot,No Slot,6,0,,0,,,,,,,,0,,,,,{},{},{}
+4000,Free_Slot,Free Slot,6,0,,0,,,,,,,,0,,,,,{},{},{}
+//-------------------------------------------------------------------
+
+//Cristais (Cartas)
+4001,Carta_Poring,Cristal de força 1,6,,10,10,,,,,,,,2,,,,,{ bonus bStr,2; },{},{}
+4002,Carta_Fabre,Cristal de força 2,6,,10,10,,,,,,,,2,,,,,{ bonus bStr,4; },{},{}
+4003,Carta_Pupa,Cristal de força 3,6,,10,10,,,,,,,,2,,,,,{ bonus bStr,6; },{},{}
+4004,Carta_Drops,Cristal de força 4,6,,10,10,,,,,,,,2,,,,,{ bonus bStr,10; },{},{}
+
+4005,Carta_Poring_Noel,Cristal de agilidade 1,6,,10,10,,,,,,,,64,,,,,{ bonus bAgi,2; },{},{}
+4006,Carta_Lunático,Cristal de agilidade 2,6,,10,10,,,,,,,,64,,,,,{ bonus bAgi,4; },{},{}
+4007,Carta_Ovo_de_Pecopeco,Cristal de agilidade 3,6,,10,10,,,,,,,,64,,,,,{ bonus bAgi,6; },{},{}
+4008,Carta_Picky,Cristal de agilidade 4,6,,10,10,,,,,,,,64,,,,,{ bonus bAgi,10; },{},{}
+
+4009,Carta_Chonchon,Cristal de Inteligencia 1,6,,10,10,,,,,,,,32,,,,,{ bonus bInt,2; },{},{}
+4010,Carta_Salgueiro,Cristal de Inteligencia 2,6,,10,10,,,,,,,,32,,,,,{ bonus bInt,4; },{},{}
+4011,Carta_Picky_com_casca,Cristal de Inteligencia 3,6,,10,10,,,,,,,,32,,,,,{ bonus bInt,6; },{},{}
+4012,Carta_Ovo_de_Besouro-Ladrão,Cristal de Inteligencia 4,6,,10,10,,,,,,,,32,,,,,{ bonus bInt,10; },{},{}
+
+4013,Carta_Ovo_de_Andre,Cristal de Vitalidade 1,6,,10,10,,,,,,,,16,,,,,{ bonus bVit,2; },{},{}
+4014,Carta_Sapo_de_Rodda,Cristal de Vitalidade 2,6,,10,10,,,,,,,,16,,,,,{ bonus bVit,4; },{},{}
+4015,Carta_Condor,Cristal de Vitalidade 3,6,,10,10,,,,,,,,16,,,,,{ bonus bVit,6; },{},{}
+4016,Carta_Besouro-Ladrão,Cristal de Vitalidade 4,6,,10,10,,,,,,,,16,,,,,{bonus bVit,10;},{},{}
+
+4017,Carta_Bebe_Selvagem,Cristal de Destreza 1,6,,10,10,,,,,,,,64,,,,,{ bonus bDex,2; },{},{}
+4018,Carta_Larva_de_Andre,Cristal de Destreza 2,6,,10,10,,,,,,,,64,,,,,{ bonus bDex,4; },{},{}
+4019,Carta_Zangão,Cristal de Destreza 3,6,,10,10,,,,,,,,64,,,,,{ bonus bDex,6; },{},{}
+4020,Carta_Familiar,Cristal de Destreza 4,6,,10,10,,,,,,,,64,,,,,{ bonus bDex,10; },{},{}
+
+4021,Carta_Rocker,Cristal de Sorte 1,6,,10,10,,,,,,,,16,,,,,{},{},{}
+4022,Carta_Esporo,Cristal de Sorte 2,6,,10,10,,,,,,,,16,,,,,{ bonus bLuk,4; },{},{}
+4023,Carta_Filhote_de_Lobo_do_Deserto,Cristal de Sorte 3,6,,10,10,,,,,,,,16,,,,,{ bonus bLuk,6; },{},{}
+4024,Carta_Plankton,Cristal de Sorte 4,6,,10,10,,,,,,,,16,,,,,{ bonus bLuk,10; },{},{}
+
+4025,Carta_Esqueleto,Cristal de Resistencia 1,6,,10,10,,,,,,,,4,,,,,{ bonus bSpeedAddRate,1; },{},{}
+4026,Carta_Besouro-Ladrão_Fêmea,Cristal de Resistencia 2,6,,10,10,,,,,,,,4,,,,,{ bonus bSpeedAddRate,3; },{},{}
+4027,Carta_Kukre,Cristal de Resistencia 3,6,,10,10,,,,,,,,4,,,,,{bonus bSpeedAddRate,5;},{},{}
+4028,Carta_Tarou,Cristal de Resistencia 4,6,,10,10,,,,,,,,4,,,,,{},{},{}
+
+4029,Carta_Lobo,Cristal de Proteção 1,6,,10,10,,,,,,,,4,,,,,{ bonus bDef,1; },{},{}
+4030,Carta_Mandrágora,Cristal de Proteção 2,6,,10,10,,,,,,,,4,,,,,{ bonus bDef,3; },{},{}
+4031,Carta_PecoPeco,Cristal de Proteção 3,6,,10,10,,,,,,,,4,,,,,{ bonus bDef,5; },{},{}
+4032,Carta_Ambernite,Cristal de Proteção 4,6,,10,10,,,,,,,,4,,,,,{ bonus bDef,8; },{},{}
+
+4033,Carta_PoPoring,Carta de EProteção 1,6,,10,10,,,,,,,,4,,,,,{bonus bMdef,1;},{},{}
+4034,Carta_Rabo-de-Verme,Carta de EProteção 2,6,,10,10,,,,,,,,4,,,,,{bonus bMdef,3;},{},{}
+4035,Carta_Hidra,Carta de EProteção 3,6,,10,10,,,,,,,,4,,,,,{bonus bMdef,5;},{},{}
+4036,Carta_Muka,Carta de EProteção 4,6,,10,10,,,,,,,,4,,,,,{bonus bMdef,10;},{},{}
+
+4037,Carta_Jibóia,Carta Jibóia,6,,10,10,,,,,,,,2,,,,,{ bonus2 bAddEff,Eff_Poison,500; bonus bBaseAtk,5; },{},{}
+4038,Carta_Zumbi,Carta Zumbi,6,,10,10,,,,,,,,64,,,,,{ bonus bHPrecovRate,20; },{},{}
+4039,Carta_Percevejo,Carta Percevejo,6,,10,10,,,,,,,,769,,,,,{ bonus2 bResEff,Eff_Silence,2000; bonus bDef,1; },{},{}
+4040,Carta_Creamy,Carta Creamy,6,,10,10,,,,,,,,136,,,,,{ skill "AL_TELEPORT",1; },{},{}
+
+// fragmentos e etc
+
+//fragmentos 1
+512,Maçã,Fragmento de Força 1,3,466,,10,,,,,,,,,,,,,{},{},{}
+556,Bolinho_de_Arroz_no_Palito,Fragmento de Agilidade 1,3,466,,10,,,,,,,,,,,,,{},{},{}
+558,Chocolate,Fragmento de Inteligencia 1,3,466,,10,,,,,,,,,,,,,{},{},{}
+582,Laranja,Fragmento de Vitalidade 1,3,466,,10,,,,,,,,,,,,,{},{},{}
+578,Morango,Fragmento de Destreza 1,3,466,,10,,,,,,,,,,,,,{},{},{}
+572,Biscoito_da_Sorte,Fragmento de Sorte 1,3,466,,10,,,,,,,,,,,,,{},{},{}
+573,Chocolate_Quente,Fragmento de Resistencia 1,3,466,,10,,,,,,,,,,,,,{},{},{}
+574,Ovo,Fragmento de Proteção 1,3,466,,10,,,,,,,,,,,,,{},{},{}
+575,Chapéu_de_Bolo_do,Fragmento elemental 1,3,466,,10,,,,,,,,,,,,,{},{},{}
+
+//fragmentos 2
+13100,Pistola_de_Seis_Tiros,Fragmento de Força 2,3,466,,10,,,,,,,,,,,,,{},{},{}
+13101,Pistola_de_Seis_Tiros,Fragmento de Agilidade 2,3,466,,10,,,,,,,,,,,,,{},{},{}
+13102,Raio_Vermelho,Fragmento de Inteligencia 2,3,466,,10,,,,,,,,,,,,,{},{},{}
+13103,Raio_Vermelho,Fragmento de Vitalidade 2,3,466,,10,,,,,,,,,,,,,{},{},{}
+13104,Garrison,Fragmento de Destreza 2,3,466,,10,,,,,,,,,,,,,{},{},{}
+13105,Garrison,Fragmento de Sorte 2,3,466,,10,,,,,,,,,,,,,{},{},{}
+13106,Brilho_Dourado,Fragmento de Resistencia 2,3,466,,10,,,,,,,,,,,,,{},{},{}
+13150,Branch,Fragmento de Proteção 2,3,466,,10,,,,,,,,,,,,,{},{},{}
+13151,Ciclone,Fragmento elemental 2,3,466,,10,,,,,,,,,,,,,{},{},{}
+
+//fragmentos 3
+13152,Ciclone,Fragmento de Força 3,3,466,,10,,,,,,,,,,,,,{},{},{}
+13153,Crepúsculo,Fragmento de Agilidade 3,3,466,,10,,,,,,,,,,,,,{},{},{}
+13154,Rolling_Stone,Fragmento de Inteligencia 3,3,466,,10,,,,,,,,,,,,,{},{},{}
+13155,Rosa_Negra,Fragmento de Vitalidade 3,3,466,,10,,,,,,,,,,,,,{},{},{}
+13156,Guardião_da_Passagem,Fragmento de Destreza 3,3,466,,10,,,,,,,,,,,,,{},{},{}
+13157,Andarilho,Fragmento de Sorte 3,3,466,,10,,,,,,,,,,,,,{},{},{}
+13158,Retalhadora,Fragmento de Resistencia 3,3,466,,10,,,,,,,,,,,,,{},{},{}
+13159,Retalhadora,Fragmento de Proteção 3,3,466,,10,,,,,,,,,,,,,{},{},{}
+13160,Destruidora,Fragmento elemental 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+
+//fragmentos 4
+13161,Destruidora,Fragmento de Força 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+13162,Inferno,Fragmento de Agilidade 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+13163,Rifle_de_Alcance,Fragmento de Inteligencia 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+13164,Rifle_de_Alcance,Fragmento de Vitalidade 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+13165,Carabina,Fragmento de Destreza 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+13166,Carabina,Fragmento de Sorte 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+13167,Leão-de-Chácara,Fragmento de Resistencia 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+13168,Trovoada,Fragmento de Proteção 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+13169,Trovoada,Fragmento elemental 4,3,466,,10,,,,,,,,,,,,,{},{},{}
+
+//Selos kai
+576,Fruta_Espinhosa,Selo Kai de força,3,466,,10,,,,,,,,,,,,,{},{},{}
+577,Sacola_de_Grãos,Selo kai de Int,3,466,,10,,,,,,,,,,,,,{},{},{}
+559,Chocolate_Caseiro,Selo kai de armor,3,466,,10,,,,,,,,,,,,,{},{},{}
+560,Chocolate_Branco_feito_a_mão,Selo kai de agi,3,466,,10,,,,,,,,,,,,,{},{},{}
+//561,Chocolate_Branco,Selo kai elemental,3,466,,10,,,,,,,,,,,,,{},{},{}
+
+//metal de remoção
+562,Fondue_Suíço,metal de remoção,3,466,,10,,,,,,,,,,,,,{},{},{}
+
+//22000,Drill_Boots,Drill Boots,5,255000,55000,500,0,0,0,0,0xFFFFFFFE,7,2,64,0,50,0,0,{if (callfunc("iReadC","MineWeight")) skill "MC_INCCARRY",1 + callfunc("iReadC","MineWeight") / 5;},{callfunc "equipBoots";},{}
+
+19198,espada4,espada4,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,735,{ },{},{}
+19199,espada5,espada5,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,736,{ },{},{}
+19200,espada6,espada6,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,737,{ },{},{}
+//19201,espada7,espada7,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,738,{ },{},{}
+19201,espada7,espada7,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,738,{},{},{}
+19202,espada8,espada8,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,739,{ },{},{}
+19203,espada9,espada9,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,740,{ },{},{}
+19204,espada10,espada10,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,741,{ },{},{}
+
+19205,item_akamaru,item_akamaru,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,742,{ },{},{}
+19206,item_bandagem,item_bandagem,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,743,{},{},{}
+19207,item_tenten,item_tenten,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,744,{callfunc "kg_Mitsashi";},{},{}
+19208,item_hidan2,item_hidan2,5,,10,100,,2,,2,0xFFFFFFFF,7,2,256,,0,1,,{set meucabelo,getlook(1); set meucabelo2,getlook(6); setlook(6),0; setlook(1),41; changebase 25; bonus bLastStand,100;},{},{changebase Class; sc_end SC_Bleeding; setlook(1),meucabelo; setlook(6),meucabelo2; end;}
+19209,item_chapeu,item_chapeu,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,746,{ },{},{}
+19210,item_hidan,item_hidan,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,747,{callfunc "kg_Jashin";},{},{}
+19211,item_tayuya,item_tayuya,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,748,{callfunc "kg_Tayuya"; },{},{}
+19212,item_orochi,item_deidara,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,749,{callfunc "kg_kibaku";},{},{}
+//19213,item_samehada,item_samehada,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,750,{ },{},{}
+19214,item_sarutobi,item_sarutobi,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,751,{ },{},{}
+19215,item_sussano,item_sussano,5,,10,100,,0,,2,0xFFFFFFFF,7,2,256,,0,1,752,{bonus2 bSPLossRate,1500,1000; bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,15; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15; bonus bCopycat,10;},{},{}
+19216,item_sussano2,item_aburame,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,12,{ skill 127,1; callfunc "kg_Aburame";},{},{}
+19217,item_tobi,item_tobi,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,754,{},{},{}
+19218,hanzou,hanzou,5,,10,100,,3,,2,0xFFFFFFFF,7,2,1,,0,1,755,{callfunc "kg_Ibuse";},{},{}
+
+//densetsu
+
+//Agilidade
+20003,Pedra_de_Agilidade,Pedra de Agilidade,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bAgi,3;},{},{}
+20004,Pedra_de_Esquiva,Pedra de Esquiva,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bFlee,20;},{},{}
+20005,Pedra_de_Velocidade,Pedra de Velocidade,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bSpeedRate,1; },{},{}
+20006,Pedra_de_Evitar_Armadilha,Pedra de Evitar Armadilha,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bAvoidTrap,2; },{},{}
+20007,Pedra_de_ataque_speed,Pedra de Ataque speed,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bAspdRate,10; },{},{} //Chance de esquivar de ataques ao ficar com x% de HP
+20008,Pedra_de_delay,Pedra de delay,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bDelayRate,-1; },{},{}
+20009,Pedra_de_esquiva_critico,Pedra de esquiva critica,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCritAtkMiss,4;},{},{}
+20010,Pedra_de_Agilidade,Pedra de Agilidade,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bAgi,7;},{},{}
+20011,Pedra_de_Esquiva,Pedra de Esquiva,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bFlee,30;},{},{}
+20012,Pedra_de_Velocidade,Pedra de Velocidade,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bSpeedRate,2; },{},{}
+20013,Pedra_de_delay,Pedra de delay,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bDelayRate,-2; },{},{}
+20014,Pedra_de_Evitar_Armadilha,Pedra de Evitar Armadilha,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bAvoidTrap,3; },{},{}
+20015,Pedra_de_Velocidade,Pedra de Velocidade,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{ bonus bSpeedRate,3; },{},{}
+20016,Pedra_de_esquiva_critico,Pedra de esquiva critica,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCritAtkMiss,6;},{},{}
+20017,Pedra_de_shiko_agi,Pedra de Shiko Agilidade,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{skill 356,3; bonus bSpeedRate,4;},{},{}
+
+
+//Sorte - novo
+20018,Pedra_de_Sorte,Pedra de Sorte,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCResist,SC_Stun,3; bonus2 bSCResist,SC_Freeze,3; bonus2 bSCResist,Eff_Silence,3; bonus2 bSCResist,Eff_Curse,3;},{},{}
+20019,Pedra_de_Crítico,Pedra de Crítico,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bFlee2,5;},{},{}
+20020,Pedra_de_Esquiva_Perfeita,Pedra de Esquiva Perfeita,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCritAtkRate,3;},{},{}
+20021,Pedra_de_Resistencia_Genjutsus,Pedra Resistencia Genjutsus,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCDamage,SC_STUN,3; bonus2 bSCDamage,SC_POISON,3; bonus2 bSCDamage,SC_CURSE,3; bonus2 bSCDamage,SC_SLEEP,3; bonus2 bSCDamage,SC_BLIND,3;},{},{}
+20022,Pedra_de_Dano_Silencio,Pedra de Dano em Silêncio,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bFlee2,5;},{},{}
+20023,Pedra_de_Dano_Stun,Pedra de Dano em Stun,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCResist,SC_Stun,3; bonus2 bSCResist,SC_Freeze,3; bonus2 bSCResist,Eff_Silence,3; bonus2 bSCResist,Eff_Curse,3;},{},{}
+20024,Pedra_de_Sorte,Pedra de Sorte,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCritAtkRate,3;},{},{}
+20025,Pedra_de_Sono,Pedra de Sono,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bFlee2,5;},{},{}
+20026,Pedra_de_Sorte,Pedra de Sorte,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCResist,SC_Stun,3; bonus2 bSCResist,SC_Freeze,3; bonus2 bSCResist,Eff_Silence,3; bonus2 bSCResist,Eff_Curse,3;},{},{}
+20027,Pedra_de_Esquiva_Perfeita,Pedra de Esquiva Perfeita,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus3 bAddEff,Eff_Sleep,100,ATF_SHORT;},{},{}
+20028,Pedra_de_Crítico,Pedra de Crítico,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCritAtkRate,4;},{},{}
+20029,Pedra_de_Dano_Silencio,Pedra de Dano em Silêncio,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCDamage,SC_STUN,3; bonus2 bSCDamage,SC_POISON,3; bonus2 bSCDamage,SC_CURSE,3; bonus2 bSCDamage,SC_SLEEP,3; bonus2 bSCDamage,SC_BLIND,3;},{},{}
+20030,Pedra_de_Dano_Stun,Pedra de Dano em Stun,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus3 bAddEff,Eff_Sleep,100,ATF_SHORT;},{},{}
+20031,Pedra_de_Resistencia_Genjutsus,Pedra Resistencia Genjutsus,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCDamage,SC_STUN,3; bonus2 bSCDamage,SC_POISON,3; bonus2 bSCDamage,SC_CURSE,3; bonus2 bSCDamage,SC_SLEEP,3; bonus2 bSCDamage,SC_BLIND,3;},{},{}
+20032,Pedra_de_Shiko_Gen,Pedra de Shiko Genjutsu,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{skill 289,5; autobonus "{ bonus bCritical,50; }",5,5000,0,"{ specialeffect2 EF_ENHANCE; }";},{},{}
+
+//20018,Pedra_de_Sorte,Pedra de Sorte,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bLuk,2;},{},{}
+//20019,Pedra_de_Crítico,Pedra de Crítico,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCritical,4;},{},{}
+//20020,Pedra_de_Esquiva_Perfeita,Pedra de Esquiva Perfeita,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bFlee2,2;},{},{}
+//20021,Pedra_de_Resistencia_Genjutsus,Pedra Resistencia Genjutsus,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCResist,SC_Stun,1; bonus2 bSCResist,SC_Freeze,1; bonus2 bSCResist,Eff_Silence,1; bonus2 bSCResist,Eff_Curse,1;},{},{}
+//20022,Pedra_de_Dano_Silencio,Pedra de Dano em Silêncio,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCDamage,SC_SILENCE,2;},{},{}
+//20023,Pedra_de_Dano_Stun,Pedra de Dano em Stun,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCDamage,SC_STUN,2;},{},{}
+//20024,Pedra_de_Sorte,Pedra de Sorte,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bLuk,3;},{},{}
+//20025,Pedra_de_Sono,Pedra de Sono,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus3 bAddEff,Eff_Sleep,100,ATF_SHORT;},{},{}
+//20026,Pedra_de_Sorte,Pedra de Sorte,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bLuk,5;},{},{}
+//20027,Pedra_de_Esquiva_Perfeita,Pedra de Esquiva Perfeita,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bFlee2,5;},{},{}
+//20028,Pedra_de_Crítico,Pedra de Crítico,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCritical,6;},{},{}
+//20029,Pedra_de_Dano_Silencio,Pedra de Dano em Silêncio,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCDamage,SC_SILENCE,3;},{},{}
+//20030,Pedra_de_Dano_Stun,Pedra de Dano em Stun,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCDamage,SC_STUN,3;},{},{}
+//20031,Pedra_de_Resistencia_Genjutsus,Pedra Resistencia Genjutsus,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSCResist,SC_Stun,3; bonus2 bSCResist,SC_Freeze,3; bonus2 bSCResist,Eff_Silence,3; bonus2 bSCResist,Eff_Curse,3;},{},{}
+//20032,Pedra_de_Shiko_Gen,Pedra de Shiko Genjutsu,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{skill 289,5; autobonus "{ bonus bCritical,50; }",5,5000,0,"{ specialeffect2 EF_ENHANCE; }";},{},{}
+
+//força
+
+20033,Pedra_de_Dano,Pedra de Dano,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bAtk,150;},{},{}
+20034,Pedra_de_Força,Pedra de Força,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bStr,2;},{},{}
+20035,Pedra_de_Dano_Crítico,Pedra de Dano Crítico,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCritAtkRate,3;},{},{}
+20036,Pedra_de_Dano_Médio,Pedra de Dano Médio,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bAddSize,1,2;},{},{}
+20037,Pedra_de_Lifesteal,Pedra de Lifesteal,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bHpDrainRate,10,30;},{},{}
+20038,Pedra_de_Dano_Boss,Pedra de Dano Boss,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bAddRace,RC_Boss,1;},{},{}
+20039,Pedra_de_Dano,Pedra de Dano,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bAtk,150;},{},{}
+20040,Pedra_de_Força,Pedra de Força,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bStr,6;},{},{}
+20041,Pedra_de_Dano_Médio,Pedra de Dano Médio,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bAddSize,1,3;},{},{}
+20042,Pedra_de_Dano,Pedra de Dano,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bAtk,200;},{},{}
+20043,Pedra_de_Dano_Crítico,Pedra de Dano Crítico,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCritAtkRate,7;},{},{}
+20044,Pedra_de_Força,Pedra de Força,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bStr,8;},{},{}
+20045,Pedra_de_Lifesteal,Pedra de Lifesteal,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bHpDrainRate,40,30;},{},{}
+20046,Pedra_de_Dano_Boss,Pedra de Dano Boss,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bAddRace,RC_Boss,4;},{},{}
+20047,Pedra_de_Shiko_Tai,Pedra de Shiko Taijutsu,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{skill 234,1; bonus2 bAddRace,RC_NonBoss,2; bonus2 bAddRace2,5,2;},{},{}
+
+//Inteligência
+20048,Pedra_de_Regeneração_Sp,Pedra de Regeneração de SP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSPRegenRate,150,1000;},{},{}
+20049,Pedra_de_Inteligência,Pedra de Inteligência,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bInt,5;},{},{}
+20050,Pedra_de_Ataque_Mágico,Pedra de Ataque Mágico,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMatkRate,2;},{},{}
+20051,Pedra_de_Ataque_Elemental,Pedra de Ataque Elemental,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bElementDamage,Dark,2; bonus2 bElementDamage,Wind,2; bonus2 bElementDamage,Fire,2; bonus2 bElementDamage,Earth,2; bonus2 bElementDamage,Water,2;},{},{}
+20052,Pedra_de_Inteligência,Pedra de Inteligência,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bInt,5;},{},{}
+20053,Pedra_de_Defesa_Elemental,Pedra de Defesa Elemental,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSubEle,Ele_Holy,2; bonus2 bSubEle,Ele_Wind,2; bonus2 bSubEle,Ele_Dark,2; bonus2 bSubEle,Ele_Fire,2; bonus2 bSubEle,Ele_Water,2; bonus2 bSubEle,Ele_Earth,2;},{},{}
+20054,Pedra_de_Ataque_Mágico,Pedra de Ataque Mágico,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMatkRate,2;},{},{}
+20055,Pedra_de_Regeneração_Sp,Pedra de Regeneração de SP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSPRegenRate,150,1000;},{},{}
+20056,Pedra_de_Inteligência,Pedra de Inteligência,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bInt,5;},{},{}
+20057,Pedra_de_Cast,Pedra de Cast,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCastRate,-2;},{},{}
+20058,Pedra_de_Ataque_Elemental,Pedra de Ataque Elemental,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bElementDamage,Dark,2; bonus2 bElementDamage,Wind,2; bonus2 bElementDamage,Fire,2; bonus2 bElementDamage,Earth,2; bonus2 bElementDamage,Water,2;},{},{}
+20059,Pedra_de_SP,Pedra de SP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMaxSP,1500;},{},{}
+20060,Pedra_de_Ataque_Mágico,Pedra de Ataque Mágico,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMatkRate,2;},{},{}
+20061,Pedra_de_SP_Máximo,Pedra de SP Máximo,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMaxSPrate,1;},{},{}
+20062,Pedra_de_Shiko_Nin,Pedra de Shiko Ninjutsu,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{skill 364,10; bonus bMatkRate,2;},{},{}
+
+//Destreza
+20063,Pedra_de_Dex,Pedra de Dex,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bDex,3;},{},{}
+20064,Pedra_de_Hit,Pedra de Hit,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bHit,20;},{},{}
+20065,Pedra_de_Roubo_SP,Pedra de Roubo SP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSpDrainRate,10,15;},{},{}
+20066,Pedra_de_SP,Pedra de SP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMaxSP,250;},{},{}
+20067,Pedra_de_Hit_Porcentagem,Pedra de Hit Porcentagem,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bHitRate,1;},{},{}
+20068,Pedra_de_Cast,Pedra de Cast,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCastRate,-1;},{},{}
+20069,Pedra_de_Roubo_SP,Pedra de Roubo SP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSpDrainRate,20,15;},{},{}
+20070,Pedra_de_SP,Pedra de SP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMaxSP,250;},{},{}
+20071,Pedra_de_Hit,Pedra de Hit,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bHit,30;},{},{}
+20072,Pedra_de_Hit_Porcentagem,Pedra de Hit Porcentagem,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bHitRate,1;},{},{}
+20073,Pedra_de_Cast,Pedra de Cast,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCastRate,-1;},{},{}
+20074,Pedra_de_Roubo_SP,Pedra de Roubo SP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSpDrainRate,30,15;},{},{}
+20075,Pedra_de_SP,Pedra de SP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMaxSP,250;},{},{}
+20076,Pedra_de_Cast,Pedra de Cast,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bCastRate,-3;},{},{}
+20077,Pedra_de_Shiko_Dex,Pedra de Shiko Destreza,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{skill 463,7; bonus2 bSPVanishRate,50,10;},{},{}
+
+//Vitalidade
+20078,Pedra_de_Aumento_Cura,Pedra de Aumento de Cura,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMaxHPrate,1;},{},{}
+20079,Pedra_de_Aumento_Santuario,Pedra de Aumento de Santuario,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSubEle,Ele_Holy,3;},{},{}
+20080,Pedra_de_Defesa,Pedra de Defesa,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMdef,3;},{},{}
+20081,Pedra_de_Defesa,Pedra de Defesa,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bHPRegenRate,2000,1000;},{},{}
+20082,Pedra_de_Defesa,Pedra de Defesa,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMaxHP,30000;},{},{}
+20083,Pedra_de_Defesa,Pedra de Defesa,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMdef,5;},{},{}
+20084,Pedra_de_Aumento_Cura,Pedra de Aumento de Cura,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSkillHeal,"AL_HEAL",5; bonus2 bSkillHeal,"PR_SANCTUARY",5;},{},{}
+20085,Pedra_de_Regeneração_HP,Pedra de Regeneração HP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSubEle,Ele_Holy,2;},{},{}
+20086,Pedra_de_Defesa,Pedra de Defesa,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMaxHPrate,2;},{},{}
+20087,Pedra_de_Defesa,Pedra de Defesa,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSubEle,Ele_Ghost,2; bonus2 bSubEle,Ele_Fire,2; bonus2 bSubEle,Ele_Water,2; bonus2 bSubEle,Ele_Wind,2; bonus2 bSubEle,Ele_Earth,2; bonus2 bSubEle,Ele_Holy,2; bonus2 bSubEle,Ele_Poison,2; bonus2 bSubEle,Ele_Dark,2;},{},{}
+20088,Pedra_de_Regeneração_HP,Pedra de Regeneração HP,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSubEle,Ele_Ghost,4; bonus2 bSubEle,Ele_Fire,4; bonus2 bSubEle,Ele_Water,4; bonus2 bSubEle,Ele_Wind,4; bonus2 bSubEle,Ele_Earth,4; bonus2 bSubEle,Ele_Holy,4; bonus2 bSubEle,Ele_Poison,4; bonus2 bSubEle,Ele_Dark,4;},{},{}
+20089,Pedra_de_Aumento_Santuario,Pedra de Aumento de Santuario,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSkillHeal,"AL_HEAL",10; bonus2 bSkillHeal,"PR_SANCTUARY",10;},{},{}
+20090,Pedra_de_Aumento_Cura,Pedra de Aumento de Cura,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bHPRegenRate,3000,1000;},{},{}
+20091,Pedra_de_Defesa,Pedra de Defesa,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus2 bSkillHeal,"AL_HEAL",10; bonus2 bSkillHeal,"PR_SANCTUARY",10;},{},{}
+561,Pedra_de_Shiko_Vit,Pedra de Shiko Vitalidade,12,50,,70,,,,,0xFFFFFFFF,7,2,,,1,,,{bonus bMaxHP,30000; skill 144,1;},{},{}
+
+////////////////////////////
+
+
+
+//////////////////////EQUIPAMENTOS NOVOS///////////////////////////
+
+/////////////////Capas/////////////////////////////
+
+// Tier 1
+14000,Capa,CapaTier1,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{ bonus2 bSubEle,Water,3; },{},{}
+
+// Tier 2
+14026,Capa,CapaTier2,5,1,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{ bonus2 bSubEle,Water,4; },{},{}
+
+// Tier 3
+14052,Capa,CapaTier3,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{ bonus2 bSubEle,Water,5; },{},{}
+
+// Tier 4
+14078,Capa,CapaTier4,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{ bonus2 bSubEle,Water,6; bonus2 bSubEle,Earth,6; },{},{}
+
+// Tier 5
+14234,Capa,CapaTier5,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{ bonus bVit,2; bonus2 bSubEle,Water,7; bonus2 bSubEle,Earth,7; },{},{}
+
+// Tier 6
+14390,Capa,CapaTier6,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{ bonus2 bSubEle,Water,8; bonus2 bSubEle,Earth,8; },{},{}
+
+// Tier 7
+14546,Capa,CapaTier7,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{ bonus2 bSubEle,Water,11; bonus2 bSubEle,Earth,11; },{},{}
+
+// Tier 8
+14702,Capa,CapaTier8,5,82000,,20,,2,,1,0xFFFFFFFF,7,2,4,,1,1,0,{ bonus2 bSubEle,Water,14; bonus2 bSubEle,Earth,14; },{},{}
+
+// Tier 9
+
+
+
+// Armaduras
+
+// Tier 1
+15026,Armadura,ArmaduraTier1,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,100,1,0,{ bonus bVit,3; },{},{}
+
+// Tier 2
+15062,Armadura,ArmaduraTier2,5,1,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{ bonus bVit,3; },{},{}
+
+// Tier 3
+15098,Armadura,ArmaduraTier3,5,1,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{ bonus bVit,5; },{},{}
+
+// Tier 4
+15134,Armadura,ArmaduraTier4,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{ bonus bVit,9; bonus bDef2Rate,7; },{},{}
+
+// Tier 5
+15316,Armadura,ArmaduraTier5,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{ bonus bVit,11; bonus bDef2Rate,9; },{},{}
+
+// Tier 6
+15498,Armadura,ArmaduraTier6,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{ bonus bVit,15; bonus bDef2Rate,11; },{},{}
+
+// Tier 7
+15680,Armadura,ArmaduraTier7,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{ bonus bVit,20; bonus bDef2Rate,13; },{},{}
+
+// Tier 8
+15862,Armadura,ArmaduraTier8,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{ bonus bVit,27; bonus bDef2Rate,15; },{},{}
+
+// Tier 9
+16044,Armadura,ArmaduraTier9,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{ bonus bVit,30; bonus bDef2Rate,17; bonus bUnbreakableArmor,0; },{},{}
+
+// Tier 10
+16388,Armadura,ArmaduraTier10,5,1000,,1,,4,,0,0xFFFFFFFF,7,2,16,,999,1,0,{ bonus bVit,33; bonus bDef2Rate,19; bonus bUnbreakableArmor,0; },{},{}
+
+
+//////////////////Pergaminhos/////////////////////
+
+//Tier 1
+16732,Pergaminho,PergaminhoTier1,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,5; },{},{}
+
+// Tier 2
+16772,Pergaminho,PergaminhoTier2,5,1,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,12; },{},{}
+
+// Tier 3
+16812,Pergaminho,PergaminhoTier3,5,1,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,20; },{},{}
+
+// Tier 4
+16852,Pergaminho,PergaminhoTier4,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,28; bonus bMatkRate,4; },{},{}
+
+// Tier 5
+17164,Pergaminho,PergaminhoTier5,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,36; bonus bMatkRate,5; },{},{}
+
+// Tier 6
+17476,Pergaminho,PergaminhoTier6,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,46; bonus bMatkRate,6; },{},{}
+
+// Tier 7
+11010,Pergaminho,PergaminhoTier7,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,58; bonus bMatkRate,7; },{},{}
+
+// Tier 8
+11322,Pergaminho,PergaminhoTier8,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,71; bonus bMatkRate,7; },{},{}
+
+// Tier 9
+11634,Pergaminho,PergaminhoTier9,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,63; bonus bMatkRate,7; bonus2 bSkillAtk,540,3; },{},{}
+
+// Tier 10
+29654,Pergaminho,PergaminhoTier10,5,500,,300,,3,,0,0xFFFFFFFF,7,2,32,,1,1,1,{ bonus bInt,81; bonus bMatkRate,8; bonus2 bSkillAtk,540,4; },{},{}
+
+//////////////////////botas///////////////////////////
+
+// Tier 01
+20092,Nome,BotaTier1,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{ bonus bAgi,1; },{},{}
+
+// Tier 02
+20104,Nome,BotaTier2,5,1,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{ bonus bAgi,3; },{},{}
+
+// Tier 03
+20116,Nome,BotaTier3,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{ bonus bAgi,5; },{},{}
+
+// Tier 04
+20128,Nome,BotaTier4,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{ bonus bAgi,7; bonus bSpeedAddRate,3;},{},{}
+
+// Tier 05
+20158,Nome,BotaTier5,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{ bonus bAgi,9; bonus bSpeedAddRate,4;},{},{}
+
+// Tier 06
+20188,Nome,BotaTier6,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{ bonus bAgi,11; bonus bSpeedAddRate,5;},{},{}
+
+// Tier 07
+20218,Nome,BotaTier7,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{ bonus bAgi,13; bonus bSpeedAddRate,7;},{},{}
+
+// Tier 08
+20248,Nome,BotaTier8,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{ bonus bAgi,15; bonus bSpeedAddRate,9;},{},{}
+
+// Tier 09
+20278,Nome,BotaTier9,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{ bonus bAgi,17; bonus bSpeedAddRate,10; bonus bAvoidTrap,25; },{},{}
+
+// Tier 10
+20310,Nome,BotaTier10,5,30000,,650,,4,,0,0xFFFFFFFE,7,2,64,,1,1,0,{bonus bFlee,100; bonus bAgi,20; bonus bSpeedAddRate,12; bonus bAvoidTrap,25;  bonus bSPrecovRate,12;},{},{}
+
+//////////////////////////////////////ACESSORIOS//////////////////////////////////////
+
+// Tier 1
+20342,Amuleto,AmuletoTier1,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bLuk,1; },{},{}
+
+// Tier 2
+20396,Amuleto,AmuletoTier2,5,1,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bLuk,2; },{},{}
+
+// Tier 3
+20450,Amuleto,AmuletoTier3,5,10,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bLuk,3; },{},{}
+
+// Tier 4
+20504,Amuleto,AmuletoTier4,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bLuk,6;  },{},{}
+
+// Tier 5
+20935,Amuleto,AmuletoTier5,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bStr,4; bonus2 bAddSize,0,5;  },{},{}
+
+// Tier 6
+21364,Amuleto,AmuletoTier6,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bLuk,5;  },{},{}
+
+// Tier 7
+21794,Amuleto,AmuletoTier7,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bLuk,7;  },{},{}
+
+// Tier 8
+22225,Amuleto,AmuletoTier8,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bLuk,9;  },{},{}
+
+// Tier 9
+22655,Amuleto,AmuletoTier9,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bLuk,10;  bonus2 bSPDrainRate,30,5; },{},{}
+
+//Tier 10
+24423,Amuleto,AmuletoTier10,5,10000,,100,,0,,0,0xFFFFFFFF,7,2,136,,0,0,0,{ bonus bLuk,13;  bonus2 bSPDrainRate,40,4; },{},{}
+
+// ARMAS
+
+// Tier 01
+
+26199,Arma,ArmaTier1,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{ bonus bStr,20; },{},{}
+
+// Tier 02
+26245,Arma,ArmaTier2,4,1,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{ bonus bStr,60; },{},{}
+
+// Tier 03
+26300,Arma,ArmaTier3,4,1,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{ bonus bStr,94; },{},{}
+
+// Tier 4
+26360,Arma,ArmaTier4,4,1,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{ bonus bStr,486; bonus2 bAddRace,RC_NonBoss,4; bonus2 bAddRace2,5,4; },{},{}
+
+// Tier 5
+26734,Arma,ArmaTier5,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{ bonus bStr,122; bonus2 bAddRace,RC_NonBoss,5; bonus2 bAddRace2,5,5; },{},{}
+
+// Tier 6
+27110,Arma,ArmaTier6,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{ bonus bStr,142; bonus2 bAddRace,RC_NonBoss,6; bonus2 bAddRace2,5,6; },{},{}
+
+// Tier 7
+27486,Arma,ArmaTier7,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{ bonus bStr,166; bonus2 bAddRace,RC_NonBoss,7; bonus2 bAddRace2,5,7; },{},{}
+
+// Tier 8
+27859,Arma,ArmaTier8,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{ bonus bStr,194; bonus2 bAddRace,RC_NonBoss,8; bonus2 bAddRace2,5,8; },{},{}
+
+// Tier 9
+28235,Arma,ArmaTier9,4,50000,0,10,15000,,1,0,0xFFFFFFFF,7,2,2,1,1,1,1,{ bonus bStr,226; bonus2 bAddRace,RC_NonBoss,9; bonus2 bAddRace2,5,9; bonus bUnbreakableWeapon,0; },{},{}
+
+// ------------------------ CUSTONS NNGO
+12600,gengarhat,Chapéu do Gengar,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,875,{},{},{}
+12601,AsaSasori,Asas Sasori,5,,10,1,,0,,2,0xFFFFFFFF,7,2,256,,0,1,876,{},{},{}
+12602,Konan,Asas Konan,5,20,,100,,0,,4,0xFFFFFFFF,7,2,256,,0,1,877,{},{},{}
+12603,ninjagm,Bandana de GM,5,,10,100,,3,,0,0xFFFFFFFF,7,2,512,,0,1,878,{skill 758,1;},{},{}
+12604,samehadac2,Samehada Visual,5,20,,0,,10,,1,0xFFFFFFFF,7,2,1,,0,1,912,{},{},{}
+12605,Zambatou,Zambatou Visual,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,880,{},{},{}
+12606,Black_Gangster_Scarf,Fugitivo Preto,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,881,{},{},{}
+//12607,Konan,Controle dos Papeis,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,719,{callfunc "KG_KONAN";},{},{DelTimer "FOME_KONAN_DICREASE::OnHPKONAN11"; DelTimer "FOME_KONAN_DICREASE::OnHPKONAN12"; DelTimer "FOME_KONAN_DICREASE::OnHPKONAN13"; DelTimer "FOME_KONAN_DICREASE::OnHPKONAN14"; end;}
+12608,pesarkyuubi,Pesar da Kyuubi,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,883,{},{},{}
+12609,auraamarela,Aura Amarela,5,20,,100,,0,,4,0xFFFFFFFF,7,2,256,,0,1,884,{},{},{}
+12610,auradasortegrande,Aura da Sorte,5,20,,100,,0,,4,0xFFFFFFFF,7,2,256,,0,1,885,{},{},{}
+12611,Chapeu_do_Olho_Negro,Chapéu do Olho Negro,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,886,{},{},{}
+12612,Circulo_de_Dragao,Chakra Uzumaki,5,,10,1,,3,,4,0xFFFFFFFF,7,2,1,,0,1,896,{callfunc "kg_uzumaki";},{},{}
+12613,Elmo_do_Dragao_Infernal,Elmo do Kyonno,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,888,{},{},{}
+12614,holy_protection,Proteção da Floresta,5,20,,100,,0,,4,0xFFFFFFFF,7,2,256,,0,1,889,{},{},{}
+12615,menestrelred,Menestrel Vermelho,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,890,{},{},{}
+12616,oculosnaruto,Visores Uzumaki,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,891,{},{},{}
+12617,itemuzumaki,Selamento Uzumaki,3,907,,10,,,,,,,,,,,,,{},{},{}
+12618,Marcas_da_raposa,Marcas Uzumaki,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,892,{},{},{}
+12619,Pergaminho_do_Sannin,Pergaminho Uzumaki,5,,10,1,,3,,2,0xFFFFFFFF,7,2,1,,0,1,897,{},{},{}
+12620,kghashirama,Liberação de Mokuton,5,,10,1,,3,,4,0xFFFFFFFF,7,2,1,,0,1,895,{callfunc "kg_hashirama";},{},{DelTimer "REMOVERMOKU2::OnMOKU2";}
+12621,dnahashirama,DNA - Hashirama,3,907,,10,,,,,,,,,,,,,{},{},{}
+12622,Black_Executioner_Hood,Executor Negro,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,898,{},{},{}
+12623,Black_Neko_Mimi,Gato Noturno,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,899,{},{},{}
+12624,cartolacomcoelhinho,Cartola com Coelhinho,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,900,{},{},{}
+//12625,catoninetailshat,Chapéu Ninetales,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,901,{},{},{}
+12626,gaaragourd,Jarro do Gaara,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,902,{},{},{}
+12627,White_Magic_Eyes,Olho Mágico Branco,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,903,{},{},{}
+12628,Jason_Mask,Jason Mask,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,904,{},{},{}
+12629,bunnyhat3,Chapéu do Bunny,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,905,{},{},{}
+12630,doghat,Chapéu do Cachorro,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,906,{},{},{}
+12631,fs_poopoohat,Chapéu de CocÔ,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,907,{},{},{}
+12632,fs_shark,Chapéu do Tubarão,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,908,{},{},{}
+12633,fs_snowwolf,Chapéu do Lobo da Neve,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,909,{},{},{}
+12634,pighat,Chapéu do Porco,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,910,{},{},{}
+12635,Scream_Mask,Máscara do Pânico,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,911,{},{},{}
+12636,samehadacostas,Samehada Costas,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,912,{},{},{}
+// View da Same é 912
+12637,Black_Flying_Evil_Wing,Asas de Anjo Negras,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,913,{},{},{}
+12638,Red_Hunter_Cap,Hunter Vermelho,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,914,{},{},{}
+12639,Gold_Gangster_Scarf,Fugitivo Amarelo,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,915,{},{},{}
+12640,Black_Wandering_Minstrel_Hat,Ministrel Preto,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,916,{},{},{}
+12641,orochi1,Shikotsumyaku,5,,10,1,,3,,4,0xFFFFFFFF,7,2,1,,0,1,885,{callfunc "kg_ossos";},{},{DelTimer "REMOVEROSSOS2::OnOSSOS2";}
+12642,orochiativo,Shikotsumyaku Kai,5,20,,100,,0,,4,0xFFFFFFFF,7,2,256,,0,1,889,{},{},{}
+12643,lequemadara,Leque Uchiha,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,919,{},{},{}
+12644,Black_Wandering_Minstrel_Hat,Ministrel Branco,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,920,{},{},{}
+12645,Black_Wandering_Minstrel_Hat,Fugitivo Branco,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,921,{},{},{}
+12646,Black_Wandering_Minstrel_Hat,Hunting Cap Preto,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,922,{},{},{}
+12647,Gold_Wandering_Minstrel_Hat,Menestrel Amarelo,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,923,{},{},{}
+12648,Purple_Angel_Wing,Asas Lendárias Rosas,5,3000,,100,,0,,0,0xFFFFFFFF,7,2,256,,0,0,924,{},{},{}

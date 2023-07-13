@@ -1,0 +1,84 @@
+//======================================================================================
+// Map Index
+//======================================================================================
+//Contains the list of maps with their respective IDs for inter-server use.
+//IDs must never change, therefore any new maps need to be added at the end,
+//and old ones must not be removed, but may be replaced.
+//Format:
+//mapname<tab>index <- specifies index for this map
+//mapname <- map will use index of previous map +1
+//Note that map index 0 is special and reserved for "error" status. 
+
+//======================================================================================
+//Place your custom maps with a starting ID here.
+//======================================================================================
+//Example:
+//
+//mymap	1250
+//mymap-2
+nevoa.gat 1303
+areia.gat 1304
+konoha.gat 1305
+kakashi.gat 1306
+gvg_vilas 1307
+nrpg_sell 1308
+ondular 1309
+ondr_fild01 1310
+ondr_fild02 1311
+ondr_fild03 1312
+ondr_fild04 1313
+ondr_fild07 1314
+akatsuki 1315
+akat 1316
+chunin 1317
+Orochimaru 1318
+valedofim 1319
+hyuuga 1320
+salakage 1321
+floresta 1322
+salakagea 1323
+salakagen 1324
+orochi 1325
+arenaflo 1326
+suna 1327
+suna2 1328
+kiri 1329
+acad_01 1330
+nuvem 1331
+hospital 1332
+hospital2 1333
+hospital3 1334
+hospital4 1335
+salakagex 1336
+bibli_01 1337
+bibli_02 1338
+bibli_03 1339
+bibli_04 1340
+areia2 1342
+konoha01 1343
+woe01 1345
+chuva 1346
+reuniaok 1347
+valefim 1348
+arena_woe 1349
+koth01 1350
+biju_pri1 1351
+biju_pri2 1352
+biju_pri3 1353
+biju_pri4 1354
+biju_pri5 1355
+endless_war 1356
+konoha3 1357
+1@cave 1358
+sunagakure 1359
+kiragakure 1360
+vend_zone 1361
+2@caves 1362
+kumogakure 1363
+2@gl_chyard 1364
+gengar_arena 1365
+gengar_aren 1366
+akat_arena 1367
+akat_espera 1368
+orochimaru 1369
+

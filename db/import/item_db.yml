@@ -1,0 +1,8650 @@
+# This file is a part of rAthena.
+#   Copyright(C) 2021 rAthena Development Team
+#   https://rathena.org - https://github.com/rathena
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+###########################################################################
+# Item Database
+###########################################################################
+#
+# Item Settings
+#
+###########################################################################
+# - Id                      Item ID.
+#   AegisName               Server name to reference the item in scripts and lookups, should use no spaces.
+#   Name                    Name in English for displaying as output.
+#   Type                    Item type. (Default: Etc)
+#   SubType                 Weapon, Ammo or Card type. (Default: 0)
+#   Buy                     Buying price. When not specified, becomes double the sell price. (Default: 0)
+#   Sell                    Selling price. When not specified, becomes half the buy price. (Default: 0)
+#   Weight                  Item weight. Each 10 is 1 weight. (Default: 0)
+#   Attack                  Weapon's attack. (Default: 0)
+#   MagicAttack             Weapon's magic attack. (Default: 0)
+#   Defense                 Armor's defense. (Default: 0)
+#   Range                   Weapon's attack range. (Default: 0)
+#   Slots                   Available slots in item. (Default: 0)
+#   Jobs                    Jobs that can equip the item. (Map default is 'All: true')
+#   Classes                 Upper class types that can equip the item. (Map default is 'All: true')
+#   Gender                  Gender that can equip the item. (Default: Both)
+#   Locations               Equipment's placement. (Default: None)
+#   WeaponLevel             Weapon level. (Default: 1 for Weapons)
+#   ArmorLevel              Armor level. (Default: 1 for Armors)
+#   EquipLevelMin           Minimum required level to equip. (Default: 0)
+#   EquipLevelMax           Maximum level that can equip. (Default: 0)
+#   Refineable              If the item can be refined. (Default: false)
+#   Gradable                If the item can be graded. (Default: false)
+#   View                    View sprite of an item. (Default: 0)
+#   AliasName               Another item's AegisName that will be sent to the client instead of this item's AegisName. (Default: null)
+#   Flags:                  Item flags. (Default: null)
+#     BuyingStore           If the item is available for Buyingstores. (Default: false)
+#     DeadBranch            If the item is a Dead Branch. (Default: false)
+#     Container             If the item is part of a container. (Default: false)
+#     UniqueId              If the item is a unique stack. (Default: false)
+#     BindOnEquip           If the item is bound to the character upon equipping. (Default: false)
+#     DropAnnounce          If the item has a special announcement to self on drop. (Default: false)
+#     NoConsume             If the item is consumed on use. (Default: false)
+#     DropEffect            If the item has a special effect on the ground when dropped by a monster. (Default: None)
+#   Delay:                  Item use delay. (Default: null)
+#     Duration              Duration of delay in seconds.
+#     Status                Status Change used to track delay. (Default: None)
+#   Stack:                  Item stack amount. (Default: null)
+#     Amount                Maximum amount that can be stacked.
+#     Inventory             If the stack is applied to player's inventory. (Default: true)
+#     Cart                  If the stack is applied to the player's cart. (Default: false)
+#     Storage               If the stack is applied to the player's storage. (Default: false)
+#     GuildStorage          If the stack is applied to the player's guild storage. (Default: false)
+#   NoUse:                  Conditions when the item is unusable. (Default: null)
+#     Override              Group level to override these conditions. (Default: 100)
+#     Sitting               If the item can not be used while sitting. (Default: false)
+#   Trade:                  Trade restrictions. (Default: null)
+#     Override              Group level to override these conditions. (Default: 100)
+#     NoDrop                If the item can not be dropped. (Default: false)
+#     NoTrade               If the item can not be traded. (Default: false)
+#     TradePartner          If the item can not be traded to the player's partner. (Default: false)
+#     NoSell                If the item can not be sold. (Default: false)
+#     NoCart                If the item can not be put in a cart. (Default: false)
+#     NoStorage             If the item can not be put in a storage. (Default: false)
+#     NoGuildStorage        If the item can not be put in a guild storage. (Default: false)
+#     NoMail                If the item can not be put in a mail. (Default: false)
+#     NoAuction             If the item can not be put in an auction. (Default: false)
+#   Script                  Script to execute when the item is used/equipped. (Default: null)
+#   EquipScript             Script to execute when the item is equipped. (Default: null)
+#   UnEquipScript           Script to execute when the item is unequipped or when a rental item expires. (Default: null)
+###########################################################################
+
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 1201
+    AegisName: Knife
+    Name: Knife
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50
+    Weight: 400
+    Attack: 17
+    Range: 1
+    Slots: 3
+    Jobs:
+      Alchemist: true
+      Archer: true
+      Assassin: true
+      BardDancer: true
+      Blacksmith: true
+      Crusader: true
+      Hunter: true
+      KagerouOboro: true
+      Knight: true
+      Mage: true
+      Merchant: true
+      Ninja: true
+      Novice: true
+      Rogue: true
+      Sage: true
+      SoulLinker: true
+      SuperNovice: true
+      Swordman: true
+      Thief: true
+      Wizard: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 2301
+    AegisName: Cotton_Shirt
+    Name: Cotton Shirt
+    Type: Armor
+    Buy: 10
+    Weight: 100
+    Defense: 10
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    Refineable: true
+  ### CUSTOM
+  - Id: 19001
+    AegisName: water
+    Name: Bandana Da Névoa
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 501
+
+  - Id: 19006
+    AegisName: wind
+    Name: Bandana Da Areia
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 506
+
+  - Id: 19007
+    AegisName: sound
+    Name: Bandana Do Som
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 507
+    Script: |
+      if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5;skill 1,9; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;
+
+  - Id: 19008
+    AegisName: konoha
+    Name: Bandana De Konoha
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 508
+
+  - Id: 19039
+    AegisName: Naruto_Earth_Head_Protector
+    Name: Naruto_Earth_Head_Protector
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 539
+    Script: |
+      if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;
+
+  - Id: 19040
+    AegisName: Naruto_Lightning_Head_Protector
+    Name: Naruto_Lightning_Head_Protector
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 540
+
+  - Id: 19110
+    AegisName: rain
+    Name: Bandana Da Chuva
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 619
+
+  - Id: 19072
+    AegisName: Pedra_kakashi
+    Name: Pedra Kakashi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 603
+    Script: |
+      if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;
+
+  - Id: 19073
+    AegisName: Nevoa_kakashi
+    Name: Nevoa Kakashi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 604
+
+  - Id: 19074
+    AegisName: Nuvem_kakashi
+    Name: Nuvem Kakashi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 605
+
+  - Id: 19075
+    AegisName: Som_kakashi
+    Name: Som Kakashi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 606
+    Script: |
+      if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 526,1; skill 500,1; skill 222,1; skill 262,1; skill 63,1;
+
+  - Id: 19076
+    AegisName: Suna_kakashi
+    Name: Suna Kakashi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 607
+
+  - Id: 19004
+    AegisName: kakashi
+    Name: Bandana Kakashi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 504
+
+  - Id: 19078
+    AegisName: Mist
+    Name: Bandana Nukenin Nevoa
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 609
+    Script: |
+       if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19079
+    AegisName: suna
+    Name: Bandana Nukenin Areia
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 610
+    Script: |
+      if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19080
+    AegisName: pedra
+    Name: Bandana Nukenin Pedra
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 611
+    Script: |
+      if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19081
+    AegisName: folha
+    Name: Bandana Nukenin konoha
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 612
+    Script: |
+      if(med_basico == 1) {skill 304,1;} bonus bSkillMove,50; ; bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,25; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25; skill 487,1;
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19082
+    AegisName: som
+    Name: Bandana Nukenin Som
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 4
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 613
+    Script: |
+      skill 522,10; skill 523,10; skill 117,5;
+
+  - Id: 19034
+    AegisName: Anbu
+    Name: Bandana de lado konoha
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 534
+    Script: |
+       
+
+  - Id: 19018
+    AegisName: dragao_gelo
+    Name: Bandana de lado suna
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 518
+
+  - Id: 19019
+    AegisName: dragao_fogo
+    Name: Bandana de lado névoa
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 519
+
+  - Id: 19165
+    AegisName: oculos_gatou
+    Name: Bandana de lado névem
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 729
+
+  - Id: 19025
+    AegisName: BandAid
+    Name: Bandana de pescoço konoha
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 525
+
+  - Id: 19096
+    AegisName: mario_cap
+    Name: Bandana pescoço suna
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 616
+
+  - Id: 19097
+    AegisName: fred_asaselementais
+    Name: Bandana pescoço névoa
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 617
+
+  - Id: 19098
+    AegisName: fred_asadefada
+    Name: Bandana pescoço névem
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 618
+
+  - Id: 19168
+    AegisName: yamato_suna
+    Name: Bandana Yamato suna
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 727
+
+  - Id: 19169
+    AegisName: yamato_kiri
+    Name: Bandana Yamato kiri
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 728
+
+  - Id: 19170
+    AegisName: bandana_yamato
+    Name: Bandana Yamato konoha
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 730
+
+  - Id: 19095
+    AegisName: golden_wings
+    Name: Yamato névem
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 615
+
+  - Id: 19030
+    AegisName: Orelhas_Kyuubi
+    Name: Kisame konoha
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 530
+
+  - Id: 19156
+    AegisName: kaiza
+    Name: Kisame suna
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 726
+
+  - Id: 19016
+    AegisName: capitao_anbu
+    Name: Kisame névoa
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 516
+
+  - Id: 19127
+    AegisName: Sombrancelhas_Grossas
+    Name: Kisame névem
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 623
+
+  - Id: 19077
+    AegisName: jiraya
+    Name: Jiraya
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 608
+
+  - Id: 19024
+    AegisName: Asas_Chouji
+    Name: Asas Chouji
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 524
+    Script: |
+      bonus2 bAddRace,RC_NonBoss,15; bonus2 bAddRace,RC_Boss,15; bonus2 bAddRace2,5,15; bonus bSpeedRate,20; bonus bSplashRange,2; bonus bMaxHPRate,7; bonus2 bSCResist,SC_Stun,20; bonus2 bSCResist,SC_Freeze,20; bonus2 bSCResist,Eff_Silence,20; bonus2 bSCResist,Eff_Poison,20;
+
+  - Id: 19028
+    AegisName: Inteira_nevoa
+    Name: Inteira névoa
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 528
+    Script: |
+      skill 950,1;
+
+  - Id: 19033
+    AegisName: Kankuro_Mask
+    Name: Aura vermelha
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 533
+
+  - Id: 19009
+    AegisName: Hokage_Hat
+    Name: Hokage
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 509
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19010
+    AegisName: black
+    Name: Otokage
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 510
+    Script: |
+      skill 522,10; skill 523,10; skill 117,5; bonus bStr,5; bonus bAgi,25; bonus bAllStats,20;
+
+  - Id: 19012
+    AegisName: yellow
+    Name: Mizukage
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    EquipLevelMin: 99
+    Refineable: true
+    View: 512
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19035
+    AegisName: marron
+    Name: Tsuchikage
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    EquipLevelMin: 99
+    Refineable: true
+    View: 535
+    Script: |
+      skill 522,10; skill 523,10; skill 117,5; bonus bStr,5; bonus bAgi,25; bonus bAllStats,20;
+
+  - Id: 19036
+    AegisName: cinza
+    Name: Raikage
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    EquipLevelMin: 99
+    Refineable: true
+    View: 536
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19148
+    AegisName: blue
+    Name: Kazekage
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    EquipLevelMin: 99
+    Refineable: true
+    View: 511
+    Script: |
+       
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19026
+    AegisName: Kyuubi_hat
+    Name: Kyuubi_hat
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 0
+    Slots: 1
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 256
+
+  - Id: 19027
+    AegisName: Tobi_Mask
+    Name: Mascara Tobi
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Sell: 10
+    Weight: 10
+    Locations:
+      Head_Top: true
+    WeaponLevel: 1
+    View: 527
+
+  - Id: 19029
+    AegisName: Cauda_Kyuubi
+    Name: Cauda_Kyuubi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 10
+    Slots: 2
+    Locations:
+      Both_Accessory: true
+    EquipLevelMin: 200
+    View: 529
+    Script: |
+      bonus bInt,20;
+
+  - Id: 19031
+    AegisName: Akamaru_Hat
+    Name: Akamaru_Hat
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 0
+    Slots: 2
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 531
+
+  - Id: 19037
+    AegisName: Dowry
+    Name: Dowry
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Locations:
+      Head_Top: true
+    EquipLevelMin: 1
+    View: 537
+
+  - Id: 19005
+    AegisName: kanku
+    Name: Kankuro_cap
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 505
+
+  - Id: 19083
+    AegisName: sasuke
+    Name: Asas_Do_Sasuke
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Slots: 4
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 614
+
+  - Id: 19128
+    AegisName: Mascara_Zabuza
+    Name: Mascara Zabuza
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 621
+    Script: |
+      bonus bInt,5; bonus bDex,5;
+
+  - Id: 19015
+    AegisName: elite
+    Name: AnbuMask
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Slots: 4
+    Locations:
+      Head_Top: true
+    EquipLevelMin: 99
+    Refineable: true
+    View: 515
+    Script: |
+      skill 5,10; skill 379,10; skill 263,10; skill 48,10; skill 58,10; skill 399,10; skill 379,10; skill 266,5; skill 61,5; skill 509,10; skill 421,7; skill 110,4; skill 136,10; skill 517,10; skill 480,5; skill 357,5; skill 62,10; skill 254,10; skill 370,10; skill 171,10; skill 365,1;
+
+  - Id: 19017
+    AegisName: capuz_anbu
+    Name: capuz_anbu
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Locations:
+      Head_Top: true
+    EquipLevelMin: 99
+    View: 517
+    Script: |
+      skill 27,3; skill 255,2; skill 999,1; bonus bAllStats,5;
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(256);}
+
+  - Id: 19022
+    AegisName: Capuz_Anbu2
+    Name: Capuz_Anbu2
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Locations:
+      Head_Mid: true
+    EquipLevelMin: 99
+    View: 522
+    Script: |
+      skill 724,4;
+
+  - Id: 19038
+    AegisName: anbu3
+    Name: AnbuMask
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Slots: 4
+    Locations:
+      Head_Top: true
+    EquipLevelMin: 99
+    Refineable: true
+    View: 538
+    Script: |
+      skill 152,1;
+
+  - Id: 19020
+    AegisName: akatsuki_hat
+    Name: akatsuki_hat
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 520
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") unequip(512);
+    UnEquipScript: |
+       changebase Class;
+
+  - Id: 19195
+    AegisName: espada1
+    Name: Espada 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+      Left_Hand: true
+      Costume_Head_Mid: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 732
+    Script: |
+       bonus bStr,20;
+
+    Script: |
+       skill 27,2;
+
+  - Id: 19196
+    AegisName: espada2
+    Name: Espada 2
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+      Left_Hand: true
+      Costume_Head_Mid: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 733
+    Script: |
+       skill 27,2;
+
+  - Id: 19197
+    AegisName: Akatsuki
+    Name: Akatsuki
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") unequip(512);
+    UnEquipScript: |
+       changebase Class; savepoint "lou_ino02",237,167;
+
+  - Id: 19023
+    AegisName: rinnegan
+    Name: rinnegan
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 523
+    Script: |
+       skill 758,1; bonus bAllStats,20; skill 1014,1; skill 995,1; bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,5; bonus2 bSubEle,Ele_Poison,3; bonus2 bSubEle,Ele_Dark,5; bonus bSpeedAddRate,5; skill 152,1; skill 990,1;
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(256);}
+
+  - Id: 19042
+    AegisName: Anel_Rei
+    Name: Anel_Rei
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Right_Accessory: true
+    EquipLevelMin: 150
+    View: 731
+    Script: |
+       changebase 4009; skill 260,5; skill 401,1; skill 261,5; skill 370,10; skill 262,1; skill 264,1; skill 267,5; skill 270,10; skill 29,10; skill 154,1; skill 115,5; skill 542,10; skill 134,10; skill 376,5; skill 132,5; skill 133,5; skill 486,5; skill 282,10; skill 220,1; skill 221,5; skill 222,1; skill 389,5; skill 525,9; skill 426,5; skill 522,10; skill 540,10; skill 271,5; skill 150,1;
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19043
+    AegisName: Anel_Sei
+    Name: Anel_Sei
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Right_Accessory: true
+    EquipLevelMin: 150
+    Script: |
+       skill 14,10; skill 29,10; skill 51,10; skill 15,10; skill 87,10; skill 286,5; skill 86,10; skill 88,10; skill 89,10; skill 3,10; skill 60,10; skill 403,1; skill 121,5; skill 357,10; skill 355,10; skill 404,10; skill 281,10; skill 537,10; skill 538,10; skill 539,10; skill 528,5; skill 525,9; skill 20,10; skill 150,1;
+
+  - Id: 19044
+    AegisName: Anel_Haku
+    Name: Anel_Haku
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Right_Accessory: true
+    EquipLevelMin: 150
+    Script: |
+       skill 39,10; skill 153,10; skill 387,10; skill 41,10; skill 1,9; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 36,10; skill 49,10; skill 424,5; skill 425,7; skill 426,5; skill 113,5; skill 257,5; skill 383,10; skill 421,5; skill 425,7; skill 420,1; skill 524,9; skill 523,9; skill 525,9; skill 522,10; skill 533,10; skill 117,5; skill 150,1; skill 411,10; skill 412,1; skill 413,7; skill 414,1; skill 415,7; skill 416,1; skill 417,7; skill 418,1; skill 419,7; skill 420,1; skill 265,10; skill 29,10; skill 368,5; skill 74,5; skill 111,5; skill 527,5; skill 410,1; skill 359,1; skill 261,5; skill 479,10; skill 228,10; skill 268,5; skill 51,10; skill 257,5; skill 485,10;
+
+  - Id: 19045
+    AegisName: Anel_Shu
+    Name: Anel_Shu
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Right_Accessory: true
+    EquipLevelMin: 150
+    Script: |
+       skill 39,10; skill 41,10; skill 1,9; skill 150,1; skill 19,10; skill 29,10; skill 49,10; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 17,10; skill 18,10; skill 84,10; skill 83,10; skill 154,1; skill 523,9; skill 2,10; skill 145,1; skill 123,5; skill 524,9; skill 536,5; skill 541,10; skill 280,10; skill 5,10; skill 525,9; skill 522,10; skill 426,5; skill 533,10; skill 117,5; skill 51,10; skill 219,5; skill 489,5; skill 30,10; skill 475,1; skill 225,10; skill 285,5; skill 318,5;
+
+  - Id: 19046
+    AegisName: Anel_Kai
+    Name: Anel_Kai
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Right_Accessory: true
+    EquipLevelMin: 150
+    Script: |
+       skill 54,10; skill 1,9; skill 2,10; skill 49,10; skill 52,20; skill 261,5; skill 270,5; skill 40,1; skill 6,10; skill 36,10; skill 39,10; skill 41,10; skill 29,10; skill 53,1; skill 51,10; skill 137,5; skill 138,10; skill 139,10; skill 140,10; skill 141,10; skill 1004,1; skill 25,1; skill 35,1; skill 42,10; skill 522,10; skill 523,10; skill 524,5; skill 525,5; skill 110,5; skill 78,1; skill 71,4; skill 289,5; skill 227,10; skill 228,10; skill 231,5; skill 399,10; skill 363,10; skill 483,1; skill 135,10; skill 379,10; skill 406,10; skill 390,5; skill 490,10; skill 426,5; skill 396,1; skill 243,1; skill 247,5;
+
+  - Id: 19047
+    AegisName: Anel_Kuu
+    Name: Anel_Kuu
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Right_Accessory: true
+    EquipLevelMin: 150
+    View: 520
+    Script: |
+       skill 39,10; skill 41,10; skill 1,9; skill 150,1; skill 304,1; skill 4,10; skill 9,10; skill 142,1; skill 62,10; skill 22,10; skill 25,1; skill 28,20; skill 29,10; skill 31,1; skill 33,10; skill 72,1; skill 156,1; skill 259,10; skill 261,5; skill 268,5; skill 421,5; skill 265,10; skill 266,5; skill 154,1; skill 399,10; skill 401,1; skill 70,10; skill 534,10; skill 407,1; skill 378,5; skill 54,10; skill 228,10; skill 478,10; skill 120,5; skill 369,10; skill 524,9; skill 523,9; skill 525,9; skill 426,5; skill 522,10; skill 533,10; skill 68,5; skill 270,10; skill 27,4;
+
+  - Id: 19048
+    AegisName: Anel_Nan
+    Name: Anel_Nan
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Left_Accessory: true
+    EquipLevelMin: 150
+    Script: |
+       skill 39,10; skill 153,10; skill 387,10; skill 41,10; skill 1,9; skill 150,1; skill 117,5; skill 48,10; skill 118,5; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 43,10; skill 261,5; skill 262,1; skill 263,10; skill 252,10; skill 93,1; skill 272,10; skill 45,10; skill 49,10; skill 380,10; skill 375,10; skill 273,10; skill 371,5; skill 372,10; skill 136,10; skill 154,1; skill 7,10; skill 362,10; skill 76,10; skill 29,10; skill 523,9; skill 524,9; skill 525,9; skill 426,5; skill 522,10; skill 480,10; skill 1003,2; skill 533,10; skill 398,10; skill 384,10; skill 379,10; skill 485,10; skill 479,10; skill 268,5; skill 228,10;
+
+  - Id: 19049
+    AegisName: Anel_Kita
+    Name: Anel_Kita
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Left_Accessory: true
+    EquipLevelMin: 150
+    Script: |
+       skill 39,10; skill 153,10; skill 154,1; skill 387,10; skill 41,10; skill 1,9; skill 150,1; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 90,10; skill 29,10; skill 91,10; skill 92,5; skill 8,10; skill 249,10; skill 157,1; skill 476,5; skill 16,10; skill 396,1; skill 279,10; skill 13,10; skill 119,5; skill 523,9; skill 524,9; skill 283,10; skill 484,10; skill 73,10; skill 540,9; skill 524,9; skill 525,9; skill 426,5; skill 448,5; skill 444,1; skill 522,10; skill 366,10; skill 533,10; skill 85,10; skill 485,10; skill 458,5; skill 540,10; skill 283,10;
+
+  - Id: 19050
+    AegisName: Anel_San
+    Name: Anel_San
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Left_Accessory: true
+    EquipLevelMin: 150
+    Script: |
+       skill 39,10; skill 153,10; skill 387,10; skill 41,10; skill 1,9; skill 51,10; skill 80,20; skill 117,5; skill 123,5; skill 125,1; skill 122,5; skill 510,10; skill 29,10; skill 500,5; skill 501,1; skill 213,5; skill 135,10; skill 401,1; skill 269,5; skill 228,10; skill 229,5; skill 115,5; skill 116,5; skill 118,5; skill 119,5; skill 120,5; skill 121,5; skill 12,10; skill 93,1; skill 524,9; skill 266,5; skill 405,1; skill 214,5; skill 1005,1; skill 268,5; skill 288,5; skill 389,5; skill 529,5; skill 358,1; skill 402,5; skill 427,3; skill 441,10; skill 438,5; skill 439,5; skill 440,5; skill 114,5; skill 384,10; skill 434,3; skill 426,5; skill 485,10;
+
+  - Id: 19051
+    AegisName: Anel_Gyoku
+    Name: Anel_Gyoku
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 20
+    Weight: 100
+    Slots: 2
+    Locations:
+      Left_Accessory: true
+    EquipLevelMin: 150
+    Script: |
+       skill 1,9; skill 153,10; skill 387,10; skill 142,1; skill 304,1; skill 4,10; skill 9,10; skill 36,10; skill 39,10; skill 41,10; skill 49,10; skill 424,5; skill 425,7; skill 426,5; skill 113,5; skill 257,5; skill 383,10; skill 421,5; skill 425,7; skill 420,1; skill 154,1; skill 524,9; skill 523,9; skill 525,9; skill 522,10; skill 533,10; skill 117,5; skill 150,1; skill 411,10; skill 412,1; skill 413,7; skill 414,1; skill 415,7; skill 416,1; skill 417,7; skill 418,1; skill 419,7; skill 420,1; skill 265,10; skill 29,10; skill 368,5; skill 74,5; skill 111,5; skill 527,5; skill 410,1; skill 485,10; skill 359,1; skill 261,5; skill 387,10; skill 479,10; skill 228,10; skill 268,5; skill 51,10; skill 257,5;
+
+  - Id: 19052
+    AegisName: Sandalias_Ninjas
+    Name: Sandalias Ninjas
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 6
+    Slots: 2
+    Locations:
+      Shoes: true
+    Refineable: true
+    Script: |
+       bonus bMaxSPrate,15; bonus bMaxHPrate,15; bonus bAgi,10;
+
+  - Id: 19065
+    AegisName: Botas_Lee
+    Name: Botas_Lee
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 6
+    Slots: 2
+    Locations:
+      Shoes: true
+    Refineable: true
+    Script: |
+       bonus bSpeedAddRate,25; bonus bAspdRate,10; bonus bAgi,5;
+
+  - Id: 19053
+    AegisName: Traje_Jounin
+    Name: Traje Jounin
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10
+    Weight: 100
+    Defense: 13
+    Slots: 1
+    Locations:
+      Armor: true
+    Refineable: true
+    Script: |
+      bonus bMdef,11; bonus bInt,5; bonus bDex,5;
+
+  - Id: 19062
+    AegisName: Traje_Gai
+    Name: Traje_Gai
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10
+    Weight: 100
+    Defense: 11
+    Slots: 1
+    Locations:
+      Armor: true
+    Refineable: true
+    Script: |
+       bonus bDefEle,Ele_Wind; bonus bMdef,1; bonus bAgi,2;
+
+  - Id: 19066
+    AegisName: Armadura_Shodaime
+    Name: Armadura_Shodaime
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10
+    Weight: 100
+    Defense: 12
+    Slots: 1
+    Locations:
+      Armor: true
+    Refineable: true
+    Script: |
+      bonus bDefEle,Ele_Earth; bonus bAllStats,2; skill 283,5;
+
+  - Id: 19067
+    AegisName: Armadura_Nidaime
+    Name: Armadura_Nidaime
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10
+    Weight: 100
+    Defense: 12
+    Slots: 1
+    Locations:
+      Armor: true
+    Refineable: true
+    Script: |
+       bonus bDefEle,Ele_Water; bonus bAllStats,2; skill 281,5;
+
+  - Id: 19054
+    AegisName: Pedra_Suiton
+    Name: Cabeça de treino
+    Sell: 20
+    Weight: 10
+
+  - Id: 19055
+    AegisName: Pedra_Katon
+    Name: Pedra_katon
+    Sell: 20
+    Weight: 10
+
+  - Id: 19056
+    AegisName: Pedra_Fuuton
+    Name: Pedra_Fuuton
+    Sell: 20
+    Weight: 10
+
+  - Id: 19057
+    AegisName: Pedra_Doton
+    Name: Pedra_Doton
+    Sell: 20
+    Weight: 10
+
+  - Id: 19058
+    AegisName: Pedra_Raiton
+    Name: Pedra_Raiton
+    Sell: 20
+    Weight: 10
+
+  - Id: 19060
+    AegisName: Retrato
+    Name: Retrato
+    Type: Usable
+    Buy: 50000
+    Weight: 10
+
+  - Id: 19061
+    AegisName: Icha_Icha_Paradise
+    Name: Icha_Icha_Paradise
+    Type: Usable
+    Buy: 50000
+    Weight: 10
+
+  - Id: 19013
+    AegisName: clone
+    Name: Mission Checker
+    Type: Etc
+    Weight: 0
+    Script: |
+       doevent "mission::OnWhisperGlobal";
+
+  - Id: 19014
+    AegisName: clone2
+    Name: Clonning_Scroll2
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       if(readparam(Sp) <= 1000) {dispbottom "Não tem sp o suficiente"; end;} soundeffect "kage.wav",1; getmapxy @map$,@x,@y,0; for(set .@i,0;.@i < 1; set .@i,.@i + 1) clone @map$,@x,@y,"NPCNAME::OnEVENT",getcharid(0),getcharid(0),0x83,1,15; set SP, SP - 1000; set HP, HP - 500;
+
+  - Id: 19059
+    AegisName: Colar_Tsunade
+    Name: Colar_Tsunade
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 10
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    EquipLevelMin: 200
+    Script: |
+       bonus bVit,20;
+
+  - Id: 19064
+    AegisName: luvas_kakashi
+    Name: luvas_kakashi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    EquipLevelMin: 1
+    Script: |
+       skill 39,9; skill 41,4; skill 154,1; skill 40,1; skill 41,1;
+    EquipScript: |
+       setcart 1;
+    UnEquipScript: |
+       setoption 0;
+
+  - Id: 19063
+    AegisName: Ramen
+    Name: Ramen
+    Buy: 1200
+    Weight: 150
+    Script: |
+       if (callfunc("ItemDelay",19063,3,2,7,8)) {percentheal 5,0; }
+
+  - Id: 19041
+    AegisName: kuty
+    Name: Pergaminho da Invocação
+    Buy: 50
+    Weight: 70
+    Script: |
+      summon "--ja--",1312,10000000;percentheal -99,0;end;
+
+  - Id: 19084
+    AegisName: Tyashu
+    Name: Tyashu-Ramen
+    Buy: 1200
+    Weight: 150
+    Script: |
+       if (callfunc("ItemDelay",19084,3,15,7,8)) {itemheal rand(5000,5000),0;}
+
+  - Id: 19085
+    AegisName: Yasai
+    Name: Yasai-Ramen
+    Buy: 1200
+    Weight: 150
+    Script: |
+       if (callfunc("ItemDelay",19085,3,2,7,8)) {itemheal rand(5000,5000),0;}
+
+  - Id: 19086
+    AegisName: Ebi
+    Name: Ebi-Ramen
+    Buy: 1200
+    Weight: 150
+    Script: |
+       if (callfunc("ItemDelay",19086,3,2,7,8)) {percentheal 10,0;}
+
+  - Id: 19087
+    AegisName: Kani
+    Name: Kani-Ramen
+    Buy: 1200
+    Weight: 150
+    Script: |
+       if (callfunc("ItemDelay",19087,3,2,7,8)) {itemheal rand(5000,5000),0;}
+
+  - Id: 19088
+    AegisName: Gyoza
+    Name: Kit Médico de Vitalidade
+    Buy: 1200
+    Weight: 150
+    Script: |
+       if (callfunc("ItemDelay",19088,3,2,7,8)) {percentheal 10,0;}
+
+  - Id: 19089
+    AegisName: Shio
+    Name: Shio-Ramen
+    Buy: 1200
+    Weight: 150
+    Script: |
+       if (callfunc("ItemDelay",19089,3,2,7,8)) {percentheal 0,5;}
+
+  - Id: 19090
+    AegisName: Shoyu
+    Name: Shoyu-Ramen
+    Buy: 1200
+    Weight: 150
+    Script: |
+       if (callfunc("ItemDelay",19090,3,2,7,8)) {percentheal 0,10;}
+
+  - Id: 19091
+    AegisName: Misso
+    Name: Kit Médico de Stamina
+    Buy: 1200
+    Weight: 150
+    Script: |
+       if (callfunc("ItemDelay",19091,3,2,7,8)) {percentheal 0,10;}
+
+  - Id: 19092
+    AegisName: capa_yondaime
+    Name: Capa Do Yondaime
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 500
+    Defense: 3
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      skill 756,1; skill 532,10;skill 464,3; skill 14,10; skill 89,5; skill 19,10; skill 83,5; skill 421,7; skill 322,10; skill 667,10; skill 668,10; skill 663,10; skill 311,10; skill 996,1; skill 62,10; skill 89,5; skill 83,5; skill 428,7; skill 653,5; skill 541,5; skill 394,5; skill 177,5; skill 678,5; skill 182,5; skill 667,5; skill 668,5; skill 663,5; skill 369,5; skill 14,10; skill 488,5; skill 28,10; skill 659,10; skill 670,10; skill 999,1;
+
+  - Id: 19093
+    AegisName: capa_sasuke
+    Name: Capa Do Sasuke
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 500
+    Defense: 3
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      bonus bInt,10; bonus bDex,10; skill 51,10;
+
+  - Id: 19094
+    AegisName: escudo_rashoumon
+    Name: Aura Jinchuuriki
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 505
+    Script: |
+      bonus bAllStats,20; bonus2 bAddRace,RC_NonBoss,5; bonus2 bAddRace,RC_Boss,5; bonus2 bAddRace2,5,5; bonus bMatkRate,5; bonus bMaxHPRate,5; bonus bMaxSPRate,5; skill 761,1; skill 1010,1; skill 506,1; skill 524,10; skill 523,10; skill 51,5; skill 213,5;
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(256);}
+
+  - Id: 19130
+    AegisName: Mask1
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 701
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19131
+    AegisName: Mask2
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 702
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19132
+    AegisName: Mask3
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 703
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19133
+    AegisName: Mask4
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 704
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19134
+    AegisName: Mask5
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 705
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19135
+    AegisName: Mask6
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 706
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19136
+    AegisName: Mask7
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 707
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19137
+    AegisName: Mask8
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 708
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19138
+    AegisName: Mask9
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 709
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19139
+    AegisName: Mask10
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 710
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19140
+    AegisName: Mask11
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 711
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19141
+    AegisName: Mask12
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 712
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19142
+    AegisName: Mask13
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 713
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19143
+    AegisName: Mask14
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 714
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19144
+    AegisName: Mask15
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 715
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19145
+    AegisName: Mask16
+    Name: Máscara ANBU
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 716
+    EquipScript: |
+      if(strcharinfo(3) == "job3_arch01") {unequip(512);}
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19002
+    AegisName: Byakugan
+    Name: Byakugan
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 502
+    Script: |
+      skill 401,1; bonus bIntravision,0; callfunc "kg_byakugan";
+    UnEquipScript: |
+      DelTimer "FOME_BYAKUGAN_DICREASE::OnHPBYAKUGAN1"; DelTimer "FOME_BYAKUGAN_DICREASE::OnHPBYAKUGAN2"; DelTimer "FOME_BYAKUGAN_DICREASE::OnHPBYAKUGAN3"; DelTimer "FOME_BYAKUGAN_DICREASE::OnHPBYAKUGAN4"; end;
+
+  - Id: 19068
+    AegisName: sharingan
+    Name: Sharingan lvl 1
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 503
+    Script: |
+      bonus bCopycat,5; bonus bMatkRate,6; bonus bSpeedAddRate,5;
+    UnEquipScript: |
+      DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA1";
+
+  - Id: 19069
+    AegisName: sharingan2
+    Name: Sharingan lvl 2
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 503
+    Script: |
+      bonus bCopycat,10; bonus bMatkRate,13; bonus bSpeedAddRate,5;
+    UnEquipScript: |
+      DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA2";
+
+  - Id: 19070
+    AegisName: sharingan3
+    Name: Sharingan lvl 3
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 503
+    Script: |
+      bonus bCopycat,15; bonus bMatkRate,20; bonus bSpeedAddRate,5;
+    UnEquipScript: |
+      DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA3";
+
+  - Id: 19003
+    AegisName: Mangekyou
+    Name: Mangekyou Sharingan
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 4
+    Locations:
+      Head_Low: true
+    EquipLevelMin: 99
+    Refineable: true
+    View: 503
+    Script: |
+      bonus bDex,8; bonus bMatkRate,20; callfunc "sharingan";
+    UnEquipScript: |
+      DelTimer "FOME_UCHIHA_DICREASE::OnHPUCHIHA4";
+
+  - Id: 19149
+    AegisName: jarro_gaara
+    Name: Selo_amaldicoado1
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 719
+    Script: |
+      callfunc "KG_SELO1";
+    UnEquipScript: |
+      DelTimer "FOME_SELO1_DICREASE::OnHPSELO11"; DelTimer "FOME_SELO1_DICREASE::OnHPSELO12"; DelTimer "FOME_SELO1_DICREASE::OnHPSELO13"; DelTimer "FOME_SELO1_DICREASE::OnHPSELO14"; end;
+
+  - Id: 19150
+    AegisName: pergaminho_eremita
+    Name: Selo_amaldicoado2
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 720
+    Script: |
+      callfunc "KG_SELO2";
+    UnEquipScript: |
+      DelTimer "FOME_SELO2_DICREASE::OnHPSELO21"; DelTimer "FOME_SELO2_DICREASE::OnHPSELO22"; DelTimer "FOME_SELO2_DICREASE::OnHPSELO23"; DelTimer "FOME_SELO2_DICREASE::OnHPSELO24"; end;
+
+  - Id: 19151
+    AegisName: aura_de_sombra
+    Name: Controle das Sombras
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 721
+    Script: |
+       skill 1005,1; callfunc "ROMARIO";
+    UnEquipScript: |
+      DelTimer "FOME_NARA_DICREASE::OnHPNARA1"; DelTimer "FOME_NARA_DICREASE::OnHPNARA2"; DelTimer "FOME_NARA_DICREASE::OnHPNARA3"; DelTimer "FOME_NARA_DICREASE::OnHPNARA4"; end;
+
+  - Id: 19152
+    AegisName: Koori
+    Name: Hyouton
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 722
+    Script: |
+      callfunc "KG_GELO";
+    UnEquipScript: |
+      DelTimer "FOME_GELO_DICREASE::OnHPGELO1"; DelTimer "FOME_GELO_DICREASE::OnHPGELO2"; DelTimer "FOME_GELO_DICREASE::OnHPGELO3"; DelTimer "FOME_GELO_DICREASE::OnHPGELO4"; end;
+
+  - Id: 19153
+    AegisName: selo_tsunade
+    Name: Akimichi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 723
+    Script: |
+      callfunc "kg_AKIMICHI";
+    UnEquipScript: |
+      DelTimer "FOME_AKIMICHI_DICREASE::OnHPAKIMICHI1"; DelTimer "FOME_AKIMICHI_DICREASE::OnHPAKIMICHI2"; DelTimer "FOME_AKIMICHI_DICREASE::OnHPAKIMICHI3"; DelTimer "FOME_AKIMICHI_DICREASE::OnHPAKIMICHI4"; atcommand "@size 3"; end;
+
+  - Id: 19154
+    AegisName: Asas_sasori
+    Name: Kugutsu
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 724
+    Script: |
+      callfunc "kg_MARIONETE";
+    UnEquipScript: |
+      DelTimer "FOME_MARIONETE_DICREASE::OnHPMARIONETE1"; DelTimer "FOME_MARIONETE_DICREASE::OnHPMARIONETE2"; DelTimer "FOME_MARIONETE_DICREASE::OnHPMARIONETE3"; DelTimer "FOME_MARIONETE_DICREASE::OnHPMARIONETE4"; end;
+
+  - Id: 19155
+    AegisName: aura_de_fogo
+    Name: portoes
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 725
+    Script: |
+      callfunc "RONALDO";
+    UnEquipScript: |
+       DelTimer "FOME_LEE_DICREASE::OnHPLEE1"; DelTimer "FOME_LEE_DICREASE::OnHPLEE2"; DelTimer "FOME_LEE_DICREASE::OnHPLEE3"; DelTimer "FOME_LEE_DICREASE::OnHPLEE4";
+
+  - Id: 19147
+    AegisName: Mask18
+    Name: Haku
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 718
+    Script: |
+      bonus bCopycat,100; bonus bShortWeaponDamageReturn,80;
+
+  - Id: 19146
+    AegisName: Mask17
+    Name: Nara
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 717
+    Script: |
+      bonus bCastrate,-50; bonus bDelayRate,-35;
+
+  - Id: 4436
+    AegisName: Mask19
+    Name: Deidara
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Locations:
+      Head_Low: true
+    Refineable: true
+    Script: |
+      changebase 4047; callfunc "kg_kibaku";
+    UnEquipScript: |
+      changebase Class;
+
+  - Id: 19157
+    AegisName: bengala_gatou
+    Name: bengala gatou
+    Buy: 500
+    Weight: 10
+
+  - Id: 19158
+    AegisName: Oculos_de_Protecao
+    Name: Oculos de Protecao
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 6
+    Slots: 2
+    Locations:
+      Shoes: true
+    Refineable: true
+    Script: |
+       bonus2 bAddEffWhenHit,Eff_Freeze,1000; bonus bMaxSPrate,-50; bonus bMaxHPrate,-50;
+
+  - Id: 19159
+    AegisName: Espada_Samurai
+    Name: Espada samurai
+    Buy: 500
+    Weight: 10
+
+  - Id: 19160
+    AegisName: garrafa_dagua
+    Name: garrafa dagua
+    Buy: 500
+    Weight: 10
+
+  - Id: 19161
+    AegisName: Inari-hat
+    Name: Chapéu inari
+    Buy: 500
+    Weight: 10
+
+  - Id: 19162
+    AegisName: Lasca_de_zambatou
+    Name: Lasca de zambatou
+    Buy: 500
+    Weight: 10
+
+  - Id: 19163
+    AegisName: mascara_haku
+    Name: mascara haku
+    Buy: 500
+    Weight: 10
+
+  - Id: 19164
+    AegisName: mask_zabuza
+    Name: mask zabuza
+    Buy: 500
+    Weight: 10
+
+  - Id: 19166
+    AegisName: sandalias_haku
+    Name: sandalias haku
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 6
+    Slots: 2
+    Locations:
+      Shoes: true
+    Refineable: true
+    Script: |
+      bonus bMagicDamageReturn,10; bonus bMaxSPrate, 32; bonus bMaxHPrate, 32;
+
+  - Id: 19167
+    AegisName: senbons_haku
+    Name: senbons haku
+    Buy: 500
+    Weight: 10
+
+  - Id: 19171
+    AegisName: Chave_Mestra_da_Vila
+    Name: Chave Mestra da Vila
+    Weight: 10
+
+  - Id: 19172
+    AegisName: Chave_Mestra_Nukenin
+    Name: Chave Mestra Nukenin
+    Weight: 10
+
+  - Id: 19173
+    AegisName: Selo_do_Goffu_Kekkai
+    Name: Selo do Goffu Kekkai
+    Weight: 10
+
+  - Id: 19174
+    AegisName: Chakra_Ichibi
+    Name: Fragmento de Chakra Ichibi
+    Weight: 1
+
+  - Id: 19175
+    AegisName: Chakra_Nibi
+    Name: Fragmento de Chakra Nibi
+    Weight: 1
+
+  - Id: 19176
+    AegisName: Chakra_Sanbi
+    Name: Fragmento de Chakra Sanbi
+    Weight: 1
+
+  - Id: 19177
+    AegisName: Chakra_Yonbi
+    Name: Fragmento de Chakra Yonbi
+    Weight: 1
+
+  - Id: 19178
+    AegisName: Chakra_Gobi
+    Name: Fragmento de Chakra Gobi
+    Weight: 1
+
+  - Id: 19179
+    AegisName: Chakra_Rokubi
+    Name: Fragmento de Chakra Rokubi
+    Weight: 1
+
+  - Id: 19180
+    AegisName: Chakra_Shichibi
+    Name: Fragmento de Chakra Shichibi
+    Weight: 1
+
+  - Id: 19181
+    AegisName: Chakra_Hachibi
+    Name: Fragmento de Chakra Hachibi
+    Weight: 1
+
+  - Id: 19182
+    AegisName: Chakra_Kyuubi
+    Name: Fragmento de Chakra Kyuubi
+    Type: Etc
+    Buy: 50
+    Weight: 70
+
+  - Id: 2383
+    AegisName: Armadura_de_Brynhildr
+    Name: Colete básico suiton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+      bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5;
+
+  - Id: 2352
+    AegisName: Traje_do_Aprendiz
+    Name: Colete reforçado suiton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+      bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,30; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15;
+
+  - Id: 2353
+    AegisName: Beneeo_de_Odin
+    Name: Colete avançado suiton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+      bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,50; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25;
+
+  - Id: 2356
+    AegisName: Batina_da_Fé_
+    Name: Colete básico Katon
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5;
+
+  - Id: 2347
+    AegisName: Couraça_da_Submissão_Oceanica
+    Name: Colete reforçado Katon
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,30; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15;
+
+  - Id: 2349
+    AegisName: Couraça_da_Liberdade_Celestial
+    Name: Colete avançado Katon
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,50; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25;
+
+  - Id: 19183
+    AegisName: coleteraiton1
+    Name: Colete Básico Raiton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5;
+
+  - Id: 19184
+    AegisName: coleteraiton2
+    Name: Colete Reforçado Raiton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,30; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15;
+
+  - Id: 19185
+    AegisName: coleteraiton3
+    Name: Colete avançado Raiton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,50; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25;
+
+  - Id: 19186
+    AegisName: coletedoton1
+    Name: Colete Básico Doton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5;
+
+  - Id: 19187
+    AegisName: coletedoton2
+    Name: Colete reforçado Doton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,30; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15;
+
+  - Id: 19188
+    AegisName: coletedoton3
+    Name: Colete Avançado Doton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,50; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25;
+
+  - Id: 19189
+    AegisName: coletefuton1
+    Name: Colete Básico Fuuton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,10; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,15;
+
+  - Id: 19190
+    AegisName: coletefuuton2
+    Name: Colete reforçado Fuuton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,30;
+
+  - Id: 19191
+    AegisName: coletefuuton3
+    Name: Colete Avançado Fuuton
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,50;
+
+  - Id: 19192
+    AegisName: coletetai1
+    Name: Colete Básico Taijutsu
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,5; bonus2 bSubEle,Ele_Fire,5; bonus2 bSubEle,Ele_Water,5; bonus2 bSubEle,Ele_Wind,5; bonus2 bSubEle,Ele_Earth,5; bonus2 bSubEle,Ele_Holy,15; bonus2 bSubEle,Ele_Poison,5; bonus2 bSubEle,Ele_Dark,5;
+
+  - Id: 19193
+    AegisName: coletetai2
+    Name: Colete reforçado Taijutsu
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,35; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15;
+
+  - Id: 19194
+    AegisName: coletetai3
+    Name: Colete Avançado Taijutsu
+    ArmorLevel: 1
+    Type: Armor
+    Weight: 30
+    Locations:
+      Armor: true
+    EquipLevelMin: 180
+    Script: |
+       bonus2 bSubEle,Ele_Ghost,25; bonus2 bSubEle,Ele_Fire,25; bonus2 bSubEle,Ele_Water,25; bonus2 bSubEle,Ele_Wind,25; bonus2 bSubEle,Ele_Earth,25; bonus2 bSubEle,Ele_Holy,65; bonus2 bSubEle,Ele_Poison,25; bonus2 bSubEle,Ele_Dark,25;
+
+  - Id: 19300
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 756
+
+  - Id: 19301
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 757
+
+  - Id: 19302
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 758
+
+  - Id: 19304
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 760
+
+  - Id: 19305
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 761
+
+  - Id: 19306
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 762
+
+  - Id: 19307
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 763
+
+  - Id: 19308
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 764
+
+  - Id: 19309
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 765
+
+  - Id: 19310
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 766
+
+  - Id: 19311
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 767
+
+  - Id: 19312
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 768
+
+  - Id: 19313
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 769
+
+  - Id: 19314
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 770
+
+  - Id: 19315
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 771
+
+  - Id: 19316
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 772
+
+  - Id: 19317
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 773
+
+  - Id: 19318
+    AegisName: Pavio
+    Name: Chifres Natalinos
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 774
+
+  - Id: 19319
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 775
+
+  - Id: 19320
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 776
+
+  - Id: 19321
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 777
+
+  - Id: 19322
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 778
+
+  - Id: 19323
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 779
+
+  - Id: 19324
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 780
+
+  - Id: 19325
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 781
+
+  - Id: 19326
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 782
+
+  - Id: 19327
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 783
+
+  - Id: 19328
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 784
+
+  - Id: 19329
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 785
+
+  - Id: 19330
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 786
+
+  - Id: 19331
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 787
+
+  - Id: 19332
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 788
+
+  - Id: 19333
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 789
+
+  - Id: 19334
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 790
+
+  - Id: 19335
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 791
+
+  - Id: 19336
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 792
+
+  - Id: 19337
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 793
+
+  - Id: 19338
+    AegisName: Pavio
+    Name: Chapéu do Pequeno Fantasma
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 794
+
+  - Id: 19339
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 795
+
+  - Id: 19340
+    AegisName: Pavio
+    Name: Chapéu do Soldado
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 796
+
+  - Id: 19341
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 797
+
+  - Id: 19342
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 798
+
+  - Id: 19343
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 799
+
+  - Id: 19344
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 800
+
+  - Id: 19345
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 801
+
+  - Id: 19346
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 802
+
+  - Id: 19347
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 803
+
+  - Id: 19348
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 804
+
+  - Id: 19349
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 805
+
+  - Id: 19350
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 806
+
+  - Id: 19351
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 807
+
+  - Id: 19352
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 808
+
+  - Id: 19353
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 809
+
+  - Id: 19354
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 810
+
+  - Id: 19355
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 811
+
+  - Id: 19356
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 812
+
+  - Id: 19357
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 813
+
+  - Id: 19358
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 814
+
+  - Id: 19359
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 815
+
+  - Id: 19360
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 816
+
+  - Id: 19361
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 817
+
+  - Id: 19362
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 818
+
+  - Id: 19363
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 819
+
+  - Id: 19364
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 820
+
+  - Id: 19365
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 821
+
+  - Id: 19366
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 822
+
+  - Id: 19367
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 823
+
+  - Id: 19368
+    AegisName: Pavio
+    Name: Chapéu Bovino
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 824
+
+  - Id: 19369
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 825
+
+  - Id: 19370
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 826
+
+  - Id: 19371
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 827
+
+  - Id: 19372
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 828
+
+  - Id: 19373
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 829
+
+  - Id: 19374
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 830
+
+  - Id: 19375
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 831
+
+  - Id: 19376
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 832
+
+  - Id: 19377
+    AegisName: Pavio
+    Name: Chapéu Espartano
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 833
+
+  - Id: 19378
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 834
+
+  - Id: 19379
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 835
+
+  - Id: 19380
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 836
+
+  - Id: 19381
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 837
+
+  - Id: 19382
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 838
+
+  - Id: 19383
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 839
+
+  - Id: 19384
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 840
+
+  - Id: 19385
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 841
+
+  - Id: 19386
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 842
+
+  - Id: 19387
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 843
+
+  - Id: 19388
+    AegisName: Pavio
+    Name: Chapéu da Timidez
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 844
+
+  - Id: 19389
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 845
+
+  - Id: 19390
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 846
+
+  - Id: 19391
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 847
+
+  - Id: 19392
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 848
+
+  - Id: 19393
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 849
+
+  - Id: 19394
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 850
+
+  - Id: 19395
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 851
+
+  - Id: 19396
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 852
+
+  - Id: 19397
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 853
+
+  - Id: 19398
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 854
+
+  - Id: 19399
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 855
+
+  - Id: 19400
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 856
+
+  - Id: 19401
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 857
+
+  - Id: 19402
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 858
+
+  - Id: 19403
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 859
+
+  - Id: 19404
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 860
+
+  - Id: 19405
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 861
+
+  - Id: 19406
+    AegisName: Pavio
+    Name: Hat Especial
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 862
+
+  - Id: 19407
+    AegisName: Nome
+    Name: BotaRara1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19408
+    AegisName: Nome
+    Name: BotaRara2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19409
+    AegisName: Nome
+    Name: BotaRara3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19410
+    AegisName: Nome
+    Name: BotaRara4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19411
+    AegisName: Nome
+    Name: BotaRara5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19412
+    AegisName: Nome
+    Name: BotaRara6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19413
+    AegisName: Nome
+    Name: BotaRara7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19414
+    AegisName: Nome
+    Name: BotaRara8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19415
+    AegisName: Nome
+    Name: BotaRara9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19416
+    AegisName: Nome
+    Name: BotaRara10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19417
+    AegisName: Capa
+    Name: CapaRara1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19418
+    AegisName: Capa
+    Name: CapaRara2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19419
+    AegisName: Capa
+    Name: CapaRara3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19420
+    AegisName: Capa
+    Name: CapaRara4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19421
+    AegisName: Capa
+    Name: CapaRara5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19422
+    AegisName: Capa
+    Name: CapaRara6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19423
+    AegisName: Capa
+    Name: CapaRara7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19424
+    AegisName: Capa
+    Name: CapaRara8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19425
+    AegisName: Capa
+    Name: CapaRara9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19426
+    AegisName: Capa
+    Name: CapaRara10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19427
+    AegisName: Arma
+    Name: ArmaRara1
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19428
+    AegisName: Arma
+    Name: ArmaRara2
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19429
+    AegisName: Arma
+    Name: ArmaRara3
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19430
+    AegisName: Arma
+    Name: ArmaRara4
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19431
+    AegisName: Arma
+    Name: ArmaRara5
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19432
+    AegisName: Arma
+    Name: ArmaRara6
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19433
+    AegisName: Arma
+    Name: ArmaRara7
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19434
+    AegisName: Arma
+    Name: ArmaRara8
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19435
+    AegisName: Arma
+    Name: ArmaRara9
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19436
+    AegisName: Arma
+    Name: ArmaRara10
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19437
+    AegisName: Pergaminho
+    Name: PergaminhoRaro1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19438
+    AegisName: Pergaminho
+    Name: PergaminhoRaro2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19439
+    AegisName: Pergaminho
+    Name: PergaminhoRaro3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19440
+    AegisName: Pergaminho
+    Name: PergaminhoRaro4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19441
+    AegisName: Pergaminho
+    Name: PergaminhoRaro5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19442
+    AegisName: Pergaminho
+    Name: PergaminhoRaro6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19443
+    AegisName: Pergaminho
+    Name: PergaminhoRaro7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19444
+    AegisName: Pergaminho
+    Name: PergaminhoRaro8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19445
+    AegisName: Pergaminho
+    Name: PergaminhoRaro9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19446
+    AegisName: Pergaminho
+    Name: PergaminhoRaro10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19447
+    AegisName: Armadura
+    Name: ArmaduraRara1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19448
+    AegisName: Armadura
+    Name: ArmaduraRara2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19449
+    AegisName: Armadura
+    Name: ArmaduraRara3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19450
+    AegisName: Armadura
+    Name: ArmaduraRara4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19451
+    AegisName: Armadura
+    Name: ArmaduraRara5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19452
+    AegisName: Armadura
+    Name: ArmaduraRara6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19453
+    AegisName: Armadura
+    Name: ArmaduraRara7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19454
+    AegisName: Armadura
+    Name: ArmaduraRara8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19455
+    AegisName: Armadura
+    Name: ArmaduraRara9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19456
+    AegisName: Armadura
+    Name: ArmaduraRara10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19457
+    AegisName: Amuleto
+    Name: AmuletoRaro1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19458
+    AegisName: Amuleto
+    Name: AmuletoRaro2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19459
+    AegisName: Amuleto
+    Name: AmuletoRaro3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19460
+    AegisName: Amuleto
+    Name: AmuletoRaro4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19461
+    AegisName: Amuleto
+    Name: AmuletoRaro5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19462
+    AegisName: Amuleto
+    Name: AmuletoRaro6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19463
+    AegisName: Amuleto
+    Name: AmuletoRaro7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19464
+    AegisName: Amuleto
+    Name: AmuletoRaro8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19465
+    AegisName: Amuleto
+    Name: AmuletoRaro9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19466
+    AegisName: Amuleto
+    Name: AmuletoRaro10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19547
+    AegisName: Capa
+    Name: CapaLendaria1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19548
+    AegisName: Capa
+    Name: CapaLendaria2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19549
+    AegisName: Capa
+    Name: CapaLendaria3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19550
+    AegisName: Capa
+    Name: CapaLendaria4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19551
+    AegisName: Capa
+    Name: CapaLendaria5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19552
+    AegisName: Capa
+    Name: CapaLendaria6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19553
+    AegisName: Capa
+    Name: CapaLendaria7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19554
+    AegisName: Capa
+    Name: CapaLendaria8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19555
+    AegisName: Capa
+    Name: CapaLendaria9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19556
+    AegisName: Capa
+    Name: CapaLendaria10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19557
+    AegisName: Arma
+    Name: ArmaLendaria1
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19558
+    AegisName: Arma
+    Name: ArmaLendaria2
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19559
+    AegisName: Arma
+    Name: ArmaLendaria3
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19560
+    AegisName: Arma
+    Name: ArmaLendaria4
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19561
+    AegisName: Arma
+    Name: ArmaLendaria5
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19562
+    AegisName: Arma
+    Name: ArmaLendaria6
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19563
+    AegisName: Arma
+    Name: ArmaLendaria7
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19564
+    AegisName: Arma
+    Name: ArmaLendaria8
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19565
+    AegisName: Arma
+    Name: ArmaLendaria9
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19566
+    AegisName: Arma
+    Name: ArmaLendaria10
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19567
+    AegisName: Pergaminho
+    Name: PergaminhoLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19568
+    AegisName: Pergaminho
+    Name: PergaminhoLendario2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19569
+    AegisName: Pergaminho
+    Name: PergaminhoLendario3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19570
+    AegisName: Pergaminho
+    Name: PergaminhoLendario4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19571
+    AegisName: Pergaminho
+    Name: PergaminhoLendario5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19572
+    AegisName: Pergaminho
+    Name: PergaminhoLendario6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19573
+    AegisName: Pergaminho
+    Name: PergaminhoLendario7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19574
+    AegisName: Pergaminho
+    Name: PergaminhoLendario8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19575
+    AegisName: Pergaminho
+    Name: PergaminhoLendario9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19576
+    AegisName: Pergaminho
+    Name: PergaminhoLendario10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+
+  - Id: 19577
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19578
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19579
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19580
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19581
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19582
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19583
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19584
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19585
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19586
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19587
+    AegisName: Armadura
+    Name: ArmaduraLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+
+  - Id: 19588
+    AegisName: Amuleto
+    Name: AmuletoLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19589
+    AegisName: Amuleto
+    Name: AmuletoLendario2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19590
+    AegisName: Amuleto
+    Name: AmuletoLendario3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19591
+    AegisName: Amuleto
+    Name: AmuletoLendario4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19592
+    AegisName: Amuleto
+    Name: AmuletoLendario5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19593
+    AegisName: Amuleto
+    Name: AmuletoLendario6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19594
+    AegisName: Amuleto
+    Name: AmuletoLendario7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19595
+    AegisName: Amuleto
+    Name: AmuletoLendario8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19596
+    AegisName: Amuleto
+    Name: AmuletoLendario9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19597
+    AegisName: Amuleto
+    Name: AmuletoLendario10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+
+  - Id: 19598
+    AegisName: Nome
+    Name: BotaLendario1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19599
+    AegisName: Nome
+    Name: BotaLendario2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19600
+    AegisName: Nome
+    Name: BotaLendario3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19601
+    AegisName: Nome
+    Name: BotaLendario4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19602
+    AegisName: Nome
+    Name: BotaLendario5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19603
+    AegisName: Nome
+    Name: BotaLendario6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19604
+    AegisName: Nome
+    Name: BotaLendario7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19605
+    AegisName: Nome
+    Name: BotaLendario8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19606
+    AegisName: Nome
+    Name: BotaLendario9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 19607
+    AegisName: Nome
+    Name: BotaLendario10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+
+  - Id: 3999
+    AegisName: No_Slot
+    Name: No Slot
+    Type: Card
+    Weight: 0
+
+  - Id: 4000
+    AegisName: Free_Slot
+    Name: Free Slot
+    Type: Card
+    Weight: 0
+
+  - Id: 4001
+    AegisName: Carta_Poring
+    Name: Cristal de foréa 1
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Script: |
+       bonus bStr,2;
+
+  - Id: 4002
+    AegisName: Carta_Fabre
+    Name: Cristal de foréa 2
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Script: |
+       bonus bStr,4;
+
+  - Id: 4003
+    AegisName: Carta_Pupa
+    Name: Cristal de foréa 3
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Script: |
+       bonus bStr,6;
+
+  - Id: 4004
+    AegisName: Carta_Drops
+    Name: Cristal de foréa 4
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Script: |
+       bonus bStr,10;
+
+  - Id: 4005
+    AegisName: Carta_Poring_Noel
+    Name: Cristal de agilidade 1
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Shoes: true
+    Script: |
+       bonus bAgi,2;
+
+  - Id: 4006
+    AegisName: Carta_Lunético
+    Name: Cristal de agilidade 2
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Shoes: true
+    Script: |
+       bonus bAgi,4;
+
+  - Id: 4007
+    AegisName: Carta_Ovo_de_Pecopeco
+    Name: Cristal de agilidade 3
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Shoes: true
+    Script: |
+       bonus bAgi,6;
+
+  - Id: 4008
+    AegisName: Carta_Picky
+    Name: Cristal de agilidade 4
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Shoes: true
+    Script: |
+       bonus bAgi,10;
+
+  - Id: 4009
+    AegisName: Carta_Chonchon
+    Name: Cristal de Inteligencia 1
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Left_Hand: true
+    Script: |
+       bonus bInt,2;
+
+  - Id: 4010
+    AegisName: Carta_Salgueiro
+    Name: Cristal de Inteligencia 2
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Left_Hand: true
+    Script: |
+       bonus bInt,4;
+
+  - Id: 4011
+    AegisName: Carta_Picky_com_casca
+    Name: Cristal de Inteligencia 3
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Left_Hand: true
+    Script: |
+       bonus bInt,6;
+
+  - Id: 4012
+    AegisName: Carta_Ovo_de_Besouro-Ladréo
+    Name: Cristal de Inteligencia 4
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Left_Hand: true
+    Script: |
+       bonus bInt,10;
+
+  - Id: 4013
+    AegisName: Carta_Ovo_de_Andre
+    Name: Cristal de Vitalidade 1
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Armor: true
+    Script: |
+       bonus bVit,2;
+
+  - Id: 4014
+    AegisName: Carta_Sapo_de_Rodda
+    Name: Cristal de Vitalidade 2
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Armor: true
+    Script: |
+       bonus bVit,4;
+
+  - Id: 4015
+    AegisName: Carta_Condor
+    Name: Cristal de Vitalidade 3
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Armor: true
+    Script: |
+       bonus bVit,6;
+
+  - Id: 4016
+    AegisName: Carta_Besouro-Ladréo
+    Name: Cristal de Vitalidade 4
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Armor: true
+    Script: |
+      bonus bVit,10;
+
+  - Id: 4017
+    AegisName: Carta_Bebe_Selvagem
+    Name: Cristal de Destreza 1
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Shoes: true
+    Script: |
+       bonus bDex,2;
+
+  - Id: 4018
+    AegisName: Carta_Larva_de_Andre
+    Name: Cristal de Destreza 2
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Shoes: true
+    Script: |
+       bonus bDex,4;
+
+  - Id: 4019
+    AegisName: Carta_Zangéo
+    Name: Cristal de Destreza 3
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Shoes: true
+    Script: |
+       bonus bDex,6;
+
+  - Id: 4020
+    AegisName: Carta_Familiar
+    Name: Cristal de Destreza 4
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Shoes: true
+    Script: |
+       bonus bDex,10;
+
+  - Id: 4021
+    AegisName: Carta_Rocker
+    Name: Cristal de Sorte 1
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Armor: true
+
+  - Id: 4022
+    AegisName: Carta_Esporo
+    Name: Cristal de Sorte 2
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Armor: true
+    Script: |
+       bonus bLuk,4;
+
+  - Id: 4023
+    AegisName: Carta_Filhote_de_Lobo_do_Deserto
+    Name: Cristal de Sorte 3
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Armor: true
+    Script: |
+       bonus bLuk,6;
+
+  - Id: 4024
+    AegisName: Carta_Plankton
+    Name: Cristal de Sorte 4
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Armor: true
+    Script: |
+       bonus bLuk,10;
+
+  - Id: 4025
+    AegisName: Carta_Esqueleto
+    Name: Cristal de Resistencia 1
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+       bonus bSpeedAddRate,1;
+
+  - Id: 4026
+    AegisName: Carta_Besouro-Ladréo_Fémea
+    Name: Cristal de Resistencia 2
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+       bonus bSpeedAddRate,3;
+
+  - Id: 4027
+    AegisName: Carta_Kukre
+    Name: Cristal de Resistencia 3
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+      bonus bSpeedAddRate,5;
+
+  - Id: 4028
+    AegisName: Carta_Tarou
+    Name: Cristal de Resistencia 4
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+
+  - Id: 4029
+    AegisName: Carta_Lobo
+    Name: Cristal de Proteééo 1
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+       bonus bDef,1;
+
+  - Id: 4030
+    AegisName: Carta_Mandrégora
+    Name: Cristal de Proteééo 2
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+       bonus bDef,3;
+
+  - Id: 4031
+    AegisName: Carta_PecoPeco
+    Name: Cristal de Proteééo 3
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+       bonus bDef,5;
+
+  - Id: 4032
+    AegisName: Carta_Ambernite
+    Name: Cristal de Proteééo 4
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+       bonus bDef,8;
+
+  - Id: 4033
+    AegisName: Carta_PoPoring
+    Name: Carta de EProteééo 1
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+      bonus bMdef,1;
+
+  - Id: 4034
+    AegisName: Carta_Rabo-de-Verme
+    Name: Carta de EProteééo 2
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+      bonus bMdef,3;
+
+  - Id: 4035
+    AegisName: Carta_Hidra
+    Name: Carta de EProteééo 3
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+      bonus bMdef,5;
+
+  - Id: 4036
+    AegisName: Carta_Muka
+    Name: Carta de EProteééo 4
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Garment: true
+    Script: |
+      bonus bMdef,10;
+
+  - Id: 4037
+    AegisName: Carta_Jibéia
+    Name: Carta Jibéia
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Right_Hand: true
+    Script: |
+       bonus2 bAddEff,Eff_Poison,500; bonus bBaseAtk,5;
+
+  - Id: 4038
+    AegisName: Carta_Zumbi
+    Name: Carta Zumbi
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Shoes: true
+    Script: |
+       bonus bHPrecovRate,20;
+
+  - Id: 4039
+    AegisName: Carta_Percevejo
+    Name: Carta Percevejo
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus2 bResEff,Eff_Silence,2000; bonus bDef,1;
+
+  - Id: 4040
+    AegisName: Carta_Creamy
+    Name: Carta Creamy
+    Type: Card
+    Sell: 10
+    Weight: 10
+    Locations:
+      Both_Accessory: true
+    Script: |
+       skill "AL_TELEPORT",1;
+
+  - Id: 512
+    AegisName: Maéé
+    Name: Fragmento de Foréa 1
+    Buy: 466
+    Weight: 10
+
+  - Id: 556
+    AegisName: Bolinho_de_Arroz_no_Palito
+    Name: Fragmento de Agilidade 1
+    Buy: 466
+    Weight: 10
+
+  - Id: 558
+    AegisName: Chocolate
+    Name: Fragmento de Inteligencia 1
+    Buy: 466
+    Weight: 10
+
+  - Id: 582
+    AegisName: Laranja
+    Name: Fragmento de Vitalidade 1
+    Buy: 466
+    Weight: 10
+
+  - Id: 578
+    AegisName: Morango
+    Name: Fragmento de Destreza 1
+    Buy: 466
+    Weight: 10
+
+  - Id: 572
+    AegisName: Biscoito_da_Sorte
+    Name: Fragmento de Sorte 1
+    Buy: 466
+    Weight: 10
+
+  - Id: 573
+    AegisName: Chocolate_Quente
+    Name: Fragmento de Resistencia 1
+    Buy: 466
+    Weight: 10
+
+  - Id: 574
+    AegisName: Ovo
+    Name: Fragmento de Proteééo 1
+    Buy: 466
+    Weight: 10
+
+  - Id: 575
+    AegisName: Chapéu_de_Bolo_do
+    Name: Fragmento elemental 1
+    Buy: 466
+    Weight: 10
+
+  - Id: 13100
+    AegisName: Pistola_de_Seis_Tiros
+    Name: Fragmento de Foréa 2
+    Buy: 466
+    Weight: 10
+
+  - Id: 13101
+    AegisName: Pistola_de_Seis_Tiros
+    Name: Fragmento de Agilidade 2
+    Buy: 466
+    Weight: 10
+
+  - Id: 13102
+    AegisName: Raio_Vermelho
+    Name: Fragmento de Inteligencia 2
+    Buy: 466
+    Weight: 10
+
+  - Id: 13103
+    AegisName: Raio_Vermelho
+    Name: Fragmento de Vitalidade 2
+    Buy: 466
+    Weight: 10
+
+  - Id: 13104
+    AegisName: Garrison
+    Name: Fragmento de Destreza 2
+    Buy: 466
+    Weight: 10
+
+  - Id: 13105
+    AegisName: Garrison
+    Name: Fragmento de Sorte 2
+    Buy: 466
+    Weight: 10
+
+  - Id: 13106
+    AegisName: Brilho_Dourado
+    Name: Fragmento de Resistencia 2
+    Buy: 466
+    Weight: 10
+
+  - Id: 13150
+    AegisName: Branch
+    Name: Fragmento de Proteééo 2
+    Buy: 466
+    Weight: 10
+
+  - Id: 13151
+    AegisName: Ciclone
+    Name: Fragmento elemental 2
+    Buy: 466
+    Weight: 10
+
+  - Id: 13152
+    AegisName: Ciclone
+    Name: Fragmento de Foréa 3
+    Buy: 466
+    Weight: 10
+
+  - Id: 13153
+    AegisName: Crepésculo
+    Name: Fragmento de Agilidade 3
+    Buy: 466
+    Weight: 10
+
+  - Id: 13154
+    AegisName: Rolling_Stone
+    Name: Fragmento de Inteligencia 3
+    Buy: 466
+    Weight: 10
+
+  - Id: 13155
+    AegisName: Rosa_Negra
+    Name: Fragmento de Vitalidade 3
+    Buy: 466
+    Weight: 10
+
+  - Id: 13156
+    AegisName: Guardiéo_da_Passagem
+    Name: Fragmento de Destreza 3
+    Buy: 466
+    Weight: 10
+
+  - Id: 13157
+    AegisName: Andarilho
+    Name: Fragmento de Sorte 3
+    Buy: 466
+    Weight: 10
+
+  - Id: 13158
+    AegisName: Retalhadora
+    Name: Fragmento de Resistencia 3
+    Buy: 466
+    Weight: 10
+
+  - Id: 13159
+    AegisName: Retalhadora
+    Name: Fragmento de Proteééo 3
+    Buy: 466
+    Weight: 10
+
+  - Id: 13160
+    AegisName: Destruidora
+    Name: Fragmento elemental 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 13161
+    AegisName: Destruidora
+    Name: Fragmento de Foréa 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 13162
+    AegisName: Inferno
+    Name: Fragmento de Agilidade 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 13163
+    AegisName: Rifle_de_Alcance
+    Name: Fragmento de Inteligencia 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 13164
+    AegisName: Rifle_de_Alcance
+    Name: Fragmento de Vitalidade 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 13165
+    AegisName: Carabina
+    Name: Fragmento de Destreza 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 13166
+    AegisName: Carabina
+    Name: Fragmento de Sorte 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 13167
+    AegisName: Leéo-de-Chécara
+    Name: Fragmento de Resistencia 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 13168
+    AegisName: Trovoada
+    Name: Fragmento de Proteééo 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 13169
+    AegisName: Trovoada
+    Name: Fragmento elemental 4
+    Buy: 466
+    Weight: 10
+
+  - Id: 576
+    AegisName: Fruta_Espinhosa
+    Name: Selo Kai de foréa
+    Buy: 466
+    Weight: 10
+
+  - Id: 577
+    AegisName: Sacola_de_Gréos
+    Name: Selo kai de Int
+    Buy: 466
+    Weight: 10
+
+  - Id: 559
+    AegisName: Chocolate_Caseiro
+    Name: Selo kai de armor
+    Buy: 466
+    Weight: 10
+
+  - Id: 560
+    AegisName: Chocolate_Branco_feito_a_méo
+    Name: Selo kai de agi
+    Buy: 466
+    Weight: 10
+
+  - Id: 562
+    AegisName: Fondue_Suééo
+    Name: metal de remoééo
+    Buy: 466
+    Weight: 10
+
+  - Id: 19198
+    AegisName: espada4
+    Name: espada4
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+      Left_Hand: true
+      Costume_Head_Mid: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 735
+
+  - Id: 19199
+    AegisName: espada5
+    Name: espada5
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+      Left_Hand: true
+      Costume_Head_Mid: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 736
+
+  - Id: 19200
+    AegisName: espada6
+    Name: espada6
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+      Left_Hand: true
+      Costume_Head_Mid: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 737
+
+  - Id: 19201
+    AegisName: espada7
+    Name: espada7_duplicada
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 738
+
+  - Id: 19202
+    AegisName: espada8
+    Name: espada8
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+      Left_Hand: true
+      Costume_Head_Mid: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 739
+
+  - Id: 19203
+    AegisName: espada9
+    Name: espada9
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+      Left_Hand: true
+      Costume_Head_Mid: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 740
+
+  - Id: 19204
+    AegisName: espada10
+    Name: espada10
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+      Left_Hand: true
+      Costume_Head_Mid: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 741
+
+  - Id: 19205
+    AegisName: item_akamaru
+    Name: item_akamaru
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 742
+
+  - Id: 19206
+    AegisName: item_bandagem
+    Name: item_bandagem
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 743
+
+  - Id: 19207
+    AegisName: item_tenten
+    Name: item_tenten
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 744
+    Script: |
+      callfunc "kg_Mitsashi";
+
+  - Id: 19208
+    AegisName: item_hidan2
+    Name: item_hidan2
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 2
+    Slots: 2
+    Locations:
+      Head_Top: true
+    Refineable: true
+    Script: |
+      set meucabelo,getlook(1); set meucabelo2,getlook(6); setlook(6),0; setlook(1),41; changebase 25; bonus bLastStand,100;
+    UnEquipScript: |
+      changebase Class; sc_end SC_Bleeding; setlook(1),meucabelo; setlook(6),meucabelo2; end;
+
+  - Id: 19209
+    AegisName: item_chapeu
+    Name: item_chapeu
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 746
+
+  - Id: 19210
+    AegisName: item_hidan
+    Name: item_hidan
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 747
+    Script: |
+      callfunc "kg_Jashin";
+
+  - Id: 19211
+    AegisName: item_tayuya
+    Name: item_tayuya
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 748
+    Script: |
+      callfunc "kg_Tayuya";
+
+  - Id: 19212
+    AegisName: item_orochi
+    Name: item_deidara
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 749
+    Script: |
+      callfunc "kg_kibaku";
+
+  - Id: 19214
+    AegisName: item_sarutobi
+    Name: item_sarutobi
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 751
+
+  - Id: 19215
+    AegisName: item_sussano
+    Name: item_sussano
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Slots: 2
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 752
+    Script: |
+      bonus2 bSPLossRate,1500,1000; bonus2 bSubEle,Ele_Ghost,15; bonus2 bSubEle,Ele_Fire,15; bonus2 bSubEle,Ele_Water,15; bonus2 bSubEle,Ele_Wind,15; bonus2 bSubEle,Ele_Earth,15; bonus2 bSubEle,Ele_Holy,15; bonus2 bSubEle,Ele_Poison,15; bonus2 bSubEle,Ele_Dark,15; bonus bCopycat,10;
+
+  - Id: 19216
+    AegisName: item_sussano2
+    Name: item_aburame
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 12
+    Script: |
+       skill 127,1; callfunc "kg_Aburame";
+
+  - Id: 19217
+    AegisName: item_tobi
+    Name: item_tobi
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 754
+
+  - Id: 19218
+    AegisName: hanzou
+    Name: hanzou
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 755
+    Script: |
+      callfunc "kg_Ibuse";
+
+  - Id: 20003
+    AegisName: Pedra_de_Agilidade
+    Name: Pedra de Agilidade
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bAgi,3;
+
+  - Id: 20004
+    AegisName: Pedra_de_Esquiva
+    Name: Pedra de Esquiva
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bFlee,20;
+
+  - Id: 20005
+    AegisName: Pedra_de_Velocidade
+    Name: Pedra de Velocidade
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bSpeedRate,1;
+
+  - Id: 20006
+    AegisName: Pedra_de_Evitar_Armadilha
+    Name: Pedra de Evitar Armadilha
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bAvoidTrap,2;
+
+  - Id: 20007
+    AegisName: Pedra_de_ataque_speed
+    Name: Pedra de Ataque speed
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bAspdRate,10;
+
+  - Id: 20008
+    AegisName: Pedra_de_delay
+    Name: Pedra de delay
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bDelayRate,-1;
+
+  - Id: 20009
+    AegisName: Pedra_de_esquiva_critico
+    Name: Pedra de esquiva critica
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCritAtkMiss,4;
+
+  - Id: 20010
+    AegisName: Pedra_de_Agilidade
+    Name: Pedra de Agilidade
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bAgi,7;
+
+  - Id: 20011
+    AegisName: Pedra_de_Esquiva
+    Name: Pedra de Esquiva
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bFlee,30;
+
+  - Id: 20012
+    AegisName: Pedra_de_Velocidade
+    Name: Pedra de Velocidade
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bSpeedRate,2;
+
+  - Id: 20013
+    AegisName: Pedra_de_delay
+    Name: Pedra de delay
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bDelayRate,-2;
+
+  - Id: 20014
+    AegisName: Pedra_de_Evitar_Armadilha
+    Name: Pedra de Evitar Armadilha
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bAvoidTrap,3;
+
+  - Id: 20015
+    AegisName: Pedra_de_Velocidade
+    Name: Pedra de Velocidade
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+       bonus bSpeedRate,3;
+
+  - Id: 20016
+    AegisName: Pedra_de_esquiva_critico
+    Name: Pedra de esquiva critica
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCritAtkMiss,6;
+
+  - Id: 20017
+    AegisName: Pedra_de_shiko_agi
+    Name: Pedra de Shiko Agilidade
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      skill 356,3; bonus bSpeedRate,4;
+
+  - Id: 20018
+    AegisName: Pedra_de_Sorte
+    Name: Pedra de Sorte
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSCResist,SC_Stun,3; bonus2 bSCResist,SC_Freeze,3; bonus2 bSCResist,Eff_Silence,3; bonus2 bSCResist,Eff_Curse,3;
+
+  - Id: 20019
+    AegisName: Pedra_de_Crético
+    Name: Pedra de Crético
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bFlee2,5;
+
+  - Id: 20020
+    AegisName: Pedra_de_Esquiva_Perfeita
+    Name: Pedra de Esquiva Perfeita
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCritAtkRate,3;
+
+  - Id: 20021
+    AegisName: Pedra_de_Resistencia_Genjutsus
+    Name: Pedra Resistencia Genjutsus
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSCDamage,SC_STUN,3; bonus2 bSCDamage,SC_POISON,3; bonus2 bSCDamage,SC_CURSE,3; bonus2 bSCDamage,SC_SLEEP,3; bonus2 bSCDamage,SC_BLIND,3;
+
+  - Id: 20022
+    AegisName: Pedra_de_Dano_Silencio
+    Name: Pedra de Dano em Siléncio
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bFlee2,5;
+
+  - Id: 20023
+    AegisName: Pedra_de_Dano_Stun
+    Name: Pedra de Dano em Stun
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSCResist,SC_Stun,3; bonus2 bSCResist,SC_Freeze,3; bonus2 bSCResist,Eff_Silence,3; bonus2 bSCResist,Eff_Curse,3;
+
+  - Id: 20024
+    AegisName: Pedra_de_Sorte
+    Name: Pedra de Sorte
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCritAtkRate,3;
+
+  - Id: 20025
+    AegisName: Pedra_de_Sono
+    Name: Pedra de Sono
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bFlee2,5;
+
+  - Id: 20026
+    AegisName: Pedra_de_Sorte
+    Name: Pedra de Sorte
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSCResist,SC_Stun,3; bonus2 bSCResist,SC_Freeze,3; bonus2 bSCResist,Eff_Silence,3; bonus2 bSCResist,Eff_Curse,3;
+
+  - Id: 20027
+    AegisName: Pedra_de_Esquiva_Perfeita
+    Name: Pedra de Esquiva Perfeita
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus3 bAddEff,Eff_Sleep,100,ATF_SHORT;
+
+  - Id: 20028
+    AegisName: Pedra_de_Crético
+    Name: Pedra de Crético
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCritAtkRate,4;
+
+  - Id: 20029
+    AegisName: Pedra_de_Dano_Silencio
+    Name: Pedra de Dano em Siléncio
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSCDamage,SC_STUN,3; bonus2 bSCDamage,SC_POISON,3; bonus2 bSCDamage,SC_CURSE,3; bonus2 bSCDamage,SC_SLEEP,3; bonus2 bSCDamage,SC_BLIND,3;
+
+  - Id: 20030
+    AegisName: Pedra_de_Dano_Stun
+    Name: Pedra de Dano em Stun
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus3 bAddEff,Eff_Sleep,100,ATF_SHORT;
+
+  - Id: 20031
+    AegisName: Pedra_de_Resistencia_Genjutsus
+    Name: Pedra Resistencia Genjutsus
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSCDamage,SC_STUN,3; bonus2 bSCDamage,SC_POISON,3; bonus2 bSCDamage,SC_CURSE,3; bonus2 bSCDamage,SC_SLEEP,3; bonus2 bSCDamage,SC_BLIND,3;
+
+  - Id: 20032
+    AegisName: Pedra_de_Shiko_Gen
+    Name: Pedra de Shiko Genjutsu
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      skill 289,5; autobonus "{ bonus bCritical,50; }",5,5000,0,"{ specialeffect2 EF_ENHANCE; }";
+
+  - Id: 20033
+    AegisName: Pedra_de_Dano
+    Name: Pedra de Dano
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bAtk,150;
+
+  - Id: 20034
+    AegisName: Pedra_de_Foréa
+    Name: Pedra de Foréa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bStr,2;
+
+  - Id: 20035
+    AegisName: Pedra_de_Dano_Crético
+    Name: Pedra de Dano Crético
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCritAtkRate,3;
+
+  - Id: 20036
+    AegisName: Pedra_de_Dano_Médio
+    Name: Pedra de Dano Médio
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bAddSize,1,2;
+
+  - Id: 20037
+    AegisName: Pedra_de_Lifesteal
+    Name: Pedra de Lifesteal
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bHpDrainRate,10,30;
+
+  - Id: 20038
+    AegisName: Pedra_de_Dano_Boss
+    Name: Pedra de Dano Boss
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bAddRace,RC_Boss,1;
+
+  - Id: 20039
+    AegisName: Pedra_de_Dano
+    Name: Pedra de Dano
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bAtk,150;
+
+  - Id: 20040
+    AegisName: Pedra_de_Foréa
+    Name: Pedra de Foréa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bStr,6;
+
+  - Id: 20041
+    AegisName: Pedra_de_Dano_Médio
+    Name: Pedra de Dano Médio
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bAddSize,1,3;
+
+  - Id: 20042
+    AegisName: Pedra_de_Dano
+    Name: Pedra de Dano
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bAtk,200;
+
+  - Id: 20043
+    AegisName: Pedra_de_Dano_Crético
+    Name: Pedra de Dano Crético
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCritAtkRate,7;
+
+  - Id: 20044
+    AegisName: Pedra_de_Foréa
+    Name: Pedra de Foréa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bStr,8;
+
+  - Id: 20045
+    AegisName: Pedra_de_Lifesteal
+    Name: Pedra de Lifesteal
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bHpDrainRate,40,30;
+
+  - Id: 20046
+    AegisName: Pedra_de_Dano_Boss
+    Name: Pedra de Dano Boss
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bAddRace,RC_Boss,4;
+
+  - Id: 20047
+    AegisName: Pedra_de_Shiko_Tai
+    Name: Pedra de Shiko Taijutsu
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      skill 234,1; bonus2 bAddRace,RC_NonBoss,2; bonus2 bAddRace2,5,2;
+
+  - Id: 20048
+    AegisName: Pedra_de_Regeneraééo_Sp
+    Name: Pedra de Regeneraééo de SP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSPRegenRate,150,1000;
+
+  - Id: 20049
+    AegisName: Pedra_de_Inteligéncia
+    Name: Pedra de Inteligéncia
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bInt,5;
+
+  - Id: 20050
+    AegisName: Pedra_de_Ataque_Mégico
+    Name: Pedra de Ataque Mégico
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMatkRate,2;
+
+  - Id: 20051
+    AegisName: Pedra_de_Ataque_Elemental
+    Name: Pedra de Ataque Elemental
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bElementDamage,Dark,2; bonus2 bElementDamage,Wind,2; bonus2 bElementDamage,Fire,2; bonus2 bElementDamage,Earth,2; bonus2 bElementDamage,Water,2;
+
+  - Id: 20052
+    AegisName: Pedra_de_Inteligéncia
+    Name: Pedra de Inteligéncia
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bInt,5;
+
+  - Id: 20053
+    AegisName: Pedra_de_Defesa_Elemental
+    Name: Pedra de Defesa Elemental
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSubEle,Ele_Holy,2; bonus2 bSubEle,Ele_Wind,2; bonus2 bSubEle,Ele_Dark,2; bonus2 bSubEle,Ele_Fire,2; bonus2 bSubEle,Ele_Water,2; bonus2 bSubEle,Ele_Earth,2;
+
+  - Id: 20054
+    AegisName: Pedra_de_Ataque_Mégico
+    Name: Pedra de Ataque Mégico
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMatkRate,2;
+
+  - Id: 20055
+    AegisName: Pedra_de_Regeneraééo_Sp
+    Name: Pedra de Regeneraééo de SP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSPRegenRate,150,1000;
+
+  - Id: 20056
+    AegisName: Pedra_de_Inteligéncia
+    Name: Pedra de Inteligéncia
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bInt,5;
+
+  - Id: 20057
+    AegisName: Pedra_de_Cast
+    Name: Pedra de Cast
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCastRate,-2;
+
+  - Id: 20058
+    AegisName: Pedra_de_Ataque_Elemental
+    Name: Pedra de Ataque Elemental
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bElementDamage,Dark,2; bonus2 bElementDamage,Wind,2; bonus2 bElementDamage,Fire,2; bonus2 bElementDamage,Earth,2; bonus2 bElementDamage,Water,2;
+
+  - Id: 20059
+    AegisName: Pedra_de_SP
+    Name: Pedra de SP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxSP,1500;
+
+  - Id: 20060
+    AegisName: Pedra_de_Ataque_Mégico
+    Name: Pedra de Ataque Mégico
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMatkRate,2;
+
+  - Id: 20061
+    AegisName: Pedra_de_SP_Méximo
+    Name: Pedra de SP Méximo
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxSPrate,1;
+
+  - Id: 20062
+    AegisName: Pedra_de_Shiko_Nin
+    Name: Pedra de Shiko Ninjutsu
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      skill 364,10; bonus bMatkRate,2;
+
+  - Id: 20063
+    AegisName: Pedra_de_Dex
+    Name: Pedra de Dex
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bDex,3;
+
+  - Id: 20064
+    AegisName: Pedra_de_Hit
+    Name: Pedra de Hit
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bHit,20;
+
+  - Id: 20065
+    AegisName: Pedra_de_Roubo_SP
+    Name: Pedra de Roubo SP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSpDrainRate,10,15;
+
+  - Id: 20066
+    AegisName: Pedra_de_SP
+    Name: Pedra de SP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxSP,250;
+
+  - Id: 20067
+    AegisName: Pedra_de_Hit_Porcentagem
+    Name: Pedra de Hit Porcentagem
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bHitRate,1;
+
+  - Id: 20068
+    AegisName: Pedra_de_Cast
+    Name: Pedra de Cast
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCastRate,-1;
+
+  - Id: 20069
+    AegisName: Pedra_de_Roubo_SP
+    Name: Pedra de Roubo SP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSpDrainRate,20,15;
+
+  - Id: 20070
+    AegisName: Pedra_de_SP
+    Name: Pedra de SP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxSP,250;
+
+  - Id: 20071
+    AegisName: Pedra_de_Hit
+    Name: Pedra de Hit
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bHit,30;
+
+  - Id: 20072
+    AegisName: Pedra_de_Hit_Porcentagem
+    Name: Pedra de Hit Porcentagem
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bHitRate,1;
+
+  - Id: 20073
+    AegisName: Pedra_de_Cast
+    Name: Pedra de Cast
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCastRate,-1;
+
+  - Id: 20074
+    AegisName: Pedra_de_Roubo_SP
+    Name: Pedra de Roubo SP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSpDrainRate,30,15;
+
+  - Id: 20075
+    AegisName: Pedra_de_SP
+    Name: Pedra de SP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxSP,250;
+
+  - Id: 20076
+    AegisName: Pedra_de_Cast
+    Name: Pedra de Cast
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bCastRate,-3;
+
+  - Id: 20077
+    AegisName: Pedra_de_Shiko_Dex
+    Name: Pedra de Shiko Destreza
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      skill 463,7; bonus2 bSPVanishRate,50,10;
+
+  - Id: 20078
+    AegisName: Pedra_de_Aumento_Cura
+    Name: Pedra de Aumento de Cura
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxHPrate,1;
+
+  - Id: 20079
+    AegisName: Pedra_de_Aumento_Santuario
+    Name: Pedra de Aumento de Santuario
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSubEle,Ele_Holy,3;
+
+  - Id: 20080
+    AegisName: Pedra_de_Defesa
+    Name: Pedra de Defesa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMdef,3;
+
+  - Id: 20081
+    AegisName: Pedra_de_Defesa
+    Name: Pedra de Defesa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bHPRegenRate,2000,1000;
+
+  - Id: 20082
+    AegisName: Pedra_de_Defesa
+    Name: Pedra de Defesa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxHP,30000;
+
+  - Id: 20083
+    AegisName: Pedra_de_Defesa
+    Name: Pedra de Defesa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMdef,5;
+
+  - Id: 20084
+    AegisName: Pedra_de_Aumento_Cura
+    Name: Pedra de Aumento de Cura
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSkillHeal,"AL_HEAL",5; bonus2 bSkillHeal,"PR_SANCTUARY",5;
+
+  - Id: 20085
+    AegisName: Pedra_de_Regeneraééo_HP
+    Name: Pedra de Regeneraééo HP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSubEle,Ele_Holy,2;
+
+  - Id: 20086
+    AegisName: Pedra_de_Defesa
+    Name: Pedra de Defesa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxHPrate,2;
+
+  - Id: 20087
+    AegisName: Pedra_de_Defesa
+    Name: Pedra de Defesa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSubEle,Ele_Ghost,2; bonus2 bSubEle,Ele_Fire,2; bonus2 bSubEle,Ele_Water,2; bonus2 bSubEle,Ele_Wind,2; bonus2 bSubEle,Ele_Earth,2; bonus2 bSubEle,Ele_Holy,2; bonus2 bSubEle,Ele_Poison,2; bonus2 bSubEle,Ele_Dark,2;
+
+  - Id: 20088
+    AegisName: Pedra_de_Regeneraééo_HP
+    Name: Pedra de Regeneraééo HP
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSubEle,Ele_Ghost,4; bonus2 bSubEle,Ele_Fire,4; bonus2 bSubEle,Ele_Water,4; bonus2 bSubEle,Ele_Wind,4; bonus2 bSubEle,Ele_Earth,4; bonus2 bSubEle,Ele_Holy,4; bonus2 bSubEle,Ele_Poison,4; bonus2 bSubEle,Ele_Dark,4;
+
+  - Id: 20089
+    AegisName: Pedra_de_Aumento_Santuario
+    Name: Pedra de Aumento de Santuario
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSkillHeal,"AL_HEAL",10; bonus2 bSkillHeal,"PR_SANCTUARY",10;
+
+  - Id: 20090
+    AegisName: Pedra_de_Aumento_Cura
+    Name: Pedra de Aumento de Cura
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bHPRegenRate,3000,1000;
+
+  - Id: 20091
+    AegisName: Pedra_de_Defesa
+    Name: Pedra de Defesa
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bSkillHeal,"AL_HEAL",10; bonus2 bSkillHeal,"PR_SANCTUARY",10;
+
+  - Id: 561
+    AegisName: Pedra_de_Shiko_Vit
+    Name: Pedra de Shiko Vitalidade
+    Type: Etc
+    Buy: 50
+    Weight: 70
+    EquipLevelMin: 1
+    Script: |
+      bonus bMaxHP,30000; skill 144,1;
+
+  - Id: 14000
+    AegisName: Capa
+    Name: CapaTier1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus2 bSubEle,Water,3;
+
+  - Id: 14026
+    AegisName: Capa
+    Name: CapaTier2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus2 bSubEle,Water,4;
+
+  - Id: 14052
+    AegisName: Capa
+    Name: CapaTier3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus2 bSubEle,Water,5;
+
+  - Id: 14078
+    AegisName: Capa
+    Name: CapaTier4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus2 bSubEle,Water,6; bonus2 bSubEle,Earth,6;
+
+  - Id: 14234
+    AegisName: Capa
+    Name: CapaTier5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bVit,2; bonus2 bSubEle,Water,7; bonus2 bSubEle,Earth,7;
+
+  - Id: 14390
+    AegisName: Capa
+    Name: CapaTier6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus2 bSubEle,Water,8; bonus2 bSubEle,Earth,8;
+
+  - Id: 14546
+    AegisName: Capa
+    Name: CapaTier7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus2 bSubEle,Water,11; bonus2 bSubEle,Earth,11;
+
+  - Id: 14702
+    AegisName: Capa
+    Name: CapaTier8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 82000
+    Weight: 20
+    Defense: 2
+    Slots: 1
+    Locations:
+      Garment: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus2 bSubEle,Water,14; bonus2 bSubEle,Earth,14;
+
+  - Id: 15026
+    AegisName: Armadura
+    Name: ArmaduraTier1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+       bonus bVit,3;
+
+  - Id: 15062
+    AegisName: Armadura
+    Name: ArmaduraTier2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+    Script: |
+       bonus bVit,3;
+
+  - Id: 15098
+    AegisName: Armadura
+    Name: ArmaduraTier3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+    Script: |
+       bonus bVit,5;
+
+  - Id: 15134
+    AegisName: Armadura
+    Name: ArmaduraTier4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+    Script: |
+       bonus bVit,9; bonus bDef2Rate,7;
+
+  - Id: 15316
+    AegisName: Armadura
+    Name: ArmaduraTier5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+    Script: |
+       bonus bVit,11; bonus bDef2Rate,9;
+
+  - Id: 15498
+    AegisName: Armadura
+    Name: ArmaduraTier6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+    Script: |
+       bonus bVit,15; bonus bDef2Rate,11;
+
+  - Id: 15680
+    AegisName: Armadura
+    Name: ArmaduraTier7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+    Script: |
+       bonus bVit,20; bonus bDef2Rate,13;
+
+  - Id: 15862
+    AegisName: Armadura
+    Name: ArmaduraTier8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+    Script: |
+       bonus bVit,27; bonus bDef2Rate,15;
+
+  - Id: 16044
+    AegisName: Armadura
+    Name: ArmaduraTier9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+    Script: |
+       bonus bVit,30; bonus bDef2Rate,17; bonus bUnbreakableArmor,0;
+
+  - Id: 16388
+    AegisName: Armadura
+    Name: ArmaduraTier10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1000
+    Weight: 1
+    Defense: 4
+    Locations:
+      Armor: true
+    EquipLevelMin: 999
+    Refineable: true
+    Script: |
+       bonus bVit,33; bonus bDef2Rate,19; bonus bUnbreakableArmor,0;
+
+  - Id: 16732
+    AegisName: Pergaminho
+    Name: PergaminhoTier1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,5;
+
+  - Id: 16772
+    AegisName: Pergaminho
+    Name: PergaminhoTier2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,12;
+
+  - Id: 16812
+    AegisName: Pergaminho
+    Name: PergaminhoTier3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,20;
+
+  - Id: 16852
+    AegisName: Pergaminho
+    Name: PergaminhoTier4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,28; bonus bMatkRate,4;
+
+  - Id: 17164
+    AegisName: Pergaminho
+    Name: PergaminhoTier5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,36; bonus bMatkRate,5;
+
+  - Id: 17476
+    AegisName: Pergaminho
+    Name: PergaminhoTier6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,46; bonus bMatkRate,6;
+
+  - Id: 11010
+    AegisName: Pergaminho
+    Name: PergaminhoTier7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,58; bonus bMatkRate,7;
+
+  - Id: 11322
+    AegisName: Pergaminho
+    Name: PergaminhoTier8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,71; bonus bMatkRate,7;
+
+  - Id: 11634
+    AegisName: Pergaminho
+    Name: PergaminhoTier9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,63; bonus bMatkRate,7; bonus2 bSkillAtk,540,3;
+
+  - Id: 29654
+    AegisName: Pergaminho
+    Name: PergaminhoTier10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 500
+    Weight: 300
+    Defense: 3
+    Locations:
+      Left_Hand: true
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bInt,81; bonus bMatkRate,8; bonus2 bSkillAtk,540,4;
+
+  - Id: 20092
+    AegisName: Nome
+    Name: BotaTier1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bAgi,1;
+
+  - Id: 20104
+    AegisName: Nome
+    Name: BotaTier2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bAgi,3;
+
+  - Id: 20116
+    AegisName: Nome
+    Name: BotaTier3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bAgi,5;
+
+  - Id: 20128
+    AegisName: Nome
+    Name: BotaTier4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bAgi,7; bonus bSpeedAddRate,3;
+
+  - Id: 20158
+    AegisName: Nome
+    Name: BotaTier5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bAgi,9; bonus bSpeedAddRate,4;
+
+  - Id: 20188
+    AegisName: Nome
+    Name: BotaTier6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bAgi,11; bonus bSpeedAddRate,5;
+
+  - Id: 20218
+    AegisName: Nome
+    Name: BotaTier7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bAgi,13; bonus bSpeedAddRate,7;
+
+  - Id: 20248
+    AegisName: Nome
+    Name: BotaTier8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bAgi,15; bonus bSpeedAddRate,9;
+
+  - Id: 20278
+    AegisName: Nome
+    Name: BotaTier9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+       bonus bAgi,17; bonus bSpeedAddRate,10; bonus bAvoidTrap,25;
+
+  - Id: 20310
+    AegisName: Nome
+    Name: BotaTier10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 30000
+    Weight: 650
+    Defense: 4
+    Locations:
+      Shoes: true
+    EquipLevelMin: 1
+    Refineable: true
+    Script: |
+      bonus bFlee,100; bonus bAgi,20; bonus bSpeedAddRate,12; bonus bAvoidTrap,25; bonus bSPrecovRate,12;
+
+  - Id: 20342
+    AegisName: Amuleto
+    Name: AmuletoTier1
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bLuk,1;
+
+  - Id: 20396
+    AegisName: Amuleto
+    Name: AmuletoTier2
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 1
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bLuk,2;
+
+  - Id: 20450
+    AegisName: Amuleto
+    Name: AmuletoTier3
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bLuk,3;
+
+  - Id: 20504
+    AegisName: Amuleto
+    Name: AmuletoTier4
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bLuk,6;
+
+  - Id: 20935
+    AegisName: Amuleto
+    Name: AmuletoTier5
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bStr,4; bonus2 bAddSize,0,5;
+
+  - Id: 21364
+    AegisName: Amuleto
+    Name: AmuletoTier6
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bLuk,5;
+
+  - Id: 21794
+    AegisName: Amuleto
+    Name: AmuletoTier7
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bLuk,7;
+
+  - Id: 22225
+    AegisName: Amuleto
+    Name: AmuletoTier8
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bLuk,9;
+
+  - Id: 22655
+    AegisName: Amuleto
+    Name: AmuletoTier9
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bLuk,10; bonus2 bSPDrainRate,30,5;
+
+  - Id: 24423
+    AegisName: Amuleto
+    Name: AmuletoTier10
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 10000
+    Weight: 100
+    Locations:
+      Both_Accessory: true
+    Script: |
+       bonus bLuk,13; bonus2 bSPDrainRate,40,4;
+
+  - Id: 26199
+    AegisName: Arma1
+    Name: ArmaTier1
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bStr,20;
+
+  - Id: 26245
+    AegisName: Arma2
+    Name: ArmaTier2
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 1
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bStr,60;
+
+  - Id: 26300
+    AegisName: Arma3
+    Name: ArmaTier3
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 1
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bStr,94;
+
+  - Id: 26360
+    AegisName: Arma4
+    Name: ArmaTier4
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 1
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bStr,486; bonus2 bAddRace,RC_NonBoss,4; bonus2 bAddRace2,5,4;
+
+  - Id: 26734
+    AegisName: Arma5
+    Name: ArmaTier5
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bStr,122; bonus2 bAddRace,RC_NonBoss,5; bonus2 bAddRace2,5,5;
+
+  - Id: 27110
+    AegisName: Arma6
+    Name: ArmaTier6
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bStr,142; bonus2 bAddRace,RC_NonBoss,6; bonus2 bAddRace2,5,6;
+
+  - Id: 27486
+    AegisName: Arma7
+    Name: ArmaTier7
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bStr,166; bonus2 bAddRace,RC_NonBoss,7; bonus2 bAddRace2,5,7;
+
+  - Id: 27859
+    AegisName: Arma8
+    Name: ArmaTier8
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bStr,194; bonus2 bAddRace,RC_NonBoss,8; bonus2 bAddRace2,5,8;
+
+  - Id: 28235
+    AegisName: Arma9
+    Name: ArmaTier9
+    WeaponLevel: 1
+    Type: Weapon
+    SubType: Dagger
+    Buy: 50000
+    Weight: 10
+    Attack: 15000
+    Range: 1
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1
+    Script: |
+       bonus bStr,226; bonus2 bAddRace,RC_NonBoss,9; bonus2 bAddRace2,5,9; bonus bUnbreakableWeapon,0;
+
+  - Id: 12600
+    AegisName: gengarhat
+    Name: Chapéu do Gengar
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 875
+
+  - Id: 12601
+    AegisName: AsaSasori
+    Name: Asas Sasori
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Slots: 2
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 876
+
+  - Id: 12602
+    AegisName: Konan
+    Name: Asas Konan
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Slots: 4
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 877
+
+  - Id: 12603
+    AegisName: ninjagm
+    Name: Bandana de GM
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 100
+    Defense: 3
+    Locations:
+      Head_Mid: true
+    Refineable: true
+    View: 878
+    Script: |
+      skill 758,1;
+
+  - Id: 12604
+    AegisName: samehadac2
+    Name: Samehada Visual
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 0
+    Defense: 10
+    Slots: 1
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 912
+
+  - Id: 12605
+    AegisName: Zambatou
+    Name: Zambatou Visual
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 880
+
+  - Id: 12606
+    AegisName: Black_Gangster_Scarf
+    Name: Fugitivo Preto
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 881
+
+  - Id: 12608
+    AegisName: pesarkyuubi
+    Name: Pesar da Kyuubi
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 883
+
+  - Id: 12609
+    AegisName: auraamarela
+    Name: Aura Amarela
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Slots: 4
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 884
+
+  - Id: 12610
+    AegisName: auradasortegrande
+    Name: Aura da Sorte
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Slots: 4
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 885
+
+  - Id: 12611
+    AegisName: Chapeu_do_Olho_Negro
+    Name: Chapéu do Olho Negro
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 886
+
+  - Id: 12612
+    AegisName: Circulo_de_Dragao
+    Name: Chakra Uzumaki
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 4
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 896
+    Script: |
+      callfunc "kg_uzumaki";
+
+  - Id: 12613
+    AegisName: Elmo_do_Dragao_Infernal
+    Name: Elmo do Kyonno
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 888
+
+  - Id: 12614
+    AegisName: holy_protection
+    Name: Proteééo da Floresta
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Slots: 4
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 889
+
+  - Id: 12615
+    AegisName: menestrelred
+    Name: Menestrel Vermelho
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 890
+
+  - Id: 12616
+    AegisName: oculosnaruto
+    Name: Visores Uzumaki
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 891
+
+  - Id: 12617
+    AegisName: itemuzumaki
+    Name: Selamento Uzumaki
+    Buy: 907
+    Weight: 10
+
+  - Id: 12618
+    AegisName: Marcas_da_raposa
+    Name: Marcas Uzumaki
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 892
+
+  - Id: 12619
+    AegisName: Pergaminho_do_Sannin
+    Name: Pergaminho Uzumaki
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 2
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 897
+
+  - Id: 12620
+    AegisName: kghashirama
+    Name: Liberaééo de Mokuton
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 4
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 895
+    Script: |
+      callfunc "kg_hashirama";
+    UnEquipScript: |
+      DelTimer "REMOVERMOKU2::OnMOKU2";
+
+  - Id: 12621
+    AegisName: dnahashirama
+    Name: DNA - Hashirama
+    Buy: 907
+    Weight: 10
+
+  - Id: 12622
+    AegisName: Black_Executioner_Hood
+    Name: Executor Negro
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 898
+
+  - Id: 12623
+    AegisName: Black_Neko_Mimi
+    Name: Gato Noturno
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 899
+
+  - Id: 12624
+    AegisName: cartolacomcoelhinho
+    Name: Cartola com Coelhinho
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 900
+
+  - Id: 12626
+    AegisName: gaaragourd
+    Name: Jarro do Gaara
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 902
+
+  - Id: 12627
+    AegisName: White_Magic_Eyes
+    Name: Olho Mégico Branco
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 903
+
+  - Id: 12628
+    AegisName: Jason_Mask
+    Name: Jason Mask
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 904
+
+  - Id: 12629
+    AegisName: bunnyhat3
+    Name: Chapéu do Bunny
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 905
+
+  - Id: 12630
+    AegisName: doghat
+    Name: Chapéu do Cachorro
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 906
+
+  - Id: 12631
+    AegisName: fs_poopoohat
+    Name: Chapéu de Cocé
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 907
+
+  - Id: 12632
+    AegisName: fs_shark
+    Name: Chapéu do Tubaréo
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 908
+
+  - Id: 12633
+    AegisName: fs_snowwolf
+    Name: Chapéu do Lobo da Neve
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 909
+
+  - Id: 12634
+    AegisName: pighat
+    Name: Chapéu do Porco
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 910
+
+  - Id: 12635
+    AegisName: Scream_Mask
+    Name: Máscara do Pénico
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 911
+
+  - Id: 12636
+    AegisName: samehadacostas
+    Name: Samehada Costas
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 912
+
+  - Id: 12637
+    AegisName: Black_Flying_Evil_Wing
+    Name: Asas de Anjo Negras
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 913
+
+  - Id: 12638
+    AegisName: Red_Hunter_Cap
+    Name: Hunter Vermelho
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 914
+
+  - Id: 12639
+    AegisName: Gold_Gangster_Scarf
+    Name: Fugitivo Amarelo
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 915
+
+  - Id: 12640
+    AegisName: Black_Wandering_Minstrel_Hat
+    Name: Ministrel Preto
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 916
+
+  - Id: 12641
+    AegisName: orochi1
+    Name: Shikotsumyaku
+    ArmorLevel: 1
+    Type: Armor
+    Sell: 10
+    Weight: 1
+    Defense: 3
+    Slots: 4
+    Locations:
+      Head_Low: true
+    Refineable: true
+    View: 885
+    Script: |
+      callfunc "kg_ossos";
+    UnEquipScript: |
+      DelTimer "REMOVEROSSOS2::OnOSSOS2";
+
+  - Id: 12642
+    AegisName: orochiativo
+    Name: Shikotsumyaku Kai
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Slots: 4
+    Locations:
+      Head_Top: true
+    Refineable: true
+    View: 889
+
+  - Id: 12643
+    AegisName: lequemadara
+    Name: Leque Uchiha
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 919
+
+  - Id: 12644
+    AegisName: Black_Wandering_Minstrel_Hat
+    Name: Ministrel Branco
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 920
+
+  - Id: 12645
+    AegisName: Black_Wandering_Minstrel_Hat
+    Name: Fugitivo Branco
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 921
+
+  - Id: 12646
+    AegisName: Black_Wandering_Minstrel_Hat
+    Name: Hunting Cap Preto
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 922
+
+  - Id: 12647
+    AegisName: Gold_Wandering_Minstrel_Hat
+    Name: Menestrel Amarelo
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 923
+
+  - Id: 12648
+    AegisName: Purple_Angel_Wing
+    Name: Asas Lendérias Rosas
+    ArmorLevel: 1
+    Type: Armor
+    Buy: 3000
+    Weight: 100
+    Locations:
+      Head_Top: true
+    View: 924
+
+  - Id: 12700
+    AegisName: weapon_box_tier_1
+    Name: Caixa de Arma Tier 1
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       callfunc("giveItemWithRandomStats","weapon",1);
+
+  - Id: 12701
+    AegisName: weapon_box_tier_2
+    Name: Caixa de Arma Tier 2
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       callfunc("giveItemWithRandomStats","weapon",2);
+
+  - Id: 12702
+    AegisName: weapon_box_tier_3
+    Name: Caixa de Arma Tier 3
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       callfunc("giveItemWithRandomStats","weapon",3);
+
+  - Id: 12703
+    AegisName: weapon_box_tier_4
+    Name: Caixa de Arma Tier 4
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       callfunc("giveItemWithRandomStats","weapon",4);
+
+  - Id: 12704
+    AegisName: weapon_box_tier_5
+    Name: Caixa de Arma Tier 5
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       callfunc("giveItemWithRandomStats","weapon",5);
+  
+  - Id: 12705
+    AegisName: weapon_box_tier_6
+    Name: Caixa de Arma Tier 6
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       callfunc("giveItemWithRandomStats","weapon",6);
+
+  - Id: 12706
+    AegisName: weapon_box_tier_7
+    Name: Caixa de Arma Tier 7
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       callfunc("giveItemWithRandomStats","weapon",7);
+
+  - Id: 12707
+    AegisName: weapon_box_tier_8
+    Name: Caixa de Arma Tier 8
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       callfunc("giveItemWithRandomStats","weapon",8);
+
+  - Id: 12708
+    AegisName: weapon_box_tier_9
+    Name: Caixa de Arma Tier 9
+    Type: Usable
+    Buy: 10
+    Weight: 10
+    Range: 1
+    Script: |
+       callfunc("giveItemWithRandomStats","weapon",9);
+
+  - Id: 12800
+    AegisName: hablidades_basicas
+    Name: Hablidades basicas
+    Type: Usable
+    Buy: 50
+    Weight: 70
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      skill 304,1,0; skill 4,3,0; skill 9,3,0; skill 142,1,0; skill 526,1,0; skill 500,1,0; skill 222,1,0; skill 262,1,0; skill 63,1,0; skill 1010,1,0; skill 506,1,0; skill 524,1,0; skill 523,1,0; skill 51,1,0; skill 213,5,0; skill 1,9,0; skill 426,1,0; end;
+
+  - Id: 12801
+    AegisName: hablidades_intermedias
+    Name: Hablidades intermedias
+    Type: Usable
+    Buy: 50
+    Weight: 70
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      skill 4,6,0; skill 9,6,0; skill 524,6,0; skill 523,6,0; skill 213,10,0;  skill 426,5,0; end;
+
+  - Id: 12802
+    AegisName: hablidades_avancadas
+    Name: Hablidades avancadas
+    Type: Usable
+    Buy: 50
+    Weight: 70
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      skill 4,10,0; skill 9,10,0; skill 524,10,0; skill 523,10,0; skill 213,20,0; skill 426,10,0; end;
